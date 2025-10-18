@@ -24,442 +24,402 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   />
 
   <!-- ============================================ -->
-  <!--                Contact Form                  -->
+  <!--                   Contact                    -->
   <!-- ============================================ -->
 
-  <section id="cs-contact">
-    <div class="cs-container">
-      <form id="cs-form" name="Contact Form" method="post">
-        <div class="cs-content">
-          <span class="cs-topper">Contact</span>
-          <h2 class="cs-title">Get in Touch</h2>
-          <p class="cs-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus
-            elementum ullamcorper ipsum porttitor aliquam. Id magna urna
-            ultrices odio pulvinar. Sed ut.
-          </p>
-        </div>
-        <label>
-          Name
-          <input
-            required
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-          />
-        </label>
-        <label>
-          Email
-          <input
-            required
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Email"
-          />
-        </label>
-        <label>
-          Phone
-          <input
-            required
-            type="text"
-            id="phone"
-            name="phone"
-            placeholder="Phone"
-          />
-        </label>
-        <label>
-          How Did You Find Us
-          <input
-            type="text"
-            id="find"
-            name="find-us"
-            placeholder="How did you find us?"
-          />
-        </label>
-        <label class="cs-label-message">
-          Message
-          <textarea
-            required
-            name="Message"
-            id="message"
-            placeholder="Write message..."></textarea>
-        </label>
-        <button class="cs-button-solid" type="submit">Submit Message</button>
-      </form>
-      <div class="cs-right-section">
-        <!--Email-->
-        <span class="cs-header">Email</span>
-        <a class="cs-link" href={`mailto:${client.email}`}>{client.email}</a>
-        <!--Phone-->
-        <span class="cs-header">Phone</span>
-        <a class="cs-link" href={`tel:${client.phoneForTel}`}
-          >{client.phoneFormatted}</a
-        >
-        <!--Address-->
-        <span class="cs-header">Address</span>
-        <a class="cs-link" href={client.address.mapLink}>
-          {client.address.lineOne},
-          <br />
-          {client.address.lineTwo},
-          <br />
-          <span class="cs-block">
-            {client.address.city}
-            {client.address.state}
-            {client.address.zip}
-          </span>
-        </a>
-
-        <!-- Background Image-->
-        <picture class="cs-bg-picture">
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/skyscraper.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/skyscraper.jpg"
-            alt="building"
-            loading="lazy"
-            width="2500"
-            height="1667"
-          />
-        </picture>
+  <section id="contact-1750">
+      <div class="cs-container">
+          <div class="cs-form-group">
+              <div class="cs-content">
+                  <span class="cs-topper">Get in Touch</span>
+                  <h2 class="cs-title">Contact Us</h2>
+              </div>
+              <!--Form-->
+              <form class="cs-form" id="cs-form-1750" name="Contact Form" method="post">
+                  <label class="cs-label">
+                      Name *
+                      <input class="cs-input" required type="text" id="name-1750" name="name" placeholder="John Doe">
+                  </label>
+                  <label class="cs-label cs-email">
+                      Email *
+                      <input class="cs-input" required type="email" id="email-1750" name="email" placeholder="name@company.com">
+                  </label>
+                  <label class="cs-label cs-phone">
+                      Phone *
+                      <input class="cs-input" required type="phone" id="phone-1750" name="phone" placeholder="+1 (206) 987-6543">
+                  </label>
+                  <label class="cs-label">
+                      Message *
+                      <textarea class="cs-input cs-textarea" required name="Message" id="message-1750" placeholder="Hello, I am interested..."></textarea>
+                  </label>
+                  <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
+              </form>
+          </div>
+          <!--Contact Info-->
+          <div class="cs-info-group">
+              <div class="cs-info">
+                  <span class="cs-topper">Location</span>
+                  <span class="cs-detail">234-244 Stockwell Rd, 4th Floor<br>Brixton, SW9 9SP</span>
+              </div>
+              <div class="cs-info">
+                  <span class="cs-topper">Working Hours</span>
+                  <span class="cs-detail">Monday - Saturday: 10:00 - 20:00</span>
+                  <span class="cs-detail">Sunday: Closed</span>
+              </div>
+              <div class="cs-info">
+                  <span class="cs-topper">Contact</span>
+                  <span class="cs-detail">M: +99 40 70 929</span>
+                  <span class="cs-detail">E: info@stitchgym.com</span>
+              </div>
+          </div>
       </div>
-    </div>
+
+      <div class="cs-picture-group">
+          <!--Replace with your iframe for your google business profile-->
+          <iframe class="cs-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d172153.33373691145!2d-122.33979794999999!3d47.608715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490102c93e83355%3A0x102565466944d59a!2sSeattle%2C%20WA!5e0!3m2!1sen!2sus!4v1717096613140!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          <!--All three graphics use the same src, which is transformed in the CSS. If you want to replace the graphic with another one, simply replace all the src's with the same URL and watch the magic happen!-->
+          <img class="cs-graphic cs-top cs-light" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-light.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+          <img class="cs-graphic cs-left cs-light" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-light.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+          <img class="cs-graphic cs-bottom cs-light" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-light.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+
+          <!--This is a dark version. Download the images and change the fill color to match the color of the section background below it-->
+          <img class="cs-graphic cs-top cs-dark" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-dark.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+          <img class="cs-graphic cs-left cs-dark" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-dark.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+          <img class="cs-graphic cs-bottom cs-dark" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-dark.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+      </div>
   </section>
+                                
 </BaseLayout>
 
 <style lang="less">
   /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
 
-  /*-- -------------------------- -->
+/*-- -------------------------- -->
 <---          Contact           -->
 <--- -------------------------- -*/
 
-  /* Mobile - 360px */
-  @media only screen and (min-width: 0em) {
-    :root {
-      /* 13px - 16px */
-      --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-      /* 31px - 49px */
-      --headerFontSize: clamp(1.9375rem, 4.5vw, 3.0625rem);
-      --bodyFontSize: 1rem;
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #contact-1750 {
+        padding: var(--sectionPadding);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
 
-      /* 60px - 100px top and bottom */
-      --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
-    }
-
-    #cs-contact {
-      font-family: "Roboto", "Arial", sans-serif;
-      padding: var(--sectionPadding);
-
-      .cs-container {
-        width: 100%;
-        /* changes to 1280px at desktop */
-        max-width: (800/16rem);
-        margin: auto;
-      }
-
-      .cs-content {
-        width: 100%;
-      }
-
-      .cs-topper {
-        text-align: left;
-        /* 8px - 12px */
-        margin-bottom: clamp(0.5rem, 1.4vw, 0.75rem);
-      }
-
-      .cs-title {
-        text-align: left;
-        max-width: (800/16rem);
-      }
-
-      .cs-text {
-        text-align: left;
-        /* 404px - 522px */
-        max-width: clamp(25.25rem, 30vw, 32.625rem);
-        margin: 0 auto 0 0;
-        /* 40px - 48px */
-        margin-bottom: clamp(2.5rem, 6.3vw, 3rem);
-      }
-
-      #cs-form {
-        margin-bottom: (40/16rem);
-        label {
-          font-size: (16/16rem);
-          font-weight: 700;
-          line-height: 1.5em;
-          /* 12px - 20px */
-          margin-bottom: clamp(0.75rem, 1.3em, 1.25rem);
-          color: var(--headerColor);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
+        .cs-container {
+            width: 100%;
+            /* changes to 1024 on desktop */
+            max-width: (704/16rem);
+            margin: auto;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            /* 48px - 64px */
+            gap: clamp(3rem, 5vw, 4rem);
         }
 
-        .cs-label-message {
-          /* 32px - 48px */
-          margin-bottom: clamp(2rem, 6.3vw, 3rem);
+        .cs-content {
+            /* set text align to center if content needs to be centrally aligned */
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* aligns content to the left, set to center to centrally align */
+            align-items: flex-start;
         }
 
-        input,
-        textarea {
-          font-size: (16/16rem);
-          width: 100%;
-          height: (64/16rem);
-          margin-top: (4/16rem);
-          /* prevents border & padding from affecting height */
-          box-sizing: border-box;
-          padding-left: (20/16rem);
-          border: 1px solid #b4b2c7;
-          border-radius: (8/16rem);
-          transition: border 0.3s;
-
-          &:hover {
-            border: 1px solid var(--primary);
-          }
+        .cs-form-group {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            /* resets to 0 at tablet */
+            margin: auto;
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
         }
 
-        textarea {
-          font-family: inherit;
-          min-height: (120/16rem);
-          padding-top: (20/16rem);
+        .cs-title {
+            margin: 0 0 (24/16rem);
+        }
+
+        .cs-form {
+            width: 100%;
+            /* prevents flexbox from affecting height and width */
+            box-sizing: border-box;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: (16/16rem);
+        }
+
+        .cs-label {
+            font-size: (16/16rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            color: var(--headerColor);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            grid-column: span 12;
+            gap: (8/16rem);
+        }
+
+        .cs-input {
+            font-size: (16/16rem);
+            width: 100%;
+            /* 46px - 56px */
+            height: clamp(2.875rem, 4.5vw, 3.5rem);
+            /* prevents padding from adding to height and width */
+            box-sizing: border-box;
+            padding: 0;
+            padding-left: (24/16rem);
+            background-color: #f7f7f7;
+            color: var(--headerColor);
+            border: none;
+
+            &::placeholder {
+                color: var(--bodyTextColor);
+            }
+        }
+
+        .cs-textarea {
+            font-family: inherit;
+            min-height: (120/16rem);
+            padding-top: (24/16rem);
         }
 
         .cs-button-solid {
-          width: 100%;
-          border: none;
-        }
-      }
+            font-size: (16/16rem);
+            font-weight: 700;
+            /* 46px - 56px */
+            line-height: clamp(2.875em, 5.5vw, 3.5em);
+            text-align: center;
+            text-decoration: none;
+            min-width: (150/16rem);
+            margin: 0;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            overflow: hidden;
+            color: #1a1a1a;
+            border: none;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
 
-      .cs-right-section {
-        height: (320/16rem);
-        /* 24px - 40px top & bottom */
-        /* 20px - 40px left & right */
-        padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
-        border-radius: (8/16rem);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        position: relative;
-        /* cuts off corners on img tag */
-        overflow: hidden;
-      }
-
-      .cs-header {
-        /* 16px - 20px */
-        font-size: clamp(1rem, 3vw, 1.25rem);
-        font-weight: 700;
-        line-height: 1.2em;
-        margin-bottom: (8/16rem);
-        color: var(--bodyTextColorWhite);
-        display: block;
-      }
-
-      .cs-link {
-        /* 16px - 20px */
-        font-size: clamp(1rem, 3vw, 1.25rem);
-        line-height: 1.2em;
-        text-decoration: none;
-        margin-bottom: (20/16rem);
-        color: var(--bodyTextColorWhite);
-        display: block;
-        position: relative;
-
-        &:before {
-          /* Animated underline */
-          content: "";
-          width: 0%;
-          height: 2px;
-          /* current color of the parent */
-          background: currentColor;
-          opacity: 1;
-          display: block;
-          position: absolute;
-          bottom: (-2/16rem);
-          left: 0;
-          transition: width 0.3s;
-        }
-
-        &:hover {
-          &:before {
-            width: 100%;
-          }
-        }
-
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-      }
-
-      .cs-block {
-        /* sends second address line to the bottom on its own line */
-        display: block;
-      }
-
-      .cs-bg-picture {
-        width: 100%;
-        height: 100%;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: transform 0.6s;
-
-        &:before {
-          /* background color overlay */
-          content: "";
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.8) 100%
-          );
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1;
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
-          /* Makes img tag act as a background image */
-          object-fit: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
-    }
-  }
-
-  /* Tablet - 700px */
-  @media only screen and (min-width: 43.75em) {
-    #cs-contact {
-      #cs-form {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-
-        label {
-          width: 48%;
-        }
-
-        .cs-label-message {
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  /* Small Desktop - 1024px */
-  @media only screen and (min-width: 64em) {
-    #cs-contact {
-      .cs-container {
-        max-width: (1280/16rem);
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
-        gap: (80/16rem);
-      }
-
-      #cs-form {
-        max-width: (630/16rem);
-        label {
-          width: 100%;
-        }
-      }
-
-      .cs-right-section {
-        width: 40%;
-        max-width: (542/16rem);
-        /* changes to 578px at 1300px wide */
-        height: (686/16rem);
-        /* prevents flexbox from squishing it */
-        flex: none;
-
-        &:hover {
-          .cs-bg-picture {
-            transform: scale(1.1);
-          }
-        }
-      }
-
-      .cs-block {
-        /* goes back to inline so it stays "in line" with the rest of the text */
-        display: inline-block;
-      }
-    }
-  }
-
-  /* Small Desktop - 1300px */
-  @media only screen and (min-width: 81.25em) {
-    #cs-contact {
-      #cs-form {
-        column-gap: (0/16rem);
-        label {
-          width: 48%;
-          max-width: (305/16rem);
-        }
-
-        .cs-label-message {
-          max-width: 100%;
-        }
-      }
-
-      .cs-right-section {
-        height: (578/16rem);
-      }
-    }
-  }
-
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #cs-contact {
-        .cs-text,
-        .cs-title {
-          color: var(--bodyTextColorWhite);
-        }
-
-        .cs-topper {
-          color: var(--primaryLight);
-        }
-
-        #cs-form {
-          label,
-          input,
-          textarea {
-            color: var(--bodyTextColorWhite);
-            background-color: transparent;
-
-            &::placeholder {
-              /* lighten up the color of the text by 40%*/
-              filter: brightness(1.4);
+            &:before {
+                content: "";
+                width: 0%;
+                height: 100%;
+                background: #000;
+                opacity: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
             }
-          }
+
+            &:hover {
+                color: #fff;
+                &:before {
+                    width: 100%;
+                }
+            }
         }
 
-        .cs-bg-picture {
-          background-color: #000;
+        .cs-submit {
+            margin: (16/16rem) 0 0;
+            color: var(--bodyTextColorWhite);
+            grid-column: span 12;
+            justify-self: flex-start;
 
-          img {
-            /* lets parent background-color bleed through and darken it */
-            opacity: 0.5;
-          }
+            &:hover {
+                cursor: pointer;
+            }
         }
-      }
+
+        .cs-info-group {
+            display: flex;
+            flex-direction: column;
+            gap: (24/16rem);
+        }
+
+        .cs-detail {
+            font-size: (20/16rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            color: var(--bodyTextColor);
+            display: block;
+        }
+
+        .cs-picture-group {
+            width: 110%;
+            height: 100vw;
+            /* removed at desktop */
+            max-height: (502/16rem);
+            margin-top: (48/16rem);
+            overflow: hidden;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cs-iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .cs-graphic {
+            width: 100%;
+            min-width: (1280/16rem);
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            left: 50%;
+            z-index: 0;
+            transform: translateX(-50%);
+        }
+
+        .cs-top {
+            top: 0;
+        }
+
+        .cs-left {
+            left: 4%;
+            transform: rotate(270deg);
+            transform-origin: left;
+        }
+
+        .cs-bottom {
+            bottom: 0;
+            left: 0;
+            transform: rotateX(180deg);
+        }
+
+        .cs-dark {
+            display: none;
+        }
     }
-  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #contact-1750 {
+        .cs-container {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        /* using flex: 1 on both group elements to ensure they're both the same width */
+        .cs-form-group {
+            flex: 1;
+        }
+
+        .cs-info-group {
+            flex: 1;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #contact-1750 {
+        .cs-container {
+            width: 65%;
+            max-width: (1024/16rem);
+            margin: 0 auto 0 0;
+            padding: (40/16rem) (24/16rem);
+        }
+
+        .cs-picture-group {
+            width: 90%;
+            height: 100%;
+            max-height: 100%;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: auto;
+            z-index: -1;
+            transform: none;
+        }
+
+        .cs-picture-group {
+            margin-left: (-204/16rem);
+            left: 50%;
+        }
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #contact-1750 {
+        .cs-label {
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+                grid-column: span 6;
+            }
+        }
+    }
+}
+
+/* Largest Desktop - 1920px */
+@media only screen and (min-width: 120rem) {
+    #contact-1750 {
+        padding-top: 7vw;
+        padding-bottom: 9vw;
+
+        .cs-container {
+            margin: 0 auto;
+            transform: translateX(-22rem);
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #contact-1750 {
+            .cs-container {
+                background-color: var(--dark);
+            }
+
+            .cs-label,
+            .cs-detail {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-input {
+                background-color: var(--medium);
+                color: var(--bodyTextColorWhite);
+                border-color: rgba(255, 255, 255, 0.2);
+
+                &::placeholder {
+                    color: #fff;
+                    opacity: 0.5;
+                }
+            }
+
+            .cs-light {
+                display: none;
+            }
+
+            .cs-dark {
+                display: block;
+            }
+        }
+    }
+}
+                                
 </style>
