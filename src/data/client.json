@@ -1,14 +1,14 @@
 {
-	"name": "Code Stitch Web Designs",
-	"email": "help@codestitch.app",
-	"phoneForTel": "555-779-4407",
-	"phoneFormatted": "(555) 779-4407",
+	"name": "Merit Embroidery",
+	"email": "info@meritembroidery.com",
+	"phoneForTel": "708-414-6109",
+	"phoneFormatted": "(780) 414-6110",
 	"address": {
-		"lineOne": "First Address Line",
-		"lineTwo": "Second Address Line",
-		"city": "Denver",
-		"state": "CO",
-		"zip": "80206",
+		"lineOne": "3954 76 Ave NW",
+		"lineTwo": "Edmonton, Alberta, T6B 2P1",
+		"city": "",
+		"state": "",
+		"zip": "",
 		"mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
 	},
 	"domain": "www.codestitch.app"
