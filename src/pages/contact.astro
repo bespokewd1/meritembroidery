@@ -68,8 +68,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
               </div>
               <div class="cs-info">
                   <span class="cs-topper">Contact</span>
-                  <a href={`tel:${client.phoneForTel}`}><span class="cs-detail">M: {client.phoneFormatted}</span></a>
-                  <a href={`mailto:${client.email}`}><span class="cs-detail">E: {client.email}</span></a>
+                  <a class="cs-detail" href={`tel:${client.phoneForTel}`}>M: {client.phoneFormatted}</a>
+                  <a class="cs-detail" href={`mailto:${client.email}`}>E: {client.email}</a>
               </div>
           </div>
       </div>
