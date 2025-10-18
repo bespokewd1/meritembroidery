@@ -210,8 +210,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   <!--            Extra Content To Rank             -->
   <!-- ============================================ -->
 
-  <section id="sbs-r">
-    <div id="services" class="cs-container">
+  <section id="services">
+    <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
         <picture class="cs-picture cs-picture1">
@@ -1136,7 +1136,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
   /* Mobile - 360px */
   @media only screen and (min-width: 0em) {
-    #sbs-r {
+    #services {
       padding: var(--sectionPadding);
 
       .cs-container {
@@ -1265,7 +1265,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
   /* Desktop - 1024px */
   @media only screen and (min-width: 64em) {
-    #sbs-r {
+    #services {
       .cs-container {
         flex-flow: row;
         justify-content: space-between;
@@ -1288,7 +1288,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   /* Dark Mode */
   @media only screen and (min-width: 0em) {
     body.dark-mode {
-      #sbs-r {
+      #services {
         .cs-left {
           &:before,
           &:after {
