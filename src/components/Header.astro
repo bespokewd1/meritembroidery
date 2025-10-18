@@ -99,19 +99,34 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
   document.addEventListener("DOMContentLoaded", () => {
     const nav = document.getElementById("cs-navigation");
     const toggle = document.getElementById("mobile-menu-toggle");
+    const links = document.querySelectorAll('#cs-expanded-ul a[href^="#"], #cs-expanded-ul a[href^="/#"]');
 
-    // Match both "#section" and "/#section" hrefs
-    document.querySelectorAll('#cs-expanded-ul a[href^="#"], #cs-expanded-ul a[href^="/#"]').forEach(link => {
-      link.addEventListener("click", () => {
+    links.forEach(link => {
+      link.addEventListener("click", (event) => {
+        // Always close the menu
         setTimeout(() => {
           nav?.classList.remove("cs-active");
           toggle?.setAttribute("aria-expanded", "false");
           document.body?.classList.remove("cs-open");
         }, 150);
+
+        // If the link is to the current hash (e.g., clicking `/#services` again),
+        // force a scroll to the element manually
+        const href = link.getAttribute("href");
+        const id = href?.replace(/^\/?#/, "");
+        if (id) {
+          const target = document.getElementById(id);
+          if (target) {
+            event.preventDefault(); // Prevent default jump
+            target.scrollIntoView({ behavior: "smooth" }); // Scroll manually
+            history.replaceState(null, "", `#${id}`); // Update the URL hash without reloading
+          }
+        }
       });
     });
   });
 </script>
+
 
 
 
