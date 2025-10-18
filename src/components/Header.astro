@@ -4,7 +4,9 @@ import { Icon } from 'astro-icon/components';
 import DarkModeToggle from "@components/DarkModeToggle.astro";
 ---
 
-<!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
 <header id="cs-navigation">
   <div class="cs-container">
     <!--Nav Logo-->
@@ -92,6 +94,26 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
     <DarkModeToggle />
   </div>
 </header>
+
+<!-- Script for Nav not closing on mobile when selecting a link that doesnt move to another page (#services) -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.getElementById("cs-navigation");
+    const toggle = document.getElementById("mobile-menu-toggle");
+    const links = document.querySelectorAll('#cs-expanded-ul a[href^="#"]');
+
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        if (nav.classList.contains("cs-active")) {
+          nav.classList.remove("cs-active");
+          toggle.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("cs-open");
+        }
+      });
+    });
+  });
+</script>
+
 
 <style lang="less">
 
