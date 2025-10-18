@@ -5,6 +5,11 @@
     "children": []
   },
   {
+    "key": "Home",
+    "url": "/#services",
+    "children": []
+  },
+  {
     "key": "About Us",
     "url": "/about/",
     "children": []
