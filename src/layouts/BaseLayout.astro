@@ -134,10 +134,10 @@ const { description, title, preloadedImage } = Astro.props as Props;
     setTheme();
   
     document.addEventListener("astro:after-swap", setTheme); // For View Transitions purposes - astro:after-swap ensures that the theme is kept after navigating to a new page.
-  </script>
 
-  <!-- Script for Header Nav not closing on mobile when selecting a link that doesnt move to another page (#services) -->
-  <script is:inline>
+
+
+  // Script for Header Nav not closing on mobile when selecting a link that doesnt move to another page (#services)
     document.addEventListener("DOMContentLoaded", () => {
       const nav = document.getElementById("cs-navigation");
       const toggle = document.getElementById("mobile-menu-toggle");
