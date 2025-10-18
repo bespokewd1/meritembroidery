@@ -91,38 +91,6 @@ const { description, title, preloadedImage } = Astro.props as Props;
             <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
     
             <Header />
-              <!-- Script for Header Nav not closing on mobile when selecting a link that doesnt move to another page (#services) -->
-              <script is:inline>
-                document.addEventListener("DOMContentLoaded", () => {
-                  const nav = document.getElementById("cs-navigation");
-                  const toggle = document.getElementById("mobile-menu-toggle");
-                  const links = document.querySelectorAll('#cs-expanded-ul a[href^="#"], #cs-expanded-ul a[href^="/#"]');
-
-                  links.forEach(link => {
-                    link.addEventListener("click", (event) => {
-                      // Always close the menu
-                      setTimeout(() => {
-                        nav?.classList.remove("cs-active");
-                        toggle?.setAttribute("aria-expanded", "false");
-                        document.body?.classList.remove("cs-open");
-                      }, 150);
-
-                      // If the link is to the current hash (e.g., clicking `/#services` again),
-                      // force a scroll to the element manually
-                      const href = link.getAttribute("href");
-                      const id = href?.replace(/^\/?#/, "");
-                      if (id) {
-                        const target = document.getElementById(id);
-                        if (target) {
-                          event.preventDefault(); // Prevent default jump
-                          target.scrollIntoView({ behavior: "smooth" }); // Scroll manually
-                          history.replaceState(null, "", `#${id}`); // Update the URL hash without reloading
-                        }
-                      }
-                    });
-                  });
-                });
-              </script>
             <main id="main">
                 <slot/>
             </main>
@@ -166,4 +134,37 @@ const { description, title, preloadedImage } = Astro.props as Props;
     setTheme();
   
     document.addEventListener("astro:after-swap", setTheme); // For View Transitions purposes - astro:after-swap ensures that the theme is kept after navigating to a new page.
+  </script>
+
+  <!-- Script for Header Nav not closing on mobile when selecting a link that doesnt move to another page (#services) -->
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nav = document.getElementById("cs-navigation");
+      const toggle = document.getElementById("mobile-menu-toggle");
+      const links = document.querySelectorAll('#cs-expanded-ul a[href^="#"], #cs-expanded-ul a[href^="/#"]');
+
+      links.forEach(link => {
+        link.addEventListener("click", (event) => {
+          // Always close the menu
+          setTimeout(() => {
+            nav?.classList.remove("cs-active");
+            toggle?.setAttribute("aria-expanded", "false");
+            document.body?.classList.remove("cs-open");
+          }, 150);
+
+          // If the link is to the current hash (e.g., clicking `/#services` again),
+          // force a scroll to the element manually
+          const href = link.getAttribute("href");
+          const id = href?.replace(/^\/?#/, "");
+          if (id) {
+            const target = document.getElementById(id);
+            if (target) {
+              event.preventDefault(); // Prevent default jump
+              target.scrollIntoView({ behavior: "smooth" }); // Scroll manually
+              history.replaceState(null, "", `#${id}`); // Update the URL hash without reloading
+            }
+          }
+        });
+      });
+    });
   </script>
