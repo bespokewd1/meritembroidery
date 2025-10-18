@@ -107,3 +107,33 @@
         });
     });   
     });
+
+
+
+    // 
+        // Close mobile menu when internal hash links are clicked
+    const internalLinks = document.querySelectorAll('#cs-expanded-ul a[href^="#"], #cs-expanded-ul a[href^="/#"]');
+    
+    internalLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            const href = link.getAttribute("href");
+            const id = href?.replace(/^\/?#/, "");
+            if (id) {
+                const target = document.getElementById(id);
+                if (target) {
+                    // Prevent default anchor behavior, scroll manually
+                    event.preventDefault();
+                    target.scrollIntoView({ behavior: "smooth" });
+                    history.replaceState(null, "", `#${id}`);
+                }
+            }
+
+            // Always close the mobile menu
+            setTimeout(() => {
+                CSnavbarMenu?.classList.remove("cs-active");
+                mobileMenuToggle?.classList.remove("cs-active");
+                CSbody?.classList.remove("cs-open");
+                mobileMenuToggle?.setAttribute("aria-expanded", "false");
+            }, 150);
+        });
+    });
