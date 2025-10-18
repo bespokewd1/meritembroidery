@@ -24,6 +24,29 @@ const currentYear = getCurrentYear()
         Extra content if you need it, if not you can delete this whole p tag. I
         usually do.
       </p>
+      <!--Social-->
+            <ul class="cs-social">
+                <li class="cs-social-li">
+                    <a href="" class="cs-social-link" aria-label="facebook" target="_blank" rel="noopener">
+                        <img class="cs-social-icon cs-default" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/facebook-white.svg" alt="icon" loading="lazy" decoding="async" width="12" height="12" aria-hidden="true">
+                    </a>
+                </li>
+                <li class="cs-social-li">
+                    <a href="" class="cs-social-link" aria-label="twitter" target="_blank" rel="noopener">
+                        <img class="cs-social-icon cs-default" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/twitter-white.svg" alt="icon" loading="lazy" decoding="async" width="12" height="12" aria-hidden="true">
+                    </a>
+                </li>
+                <li class="cs-social-li">
+                    <a href="" class="cs-social-link" aria-label="instagram" target="_blank" rel="noopener">
+                        <img class="cs-social-icon cs-default" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram-transparent.svg" alt="icon" loading="lazy" decoding="async" width="12" height="12" aria-hidden="true">
+                    </a>
+                </li>
+                <li class="cs-social-li">
+                    <a href="" class="cs-social-link" aria-label="twitter" target="_blank" rel="noopener">
+                        <img class="cs-social-icon cs-default" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/youtube-transparent2.svg" alt="icon" loading="lazy" decoding="async" width="12" height="12" aria-hidden="true">
+                    </a>
+                </li>
+            </ul>
     </div>
     <div class="right-section">
       <div class="lists">
@@ -105,6 +128,7 @@ const currentYear = getCurrentYear()
         display: inline-block;
 
         img {
+          filter: brightness(0) invert(1);
           width: auto;
           height: 100%;
           display: block;
@@ -121,6 +145,44 @@ const currentYear = getCurrentYear()
         color: #fff;
         opacity: 0.9;
       }
+      .cs-social {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: (8/16rem);
+        }
+
+        .cs-social-li {
+            list-style: none;
+        }
+
+        .cs-social-link {
+            width: (32/16rem);
+            height: (32/16rem);
+            background-color: #484848;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+            &:hover {
+                background-color: var(--secondary);
+
+                .cs-social-icon {
+                    filter: grayscale(1) brightness(0);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .cs-social-icon {
+            width: (12/16rem);
+            height: auto;
+            display: block;
+            opacity: 0.5;
+        }
     }
 
     .right-section {
