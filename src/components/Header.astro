@@ -100,19 +100,19 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
     const nav = document.getElementById("cs-navigation");
     const toggle = document.getElementById("mobile-menu-toggle");
 
-    // Close menu when clicking anchor links (href starts with #)
-    document.querySelectorAll('#cs-expanded-ul a[href^="#"]').forEach(link => {
-      link.addEventListener("click", (e) => {
-        // Optional: Wait a moment to let scroll happen before closing
+    // Match both "#section" and "/#section" hrefs
+    document.querySelectorAll('#cs-expanded-ul a[href^="#"], #cs-expanded-ul a[href^="/#"]').forEach(link => {
+      link.addEventListener("click", () => {
         setTimeout(() => {
           nav?.classList.remove("cs-active");
           toggle?.setAttribute("aria-expanded", "false");
           document.body?.classList.remove("cs-open");
-        }, 150); // short delay to avoid interfering with scroll
+        }, 150);
       });
     });
   });
 </script>
+
 
 
 </header>
