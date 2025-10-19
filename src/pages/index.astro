@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
+import "../styles/global.css";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -18,8 +19,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   <!--                    Hero                      -->
   <!-- ============================================ -->
 
-  <section id="hero">
-    <div class="cs-container">
+  <section id="hero" style="width: 100%;margin: 0;padding: 0;">
+    <!-- <div class="cs-container">
       <div class="cs-flex-group">
         <span class="cs-topper">Merit Embroidery</span>
         <h1 class="cs-title">Proudly producing Edmonton’s top-quality in-house embroidery, screen printing, and apparel decoration.</h1>
@@ -40,11 +41,34 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
           Get in Touch
         </a>
       </div>
+    </div> -->
+    <div class="w-full flex flex-col items-center justify-center sm:flex-row" style="margin-top: 4rem;width: 100%;padding: 0px;">
+      <div class="flex flex-col sm:h-[50vh] md:h-[100vh]" style="width: 100%;">
+        <div class="w-full flex justify-center items-center bg-red-500 sm:h-[50%] " style="padding: 2rem 0 2rem 0;">
+          <h1 class="font-bold text-xl md:text-2xl" style="text-align: center;margin: 0 1rem 0 1rem;color:white">Proudly producing Edmonton’s
+             top-quality in-house embroidery, screen printing, and apparel decoration.</h1>
+        </div>
+        <div class="w-full flex flex-col justify-center items-center bg-white-500 sm:h-[50%] " style="padding: 2rem 0 2rem 0;">
+          <h1 class="font-bold text-xl md:text-2xl" style="text-align: center;margin: 0 1rem 0 1rem;color:black">
+            Turning your visions into unique, impactful branded apparel.
+          </h1>
+          <a href="/contact" class="cs-button-solid cs-nav-button" style="margin-top: 32px;">Get A Quote</a>
+        </div>
+      </div>
+      <div class="w-full flex items-center justify-start  " >
+         <img
+              class="w-full flex items-center justify-start h-[50vh] sm:h-[50vh] md:h-[100vh]"
+              loading="lazy"
+              decoding="async"
+              src="src/assets/images/merit-building.jpg"
+              alt="play icon"
+              style="object-fit: cover;"
+            />
+      </div>
     </div>
-
     <!-- Background Image -->
     <!-- We can't use Astro <Picture /> as it does not support multiple sources -->
-    <picture class="cs-picture">
+    <!-- <picture class="cs-picture">
       <source
         media="(max-width: 600px)"
         srcset="/assets/images/hero-m.webp"
@@ -59,7 +83,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         height="1667"
         loading="eager"
       />
-    </picture>
+    </picture> -->
 
   </section>
 
@@ -719,16 +743,16 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   }
 
   /* Desktop Parallax Effect - 1300px */
-  @media only screen and (min-width: 81.25em) {
-    #hero {
-      background: url("/assets/images/hero.jpg");
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      /* creates parallax effect on background image */
-      background-attachment: fixed;
-    }
-  }
+  // @media only screen and (min-width: 81.25em) {
+  //   #hero {
+  //     background: url("/assets/images/hero.jpg");
+  //     background-position: center;
+  //     background-size: cover;
+  //     background-repeat: no-repeat;
+  //     /* creates parallax effect on background image */
+  //     background-attachment: fixed;
+  //   }
+  // }
 
   /* Dark Mode */
   @media only screen and (min-width: 0em) {
