@@ -294,17 +294,22 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    // #contact{
-    //     .container{
-    //         flex-direction: row;
-    //         .left{
-    //             width: 50%;
-    //             .upper{
-    //                 padding-top: 400px;
-    //             }
-    //         }
-    //     }
-    // }
+    #contact{
+        .container{
+            .left{
+                .lower{
+                    .chat-button{
+                        width: auto;
+                    }
+                }
+            }
+            .right{
+                .row{
+                    flex-direction: row;
+                }
+            }
+        }
+    }
 }
 
 /* Desktop - 1024px */
