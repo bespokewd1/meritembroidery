@@ -37,7 +37,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             <div class="lower">
                 <h3 class="cs-h3">Chat with our virtual assistant</h3>
                 <p class="cs-text">Start a conversation</p>
-                <a class="cs-solid-button" href="#">Start Chat</a>
+                <a class="chat-button" href="#">Start Chat</a>
             </div>
         </div>
         <div class="right">
@@ -144,6 +144,25 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 .lower{
                     padding: 32px 16px;
                     min-height: auto;
+                    .chat-button{
+                        width: 100%;
+                        text-align: center;
+                        font-size: 14px;
+                        padding: 10px 20px;
+                        display: inline-block;
+                        margin-top: 32px;
+                        font-weight: 600;
+                        color: #000;
+                        background-color: transparent;
+                        border: 1px solid #000;
+                        text-decoration: none;
+                        box-shadow: none;
+                        transition: all 0.25s ease;
+                        &:hover{
+                            border: none;
+                            background: var(--primary);
+                        }
+                    }
                     
                 }
             }
