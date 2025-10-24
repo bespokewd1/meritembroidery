@@ -314,7 +314,17 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-
+    #contact{
+        .container{
+            flex-direction: row;
+            .left{
+                width: 50%;
+                .upper{
+                    padding-top: 400px;
+                }
+            }
+        }
+    }
 }
 
 /* Large Desktop - 1300px */
