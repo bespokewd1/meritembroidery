@@ -4,7 +4,6 @@ import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
 
-import { onMount } from "astro/client";
 import BlazeSlider from "blaze-slider";
 import "blaze-slider/dist/blaze.css";
 
@@ -23,25 +22,7 @@ const reviews = [
     name: 'Carl G.',
   },
 ];
-onMount(() => {
-  // Only activate the slider on mobile/tablet (< 1024px)
-  if (window.innerWidth < 1024) {
-    const el = document.querySelector("#reviews-blaze");
-    if (el) {
-      new BlazeSlider(el, {
-        all: {
-          slidesToShow: 1,
-          slideGap: "20px",
-          loop: true,
-          enableAutoplay: true,
-          autoplayInterval: 4000,
-          transitionDuration: 600,
-          pagination: { enabled: true },
-        },
-      });
-    }
-  }
-});
+
 
 
 
