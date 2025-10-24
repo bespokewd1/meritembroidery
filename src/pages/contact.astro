@@ -41,7 +41,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             </div>
         </div>
         <div class="right">
-            <h3 class="cs-title"></h3>
+            <h3 class="cs-title">Minimum Order 24  Pieces</h3>
             <div class="form-wrapper">
                 <form action="">
                     <div class="form-group">
@@ -124,6 +124,9 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 justify-content: stretch;
                 font-family: inherit;
                 box-sizing: border-box;
+
+                border-bottom: 3px solid var(--primary);
+
                 .cs-title{
                     font-size: 20px;
                 }
@@ -169,11 +172,30 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             }
             .right{
                 .cs-title{
-
+                    width: 100%;
                 }
                 .form-wrapper{
-                    .form-group{
+                    padding: 30px 20px;
 
+                    max-width: 720px;
+                    margin: 20px auto;
+                    background: white;
+                    box-sizing: border-box;
+                    font-family: inherit;
+
+                    .form-group{
+                        label{
+                            font-weight: 500;
+                            margin-bottom: 6px;
+                            display: block;
+                            font-family: inherit;
+                        }
+                        .row{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+                            flex-wrap: wrap;
+                        }
                     }
                 }
             }
