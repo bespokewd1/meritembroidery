@@ -25,6 +25,43 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   />
 
   <!-- ============================================ -->
+  <!--                     About                    -->
+  <!-- ============================================ -->
+
+    <section id="about">
+      <div class="container">
+        <div class="left-right flex flex-wrap md:flex-nowrap items-stretch">
+
+          <div class="left w-full md:w-1/2 flex items-center bg-white">
+            <div class="content p-6">
+              <h3 class="cs-title">About Merit Embroidery</h3>
+              <p class="cs-text">
+                Merit Embroidery is one of the largest wholesale promotional decorators in Western Canada. 
+                We’ve been in the apparel decorating business for over 30 years, proudly serving customers 
+                across Canada and throughout North America.           
+              </p>
+              <p class="cs-text">
+                Our extensive experience, combined with state-of-the-art machinery, makes us one of the best 
+                in the West. With an 11,000 sq. ft. production facility and warehouse, we’re equipped to handle 
+                both small and large-volume orders — producing up to 10,000 decorated garments per day. best.
+              </p>
+            </div>
+          </div>
+
+          <div class="right w-full md:w-1/2 flex items-stretch">
+            <img
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/hero.jpg"
+              alt="Embroidery machines"
+            />
+          </div>
+        </div>
+      </div>
+   </section>
+
+  <!-- ============================================ -->
   <!--                 Side By Side                 -->
   <!-- ============================================ -->
 
@@ -189,12 +226,98 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
     </div>
 </section>
                                 
-  <FAQ />
   <CTA />
 </BaseLayout>
 
 <style lang="less">
   /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+
+
+    /*-- -------------------------- -->
+<---          About          -->
+<--- -------------------------- -*/
+
+  @media only screen and (min-width: 0em) {
+    #about{
+      margin-bottom: 32px;
+      .title-banner{
+        padding: 32px 16px;
+        background: var(--primary);
+          .cs-title{
+            color: #fff;
+            text-align: center;
+            margin: 0;
+          }
+        }
+      .container{
+        width: 100%;
+        .left-right{
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+          .left{
+            .content{
+              width: 96%;
+             margin: auto; 
+
+             .cs-title{
+                color: var(--primary);
+                font-size: 28px;
+                font-weight: 700;
+                margin: 16px 0;
+              }
+              .cs-text{
+                margin-bottom: 32px;
+              }
+              ul{
+                margin-bottom: 32px;
+              }
+            }
+            
+          }
+          .right{
+            
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 64em) {
+        #about{
+      .title-banner{
+        
+          .cs-title{
+            
+          }
+        }
+      .container{
+        
+        .left-right{
+          flex-direction: row;
+          .left{
+            width: 45%;
+            // min-width: 500px;
+            margin: auto;
+            .content{
+              width: 80%;
+              margin: auto;
+             .cs-title{
+                
+              }
+              .cs-text{
+                
+              }
+            }
+            
+          }
+          .right{
+            width: 55%;
+          }
+        }
+      }
+    }
+  }
 
   /*-- -------------------------- -->
 <---       Side By Side         -->
