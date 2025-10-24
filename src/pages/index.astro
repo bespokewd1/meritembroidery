@@ -766,11 +766,13 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
           }
         }
       .container{
+        width: 100%;
         .left-right{
           display: flex;
           flex-direction: column;
           gap: 32px;
           .left{
+            width: 96%;
             .cs-title{
               color: var(--primary);
               font-size: 28px;
@@ -782,7 +784,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             }
           }
           .right{
-
+            
           }
         }
       }
