@@ -31,7 +31,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
     <div class="container">
         <div class="left">
             <div class="upper">
-                <h3 class="cs-h3">Get a Free Quote</h3>
+                <h3 class="cs-title">Get a Free Quote</h3>
                 <p class="cs-text">Fill out a quick form</p>
             </div>
             <div class="lower">
@@ -114,7 +114,44 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+    #contact{
+        .container{
+            .left{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: stretch;
+                font-family: inherit;
+                box-sizing: border-box;
+                .cs-title{
+                    font-size: 20px;
+                    color: fff;
+                }
+                .cs-text{
+                    font-size: 15px;
+                    color: fff;
+                }
+                .upper{
+                    padding: 32px 16px;
+                    min-height: auto;
+                }
+                .lower{
+                    padding: 32px 16px;
+                    min-height: auto;
+                }
+            }
+            .right{
+                .cs-title{
 
+                }
+                .form-wrapper{
+                    .form-group{
+
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* Tablet - 768px */
