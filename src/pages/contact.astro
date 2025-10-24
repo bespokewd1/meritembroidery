@@ -184,6 +184,21 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                     font-family: inherit;
 
                     .form-group{
+                        form{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 25px;
+                            font-family: inherit;
+                            input, select, textarea{
+                                padding: 14px;
+                                font-size: 16px;
+                                border: 1px solid #ccc;
+                                border-radius: 6px;
+                                width: 100%;
+                                box-sizing: border-box;
+                                font-family: inherit;
+                            }
+                        }
                         label{
                             font-weight: 500;
                             margin-bottom: 6px;
