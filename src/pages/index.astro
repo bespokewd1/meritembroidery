@@ -670,6 +670,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                   'text-(--secondary) hover:text-(--primary) transition-colors duration-300 active:scale-100 hover:scale-105 size-7',
                 ]}
               /> -->
+              Prev
               </button
             >
 
@@ -688,6 +689,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                   'text-(--secondary) hover:text-(--primary) active:scale-100  transition-colors duration-300 hover:scale-105 size-7',
                 ]}
               /> -->
+              Next
             </button>
           </div>
         </div>
@@ -1693,3 +1695,25 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
     }
   }
 </style>
+
+<script>
+  import BlazeSlider from 'blaze-slider';
+  import 'blaze-slider/dist/blaze.css';
+
+  document.querySelectorAll('.blaze-slider').forEach((el) => {
+    new BlazeSlider(el as HTMLElement, {
+      all: {
+        enableAutoplay: true,
+        autoplayInterval: 2000,
+        transitionDuration: 300,
+        slidesToShow: 3,
+      },
+      '(max-width: 900px)': {
+        slidesToShow: 2,
+      },
+      '(max-width: 650px)': {
+        slidesToShow: 1,
+      },
+    });
+  });
+</script>
