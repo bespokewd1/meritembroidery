@@ -6,8 +6,6 @@ import "../styles/global.css";
 import BlazeSlider from 'blaze-slider'
 import 'blaze-slider/dist/blaze.css'
 
-<script src="https://cdn.tailwindcss.com"></script>
-
 // Reviews data
 const reviews = [
   {
@@ -31,6 +29,7 @@ import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASS
 import { getImage } from "astro:assets";
 const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 ---
+<script src="https://cdn.tailwindcss.com"></script>
 
 <BaseLayout
   title="Merit Embroidery | Edmonton Embroidery, Screen Printing & Custom Apparel"
