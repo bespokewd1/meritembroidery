@@ -772,17 +772,21 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
           flex-direction: column;
           gap: 32px;
           .left{
-            width: 96%;
-            margin: auto;
-            .cs-title{
-              color: var(--primary);
-              font-size: 28px;
-              font-weight: 700;
-              margin: 16px 0;
+            .content{
+              width: 96%;
+             margin: auto; 
+
+             .cs-title{
+                color: var(--primary);
+                font-size: 28px;
+                font-weight: 700;
+                margin: 16px 0;
+              }
+              .cs-text{
+                margin-bottom: 32px;
+              }
             }
-            .cs-text{
-              margin-bottom: 32px;
-            }
+            
           }
           .right{
             
@@ -791,6 +795,9 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
       }
     }
   }
+    @media only screen and (min-width: 64em) {
+
+    }
 
   /* PAGE-SPECIFIC STYLES FOR THE HOME PAGE */
 
