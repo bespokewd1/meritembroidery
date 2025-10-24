@@ -122,7 +122,16 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
           </div>
         </div>
         <div class="right">
-
+          <div class="w-full flex items-center justify-start  " >
+            <img
+                  class="w-full flex items-center justify-start h-[50vh] sm:h-[50vh] md:h-[100vh]"
+                  loading="lazy"
+                  decoding="async"
+                  src="/assets/images/merit-building.jpg"
+                  alt="play icon"
+                  style="object-fit: cover;"
+                />
+          </div>
         </div>
       </div>
     </div>
@@ -762,6 +771,17 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
           flex-direction: column;
           gap: 32px;
           .left{
+            .cs-title{
+              color: var(--primary);
+              font-size: 28px;
+              font-weight: 700;
+              margin: 16px 0;
+            }
+            .cs-text{
+              margin-bottom: 32px;
+            }
+          }
+          .right{
 
           }
         }
