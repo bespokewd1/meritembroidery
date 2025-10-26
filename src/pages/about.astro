@@ -21,19 +21,21 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
+  <!-- <Landing 
     title="About Us"
     image={optimizedImage}
-  />
+  /> -->
 
   <!-- ============================================ -->
   <!--                     About                    -->
   <!-- ============================================ -->
-
+    <section class="text-center" style="padding-top: 8rem;padding-bottom: 2rem;">
+      <h2 style="color: var(--primary);" class="cs-topper">Crafting Timeless Threads of Excellence</h2>
+      <h2 class="cs-title" >About Us</h2>
+    </section>
     <section id="about">
       <div class="container">
         <div class="left-right flex flex-wrap md:flex-nowrap items-stretch">
-
           <div class="left w-full md:w-1/2 flex items-center bg-white">
             <div class="content p-6">
               <h3 class="cs-title">About Merit Embroidery</h3>
@@ -159,7 +161,70 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         </ul>
     </div>
 </section>
-                                
+
+<!-- ============================================ -->
+<!--                 SOME OF OUT WORKS            -->
+<!-- ============================================ -->
+
+<section class="flex flex-col justify-center items-center" style="margin-bottom: 8rem;">
+  <h2 class="cs-topper">Showcasing Our Finest Creations</h2>
+  <h2 class="cs-title" style="margin-bottom: 4rem;">
+    Some of Our Works
+  </h2>
+  <div
+    class="w-[90%] grid grid-cols-1 justify-center sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
+  >
+    <div class="flex justify-center items-center">
+      <img
+        src="/assets/images/portfolio/port1.jpg"
+        alt="Gallery 1"
+        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
+      />
+    </div>
+
+    <div class="flex justify-center items-center">
+      <img
+        src="/assets/images/portfolio/port2.jpg"
+        alt="Gallery 2"
+        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
+      />
+    </div>
+
+    <div class="flex justify-center items-center">
+      <img
+        src="/assets/images/portfolio/port3.jpg"
+        alt="Gallery 3"
+        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
+      />
+    </div>
+
+    <div class="flex justify-center items-center">
+      <img
+        src="/assets/images/portfolio/port4.jpg"
+        alt="Gallery 4"
+        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
+      />
+    </div>
+
+    <div class="flex justify-center items-center">
+      <img
+        src="/assets/images/portfolio/port5.jpg"
+        alt="Gallery 5"
+        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
+      />
+    </div>
+
+    <div class="flex justify-center items-center">
+      <img
+        src="/assets/images/portfolio/port6.jpg"
+        alt="Gallery 6"
+        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
+      />
+    </div>
+  </div>
+  <a href="https://www.instagram.com" class="cs-button-solid cs-nav-button" style="margin-top: 32px;">View More on Instagram</a>
+</section>
+
   <CTA />
 </BaseLayout>
 

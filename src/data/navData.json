@@ -32,5 +32,10 @@
     "key": "About Us",
     "url": "/about/",
     "children": []
+  },
+  {
+    "key": "Contact Us",
+    "url": "/contact/",
+    "children": []
   }
 ]

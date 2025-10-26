@@ -41,7 +41,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   <!-- ============================================ -->
   <!--                    Hero                      -->
   <!-- ============================================ -->
-
+  
   <section id="hero" style="width: 100%;margin: 0;padding: 0;">
     <!-- <div class="cs-container">
       <div class="cs-flex-group">
@@ -68,12 +68,11 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
     <div class="w-full flex flex-col items-center justify-center sm:flex-row" style="margin-top: 4rem;width: 100%;padding: 0px;">
       <div class="flex flex-col sm:h-[50vh] md:h-[100vh]" style="width: 100%;">
         <div class="w-full flex justify-center items-center bg-red-500 sm:h-[50%] " style="padding: 2rem 0 2rem 0;">
-          <h1 class="font-bold text-xl md:text-2xl" style="text-align: center;margin: 0 1rem 0 1rem;color:white">Proudly producing Edmonton’s
-             top-quality in-house embroidery, screen printing, and apparel decoration.</h1>
+          <h1 class="font-bold text-xl md:text-2xl" style="text-align: center;margin: 0 1rem 0 1rem;color:white">Your Trusted Promotional Decorators!</h1>
         </div>
         <div class="w-full flex flex-col justify-center items-center bg-white-500 sm:h-[50%] " style="padding: 2rem 0 2rem 0;">
           <h1 class="font-bold text-xl md:text-2xl" style="text-align: center;margin: 0 1rem 0 1rem;color:black">
-            Turning your visions into unique, impactful branded apparel.
+            Quality, Delivery, Service, Innovation
           </h1>
           <a href="/contact" class="cs-button-solid cs-nav-button" style="margin-top: 32px;">Get A Quote</a>
         </div>
@@ -107,7 +106,22 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         loading="eager"
       />
     </picture> -->
+    <div id="floating-buttons" class="w-full fixed bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-3 z-50 hidden sm:hidden">
+      <a href="tel:(780) 414-6109"
+        class="w-[40%] h-8 bg-[var(--primary)] text-white px-4 py-3  shadow-lg text-xs font-medium flex items-center justify-center rounded-2xl">
+        Call Now
+      </a>
+      <a href="/contact"
+        class="w-[40%] h-8 bg-gray-800 text-white px-4 py-3  shadow-lg text-sm font-medium flex items-center justify-center rounded-2xl">
+         Get a Quote
+      </a>
+    </div>
 
+<!-- Back to Top Button -->
+<button id="backToTop"
+  class="hidden fixed w-8 h-8 bottom-15 font-bold right-2 bg-[var(--primary)] text-white p-3 rounded-full shadow-md z-50 lg:hidden">
+  ↑
+</button>
   </section>
 
   <!-- ============================================ -->
@@ -316,7 +330,50 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
       </div>
    </section>
 
-
+  <section class="flex flex-col items-center justify-center " style="margin-top: 4rem;">
+    <div class=" md:w-[50%] text-center"> 
+      <h3 class="cs-title"  style="color: var(--primary);">
+        Experience, Quality, and Reliability You Can Count On
+      </h3>
+    </div>
+  
+  <div class="flex flex-wrap justify-center  md:gap-4 md:flex-wrap md:justify-evenly md:w-[50%]">
+  <div class="w-[40%] flex justify-center items-center md:w-[30%]">
+    <img
+    src="src/assets/images/30years.png"
+    alt="Logo 1"
+    class="w-[100px] h-[100px] object-contain md:w-[150px] md:h-[150px]"
+  />
+  </div>
+  <div class="w-[40%] flex justify-center items-center md:w-[30%]">
+    <img
+    src="src/assets/images/canada.png"
+    alt="Logo 1"
+    class="w-[100px] h-[100px] object-contain md:w-[150px] md:h-[150px]"
+  />
+  </div>
+  <div class="w-[40%] flex justify-center items-center md:w-[30%]">
+    <img
+    src="src/assets/images/attention.png"
+    alt="Logo 1"
+    class="w-[100px] h-[100px] object-contain md:w-[150px] md:h-[150px]"/>
+  </div>
+  <div class="w-[40%] flex justify-center items-center md:w-[30%]">
+    <img
+    src="src/assets/images/onestop.png"
+    alt="Logo 1"
+    class="w-[100px] h-[100px] object-contain md:w-[150px] md:h-[150px]"
+  />
+  </div>
+  <div class="w-[40%] flex justify-center items-center md:w-[30%]">
+    <img
+    src="src/assets/images/satisfaction.png"
+    alt="Logo 1"
+    class="w-[100px] h-[100px] object-contain md:w-[150px] md:h-[150px]"
+  />
+  </div>
+  </div>
+</section>
   <!-- ============================================ -->
   <!--                 About Us                     -->
   <!-- ============================================ -->
@@ -606,6 +663,9 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
       <div class="reviews-grid">
         {reviews.map((review) => (
           <div class="review-card">
+            <div class="flex justify-end text-yellow-400 text-2xl">
+              ★★★★★
+            </div>
             <div class="quote-icon">
               <svg viewBox="0 0 24 24">
                 <path
@@ -615,6 +675,9 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             </div>
             <p class="review-text">"{review.text}"</p>
             <p class="review-name">— {review.name}</p>
+            <div class="flex justify-end text-yellow-400 text-2xl">
+              <img src="/assets/images/google-icon.webp" alt="google icon" class="w-5 h-5 inline-block" />
+            </div>
           </div>
         ))}
       </div>
@@ -628,6 +691,9 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 {reviews.map((review) => (
                   <div class="blaze-slide">
                     <div class="review-card">
+                      <div class="flex justify-end text-yellow-400 text-2xl">
+                        ★★★★★
+                      </div>
                       <div class="quote-icon">
                         <svg viewBox="0 0 24 24">
                           <path
@@ -637,7 +703,10 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                       </div>
                       <p class="review-text">"{review.text}"</p>
                       <p class="review-name">— {review.name}</p>
-                    </div>
+                      <div class="flex justify-end text-yellow-400 text-2xl">
+                        <img src="/assets/images/google-icon.webp" alt="google icon" class="w-5 h-5 inline-block" />
+                      </div>
+                    </div> 
                   </div>
                 ))}
               </div>
@@ -661,7 +730,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
       <!-- CTA -->
       <div class="reviews-cta">
         <a
-          href="#"
+          href="https://www.google.com/maps/place/Merit+Embroidery+%26+Printing+Ltd./@53.512899,-113.4059598,17z/data=!4m18!1m9!3m8!1s0x53a0186ce841d67d:0x43c318ffd01724a5!2sMerit+Embroidery+%26+Printing+Ltd.!8m2!3d53.512899!4d-113.4033849!9m1!1b1!16s%2Fg%2F1trrcwgv!3m7!1s0x53a0186ce841d67d:0x43c318ffd01724a5!8m2!3d53.512899!4d-113.4033849!9m1!1b1!16s%2Fg%2F1trrcwgv?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -673,7 +742,27 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   
 
   <CTA />
+  
 </BaseLayout>
+<script>
+  const floatingButtons = document.getElementById('floating-buttons');
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 0.8) {
+      floatingButtons.classList.remove('hidden');
+      backToTop.classList.remove('hidden');
+    } else {
+      floatingButtons.classList.add('hidden');
+      backToTop.classList.add('hidden');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
 
 <style lang="less">
 
