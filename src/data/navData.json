@@ -7,7 +7,31 @@
   {
     "key": "Services",
     "url": "/#services",
-    "children": []
+    "children": [
+      {
+        "key": "Embroidery",
+        "url": "/#embroidery"
+      },
+      {
+        "key": "Screen Printing",
+        "url": "/#screenPrinting"
+      }
+      ,
+      {
+        "key": "Laser Engraving",
+        "url": "/#screenPrinting"
+      }
+      ,
+      {
+        "key": "Digital Printing",
+        "url": "/#digitalPrinting"
+      }
+      ,
+      {
+        "key": "Artwork Services",
+        "url": "/#artworkServices"
+      }
+    ]
   },
   {
     "key": "About Us",
