@@ -132,7 +132,9 @@ const currentYear = getCurrentYear()
         }
       }
       .cta{
-
+        justify-content: left;
+        display: flex;
+        flex-direction: column;
         h2{
           font-size: 1.125rem;
           font-weight: 700;
@@ -146,13 +148,16 @@ const currentYear = getCurrentYear()
         p {
           font-size: (14/16rem);
           line-height: 27/14;
-          text-align: center;
+          // text-align: center;
           width: 100%;
           width: 307/14rem;
           margin: auto;
           color: #000;
           opacity: 0.9;
           margin-bottom: (30/16em);
+        }
+        .cs-button-solid{
+          width: fit-content;
         }
 
       }
