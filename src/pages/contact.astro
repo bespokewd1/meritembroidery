@@ -10,7 +10,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 ---
 
 <script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contactForm");
     const fileInput = document.getElementById("fileInput");
     const uploadBox = document.getElementById("uploadBox");
@@ -43,39 +43,60 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
     function displayFiles() {
         const files = Array.from(fileInput.files);
         fileList.innerHTML = files.length
-        ? `<strong>Files Selected:</strong><ul>${files.map(f => `<li>${f.name}</li>`).join('')}</ul>`
-        : "";
+            ? `<strong>Files Selected:</strong><ul>${files.map(f => `<li>${f.name}</li>`).join('')}</ul>`
+            : "";
     }
 
-    // 🔹 Optional: handle form submission with Fetch
+    // 🔹 Form submission
     form.addEventListener("submit", async (e) => {
-        e.preventDefault();
         message.style.display = "block";
         message.textContent = "Sending...";
 
+        // Create FormData
         const formData = new FormData(form);
 
-        try {
-        // ⚙️ Replace with your backend endpoint
-        const response = await fetch("/submit-form-endpoint", {
-            method: "POST",
-            body: formData,
-        });
+        // Add Netlify required hidden input if missing
+        if (!form.querySelector('input[name="form-name"]')) {
+            const hiddenInput = document.createElement("input");
+            hiddenInput.type = "hidden";
+            hiddenInput.name = "form-name";
+            hiddenInput.value = form.getAttribute("name") || "contact";
+            formData.append(hiddenInput.name, hiddenInput.value);
+        }
 
-        if (response.ok) {
-            message.textContent = "✅ Thank you! Your form was submitted successfully.";
-            form.reset();
-            fileList.innerHTML = "";
-        } else {
-            message.textContent = "⚠️ There was an issue submitting the form. Please try again.";
-        }
+        try {
+            // Submit form the normal way to let Netlify handle it
+            const request = new XMLHttpRequest();
+            request.open(form.method, form.action || "/", true);
+            request.setRequestHeader("Accept", "application/x-www-form-urlencoded");
+
+            request.onload = function() {
+                if (request.status >= 200 && request.status < 400) {
+                    message.textContent = "✅ Thank you! Your form was submitted successfully.";
+                    form.reset();
+                    fileList.innerHTML = "";
+                } else {
+                    message.textContent = "⚠️ There was an issue submitting the form. Please try again.";
+                }
+            };
+
+            request.onerror = function() {
+                message.textContent = "❌ Network error. Please check your connection.";
+            };
+
+            request.send(formData);
+
         } catch (error) {
-        console.error(error);
-        message.textContent = "❌ Network error. Please check your connection.";
+            console.error(error);
+            message.textContent = "❌ Unexpected error. Please try again.";
         }
+
+        // Prevent default only to control messages
+        e.preventDefault();
     });
-    });
+});
 </script>
+
 
 
 <BaseLayout
