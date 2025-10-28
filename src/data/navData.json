@@ -25,6 +25,10 @@
       {
         "key": "Artwork Services",
         "url": "/#artworkServices"
+      },
+      {
+        "key": "Laser Engraving",
+        "url": "/#artworkServices"
       }
     ]
   },
@@ -35,7 +39,7 @@
   },
   {
     "key": "Contact Us",
-    "url": "/contact/",
+    "url": "/contactUs/",
     "children": []
   }
 ]

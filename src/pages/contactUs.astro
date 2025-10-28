@@ -4,16 +4,44 @@ import CTA from "@components/CTA.astro";
 import Landing from "@components/Landing.astro";
 import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
+import client from '@data/client.json';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { getImage } from "astro:assets";
+import MapPinFilled from '@components/MapPinFilled.astro';
 const optimizedImage = await getImage({src: landingImage, format: 'avif'})
+
+
+const phoneDisplay = '+1 780-729-0978';
+const phoneHref = 'tel:+17807290978';
+const email = 'imassageclinique@gmail.com';
+const emailHref = `mailto:${email}`;
+
+const clinicName = client.name || 'iMassage Therapeutic Clinique';
+const addressOne =
+  client.address.lineOne?.trim() ||
+  '10625 40 Ave NW';
+  const addressTwo =
+  client.address.lineTwo?.trim() ||
+  '10625 40 Ave NW';
+const phoneNumber =
+  client.phoneForTel?.trim() ||
+  '10625 40 Ave NW';
+  const emailAddress =
+  client.email?.trim() ||
+  '10625 40 Ave NW';
+const mapHref =
+  client.address.mapLink ||
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.612254114085!2d-113.51028162603954!3d53.47538949128358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f3c749cbe89%3A0x6a72e2d6f72946d0!2s10625%2040%20Ave%20NW!5e0!3m2!1sen!2sph!4v1759943839747!5m2!1sen!2sph';
+
+const hours = [
+  { label: 'Mon – Fri', value: '8:00 am – 4:30 pm' }
+];
 ---
 
-
 <BaseLayout
-  title="About"
+  title="Contact"
   description="High-quality in-house embroidery, screen printing, and custom apparel decoration in Edmonton. Serving businesses across Alberta and North America with fast, reliable, and professional service."
   preloadedImage = {optimizedImage}
 >
@@ -31,194 +59,199 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   <!-- ============================================ -->
     <section class="text-center" style="padding-top: 8rem;padding-bottom: 2rem;">
       <h2 style="color: var(--primary);" class="cs-topper">Crafting Timeless Threads of Excellence</h2>
-      <h2 class="cs-title" >About Us</h2>
+      <h2 class="cs-title" >Contact Us</h2>
     </section>
-    <section id="about">
-      <div class="container">
-        <div class="left-right flex flex-wrap md:flex-nowrap items-stretch">
-          <div class="left w-full md:w-1/2 flex items-center bg-white">
-            <div class="content p-6">
-              <h3 class="cs-title">About Merit Embroidery</h3>
-              <p class="cs-text">
-                Merit Embroidery is one of the largest wholesale promotional decorators in Western Canada. 
-                We’ve been in the apparel decorating business for over 30 years, proudly serving customers 
-                across Canada and throughout North America.           
-              </p>
-              <p class="cs-text">
-                Our extensive experience, combined with state-of-the-art machinery, makes us one of the best 
-                in the West. With an 11,000 sq. ft. production facility and warehouse, we’re equipped to handle 
-                both small and large-volume orders — producing up to 10,000 decorated garments per day. best.
-              </p>
+    <section >
+    <div class="mx-auto max-w-3xl xl:max-w-6xl px-6 py-16 md:py-20 md:px-10" style="margin: auto;">
+      <div class="mt-8 flex flex-col gap-6">
+        <!-- map -->
+        <div class="">
+            <div class="overflow-hidden rounded-lg ring-1 ring-black/10">
+              <iframe
+                src={`${mapHref}&output=embed`}
+                style="border:0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="h-[420px] w-full"></iframe>
             </div>
           </div>
-
-          <div class="right w-full md:w-1/2 flex items-stretch">
-            <img
-              class="w-full h-full object-cover"
-              loading="lazy"
-              decoding="async"
-              src="/assets/images/hero.jpg"
-              alt="Embroidery machines"
-            />
+        </div>
+        <section class="relative flex flex-col justify-around items-start md:flex-row" style="margin-top: 4rem;">
+      <div class="">
+          <div class="space-y-6">
+            <h1 class="text-2xl" style="padding-bottom: .5rem;">CONTACT INFORMATION</h1>
+            <div>
+              <h3
+                class="text-sm font-semibold uppercase tracking-wide text-black-700" 
+                style="padding-bottom: .5rem;"
+              >
+                Address
+              </h3>
+              <div class="pl-2 mt-2 text-gray-900" style="padding-bottom: .5rem;">
+                <p class="font-medium inline-flex items-center gap-2">
+                  <span>
+                    <MapPinFilled />
+                  </span>
+                  {clinicName}
+                </p>
+                <a
+                  href={mapHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-1 block  underline-offset-2"
+                >
+                  {addressOne}
+                </a>
+                <a
+                  href={mapHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-1 block  underline-offset-2"
+                >
+                  {addressTwo}
+                </a>
+              </div>
+            </div>
+            <div>
+              <h3
+                class="text-sm font-semibold uppercase tracking-wide text-black-700 " 
+              >
+                Phone
+              </h3>
+              <a
+                href={`tel:${phoneNumber}`}
+                class="mt-1 block  underline-offset-2"
+              >
+                {phoneNumber}
+              </a>
+              <h3
+                class="text-sm font-semibold uppercase tracking-wide text-black-700"
+              >
+                Fax
+              </h3>
+              <a
+                href={`tel:(780) 414-6110`}
+                class="mt-1 block  underline-offset-2"
+              >
+                (780) 414-6110
+              </a>
+               <h3
+                class="text-sm font-semibold uppercase tracking-wide text-black-700" 
+              >
+                Email
+              </h3>
+              <a
+                href={`mailto:${emailAddress}`}
+                class="mt-1 block  underline-offset-2" style="padding-bottom: .5rem;"
+              >
+                {emailAddress}
+              </a>
+            </div>
+            <div>
+              <h3
+                class="text-sm font-semibold uppercase tracking-wide text-black-700"
+              >
+                Hours of Operation
+              </h3>
+              <ul class="mt-2 space-y-1 text-gray-900" style="padding-bottom: .5rem;">
+                {
+                  hours.map((h) => (
+                    <li class="flex items-center gap-6">
+                      <p class="font-semibold min-w-16">{h.label}:</p>
+                      <p class="">{h.value}</p>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <div>
+              <h3
+                class="text-sm font-semibold uppercase tracking-wide text-black-700"
+              >
+                EMPLOYMENT OPPORTUNITIES
+              </h3>
+              <h4>Please submit your resumes to:</h4>
+              <a
+                href={`mailto:jobs@meritembroidery.com`}
+                class="mt-1 block  underline-offset-2"
+              >
+                jobs@meritembroidery.com
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-   </section>
+        <!-- Right: form -->
+        <div class="md:col-span-2 lg:col-span-1">
+          <form
+            class="grid grid-cols-1 gap-4"
+            onsubmit="event.preventDefault();"
+          >
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label class="mb-1 block text-sm text-black-700"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  class="w-full rounded border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+                  placeholder="First name"
+                />
+              </div>
+              <div>
+                <label class="mb-1 block text-sm text-black-700">Last Name</label
+                >
+                <input
+                  type="text"
+                  class="w-full rounded border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+                  placeholder="Last name"
+                />
+              </div>
+            </div>
 
+            <div>
+              <label class="mb-1 block text-sm text-black-700">Email *</label>
+              <input
+                type="email"
+                required
+                class="w-full rounded border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+                placeholder="you@example.com"
+              />
+            </div>
 
-<!-- ============================================ -->
-<!--                  Foundation                   -->
-<!-- ============================================ -->
-<section id="foundation">
-    <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">What We Believe In, and Why It Matters</span>
-            <h2 class="cs-title">Our Foundation</h2>
+            <div>
+              <label class="mb-1 block text-sm text-black-700">Message</label>
+              <textarea
+                rows="5"
+                class="w-full rounded border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+                placeholder="How can we help?"></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="inline-flex w-full items-center justify-center rounded bg-[var(--primary)] px-6 py-3 text-sm font-semibold text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500"
+              style="padding: 8px 0 8px 0;"
+            >
+              Send
+            </button>
+          </form>
         </div>
-        <ul class="cs-card-group">
-            <li class="cs-item">
-                
-                    <img class=""
-                            src="/assets/images/AboutUs-OurVision.jpg"
-                            loading="lazy" decoding="async" alt="icon"  aria-hidden="true">
-                
-                <!-- Text Grouped For Flexbox-->
-                <div class="cs-text-group">
-                    <h3 class="cs-h3">Our Vision</h3>
-                    <p class="cs-item-text">
-                      Merit Embroidery strives to be a stitch above the 
-                      competition by producing high quality apparel decorating, 
-                      providing excellent customer service and completing projects 
-                      in a timely manner. We love to take on challenging jobs and 
-                      always find ways to complete a project no matter how tricky 
-                      or tough it looks.
-                    </p>
-                </div>
-            </li>
-            <li class="cs-item">
-                <img class=""
-                            src="/assets/images/AboutUs-OurMission.jpg"
-                            loading="lazy" decoding="async" alt="icon"  aria-hidden="true">
-                <!-- Text Grouped For Flexbox-->
-                <div class="cs-text-group">
-                    <h3 class="cs-h3">Our Mission</h3>
-                    <p class="cs-item-text">
-                      Merit Embroidery is a family owned and operated independent 
-                      commercial garment finishing business with the goal of providing 
-                      100% customer satisfaction to our valued clients. Our mission is 
-                      to produce top quality digitizing and above average garment 
-                      decorating and to ensure that your project due dates are met 
-                      consistently.
-                    </p>
-                </div>
-            </li>
-            <li class="cs-item">
-                <img class=""
-                            src="/assets/images/AboutUs-OurPromise.jpg"
-                            loading="lazy" decoding="async" alt="icon"  aria-hidden="true">
-                <!-- Text Grouped For Flexbox-->
-                <div class="cs-text-group">
-                    <h3 class="cs-h3">Our Promise</h3>
-                    <p class="cs-item-text">
-                      Merit embroidery promises to run our business with utmost honesty 
-                      and integrity. We will provide the same level of quality and service 
-                      to all our valued clients regardless of the size of their order or 
-                      account. Our in-house digitizing department and production staff will 
-                      ensure that every item that leaves our production facility meets the 
-                      highest standards of garment decorating.
-                    </p>
-                </div>
-            </li>
-            <li class="cs-item">
-                <img class=""
-                            src="/assets/images/AboutUs-OurValue.jpg"
-                            loading="lazy" decoding="async" alt="icon"  aria-hidden="true">
-                <!-- Text Grouped For Flexbox-->
-                <div class="cs-text-group">
-                    <h3 class="cs-h3">Our Value</h3>
-                    <p class="cs-item-text">
-                      Merit Embroidery digitizing department has over 25 years of combined 
-                      experience in setting up any types of complex and intricate designs. 
-                      Our production staff with over 35 years of combined stitching experience 
-                      is fully capable of handling all types of stretchy, velour, lightweight 
-                      or heavy garments to ensure that your decorating requirements are met. 
-                      We stock over 125 shades of Isacord polyester thread to facilitate pantone 
-                      matching. We have over 100 stock fonts for text and numbers.
-                      <br>
-                      Artwork can be sent to us in any format, ranging from vector files to hand 
-                      drawn logos. With the state of the art Japanese Barudan brand industrial 
-                      embroidery machines that allow us to embroider logos in up to 15 different 
-                      thread colours, you can rest assured that when we stitch your logo, it will 
-                      look like a work of art.
-                    </p>
-                </div>
-            </li>
-        </ul>
+        
+      </div>
     </div>
-</section>
+  </section>
+      </div>
+    </section>
+
+  
+
+  
 
 <!-- ============================================ -->
 <!--                 SOME OF OUR WORKS            -->
 <!-- ============================================ -->
 
-<section class="flex flex-col justify-center items-center" style="margin-bottom: 8rem;">
-  <h2 class="cs-topper">Showcasing Our Finest Creations</h2>
-  <h2 class="cs-title" style="margin-bottom: 4rem;">
-    Some of Our Works
-  </h2>
-  <div
-    class="w-[90%] grid grid-cols-1 justify-center sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
-  >
-    <div class="flex justify-center items-center">
-      <img
-        src="/assets/images/portfolio/port1.jpg"
-        alt="Gallery 1"
-        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
-      />
-    </div>
 
-    <div class="flex justify-center items-center">
-      <img
-        src="/assets/images/portfolio/port2.jpg"
-        alt="Gallery 2"
-        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
-      />
-    </div>
-
-    <div class="flex justify-center items-center">
-      <img
-        src="/assets/images/portfolio/port3.jpg"
-        alt="Gallery 3"
-        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
-      />
-    </div>
-
-    <div class="flex justify-center items-center">
-      <img
-        src="/assets/images/portfolio/port4.jpg"
-        alt="Gallery 4"
-        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
-      />
-    </div>
-
-    <div class="flex justify-center items-center">
-      <img
-        src="/assets/images/portfolio/port5.jpg"
-        alt="Gallery 5"
-        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
-      />
-    </div>
-
-    <div class="flex justify-center items-center">
-      <img
-        src="/assets/images/portfolio/port6.jpg"
-        alt="Gallery 6"
-        class="w-[80%] h-full object-cover sm:w-[60%] md:w-full"
-      />
-    </div>
-  </div>
-  <a href="https://www.instagram.com" class="cs-button-solid cs-nav-button" style="margin-top: 32px;">View More on Instagram</a>
-</section>
 
   <CTA />
 </BaseLayout>
