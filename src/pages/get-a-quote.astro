@@ -137,7 +137,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="right">
             <h3 class="cs-title">Minimum Order 24  Pieces</h3>
             <div class="form-wrapper">
-                <form id="contactForm" action="" method="POST" enctype="multipart/form-data" netlify>
+                <form id="myForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="7f34c878-37fe-46df-adb0-7f0e58fab13e">
+                      <!-- 2️⃣ Hidden field for Cloudinary file URL -->
+  <input type="hidden" id="file_url" name="File URL">
                     <div class="form-group">
                         <label>Name <span class="required">*</span></label>
                         <div class="row">
@@ -181,13 +184,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="form-group">
                         <label>File Upload</label>
                         <div class="file-upload">
-                        <input id="fileInput" type="file" name="file[]" multiple
-                            accept=".png,.jpeg,.jpg,.webp,.tif,.tiff,.pdf,.doc,.docx,.ai,.eps,.svg,.idml,.sketch">
-                        <div class="upload-box" id="uploadBox">
-                            <div class="upload-icon">📁</div>
-                            <strong>Share Art and Project Files</strong>
-                            <p>Drag and drop files here, or click to browse</p>
-                        </div>
+                            <input type="file" id="file" accept=".jpg,.png,.pdf" required>
+                            <div class="upload-box" id="uploadBox" >
+                                <label class="upload-icon" for="file">📁</label>
+                                <p id="status"></p>
+                                <strong>Share Art and Project Files</strong>
+                                <p>Drag and drop files here, or click to browse</p>
+                            </div>
                         </div>
                         <div id="fileList"></div>
                     </div>
@@ -202,6 +205,51 @@ document.addEventListener("DOMContentLoaded", () => {
   </section>
                                 
 </BaseLayout>
+<script>
+  const form = document.getElementById("myForm");
+  const fileInput = document.getElementById("file");
+  const fileUrlInput = document.getElementById("file_url");
+  const status = document.getElementById("status");
+
+  // 🧩 When the user selects a file:
+  fileInput.addEventListener("change", async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    status.textContent = "Uploading file...";
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "unsigned_upload"); // from Cloudinary
+
+    try {
+      // Upload to Cloudinary
+      const res = await fetch("https://api.cloudinary.com/v1_1/dnlwkkhua/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      // ✅ Save the file URL to hidden input
+      fileUrlInput.value = data.secure_url;
+      status.textContent = "File uploaded successfully ✔️";
+
+    } catch (err) {
+      status.textContent = "Upload failed ❌";
+      console.error(err);
+    }
+  });
+
+  // 🧩 When submitting the form:
+  form.addEventListener("submit", async (e) => {
+    if (!fileUrlInput.value) {
+      e.preventDefault(); // stop submission
+      alert("Please wait for the file to finish uploading.");
+    }
+  });
+</script>
+
 
 
 
@@ -517,7 +565,17 @@ document.addEventListener("DOMContentLoaded", () => {
 @media only screen and (min-width: 120rem) {
 
 }
+.upload-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
 
+/* Hover effect */
+.upload-icon:hover {
+  color: #007bff; /* Change color on hover */
+  transform: scale(1.2); /* Slightly enlarge */
+}
 // /* Dark Mode */
 // @media only screen and (min-width: 0rem) {
 //     body.dark-mode {
