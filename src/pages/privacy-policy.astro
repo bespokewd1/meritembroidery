@@ -75,6 +75,13 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 </BaseLayout>
 
 <style lang="less">
+
+@media only screen and (max-width: 1024px) {
+    .privacy-policy{
+        padding-top: 6rem;
+    }
+}
+
 .privacy-policy {
   padding: var(--sectionPadding);
   background: #fafafa;
