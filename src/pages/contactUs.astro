@@ -86,27 +86,27 @@ const hours = [
             <div class="contact-info">
               <h2 class="cs-header">Contact Info</h2>
               <h3>ADDRESS</h3>
-              <a class="cs-text" href="">
-                line 1
+              <a class="cs-text" href={mapHref}>
+                {addressOne}
                 <br>
-                line 2
+                {addressTwo}
               </a>
               <h3>PHONE</h3>
+              <a class="cs-text" href={`tel:${phoneNumber}`}>
+                {phoneNumber}
+              </a>
+              <!-- <h3>FAX</h3>
               <a class="cs-text" href="">
                 test
-              </a>
-              <h3>FAX</h3>
-              <a class="cs-text" href="">
-                test
-              </a>
+              </a> -->
               <h3>EMAIL</h3>
-              <a class="cs-text" href="">
-                test
+              <a class="cs-text" href={`mailto:${emailAddress}`}>
+                {emailAddress}
               </a>
               <h3>EMPLOYMENT OPPORTUNITIES</h3>
               <p class="cs-text">Please submit your resume to:</p>
-              <a class="cs-text" href="">
-                test
+              <a class="cs-text" href={`mailto:jobs@meritembroidery.com`}>
+                jobs@meritembroidery.com
               </a>
 
             </div>
@@ -476,7 +476,7 @@ const hours = [
         .cs-button-solid {
             font-size: (16/16rem);
             /* 46px - 56px */
-            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            // line-height: clamp(2.875rem, 5.5vw, 3.5rem);
             text-decoration: none;
             font-weight: 700;
             text-align: center;
@@ -511,17 +511,17 @@ const hours = [
             }
         }
 
-        .cs-submit {
-            text-transform: uppercase;
-            background-color: var(--secondaryLight);
-            color: var(--headerColor);
-            border: none;
-            transition: color 0.3s;
-            &:hover {
-                cursor: pointer;
-                color: #fff;
-            }
-        }
+        // .cs-submit {
+        //     text-transform: uppercase;
+        //     background-color: var(--secondaryLight);
+        //     color: var(--headerColor);
+        //     border: none;
+        //     transition: color 0.3s;
+        //     &:hover {
+        //         cursor: pointer;
+        //         color: #fff;
+        //     }
+        // }
 
         .cs-map {
             width: 100%;
