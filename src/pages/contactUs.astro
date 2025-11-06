@@ -84,13 +84,30 @@ const hours = [
                 <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
             </form>
             <div class="contact-info">
-              <h2>Contact Info</h2>
+              <h2 class="cs-header">Contact Info</h2>
               <h3>ADDRESS</h3>
-              <span></span>
+              <a class="cs-text" href="">
+                line 1
+                <br>
+                line 2
+              </a>
               <h3>PHONE</h3>
+              <a class="cs-text" href="">
+                test
+              </a>
               <h3>FAX</h3>
+              <a class="cs-text" href="">
+                test
+              </a>
               <h3>EMAIL</h3>
+              <a class="cs-text" href="">
+                test
+              </a>
               <h3>EMPLOYMENT OPPORTUNITIES</h3>
+              <p class="cs-text">Please submit your resume to:</p>
+              <a class="cs-text" href="">
+                test
+              </a>
 
             </div>
         </div>
@@ -119,7 +136,7 @@ const hours = [
         </picture>
         <div class="cs-hours">
             <div class="cs-topper">Working Hours</div>
-            <span class="cs-hours-info">Monday - Friday: 8:00 AM - 4:30 PM</span>
+            <span class="cs-hours-info">Mon - Fri: 8:00 AM - 4:30 PM</span>
         </div>
     </div>
 </section>
@@ -397,6 +414,14 @@ const hours = [
 
         .cs-content {
             text-align: left;
+            .contact-info{
+              .cs-header{
+                color: #000;
+              }
+              h3{
+                font-weight: 600;
+              }
+            }
         }
 
         .cs-title {
