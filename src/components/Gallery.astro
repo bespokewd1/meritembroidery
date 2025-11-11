@@ -1,194 +1,43 @@
 ---
-
+const images = [
+  "/assets/images/portfolio/port1.jpg",
+  "/assets/images/portfolio/port4.jpg",
+  "/assets/images/portfolio/port7.jpg",
+  "/assets/images/portfolio/port2.jpg",
+  "/assets/images/portfolio/port5.jpg",
+  "/assets/images/portfolio/port8.jpg",
+  "/assets/images/portfolio/port3.jpg",
+  "/assets/images/portfolio/port6.jpg",
+  "/assets/images/portfolio/port9.jpg",
+];
 ---
 
 <section id="gallery">
   <div class="cs-container">
     <h2 class="cs-topper">Showcasing Our Finest Creations</h2>
     <h2 class="cs-title" style="margin-bottom: 4rem;">Some of Our Works</h2>
-    <div class="cs-image-group">
-      <!-- Row 1-->
-      <div class="cs-row cs-row-1">
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port1-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port1.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port1.jpg"
-            alt="new hallway"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port4-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port4.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port4.jpg"
-            alt="new home construction"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture3">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port7-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port7.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port7.jpg"
-            alt="building a new wall"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-      </div>
-      <!-- Row 2 -->
-      <div class="cs-row cs-row-2">
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port2-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port2.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port2.jpg"
-            alt="new kitchen"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port5-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port5.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port5.jpg"
-            alt="apartment addition"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture3">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port8-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port8.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port8.jpg"
-            alt="kew kitchen cabinets"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-      </div>
-      <!-- Row 3 -->
-      <div class="cs-row cs-row-3">
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port3-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port3.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port3.jpg"
-            alt="new kitchen"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port6-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port6.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port6.jpg"
-            alt="apartment addition"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture3">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port9-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port9.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port9.jpg"
-            alt="kew kitchen cabinets"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
+    <!-- <div class="max-h-150 overflow-auto"> -->
+    <div class="">
+      <div class="columns-[400px]">
+        {
+          images.map((src, i) => (
+            <img
+              aria-hidden="true"
+              decoding="async"
+              src={src}
+              alt="sample img"
+              loading="lazy"
+              class="mb-4 w-full object-cover"
+              class:list={[
+                i % 3 === 0
+                  ? "md:h-[400px]"
+                  : i % 2 === 0
+                    ? "md:h-[300px]"
+                    : "md:h-[200px]",
+              ]}
+            />
+          ))
+        }
       </div>
     </div>
     <!-- <a href="/portfolio" class="cs-button-solid">Discover More</a> -->
