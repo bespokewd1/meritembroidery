@@ -1,16 +1,19 @@
 ---
-interface Props {
+import { type HTMLAttributes } from "astro/types";
+import cn from "@utils/cn";
+import { Image } from "astro:assets";
+
+type Props = HTMLAttributes<"section"> & {
   anchorId?: string;
   title: string;
-  imageSrc: string;
+  imageSrc: ImageMetadata;
   imageAlt: string;
   isReverse?: boolean;
 
-  // content API: paragraphs + optional list
   paragraphs?: string[];
   listTitle?: string;
   listItems?: string[];
-}
+};
 
 const {
   anchorId,
@@ -21,52 +24,81 @@ const {
   paragraphs = [],
   listTitle,
   listItems = [],
+  class: className,
+  ...props
 } = Astro.props;
+
+// Float direction only for md–lg
+const floatSide = isReverse
+  ? "md:float-left md:mr-4 lg:mr-10"
+  : "md:float-right md:ml-4 lg:ml-10";
+
+const sectionClass = cn("mb-8 scroll-mt-[100px]", className);
 ---
 
-<section id={anchorId} class="mb-8 scroll-mt-[100px]">
-  <div
-    class={`flex w-full max-w-384 mx-auto flex-col items-stretch gap-8 md:flex-row ${
-      isReverse ? "md:flex-row-reverse" : ""
-    }`}
-  >
-    <div class="flex w-full items-center bg-white lg:w-[50%]">
-      <div class="mx-auto w-[96%] p-6 md:w-4/5">
-        <h3 class="mb-4 text-[28px] font-bold text-(--primary)">
-          {title}
-        </h3>
+<section id={anchorId} class:list={sectionClass} {...props}>
+  <div class="mx-auto w-full max-w-384">
+    <div
+      class:list={[
+        // xl and up: back to 2-column layout, with reverse support
+        "xl:flex xl:items-stretch xl:gap-8",
+        isReverse ? "xl:flex-row-reverse" : "xl:flex-row",
+      ]}
+    >
+      <!-- Text block (contains the float image for md–lg) -->
+      <div
+        class:list={[
+          "w-full bg-white md:after:clear-both md:after:block md:after:content-['']",
+          "xl:w-[50%] xl:after:content-none",
+          "xl:flex xl:flex-col xl:items-center xl:justify-center",
+        ]}
+      >
+        <!-- Float image: md–lg only (hidden on mobile and xl+) -->
+        <Image
+          class:list={[
+            "hidden bg-neutral-300 object-cover md:mb-4 md:block md:w-90 md:max-lg:mt-6 xl:hidden",
+            floatSide,
+          ]}
+          src={imageSrc}
+          alt={imageAlt}
+        />
+        <!-- md:w-4/5 -->
+        <div class="mx-auto w-[96%] p-6">
+          <h3 class="mb-4 text-[28px] font-bold text-[var(--primary)]">
+            {title}
+          </h3>
 
-        {paragraphs.map((p) => <p class="mb-8">{p}</p>)}
+          {paragraphs.map((p) => <p class="mb-8">{p}</p>)}
 
-        {
-          listItems.length > 0 && (
-            <>
-              {listTitle && (
-                <p class="mb-2">
-                  <strong>{listTitle}</strong>
-                </p>
-              )}
-              <ul class="mb-8 list-none space-y-1">
-                {listItems.map((item) => (
-                  <li>• {item}</li>
-                ))}
-              </ul>
-            </>
-          )
-        }
+          {
+            listItems.length > 0 && (
+              <>
+                {listTitle && (
+                  <p class="mb-2">
+                    <strong>{listTitle}</strong>
+                  </p>
+                )}
+                <ul class="mb-8 list-none space-y-1">
+                  {listItems.map((item) => (
+                    <li>• {item}</li>
+                  ))}
+                </ul>
+              </>
+            )
+          }
 
-        <slot />
+          <slot />
+        </div>
       </div>
-    </div>
 
-    <div class="flex w-full items-stretch lg:w-[50%]">
-      <img
-        class="h-full w-full object-cover"
-        loading="lazy"
-        decoding="async"
-        src={imageSrc}
-        alt={imageAlt}
-      />
+      <!-- Side image: visible on mobile and xl+ (hidden only md–lg) -->
+      <div class="block w-full md:hidden xl:block xl:w-[50%]">
+        <Image
+          class="h-full w-full object-cover"
+          src={imageSrc}
+          alt={imageAlt}
+        />
+      </div>
     </div>
   </div>
 </section>

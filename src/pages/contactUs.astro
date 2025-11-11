@@ -4,119 +4,154 @@ import CTA from "@components/CTA.astro";
 import Landing from "@components/Landing.astro";
 import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
-import client from '@data/client.json';
+import client from "@data/client.json";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { getImage } from "astro:assets";
-import MapPinFilled from '@components/MapPinFilled.astro';
-const optimizedImage = await getImage({src: landingImage, format: 'avif'})
+import MapPinFilled from "@components/MapPinFilled.astro";
+const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
-
-const phoneDisplay = '+1 780-729-0978';
-const phoneHref = 'tel:+17807290978';
-const email = 'imassageclinique@gmail.com';
+const phoneDisplay = "+1 780-729-0978";
+const phoneHref = "tel:+17807290978";
+const email = "imassageclinique@gmail.com";
 const emailHref = `mailto:${email}`;
 
-const clinicName = client.name || 'Merit Embroidery';
-const addressOne =
-  client.address.lineOne?.trim() ||
-  '10625 40 Ave NW';
-  const addressTwo =
-  client.address.lineTwo?.trim() ||
-  '10625 40 Ave NW';
-const phoneNumber =
-  client.phoneForTel?.trim() ||
-  '10625 40 Ave NW';
-  const emailAddress =
-  client.email?.trim() ||
-  '10625 40 Ave NW';
+const clinicName = client.name || "Merit Embroidery";
+const addressOne = client.address.lineOne?.trim() || "10625 40 Ave NW";
+const addressTwo = client.address.lineTwo?.trim() || "10625 40 Ave NW";
+const phoneNumber = client.phoneForTel?.trim() || "10625 40 Ave NW";
+const emailAddress = client.email?.trim() || "10625 40 Ave NW";
 const mapHref =
   client.address.mapLink ||
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.612254114085!2d-113.51028162603954!3d53.47538949128358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f3c749cbe89%3A0x6a72e2d6f72946d0!2s10625%2040%20Ave%20NW!5e0!3m2!1sen!2sph!4v1759943839747!5m2!1sen!2sph';
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.612254114085!2d-113.51028162603954!3d53.47538949128358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f3c749cbe89%3A0x6a72e2d6f72946d0!2s10625%2040%20Ave%20NW!5e0!3m2!1sen!2sph!4v1759943839747!5m2!1sen!2sph";
 
-const hours = [
-  { label: 'Mon – Fri', value: '8:00 am – 4:30 pm' }
-];
+const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
 ---
 
 <BaseLayout
   title="Contact"
   description="High-quality in-house embroidery, screen printing, and custom apparel decoration in Edmonton. Serving businesses across Alberta and North America with fast, reliable, and professional service."
-  preloadedImage = {optimizedImage}
+  preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <!-- <Landing 
+  <!-- <Landing
     title="About Us"
     image={optimizedImage}
   /> -->
 
   <!-- ============================================ -->
-<!--                   Contact                    -->
-<!-- ============================================ -->
+  <!--                   Contact                    -->
+  <!-- ============================================ -->
 
-<section id="contact-2320">
+  <section id="contact-2320">
     <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">Contact Us</span>
-            <h2 class="cs-title">Get In Touch With Merit Embroidery</h2>
-            <!--Form-->
-            <form class="cs-form" id="cs-form-323-2320" name="Contact Form" method="post" netlify>
-                <label class="cs-label">
-                    Name
-                    <input class="cs-input" required type="text" name="name" placeholder="Name">
-                </label>
-                <label class="cs-label cs-email">
-                    Email
-                    <input class="cs-input" required type="email" name="email" placeholder="Email">
-                </label>
-                <label class="cs-label cs-phone">
-                    Phone
-                    <input class="cs-input" required type="tel" name="phone" placeholder="Phone">
-                </label>
-                <label class="cs-label">
-                    Message
-                    <textarea class="cs-input cs-textarea" required name="Message" placeholder="Write message..."></textarea>
-                </label>
-                <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
-            </form>
-            <div class="contact-info">
-              <h2 class="cs-header">Contact Info</h2>
-              <h3>ADDRESS</h3>
-              <a class="cs-text" href={mapHref}>
-                {addressOne}
-                <br>
-                {addressTwo}
-              </a>
-              <h3>PHONE</h3>
-              <a class="cs-text" href={`tel:${phoneNumber}`}>
-                {phoneNumber}
-              </a>
-              <h3>WORKING HOURS</h3>
-              <a class="cs-text">
-                <strong>Mon - Fri:</strong> 8:00 am – 4:30 pm
-              </a>
-              <h3>EMAIL</h3>
-              <a class="cs-text" href={`mailto:${emailAddress}`}>
-                {emailAddress}
-              </a>
-              <h3>EMPLOYMENT OPPORTUNITIES</h3>
-              <p class="cs-text">Please submit your resume to:</p>
-              <a class="cs-text" href={`mailto:jobs@meritembroidery.com`}>
-                jobs@meritembroidery.com
-              </a>
-
-            </div>
+      <div class="cs-content">
+        <span class="cs-topper">Contact Us</span>
+        <h2 class="cs-title">Get In Touch With Merit Embroidery</h2>
+        <!--Form-->
+        <form
+          class="cs-form"
+          id="cs-form-323-2320"
+          name="Contact Form"
+          method="post"
+          netlify
+        >
+          <label class="cs-label">
+            Name
+            <input
+              class="cs-input"
+              required
+              type="text"
+              name="name"
+              placeholder="Name"
+            />
+          </label>
+          <label class="cs-label cs-email">
+            Email
+            <input
+              class="cs-input"
+              required
+              type="email"
+              name="email"
+              placeholder="Email"
+            />
+          </label>
+          <label class="cs-label cs-phone">
+            Phone
+            <input
+              class="cs-input"
+              required
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+            />
+          </label>
+          <label class="cs-label">
+            Message
+            <textarea
+              class="cs-input cs-textarea"
+              required
+              name="Message"
+              placeholder="Write message..."></textarea>
+          </label>
+          <button class="cs-button-solid cs-submit" type="submit"
+            >Send Message</button
+          >
+        </form>
+        <div class="contact-info">
+          <h2 class="cs-header">Contact Info</h2>
+          <div>
+            <h3>ADDRESS</h3>
+            <a class="cs-text" href={mapHref}>
+              {addressOne}
+              <br />
+              {addressTwo}
+            </a>
+          </div>
+          <div>
+            <h3>PHONE</h3>
+            <a class="cs-text" href={`tel:${phoneNumber}`}>
+              {phoneNumber}
+            </a>
+          </div>
+          <div>
+            <h3>WORKING HOURS</h3>
+            <a class="cs-text">
+              <strong>Mon - Fri:</strong> 8:00 am – 4:30 pm
+            </a>
+          </div>
+          <div>
+            <h3>EMAIL</h3>
+            <a class="cs-text" href={`mailto:${emailAddress}`}>
+              {emailAddress}
+            </a>
+          </div>
+          <div>
+            <h3>EMPLOYMENT OPPORTUNITIES</h3>
+            <p class="cs-text">Please submit your resume to:</p>
+            <a class="cs-text" href={`mailto:jobs@meritembroidery.com`}>
+              jobs@meritembroidery.com
+            </a>
+          </div>
         </div>
-        <!--Map Image, pin is made in the Figma then export as one image-->
-        <div class="cs-map">
-            <div class="cs-iframe-wrapper">
-                <iframe src={`${mapHref}&output=embed`} width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <!-- <div class="cs-box">
+      </div>
+      <!--Map Image, pin is made in the Figma then export as one image-->
+      <div class="cs-map">
+        <div class="cs-iframe-wrapper">
+          <iframe
+            src={`${mapHref}&output=embed`}
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- <div class="cs-box">
                 <img class="cs-icon" decoding="async" loading="lazy" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/yellow-pin.svg" alt="icon" width="40" height="40" aria-hidden="true">
                 <div class="cs-flex">
                     <span class="cs-header">Location</span>
@@ -124,7 +159,7 @@ const hours = [
                     </span>
                 </div>
             </div> -->
-        </div>
+      </div>
     </div>
     <!-- <div class="cs-container2">
         <picture class="cs-background">
@@ -137,357 +172,354 @@ const hours = [
             <span class="cs-hours-info">Mon - Fri: 8:00 AM - 4:30 PM</span>
         </div>
     </div> -->
-</section>
+  </section>
 
   <CTA />
 </BaseLayout>
 
 <style lang="less">
- /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
- /*-- -------------------------- -->
+  /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+  /*-- -------------------------- -->
 <---          Contact           -->
 <--- -------------------------- -*/
 
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
     #contact-2320 {
-        padding: var(--sectionPadding);
-        padding-top: 6rem;
+      padding: var(--sectionPadding);
+      padding-top: 6rem;
+      display: flex;
+      flex-direction: column;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+      position: relative;
+      z-index: 1;
+
+      .cs-container {
+        width: 100%;
+        /* changes to 1280px at desktop */
+        max-width: (580/16rem);
+        margin: auto;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
         /* 48px - 64px */
         gap: clamp(3rem, 6vw, 4rem);
+      }
+
+      .cs-container2 {
+        width: 100%;
+        /* changes to 1280px at desktop */
+        max-width: (580/16rem);
+        padding: (80/16rem) (48/16rem);
+        margin: auto;
         position: relative;
         z-index: 1;
 
-        .cs-container {
+        .cs-topper {
+          color: #fff;
+        }
+      }
+
+      .cs-content {
+        text-align: left;
+        .contact-info {
+          margin-top: 2rem;
+          .cs-header {
+            color: #000;
+          }
+          h3 {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .cs-title {
+        margin-bottom: (32/16rem);
+      }
+
+      .cs-form {
+        border-radius: (16/16rem);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: (12/16rem);
+      }
+
+      .cs-label {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        width: 100%;
+        color: var(--headerColor);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: (4/16rem);
+      }
+
+      .cs-input {
+        font-size: (16/16rem);
+        width: 100%;
+        height: (56/16rem);
+        padding: 0;
+        padding-left: (24/16rem);
+        color: var(--headerColor);
+        background-color: #f7f7f7;
+        border: none;
+        /* prevents padding from adding to height and width */
+        box-sizing: border-box;
+        &::placeholder {
+          color: #7d799c;
+          opacity: 0.6;
+        }
+      }
+
+      .cs-textarea {
+        min-height: (120/16rem);
+        padding-top: (24/16rem);
+        margin-bottom: (12/16rem);
+        font-family: inherit;
+      }
+
+      .cs-button-solid {
+        font-size: (16/16rem);
+        /* 46px - 56px */
+        // line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        padding: 0 (24/16rem);
+        background-color: var(--primary);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+
+        &:before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 0%;
+          background: #000;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          border-radius: (4/16rem);
+          transition: width 0.3s;
+        }
+
+        &:hover {
+          &:before {
             width: 100%;
-            /* changes to 1280px at desktop */
-            max-width: (580/16rem);
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
+          }
+        }
+      }
+
+      // .cs-submit {
+      //     text-transform: uppercase;
+      //     background-color: var(--secondaryLight);
+      //     color: var(--headerColor);
+      //     border: none;
+      //     transition: color 0.3s;
+      //     &:hover {
+      //         cursor: pointer;
+      //         color: #fff;
+      //     }
+      // }
+
+      .cs-map {
+        width: 100%;
+        max-width: (630/16rem);
+        height: (400/16rem);
+        position: relative;
+        z-index: 1;
+        display: block;
+      }
+
+      .cs-iframe-wrapper {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* 40px - 56px */
+        bottom: clamp(2.5rem, 5vw, 3.5rem);
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .cs-box {
+        width: 90%;
+        max-width: (450/16rem);
+        /* 16px - 32px top & bottom */
+        /* 16px left & right */
+        padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 2.4vw, 1rem);
+        background-color: #fff;
+        display: flex;
+        align-items: flex-start;
+        gap: (8/16rem);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+
+        &:before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: var(--primary);
+          pointer-events: none;
+          opacity: 0.1;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+        }
+      }
+
+      .cs-icon {
+        width: (32/16rem);
+        height: auto;
+        display: block;
+      }
+
+      .cs-flex {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cs-header {
+        font-size: (20/16rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        margin: 0 0 (8/16rem);
+        color: var(--headerColor);
+      }
+
+      .cs-address {
+        font-size: clamp(0.75rem, 2.8vw, 1rem);
+        line-height: 1.5em;
+        margin: 0;
+        color: var(--bodyTextColor);
+      }
+
+      .cs-hours {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cs-hours-info {
+        /* 20px - 25px */
+        font-size: clamp(1.25rem, 3vw, 1.5625rem);
+        line-height: 1.2em;
+        font-weight: 700;
+        width: 60%;
+        max-width: 28ch;
+        margin: 0;
+        color: var(--bodyTextColorWhite);
+      }
+
+      .cs-background {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        &:before {
+          /* background color overlay */
+          content: "";
+          position: absolute;
+          display: block;
+          height: 100%;
+          width: 100%;
+          background: #000;
+          opacity: 0.72;
+          top: 0;
+          left: 0;
+          z-index: 1;
         }
 
-        .cs-container2 {
-            width: 100%;
-            /* changes to 1280px at desktop */
-            max-width: (580/16rem);
-            padding: (80/16rem) (48/16rem);
-            margin: auto;
-            position: relative;
-            z-index: 1;
-
-            .cs-topper {
-                color: #fff;
-            }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          /* Makes img tag act as a background image */
+          object-fit: cover;
         }
-
-        .cs-content {
-            text-align: left;
-            .contact-info{
-              margin-top: 2rem;
-              .cs-header{
-                color: #000;
-              }
-              h3{
-                font-weight: 600;
-              }
-            }
-        }
-
-        .cs-title {
-            margin-bottom: (32/16rem);
-        }
-
-        .cs-form {
-            border-radius: (16/16rem);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: (12/16rem);
-        }
-
-        .cs-label {
-            /* 14px - 16px */
-            font-size: clamp(0.875rem, 1.5vw, 1rem);
-            width: 100%;
-            color: var(--headerColor);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            gap: (4/16rem);
-        }
-
-        .cs-input {
-            font-size: (16/16rem);
-            width: 100%;
-            height: (56/16rem);
-            padding: 0;
-            padding-left: (24/16rem);
-            color: var(--headerColor);
-            background-color: #f7f7f7;
-            border: none;
-            /* prevents padding from adding to height and width */
-            box-sizing: border-box;
-            &::placeholder {
-                color: #7d799c;
-                opacity: 0.6;
-            }
-        }
-
-        .cs-textarea {
-            min-height: (120/16rem);
-            padding-top: (24/16rem);
-            margin-bottom: (12/16rem);
-            font-family: inherit;
-        }
-
-        .cs-button-solid {
-            font-size: (16/16rem);
-            /* 46px - 56px */
-            // line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-            text-decoration: none;
-            font-weight: 700;
-            text-align: center;
-            margin: 0;
-            color: #fff;
-            padding: 0 (24/16rem);
-            background-color: var(--primary);
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            /* prevents padding from adding to the width */
-            box-sizing: border-box;
-
-            &:before {
-                content: "";
-                position: absolute;
-                height: 100%;
-                width: 0%;
-                background: #000;
-                opacity: 1;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                border-radius: (4/16rem);
-                transition: width 0.3s;
-            }
-
-            &:hover {
-                &:before {
-                    width: 100%;
-                }
-            }
-        }
-
-        // .cs-submit {
-        //     text-transform: uppercase;
-        //     background-color: var(--secondaryLight);
-        //     color: var(--headerColor);
-        //     border: none;
-        //     transition: color 0.3s;
-        //     &:hover {
-        //         cursor: pointer;
-        //         color: #fff;
-        //     }
-        // }
-
-        .cs-map {
-            width: 100%;
-            max-width: (630/16rem);
-            height: (400/16rem);
-            position: relative;
-            z-index: 1;
-            display: block;
-        }
-
-        .cs-iframe-wrapper {
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            /* 40px - 56px */
-            bottom: clamp(2.5rem, 5vw, 3.5rem);
-
-            iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .cs-box {
-            width: 90%;
-            max-width: (450/16rem);
-            /* 16px - 32px top & bottom */
-            /* 16px left & right */
-            padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 2.4vw, 1rem);
-            background-color: #fff;
-            display: flex;
-            align-items: flex-start;
-            gap: (8/16rem);
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
-
-            &:before {
-                content: '';
-                width: 100%;
-                height: 100%;
-                background: var(--primary);
-                pointer-events: none;
-                opacity: .1;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -1;
-            }
-        }
-
-        .cs-icon {
-            width: (32/16rem);
-            height: auto;
-            display: block;
-        }
-
-        .cs-flex {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cs-header {
-            font-size: (20/16rem);
-            font-weight: 700;
-            line-height: 1.2em;
-            margin: 0 0 (8/16rem);
-            color: var(--headerColor);
-        }
-
-        .cs-address {
-            font-size: clamp(.75rem, 2.8vw, 1rem);
-            line-height: 1.5em;
-            margin: 0;
-            color: var(--bodyTextColor);
-        }
-
-        .cs-hours {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .cs-hours-info {
-            /* 20px - 25px */
-            font-size: clamp(1.25rem, 3vw, 1.5625rem);
-            line-height: 1.2em;
-            font-weight: 700;
-            width: 60%;
-            max-width: 28ch;
-            margin: 0;
-            color: var(--bodyTextColorWhite);
-        }
-
-        .cs-background {
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-
-            &:before {
-                /* background color overlay */
-                content: '';
-                position: absolute;
-                display: block;
-                height: 100%;
-                width: 100%;
-                background: #000;
-                opacity: .72;
-                top: 0;
-                left: 0;
-                z-index: 1;
-            }
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                /* Makes img tag act as a background image */
-                object-fit: cover;
-            }
-        }
-
+      }
     }
-}
+  }
 
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
+  /* Small Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
     #contact-2320 {
-        .cs-container {
-            max-width: (1280/16rem);
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: stretch;
-            gap: (52/16rem);
-        }
+      .cs-container {
+        max-width: (1280/16rem);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: (52/16rem);
+      }
 
-        .cs-container2 {
-            max-width: (1280/16rem);
-        }
+      .cs-container2 {
+        max-width: (1280/16rem);
+      }
 
-        .cs-content {
-            // order -1 makes it left for desktop
-            order: -1; 
-            max-width: (522/16rem);
-            /* 24px - 80px */
-            padding: clamp(2rem, 5vw, 5rem) 0;
-        }
+      .cs-content {
+        // order -1 makes it left for desktop
+        order: -1;
+        max-width: (522/16rem);
+        /* 24px - 80px */
+        padding: clamp(2rem, 5vw, 5rem) 0;
+      }
 
-        .cs-title,
-        .cs-topper,
-        .cs-text {
-            text-align: left;
-            margin-left: 0;
-        }
+      .cs-title,
+      .cs-topper,
+      .cs-text {
+        text-align: left;
+        margin-left: 0;
+      }
 
-        .cs-title {
-            max-width: (522/16rem);
-        }
+      .cs-title {
+        max-width: (522/16rem);
+      }
 
-        .cs-services,
-        .cs-phone {
-            width: 47%;
-        }
+      .cs-services,
+      .cs-phone {
+        width: 47%;
+      }
 
-        .cs-button-solid {
-            margin-left: 0;
-        }
+      .cs-button-solid {
+        margin-left: 0;
+      }
 
-        .cs-map {
-            max-width: (630/16rem);
-            height: auto;
-            order: -1;
-        }
+      .cs-map {
+        max-width: (630/16rem);
+        height: auto;
+        order: -1;
+      }
     }
-}
-                                
-         
+  }
 </style>

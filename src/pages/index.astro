@@ -4,6 +4,13 @@ import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
 
+import service1 from "@assets/images/services/s-1.png";
+import service2 from "@assets/images/services/s-2.png";
+import service3 from "@assets/images/services/s-3.png";
+import service4 from "@assets/images/services/s-4.png";
+import service5 from "@assets/images/services/s-5.png";
+import service6 from "@assets/images/services/s-6.png";
+
 import BlazeSlider from "blaze-slider";
 import "blaze-slider/dist/blaze.css";
 
@@ -155,15 +162,16 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!-- ============================================ -->
   <!--                   Services                   -->
   <!-- ============================================ -->
-  <section id="services">
+  <section id="services" class="mb-0">
     <div class="title-banner">
       <h3 class="cs-title">Services</h3>
     </div>
   </section>
   <ServiceSection
+    class="mb-0"
     anchorId="embroidery"
     title="Custom Logo Embroidery & Embroidered Patches"
-    imageSrc="/assets/images/1.Custom Logo Embroidery- Services.png"
+    imageSrc={service1}
     imageAlt="Embroidery machines"
     paragraphs={[
       "With over three decades of experience, Merit Embroidery & Printing delivers premium-quality embroidery for apparel, headwear, bags, workwear, and more. Using Barudan multi-head commercial machines and in-house digitizing, we ensure every stitch meets the highest standards — whether it’s a dozen shirts or thousands of hats.",
@@ -179,9 +187,10 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   />
 
   <ServiceSection
+    class="mb-0"
     isReverse={true}
     title="Screen Printing"
-    imageSrc="/assets/images/2.ScreenPrinting-Services.png"
+    imageSrc={service2}
     imageAlt="Screen printing press"
     paragraphs={[
       "Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour, combining efficiency with exceptional quality. Since expanding into screen printing in 2015, we’ve mastered techniques that make every print vibrant, durable, and true to your brand.",
@@ -194,24 +203,32 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       "Spot color, high-density, reflective, puff, and glow-in-the-dark effects",
       "Custom Pantone color matching and heat transfer applications",
     ]}
-  >
-    <h3 class="mb-4 text-[28px] font-bold text-[var(--primary)]">
-      Laser Engraved Faux Leather & Suede Patches
-    </h3>
-    <p class="mb-8">
+  />
+
+  <ServiceSection
+    class="mb-0"
+    anchorId="screenPrinting"
+    title="Laser Engraved Faux Leather & Suede Patches"
+    imageSrc={service6}
+    imageAlt="Laser Engraved Faux Leather & Suede Patches"
+    paragraphs={[
+      `
       For designs too detailed for embroidery, our laser-engraved patches
       deliver sharp precision and lasting quality. Made locally in Edmonton, we
       create custom shapes, sizes, and logo cuts on faux leather, faux suede, or
       real cork — with no minimum orders. Choose from 14 color options and get
       samples before production to ensure perfect results. We also offer laser
       engraving on mugs, bottles, awards, keychains, coasters, and more.
-    </p>
-  </ServiceSection>
+    `,
+    ]}
+  />
 
   <ServiceSection
+    class="mb-0"
     anchorId="screenPrinting"
     title="Digital Printing & Digital Patches"
-    imageSrc="/assets/images/3.DigitalPrinting-DigitalPatches-Services.png"
+    imageSrc={service3}
+    isReverse={true}
     imageAlt="Digital printing equipment"
     paragraphs={[
       "When your artwork requires full color and fine detail, our digital printing services bring it to life. Using advanced Mimaki large-format and DTF printers, we produce vibrant prints on apparel, headwear, banners, and more — all made in-house for fast turnaround and consistent color accuracy. Options include Direct to Film, CAD Cut, CAD Print, and Sublimation, plus specialty vinyls like reflective, foil, foam, and debossed finishes.",
@@ -219,10 +236,10 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   />
 
   <ServiceSection
+    class="mb-0"
     anchorId="digitalPrinting"
-    isReverse={true}
     title="Art & Design Services"
-    imageSrc="/assets/images/4.Art-n-DesignServices.png"
+    imageSrc={service4}
     imageAlt="Graphic design workspace"
     paragraphs={[
       "Our experienced in-house graphic design and digitizing team provides complete creative support — from logo design and mockups to vector files, digitizing, and embroidery file edits. Whether you need artwork from scratch or technical adjustments, we ensure your designs are optimized for perfect embroidery and printing results.",
@@ -232,7 +249,8 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <ServiceSection
     anchorId="artworkServices"
     title="Laser Engraving"
-    imageSrc="/assets/images/laser-engrave.png"
+    imageSrc={service5}
+    isReverse={true}
     imageAlt="Laser engraving in progress"
     paragraphs={[
       "For precise, professional customization, our laser engraving services etch your designs, logos, or text onto a variety of materials, including wood, metal, acrylic, and leather. Using advanced laser technology, we deliver clean, permanent results with intricate detail and sharp edges. Options include single-color engraving, layered effects, and custom textures — all done in-house for fast turnaround and consistent quality.",
@@ -242,7 +260,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!--                 About Us                     -->
   <!-- ============================================ -->
 
-  <section id="sbs">
+  <section id="sbs" class="bg-red-50">
     <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
@@ -367,7 +385,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!-- ============================================ -->
   <!--                  Reviews                     -->
   <!-- ============================================ -->
-  <section id="reviews-section">
+  <section id="reviews-section" class="bg-red-50">
     <div class="reviews-container">
       <!-- Header -->
       <div class="reviews-header">
@@ -468,7 +486,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!-- ============================================ -->
   <FAQ />
 
-  <section id="faq-351">
+  <section id="faq-351" class="bg-red-50">
     <div class="cs-container">
       <div class="cs-content">
         <span class="cs-topper">Frequently Asked Questions</span>

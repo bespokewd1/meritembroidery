@@ -1,4 +1,10 @@
 ---
+import { type HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"section">;
+
+const { class: className, ...props } = Astro.props;
+
 const images = [
   "/assets/images/portfolio/port1.jpg",
   "/assets/images/portfolio/port4.jpg",
@@ -12,7 +18,7 @@ const images = [
 ];
 ---
 
-<section id="gallery">
+<section id="gallery" class:list={[className]} {...props}>
   <div class="cs-container">
     <h2 class="cs-topper">Showcasing Our Finest Creations</h2>
     <h2 class="cs-title" style="margin-bottom: 4rem;">Some of Our Works</h2>
