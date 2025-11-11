@@ -18,5 +18,10 @@
 		"blaze-slider": "^1.9.3",
 		"less": "^4.4.1",
 		"tailwindcss": "^4.1.16"
+	},
+	"devDependencies": {
+		"prettier": "^3.6.2",
+		"prettier-plugin-astro": "0.14.1",
+		"prettier-plugin-tailwindcss": "^0.7.1"
 	}
 }
