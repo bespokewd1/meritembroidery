@@ -247,6 +247,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   />
 
   <ServiceSection
+    class="mb-0"
     anchorId="artworkServices"
     title="Laser Engraving"
     imageSrc={service5}
@@ -260,7 +261,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!--                 About Us                     -->
   <!-- ============================================ -->
 
-  <section id="sbs" class="bg-red-50">
+  <section id="sbs" class="bg-slate-100">
     <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
@@ -325,10 +326,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     </div>
   </section>
 
-  <section
-    class="flex flex-col items-center justify-center"
-    style="margin-top: 4rem;"
-  >
+  <section class="mt-16 mb-8 flex flex-col items-center justify-center">
     <div class="text-center md:w-[50%]">
       <h3 class="cs-title" style="color: var(--primary);">
         Experience, Quality, and Reliability You Can Count On
@@ -380,12 +378,12 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!--                   Gallery                    -->
   <!-- ============================================ -->
 
-  <Gallery />
+  <Gallery class="bg-slate-100" />
 
   <!-- ============================================ -->
   <!--                  Reviews                     -->
   <!-- ============================================ -->
-  <section id="reviews-section" class="bg-red-50">
+  <section id="reviews-section">
     <div class="reviews-container">
       <!-- Header -->
       <div class="reviews-header">
@@ -480,13 +478,13 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     </div>
   </section>
 
-  <CTA />
+  <CTA class={"after:bg-slate-100"} />
   <!-- ============================================ -->
   <!--                    FAQ                       -->
   <!-- ============================================ -->
   <FAQ />
 
-  <section id="faq-351" class="bg-red-50">
+  <section id="faq-351">
     <div class="cs-container">
       <div class="cs-content">
         <span class="cs-topper">Frequently Asked Questions</span>
