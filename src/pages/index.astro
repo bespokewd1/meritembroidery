@@ -27,6 +27,7 @@ const reviews = [
 import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { getImage } from "astro:assets";
 import Gallery from "@components/Gallery.astro";
+import ServiceSection from "@components/ServiceSection.astro";
 const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 ---
 
@@ -158,218 +159,85 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     <div class="title-banner">
       <h3 class="cs-title">Services</h3>
     </div>
-    <div id="embroidery" class="container">
-      <div class="left-right flex flex-wrap items-stretch md:flex-nowrap">
-        <div class="left flex w-full items-center bg-white md:w-1/2">
-          <div class="content p-6">
-            <h3 class="cs-title">
-              Custom Logo Embroidery & Embroidered Patches
-            </h3>
-            <p class="cs-text">
-              With over three decades of experience, Merit Embroidery & Printing
-              delivers premium-quality embroidery for apparel, headwear, bags,
-              workwear, and more. Using Barudan multi-head commercial machines
-              and in-house digitizing, we ensure every stitch meets the highest
-              standards — whether it’s a dozen shirts or thousands of hats.
-            </p>
-
-            <h4>
-              <strong>We offer:</strong>
-            </h4>
-            <ul>
-              <li>• Flat, Puff (3D), and FR Embroidery</li>
-              <li>
-                • Appliqué options: twill, felt, suede, faux leather,
-                sublimated, and more
-              </li>
-              <li>
-                • Custom embroidered patches with merrowed or custom-cut borders
-              </li>
-              <li>
-                • Sewing services for woven, PVC, digital, and leather patches
-              </li>
-            </ul>
-
-            <p class="cs-text">
-              With over 40 sewing heads, we produce thousands of embroidered
-              goods daily — each piece crafted for precision, texture, and
-              lasting impact.
-            </p>
-          </div>
-        </div>
-
-        <div class="right flex w-full items-stretch md:w-1/2">
-          <img
-            class="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-            src="/assets/images/1.Custom Logo Embroidery- Services.png"
-            alt="Embroidery machines"
-          />
-        </div>
-      </div>
-    </div>
   </section>
+  <ServiceSection
+    anchorId="embroidery"
+    title="Custom Logo Embroidery & Embroidered Patches"
+    imageSrc="/assets/images/1.Custom Logo Embroidery- Services.png"
+    imageAlt="Embroidery machines"
+    paragraphs={[
+      "With over three decades of experience, Merit Embroidery & Printing delivers premium-quality embroidery for apparel, headwear, bags, workwear, and more. Using Barudan multi-head commercial machines and in-house digitizing, we ensure every stitch meets the highest standards — whether it’s a dozen shirts or thousands of hats.",
+      "With over 40 sewing heads, we produce thousands of embroidered goods daily — each piece crafted for precision, texture, and lasting impact.",
+    ]}
+    listTitle="We offer:"
+    listItems={[
+      "Flat, Puff (3D), and FR Embroidery",
+      "Appliqué options: twill, felt, suede, faux leather, sublimated, and more",
+      "Custom embroidered patches with merrowed or custom-cut borders",
+      "Sewing services for woven, PVC, digital, and leather patches",
+    ]}
+  />
 
-  <section id="services-reverse">
-    <div class="container">
-      <div class="left-right flex flex-wrap items-stretch md:flex-nowrap">
-        <!-- Left side -->
-        <div class="left flex w-full items-center bg-white md:w-1/2">
-          <div class="content p-6">
-            <h3 class="cs-title">Screen Printing</h3>
-            <p class="cs-text">
-              Our state-of-the-art M&R automatic screen presses allow us to
-              print up to 1,000 garments per hour, combining efficiency with
-              exceptional quality. Since expanding into screen printing in 2015,
-              we’ve mastered techniques that make every print vibrant, durable,
-              and true to your brand.
-            </p>
-            <p class="cs-text">
-              We print on t-shirts, hoodies, bags, jerseys, workwear, and
-              specialty fabrics, using Wilflex plastisol, water-based, and
-              air-dry inks.
-              <br />
-              <strong>Capabilities include:</strong>
-            </p>
-            <ul>
-              <li>• Up to 12-color prints</li>
-              <li>
-                • Spot color, high-density, reflective, puff, and
-                glow-in-the-dark effects
-              </li>
-              <li>
-                • Custom Pantone color matching and heat transfer applications
-              </li>
-            </ul>
-            <p class="cs-text">
-              Whether you need small runs or large orders, our expert team
-              ensures every print is sharp, consistent, and built to last.
-            </p>
+  <ServiceSection
+    isReverse={true}
+    title="Screen Printing"
+    imageSrc="/assets/images/2.ScreenPrinting-Services.png"
+    imageAlt="Screen printing press"
+    paragraphs={[
+      "Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour, combining efficiency with exceptional quality. Since expanding into screen printing in 2015, we’ve mastered techniques that make every print vibrant, durable, and true to your brand.",
+      "We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty fabrics, using Wilflex plastisol, water-based, and air-dry inks.",
+      "Whether you need small runs or large orders, our expert team ensures every print is sharp, consistent, and built to last.",
+    ]}
+    listTitle="Capabilities include:"
+    listItems={[
+      "Up to 12-color prints",
+      "Spot color, high-density, reflective, puff, and glow-in-the-dark effects",
+      "Custom Pantone color matching and heat transfer applications",
+    ]}
+  >
+    <h3 class="mb-4 text-[28px] font-bold text-[var(--primary)]">
+      Laser Engraved Faux Leather & Suede Patches
+    </h3>
+    <p class="mb-8">
+      For designs too detailed for embroidery, our laser-engraved patches
+      deliver sharp precision and lasting quality. Made locally in Edmonton, we
+      create custom shapes, sizes, and logo cuts on faux leather, faux suede, or
+      real cork — with no minimum orders. Choose from 14 color options and get
+      samples before production to ensure perfect results. We also offer laser
+      engraving on mugs, bottles, awards, keychains, coasters, and more.
+    </p>
+  </ServiceSection>
 
-            <h3>
-              <strong>Laser Engraved Faux Leather & Suede Patches</strong>
-            </h3>
-            <p class="cs-text">
-              For designs too detailed for embroidery, our laser-engraved
-              patches deliver sharp precision and lasting quality. Made locally
-              in Edmonton, we create custom shapes, sizes, and logo cuts on faux
-              leather, faux suede, or real cork — with no minimum orders. Choose
-              from 14 color options and get samples before production to ensure
-              perfect results. We also offer laser engraving on mugs, bottles,
-              awards, keychains, coasters, and more.
-            </p>
-          </div>
-        </div>
+  <ServiceSection
+    anchorId="screenPrinting"
+    title="Digital Printing & Digital Patches"
+    imageSrc="/assets/images/3.DigitalPrinting-DigitalPatches-Services.png"
+    imageAlt="Digital printing equipment"
+    paragraphs={[
+      "When your artwork requires full color and fine detail, our digital printing services bring it to life. Using advanced Mimaki large-format and DTF printers, we produce vibrant prints on apparel, headwear, banners, and more — all made in-house for fast turnaround and consistent color accuracy. Options include Direct to Film, CAD Cut, CAD Print, and Sublimation, plus specialty vinyls like reflective, foil, foam, and debossed finishes.",
+    ]}
+  />
 
-        <!-- Right side -->
-        <div class="right flex w-full items-stretch md:w-1/2">
-          <img
-            class="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-            src="/assets/images/2.ScreenPrinting-Services.png"
-            alt="Embroidery machines"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+  <ServiceSection
+    anchorId="digitalPrinting"
+    isReverse={true}
+    title="Art & Design Services"
+    imageSrc="/assets/images/4.Art-n-DesignServices.png"
+    imageAlt="Graphic design workspace"
+    paragraphs={[
+      "Our experienced in-house graphic design and digitizing team provides complete creative support — from logo design and mockups to vector files, digitizing, and embroidery file edits. Whether you need artwork from scratch or technical adjustments, we ensure your designs are optimized for perfect embroidery and printing results.",
+    ]}
+  />
 
-  <section id="services">
-    <div id="screenPrinting" class="container">
-      <div class="left-right flex flex-wrap items-stretch md:flex-nowrap">
-        <div class="left flex w-full items-center bg-white md:w-1/2">
-          <div class="content p-6">
-            <h3 class="cs-title">Digital Printing & Digital Patches</h3>
-            <p class="cs-text">
-              When your artwork requires full color and fine detail, our digital
-              printing services bring it to life. Using advanced Mimaki
-              large-format and DTF printers, we produce vibrant prints on
-              apparel, headwear, banners, and more — all made in-house for fast
-              turnaround and consistent color accuracy. Options include Direct
-              to Film, CAD Cut, CAD Print, and Sublimation, plus specialty
-              vinyls like reflective, foil, foam, and debossed finishes.
-            </p>
-          </div>
-        </div>
-
-        <div class="right flex w-full items-stretch md:w-1/2">
-          <img
-            class="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-            src="/assets/images/3.DigitalPrinting-DigitalPatches-Services.png"
-            alt="Embroidery machines"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services-reverse">
-    <div id="digitalPrinting" class="container">
-      <div class="left-right flex flex-wrap items-stretch md:flex-nowrap">
-        <!-- Left side -->
-        <div class="left flex w-full items-center bg-white md:w-1/2">
-          <div class="content p-6">
-            <h3 class="cs-title">Art & Design Services</h3>
-            <p class="cs-text">
-              Our experienced in-house graphic design and digitizing team
-              provides complete creative support — from logo design and mockups
-              to vector files, digitizing, and embroidery file edits. Whether
-              you need artwork from scratch or technical adjustments, we ensure
-              your designs are optimized for perfect embroidery and printing
-              results.
-            </p>
-          </div>
-        </div>
-
-        <!-- Right side -->
-        <div class="right flex w-full items-stretch md:w-1/2">
-          <img
-            class="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-            src="/assets/images/4.Art-n-DesignServices.png"
-            alt="Embroidery machines"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services">
-    <div id="artworkServices" class="container">
-      <div class="left-right flex flex-wrap items-stretch md:flex-nowrap">
-        <div class="left flex w-full items-center bg-white md:w-1/2">
-          <div class="content p-6">
-            <h3 class="cs-title">Laser Engraving</h3>
-            <p class="cs-text">
-              For precise, professional customization, our laser engraving
-              services etch your designs, logos, or text onto a variety of
-              materials, including wood, metal, acrylic, and leather. Using
-              advanced laser technology, we deliver clean, permanent results
-              with intricate detail and sharp edges. Options include
-              single-color engraving, layered effects, and custom textures — all
-              done in-house for fast turnaround and consistent quality.
-            </p>
-          </div>
-        </div>
-
-        <div class="right flex w-full items-stretch md:w-1/2">
-          <img
-            class="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-            src="/assets/images/laser-engrave.png"
-            alt="Embroidery machines"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <ServiceSection
+    anchorId="artworkServices"
+    title="Laser Engraving"
+    imageSrc="/assets/images/laser-engrave.png"
+    imageAlt="Laser engraving in progress"
+    paragraphs={[
+      "For precise, professional customization, our laser engraving services etch your designs, logos, or text onto a variety of materials, including wood, metal, acrylic, and leather. Using advanced laser technology, we deliver clean, permanent results with intricate detail and sharp edges. Options include single-color engraving, layered effects, and custom textures — all done in-house for fast turnaround and consistent quality.",
+    ]}
+  />
   <!-- ============================================ -->
   <!--                 About Us                     -->
   <!-- ============================================ -->

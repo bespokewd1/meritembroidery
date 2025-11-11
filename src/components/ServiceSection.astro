@@ -1,0 +1,72 @@
+---
+interface Props {
+  anchorId?: string;
+  title: string;
+  imageSrc: string;
+  imageAlt: string;
+  isReverse?: boolean;
+
+  // content API: paragraphs + optional list
+  paragraphs?: string[];
+  listTitle?: string;
+  listItems?: string[];
+}
+
+const {
+  anchorId,
+  title,
+  imageSrc,
+  imageAlt,
+  isReverse = false,
+  paragraphs = [],
+  listTitle,
+  listItems = [],
+} = Astro.props;
+---
+
+<section id={anchorId} class="mb-8 scroll-mt-[100px]">
+  <div
+    class={`flex w-full max-w-384 mx-auto flex-col items-stretch gap-8 md:flex-row ${
+      isReverse ? "md:flex-row-reverse" : ""
+    }`}
+  >
+    <div class="flex w-full items-center bg-white lg:w-[50%]">
+      <div class="mx-auto w-[96%] p-6 md:w-4/5">
+        <h3 class="mb-4 text-[28px] font-bold text-(--primary)">
+          {title}
+        </h3>
+
+        {paragraphs.map((p) => <p class="mb-8">{p}</p>)}
+
+        {
+          listItems.length > 0 && (
+            <>
+              {listTitle && (
+                <p class="mb-2">
+                  <strong>{listTitle}</strong>
+                </p>
+              )}
+              <ul class="mb-8 list-none space-y-1">
+                {listItems.map((item) => (
+                  <li>• {item}</li>
+                ))}
+              </ul>
+            </>
+          )
+        }
+
+        <slot />
+      </div>
+    </div>
+
+    <div class="flex w-full items-stretch lg:w-[50%]">
+      <img
+        class="h-full w-full object-cover"
+        loading="lazy"
+        decoding="async"
+        src={imageSrc}
+        alt={imageAlt}
+      />
+    </div>
+  </div>
+</section>
