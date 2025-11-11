@@ -35,6 +35,7 @@ import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE AS
 import { getImage } from "astro:assets";
 import Gallery from "@components/Gallery.astro";
 import ServiceSection from "@components/ServiceSection.astro";
+import ApplicationLogosCarousel from "@components/ApplicationLogosCarousel.astro";
 const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 ---
 
@@ -378,12 +379,13 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!--                   Gallery                    -->
   <!-- ============================================ -->
 
-  <Gallery class="bg-slate-100" />
+  <!-- <Gallery class="bg-slate-100" /> -->
+  <ApplicationLogosCarousel />
 
   <!-- ============================================ -->
   <!--                  Reviews                     -->
   <!-- ============================================ -->
-  <section id="reviews-section">
+  <section id="reviews-section" class="bg-slate-100">
     <div class="reviews-container">
       <!-- Header -->
       <div class="reviews-header">
@@ -477,14 +479,14 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       </div>
     </div>
   </section>
-
-  <CTA class={"after:bg-slate-100"} />
+  <!-- class={"after:bg-slate-100"}  -->
+  <CTA />
   <!-- ============================================ -->
   <!--                    FAQ                       -->
   <!-- ============================================ -->
   <FAQ />
 
-  <section id="faq-351">
+  <section id="faq-351" class="bg-slate-100">
     <div class="cs-container">
       <div class="cs-content">
         <span class="cs-topper">Frequently Asked Questions</span>
