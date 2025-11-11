@@ -20,6 +20,7 @@
 		"tailwindcss": "^4.1.16"
 	},
 	"devDependencies": {
+		"@iconify-json/tabler": "^1.2.23",
 		"clsx": "^2.1.1",
 		"prettier": "^3.6.2",
 		"prettier-plugin-astro": "0.14.1",

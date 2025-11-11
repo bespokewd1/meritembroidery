@@ -5,6 +5,7 @@ import Landing from "@components/Landing.astro";
 import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
 import client from "@data/client.json";
+import { Icon } from "astro-icon/components";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -102,39 +103,73 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
             >Send Message</button
           >
         </form>
-        <div class="contact-info">
+
+        <div class="contact-info flex flex-col gap-4">
           <h2 class="cs-header">Contact Info</h2>
+
           <div>
             <h3>ADDRESS</h3>
-            <a class="cs-text" href={mapHref}>
-              {addressOne}
-              <br />
-              {addressTwo}
+            <a
+              class="group cs-text mt-1 ml-2 inline-flex items-center gap-2 transition-colors duration-300 hover:text-red-950 hover:underline"
+              href={mapHref}
+            >
+              {addressOne}, {addressTwo}
+              <Icon
+                name="tabler:external-link"
+                class={"invisible opacity-0 group-hover:visible transition-[opacity,visibility] group-hover:opacity-100"}
+              />
             </a>
           </div>
+
           <div>
             <h3>PHONE</h3>
-            <a class="cs-text" href={`tel:${phoneNumber}`}>
+            <a
+              class="group cs-text mt-1 ml-2 inline-flex items-center gap-2 transition-colors duration-300 hover:text-red-950 hover:underline"
+              href={`tel:${phoneNumber}`}
+            >
               {phoneNumber}
+              <Icon
+                name="tabler:external-link"
+                class={"invisible opacity-0 group-hover:visible transition-[opacity,visibility] group-hover:opacity-100"}
+              />
             </a>
           </div>
+
           <div>
             <h3>WORKING HOURS</h3>
-            <a class="cs-text">
+            <p class="cs-text mt-1 ml-2">
               <strong>Mon - Fri:</strong> 8:00 am – 4:30 pm
-            </a>
+            </p>
           </div>
+
           <div>
             <h3>EMAIL</h3>
-            <a class="cs-text" href={`mailto:${emailAddress}`}>
+
+            <a
+              class="group cs-text mt-1 ml-2 inline-flex items-center gap-2 transition-colors duration-300 hover:text-red-950 hover:underline"
+              href={`mailto:${emailAddress}`}
+            >
               {emailAddress}
+              <Icon
+                name="tabler:external-link"
+                class={"invisible opacity-0 group-hover:visible transition-[opacity,visibility] group-hover:opacity-100"}
+              />
             </a>
           </div>
+
           <div>
             <h3>EMPLOYMENT OPPORTUNITIES</h3>
-            <p class="cs-text">Please submit your resume to:</p>
-            <a class="cs-text" href={`mailto:jobs@meritembroidery.com`}>
+            <p class="cs-text mt-1 ml-2">Please submit your resume to:</p>
+
+            <a
+              class="group cs-text ml-2 inline-flex items-center gap-2 transition-colors duration-300 hover:text-red-950 hover:underline"
+              href={`mailto:jobs@meritembroidery.com`}
+            >
               jobs@meritembroidery.com
+              <Icon
+                name="tabler:external-link"
+                class={"invisible opacity-0 group-hover:visible transition-[opacity,visibility] group-hover:opacity-100"}
+              />
             </a>
           </div>
         </div>
@@ -143,13 +178,21 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
       <div class="cs-map">
         <div class="cs-iframe-wrapper">
           <iframe
-            src={`${mapHref}&output=embed`}
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4059.2710844829853!2d-113.4038975274644!3d53.51237639588471!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a0186ce841d67d%3A0x43c318ffd01724a5!2sMerit%20Embroidery%20%26%20Printing%20Ltd.!5e1!3m2!1sen!2sus!4v1762867446743!5m2!1sen!2sus"
             width="600"
             height="450"
             style="border:0;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <!-- <iframe
+            src={`${mapHref}&output=embed&maptype=satellite`}
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
         </div>
         <!-- <div class="cs-box">
                 <img class="cs-icon" decoding="async" loading="lazy" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/yellow-pin.svg" alt="icon" width="40" height="40" aria-hidden="true">
