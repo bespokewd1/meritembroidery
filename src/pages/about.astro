@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import Landing from "@components/Landing.astro";
 import FAQ from "@components/FAQ.astro";
+import Gallery from "@components/Gallery.astro";
 import "../styles/global.css";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
@@ -184,69 +185,71 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!--                 SOME OF OUR WORKS            -->
   <!-- ============================================ -->
 
-  <section
-    class="flex flex-col items-center justify-center"
-    style="margin-bottom: 8rem;"
-  >
-    <h2 class="cs-topper">Showcasing Our Finest Creations</h2>
-    <h2 class="cs-title" style="margin-bottom: 4rem;">Some of Our Works</h2>
-    <div
-      class="grid w-[90%] grid-cols-1 justify-center gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
-    >
-      <div class="flex items-center justify-center">
-        <img
-          src="/assets/images/portfolio/port1.jpg"
-          alt="Gallery 1"
-          class="h-full w-[80%] object-cover sm:w-[60%] md:w-full"
-        />
-      </div>
+  <Gallery limit={20}/>
 
-      <div class="flex items-center justify-center">
-        <img
-          src="/assets/images/portfolio/port2.jpg"
-          alt="Gallery 2"
-          class="h-full w-[80%] object-cover sm:w-[60%] md:w-full"
-        />
-      </div>
-
-      <div class="flex items-center justify-center">
-        <img
-          src="/assets/images/portfolio/port3.jpg"
-          alt="Gallery 3"
-          class="h-full w-[80%] object-cover sm:w-[60%] md:w-full"
-        />
-      </div>
-
-      <div class="flex items-center justify-center">
-        <img
-          src="/assets/images/portfolio/port4.jpg"
-          alt="Gallery 4"
-          class="h-full w-[80%] object-cover sm:w-[60%] md:w-full"
-        />
-      </div>
-
-      <div class="flex items-center justify-center">
-        <img
-          src="/assets/images/portfolio/port5.jpg"
-          alt="Gallery 5"
-          class="h-full w-[80%] object-cover sm:w-[60%] md:w-full"
-        />
-      </div>
-
-      <div class="flex items-center justify-center">
-        <img
-          src="/assets/images/portfolio/port6.jpg"
-          alt="Gallery 6"
-          class="h-full w-[80%] object-cover sm:w-[60%] md:w-full"
-        />
-      </div>
-    </div>
-    <a
-      href="https://www.instagram.com"
-      class="cs-button-solid cs-nav-button"
-      style="margin-top: 32px;">View More on Instagram</a
-    >
-  </section>
+  <!-- <section -->
+  <!--   class="flex flex-col items-center justify-center" -->
+  <!--   style="margin-bottom: 8rem;" -->
+  <!-- > -->
+  <!--   <h2 class="cs-topper">Showcasing Our Finest Creations</h2> -->
+  <!--   <h2 class="cs-title" style="margin-bottom: 4rem;">Some of Our Works</h2> -->
+  <!--   <div -->
+  <!--     class="grid w-[90%] grid-cols-1 justify-center gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4" -->
+  <!--   > -->
+  <!--     <div class="flex items-center justify-center"> -->
+  <!--       <img -->
+  <!--         src="/assets/images/portfolio/port1.jpg" -->
+  <!--         alt="Gallery 1" -->
+  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
+  <!--       /> -->
+  <!--     </div> -->
+  <!---->
+  <!--     <div class="flex items-center justify-center"> -->
+  <!--       <img -->
+  <!--         src="/assets/images/portfolio/port2.jpg" -->
+  <!--         alt="Gallery 2" -->
+  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
+  <!--       /> -->
+  <!--     </div> -->
+  <!---->
+  <!--     <div class="flex items-center justify-center"> -->
+  <!--       <img -->
+  <!--         src="/assets/images/portfolio/port3.jpg" -->
+  <!--         alt="Gallery 3" -->
+  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
+  <!--       /> -->
+  <!--     </div> -->
+  <!---->
+  <!--     <div class="flex items-center justify-center"> -->
+  <!--       <img -->
+  <!--         src="/assets/images/portfolio/port4.jpg" -->
+  <!--         alt="Gallery 4" -->
+  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
+  <!--       /> -->
+  <!--     </div> -->
+  <!---->
+  <!--     <div class="flex items-center justify-center"> -->
+  <!--       <img -->
+  <!--         src="/assets/images/portfolio/port5.jpg" -->
+  <!--         alt="Gallery 5" -->
+  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
+  <!--       /> -->
+  <!--     </div> -->
+  <!---->
+  <!--     <div class="flex items-center justify-center"> -->
+  <!--       <img -->
+  <!--         src="/assets/images/portfolio/port6.jpg" -->
+  <!--         alt="Gallery 6" -->
+  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
+  <!--       /> -->
+  <!--     </div> -->
+  <!--   </div> -->
+  <!--   <a -->
+  <!--     href="https://www.instagram.com" -->
+  <!--     class="cs-button-solid cs-nav-button" -->
+  <!--     style="margin-top: 32px;">View More on Instagram</a -->
+  <!--   > -->
+  <!-- </section> -->
 
   <CTA />
 </BaseLayout>

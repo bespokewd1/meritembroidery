@@ -2,8 +2,11 @@
 import { Image } from "astro:assets";
 import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<"section">;
-const { class: className, ...props } = Astro.props;
+type Props = HTMLAttributes<"section"> & {
+  showLink?: boolean
+  limit?:number
+};
+const { class: className,showLink = true, limit, ...props } = Astro.props;
 
 // Load everything in these folders:
 const galleryImports = import.meta.glob(
@@ -23,6 +26,14 @@ const images = Object.values(galleryImports)
       numeric: true,
     })
   );
+
+const normalizedLimit =
+  typeof limit === "number" && Number.isFinite(limit) && limit > 0
+    ? Math.floor(limit)
+    : undefined;
+
+const displayedImages = normalizedLimit ? images.slice(0, normalizedLimit) : images;
+
 ---
 
 <section id="gallery" class:list={[className]} {...props}>
@@ -33,7 +44,7 @@ const images = Object.values(galleryImports)
     <div class="max-h-340 overflow-y-auto">
       <div class="columns-[400px]">
         {
-          images.map((src, i) => (
+          displayedImages.map((src, i) => (
           <div class="mb-4 break-inside-avoid [page-break-inside:avoid] [-webkit-column-break-inside:avoid] inline-block">
             <Image
               aria-hidden="true"
@@ -46,7 +57,10 @@ const images = Object.values(galleryImports)
         }
       </div>
     </div>
-    <!-- <a href="/portfolio" class="cs-button-solid">Discover More</a> -->
+    {showLink && 
+
+      <a href="/portfolio" class="cs-button-solid" title="check out our portfolio">Discover More</a>
+    }
   </div>
 </section>
 

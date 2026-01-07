@@ -3,13 +3,21 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
+import { Image,Picture } from "astro:assets";
 
-import service1 from "@assets/images/services/s-1.png";
-import service2 from "@assets/images/services/s-2.png";
-import service3 from "@assets/images/services/s-3.png";
-import service4 from "@assets/images/services/s-4.png";
-import service5 from "@assets/images/services/s-5.png";
-import service6 from "@assets/images/services/s-6.png";
+
+// import service1 from "@assets/images/services/s-1.png";
+import service1 from "@assets/images/merit-images/merit-0261.jpg";
+// import service2 from "@assets/images/services/s-2.png";
+import service2 from "@assets/images/merit-images/merit-0256.jpg";
+// import service3 from "@assets/images/services/s-3.png";
+import service3 from "@assets/images/merit-images/merit-0283.jpg";
+// import service4 from "@assets/images/services/s-4.png";
+import service4 from "@assets/images/gallery/3.jpg";
+// import service5 from "@assets/images/services/s-5.png";
+import service5 from "@assets/images/merit-images/merit-0321.jpg";
+// import service6 from "@assets/images/services/s-6.png";
+import service6 from "@assets/images/merit-images/merit-0318.jpg";
 
 import BlazeSlider from "blaze-slider";
 import "blaze-slider/dist/blaze.css";
@@ -31,7 +39,9 @@ const reviews = [
 ];
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from "@assets/images/merit-images/merit-0256.jpg";
+import aboutImg1 from "@assets/images/merit-images/merit-0290.jpg";
+import aboutImg2 from "@assets/images/merit-images/merit-0314.jpg";
 import { getImage } from "astro:assets";
 import Gallery from "@components/Gallery.astro";
 import ServiceSection from "@components/ServiceSection.astro";
@@ -105,14 +115,20 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         </div>
       </div>
       <div class="flex w-full items-center justify-start">
-        <img
-          class="flex h-[50vh] w-full items-center justify-start sm:h-[50vh] md:h-[100vh]"
-          loading="lazy"
-          decoding="async"
-          src="/assets/images/background-img.jpg"
-          alt="play icon"
-          style="object-fit: cover;"
-        />
+        <Image 
+          src={landingImage}
+          alt="embroidery machines"
+          loading="eager"
+          fetchpriority="high"
+          class="flex object-cover h-[50vh] w-full items-center justify-start sm:h-[50vh] md:h-[100vh]" />
+        <!-- <img -->
+        <!--   class="flex h-[50vh] w-full items-center justify-start sm:h-[50vh] md:h-[100vh]" -->
+        <!--   loading="lazy" -->
+        <!--   decoding="async" -->
+        <!--   src="/assets/images/background-img.jpg" -->
+        <!--   alt="play icon" -->
+        <!--   style="object-fit: cover;" -->
+        <!-- /> -->
       </div>
     </div>
     <!-- Background Image -->
@@ -266,44 +282,53 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/1.Custom Logo Embroidery- Services.png"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/1.Custom Logo Embroidery- Services.png"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/1.Custom Logo Embroidery- Services.png"
-            alt="cabinets"
-            loading="lazy"
-            width="400"
-            height="563"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/background-img.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/background-img.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/background-img.jpg"
-            alt="house"
-            loading="lazy"
-            width="400"
-            height="563"
-          />
-        </picture>
+        <Picture src={aboutImg1}  formats={['avif', 'webp']}
+          pictureAttributes={{ class: "cs-picture cs-picture1" }}
+          alt="leather embroidered cap"
+        />
+        <!-- <picture class="cs-picture cs-picture1"> -->
+        <!--   <source -->
+        <!--     media="(max-width: 600px)" -->
+        <!--     srcset={aboutImg1.src} -->
+        <!--   /> -->
+        <!--   <source -->
+        <!--     media="(min-width: 601px)" -->
+        <!--     srcset={aboutImg1.src} -->
+        <!--   /> -->
+        <!--   <img -->
+        <!--     aria-hidden="true" -->
+        <!--     decoding="async" -->
+        <!--     src={aboutImg1.src} -->
+        <!--     alt="cabinets" -->
+        <!--     loading="lazy" -->
+        <!--     width="400" -->
+        <!--     height="563" -->
+        <!--   /> -->
+        <!-- </picture> -->
+
+        <Picture src={aboutImg2}  formats={['avif', 'webp']}
+          pictureAttributes={{ class: "cs-picture cs-picture2" }}
+          alt="lazered cap with text elephanty and elephant logo"
+        />
+        <!-- <picture class="cs-picture cs-picture2"> -->
+        <!--   <source -->
+        <!--     media="(max-width: 600px)" -->
+        <!--     srcset="/assets/images/background-img.jpg" -->
+        <!--   /> -->
+        <!--   <source -->
+        <!--     media="(min-width: 601px)" -->
+        <!--     srcset="/assets/images/background-img.jpg" -->
+        <!--   /> -->
+        <!--   <img -->
+        <!--     aria-hidden="true" -->
+        <!--     decoding="async" -->
+        <!--     src="/assets/images/background-img.jpg" -->
+        <!--     alt="house" -->
+        <!--     loading="lazy" -->
+        <!--     width="400" -->
+        <!--     height="563" -->
+        <!--   /> -->
+        <!-- </picture> -->
       </div>
       <!-- Right Content Section-->
       <div class="cs-right">
