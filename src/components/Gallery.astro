@@ -1,109 +1,28 @@
 ---
-import { type HTMLAttributes } from "astro/types";
 import { Image } from "astro:assets";
-import gallery1 from "@assets/images/gallery/1.jpg";
-import gallery2 from "@assets/images/gallery/2.jpg";
-import gallery3 from "@assets/images/gallery/3.jpg";
-import gallery4 from "@assets/images/gallery/4.jpg";
-import gallery5 from "@assets/images/gallery/5.jpg";
-import gallery6 from "@assets/images/gallery/6.jpg";
-import gallery7 from "@assets/images/gallery/7.jpg";
-import gallery8 from "@assets/images/gallery/8.jpg";
-import gallery9 from "@assets/images/gallery/9.jpg";
-import gallery10 from "@assets/images/gallery/10.jpg";
-import gallery11 from "@assets/images/gallery/11.jpg";
-import gallery12 from "@assets/images/gallery/12.jpg";
-import gallery13 from "@assets/images/gallery/13.jpg";
-import gallery14 from "@assets/images/gallery/14.jpg";
-import gallery15 from "@assets/images/gallery/15.jpg";
-import gallery16 from "@assets/images/gallery/16.jpg";
-import gallery17 from "@assets/images/gallery/17.jpg";
-import gallery18 from "@assets/images/gallery/18.jpg";
-import gallery19 from "@assets/images/gallery/19.jpg";
-import gallery20 from "@assets/images/gallery/20.jpg";
-import gallery21 from "@assets/images/gallery/21.jpg";
-import gallery22 from "@assets/images/gallery/22.jpg";
-import gallery23 from "@assets/images/gallery/23.jpg";
-import gallery24 from "@assets/images/gallery/24.jpg";
-
-// merit-images (following gallery25 pattern)
-import gallery25 from "@assets/images/merit-images/merit-0256.jpg";
-import gallery26 from "@assets/images/merit-images/merit-0261.jpg";
-import gallery27 from "@assets/images/merit-images/merit-0278.jpg";
-import gallery28 from "@assets/images/merit-images/merit-0281.jpg";
-import gallery29 from "@assets/images/merit-images/merit-0283.jpg";
-import gallery30 from "@assets/images/merit-images/merit-0289.jpg";
-import gallery31 from "@assets/images/merit-images/merit-0290.jpg";
-import gallery32 from "@assets/images/merit-images/merit-0295.jpg";
-import gallery33 from "@assets/images/merit-images/merit-0296.jpg";
-import gallery34 from "@assets/images/merit-images/merit-0297.jpg";
-import gallery35 from "@assets/images/merit-images/merit-0298.jpg";
-import gallery36 from "@assets/images/merit-images/merit-0299.jpg";
-import gallery37 from "@assets/images/merit-images/merit-0300.jpg";
-import gallery38 from "@assets/images/merit-images/merit-0301.jpg";
-import gallery39 from "@assets/images/merit-images/merit-0302.jpg";
-import gallery40 from "@assets/images/merit-images/merit-0309.jpg";
-import gallery41 from "@assets/images/merit-images/merit-0312.jpg";
-import gallery42 from "@assets/images/merit-images/merit-0313.jpg";
-import gallery43 from "@assets/images/merit-images/merit-0314.jpg";
-import gallery44 from "@assets/images/merit-images/merit-0317.jpg";
-import gallery45 from "@assets/images/merit-images/merit-0318.jpg";
-import gallery46 from "@assets/images/merit-images/merit-0319.jpg";
-import gallery47 from "@assets/images/merit-images/merit-0321.jpg";
+import type { HTMLAttributes } from "astro/types";
 
 type Props = HTMLAttributes<"section">;
-
 const { class: className, ...props } = Astro.props;
 
-const images: ImageMetadata[] = [
-  gallery1,
-  gallery2,
-  gallery3,
-  gallery4,
-  gallery5,
-  gallery6,
-  gallery7,
-  gallery8,
-  gallery9,
-  gallery10,
-  gallery11,
-  gallery12,
-  gallery13,
-  gallery14,
-  gallery15,
-  gallery16,
-  gallery17,
-  gallery18,
-  gallery19,
-  gallery20,
-  gallery21,
-  gallery22,
-  gallery23,
-  gallery24,
-  gallery25,
-  gallery26,
-  gallery27,
-  gallery28,
-  gallery29,
-  gallery30,
-  gallery31,
-  gallery32,
-  gallery33,
-  gallery34,
-  gallery35,
-  gallery36,
-  gallery37,
-  gallery38,
-  gallery39,
-  gallery40,
-  gallery41,
-  gallery42,
-  gallery43,
-  gallery44,
-  gallery45,
-  gallery46,
-  gallery47,
-];
+// Load everything in these folders:
+const galleryImports = import.meta.glob(
+  [
+    "/src/assets/images/gallery/*.{jpg,jpeg,png,webp,avif}",
+    "/src/assets/images/merit-images/*.{jpg,jpeg,png,webp,avif}",
+  ],
+  { eager: true }
+);
+
+// Convert module map -> array of ImageMetadata
+const images = Object.values(galleryImports)
+  .map((m: any) => m.default)
+  // optional: sort by filename so it's stable
+  .sort((a: any, b: any) =>
+    String(a.src).localeCompare(String(b.src), undefined, {
+      numeric: true,
+    })
+  );
 ---
 
 <section id="gallery" class:list={[className]} {...props}>
@@ -115,12 +34,14 @@ const images: ImageMetadata[] = [
       <div class="columns-[400px]">
         {
           images.map((src, i) => (
+          <div class="mb-4 break-inside-avoid [page-break-inside:avoid] [-webkit-column-break-inside:avoid] inline-block">
             <Image
               aria-hidden="true"
               src={src}
               alt={`embroidery product ${i + 1}`}
-              class="mb-4 object-contain"
+              class="object-contain w-full block "
             />
+        </div>
           ))
         }
       </div>
