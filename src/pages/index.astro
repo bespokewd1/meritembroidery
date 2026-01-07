@@ -73,7 +73,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     </div> -->
     <div
       class="flex w-full flex-col items-center justify-center sm:flex-row"
-      style="margin-top: 4rem;width: 100%;padding: 0px;"
+      style="width: 100%;padding: 0px;"
     >
       <div class="flex flex-col sm:h-[50vh] md:h-[100vh]" style="width: 100%;">
         <div
@@ -189,6 +189,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <ServiceSection
     class="mb-0"
+    anchorId="screenPrinting"
     isReverse={true}
     title="Screen Printing"
     imageSrc={service2}
@@ -208,7 +209,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <ServiceSection
     class="mb-0"
-    anchorId="screenPrinting"
     title="Laser Engraved Faux Leather & Suede Patches"
     imageSrc={service6}
     imageAlt="Laser Engraved Faux Leather & Suede Patches"
@@ -226,7 +226,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <ServiceSection
     class="mb-0"
-    anchorId="screenPrinting"
+    anchorId="digitalPrinting"
     title="Digital Printing & Digital Patches"
     imageSrc={service3}
     isReverse={true}
@@ -238,8 +238,8 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <ServiceSection
     class="mb-0"
-    anchorId="digitalPrinting"
     title="Art & Design Services"
+    anchorId="artworkServices"
     imageSrc={service4}
     imageAlt="Graphic design workspace"
     paragraphs={[
@@ -249,8 +249,8 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <ServiceSection
     class="mb-0"
-    anchorId="artworkServices"
     title="Laser Engraving"
+    anchorId="laserEngraving"
     imageSrc={service5}
     isReverse={true}
     imageAlt="Laser engraving in progress"

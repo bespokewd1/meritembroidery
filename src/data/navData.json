@@ -28,13 +28,18 @@
       },
       {
         "key": "Laser Engraving",
-        "url": "/#artworkServices"
+        "url": "/#laserEngraving"
       }
     ]
   },
   {
     "key": "About Us",
     "url": "/about/",
+    "children": []
+  },
+  {
+    "key": "Gallery",
+    "url": "/portfolio/",
     "children": []
   },
   {

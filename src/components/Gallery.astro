@@ -26,6 +26,31 @@ import gallery22 from "@assets/images/gallery/22.jpg";
 import gallery23 from "@assets/images/gallery/23.jpg";
 import gallery24 from "@assets/images/gallery/24.jpg";
 
+// merit-images (following gallery25 pattern)
+import gallery25 from "@assets/images/merit-images/merit-0256.jpg";
+import gallery26 from "@assets/images/merit-images/merit-0261.jpg";
+import gallery27 from "@assets/images/merit-images/merit-0278.jpg";
+import gallery28 from "@assets/images/merit-images/merit-0281.jpg";
+import gallery29 from "@assets/images/merit-images/merit-0283.jpg";
+import gallery30 from "@assets/images/merit-images/merit-0289.jpg";
+import gallery31 from "@assets/images/merit-images/merit-0290.jpg";
+import gallery32 from "@assets/images/merit-images/merit-0295.jpg";
+import gallery33 from "@assets/images/merit-images/merit-0296.jpg";
+import gallery34 from "@assets/images/merit-images/merit-0297.jpg";
+import gallery35 from "@assets/images/merit-images/merit-0298.jpg";
+import gallery36 from "@assets/images/merit-images/merit-0299.jpg";
+import gallery37 from "@assets/images/merit-images/merit-0300.jpg";
+import gallery38 from "@assets/images/merit-images/merit-0301.jpg";
+import gallery39 from "@assets/images/merit-images/merit-0302.jpg";
+import gallery40 from "@assets/images/merit-images/merit-0309.jpg";
+import gallery41 from "@assets/images/merit-images/merit-0312.jpg";
+import gallery42 from "@assets/images/merit-images/merit-0313.jpg";
+import gallery43 from "@assets/images/merit-images/merit-0314.jpg";
+import gallery44 from "@assets/images/merit-images/merit-0317.jpg";
+import gallery45 from "@assets/images/merit-images/merit-0318.jpg";
+import gallery46 from "@assets/images/merit-images/merit-0319.jpg";
+import gallery47 from "@assets/images/merit-images/merit-0321.jpg";
+
 type Props = HTMLAttributes<"section">;
 
 const { class: className, ...props } = Astro.props;
@@ -55,6 +80,29 @@ const images: ImageMetadata[] = [
   gallery22,
   gallery23,
   gallery24,
+  gallery25,
+  gallery26,
+  gallery27,
+  gallery28,
+  gallery29,
+  gallery30,
+  gallery31,
+  gallery32,
+  gallery33,
+  gallery34,
+  gallery35,
+  gallery36,
+  gallery37,
+  gallery38,
+  gallery39,
+  gallery40,
+  gallery41,
+  gallery42,
+  gallery43,
+  gallery44,
+  gallery45,
+  gallery46,
+  gallery47,
 ];
 ---
 
@@ -63,7 +111,7 @@ const images: ImageMetadata[] = [
     <h2 class="cs-topper">Showcasing Our Finest Creations</h2>
     <h2 class="cs-title" style="margin-bottom: 4rem;">Some of Our Works</h2>
     <!-- <div class="max-h-150 overflow-auto"> -->
-    <div class="">
+    <div class="max-h-340 overflow-y-auto">
       <div class="columns-[400px]">
         {
           images.map((src, i) => (
@@ -71,7 +119,7 @@ const images: ImageMetadata[] = [
               aria-hidden="true"
               src={src}
               alt={`embroidery product ${i + 1}`}
-              class="mb-4"
+              class="mb-4 object-contain"
             />
           ))
         }
