@@ -4,12 +4,16 @@ import CTA from "@components/CTA.astro";
 import Landing from "@components/Landing.astro";
 import FAQ from "@components/FAQ.astro";
 import Gallery from "@components/Gallery.astro";
+import {TimelineSection} from "@components/TimelineSection.tsx";
+import { Image } from "astro:assets";
 import "../styles/global.css";
 
+import timeline1 from "@assets/images/merit-images/merit-0256.jpg";
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { getImage } from "astro:assets";
 const optimizedImage = await getImage({ src: landingImage, format: "avif" });
+
 ---
 
 <BaseLayout
@@ -21,7 +25,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <!-- <Landing 
+  <!-- <Landing
     title="About Us"
     image={optimizedImage}
   /> -->
@@ -69,6 +73,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       </div>
     </div>
   </section>
+
 
   <!-- ============================================ -->
   <!--                  Foundation                   -->
@@ -184,6 +189,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!-- ============================================ -->
   <!--                 SOME OF OUR WORKS            -->
   <!-- ============================================ -->
+  <TimelineSection client:visible />
 
   <Gallery limit={20}/>
 

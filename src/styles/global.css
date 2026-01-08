@@ -4,6 +4,8 @@
 
   --color-accent-primary: hsl(218, 47%, 47%);
 
+  --font-roboto:"Roboto", Arial, sans-serif;
+
   --animate-move-to-left: move-to-left 35s infinite linear;
   --animate-move-to-right: move-to-right 35s infinite linear;
   --animate-move-to-top: move-to-top 30s infinite linear;
