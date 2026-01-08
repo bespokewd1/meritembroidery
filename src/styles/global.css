@@ -100,3 +100,20 @@
 }
 
 
+
+.bg-grid {
+    background-color: #f9fafb;
+    background-image: linear-gradient(to right, #29333d14 1px, #00000000 1px), linear-gradient(to bottom, var(--color-slate-100) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transition: background-color 0.4s ease;
+    position: relative;
+}
+
+.bg-grid::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, transparent 40%, #f9fafb 100%);
+    pointer-events: none;
+    z-index: 0;
+}

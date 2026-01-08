@@ -3,8 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
-import { Image,Picture } from "astro:assets";
-
+import { Image, Picture } from "astro:assets";
 
 // import service1 from "@assets/images/services/s-1.png";
 import service1 from "@assets/images/merit-images/merit-0261.jpg";
@@ -109,18 +108,19 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
           </h1>
           <a
             href="/get-a-quote"
-            class="cs-button-solid cs-nav-button"
+            class="cs-button-solid cs-nav-button bg-accent-primary"
             style="margin-top: 32px;">Get A Quote</a
           >
         </div>
       </div>
       <div class="flex w-full items-center justify-start">
-        <Image 
+        <Image
           src={landingImage}
           alt="embroidery machines"
           loading="eager"
           fetchpriority="high"
-          class="flex object-cover h-[50vh] w-full items-center justify-start sm:h-[50vh] md:h-[100vh]" />
+          class="flex h-[50vh] w-full items-center justify-start object-cover sm:h-[50vh] md:h-[100vh]"
+        />
         <!-- <img -->
         <!--   class="flex h-[50vh] w-full items-center justify-start sm:h-[50vh] md:h-[100vh]" -->
         <!--   loading="lazy" -->
@@ -282,7 +282,9 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
-        <Picture src={aboutImg1}  formats={['avif', 'webp']}
+        <Picture
+          src={aboutImg1}
+          formats={["avif", "webp"]}
           pictureAttributes={{ class: "cs-picture cs-picture1" }}
           alt="leather embroidered cap"
         />
@@ -306,7 +308,9 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         <!--   /> -->
         <!-- </picture> -->
 
-        <Picture src={aboutImg2}  formats={['avif', 'webp']}
+        <Picture
+          src={aboutImg2}
+          formats={["avif", "webp"]}
           pictureAttributes={{ class: "cs-picture cs-picture2" }}
           alt="lazered cap with text elephanty and elephant logo"
         />
@@ -333,7 +337,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       <!-- Right Content Section-->
       <div class="cs-right">
         <span class="cs-topper">About Us</span>
-        <h2 class="cs-title">About Merit Embroidery</h2>
+        <h2 class="cs-title text-accent-primary">About Merit Embroidery</h2>
         <p class="cs-text">
           Merit Embroidery is one of the largest wholesale embroidery houses in
           Western Canada. We have been in the business of apparel decorating for
@@ -347,14 +351,18 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
           to all our small or high volume clients, delivering between 1,000 and
           2,000 decorated goods daily!
         </p>
-        <a href="/about" class="cs-button-solid">More About Us</a>
+        <a href="/about" class="cs-button-solid bg-accent-primary"
+          >More About Us</a
+        >
       </div>
     </div>
   </section>
 
-  <section class="mt-16 mb-8 flex flex-col items-center justify-center">
+  <section
+    class="bg-grid relative flex flex-col items-center justify-center bg-slate-50 pt-16 pb-8"
+  >
     <div class="text-center md:w-[50%]">
-      <h3 class="cs-title" style="color: var(--primary);">
+      <h3 class="cs-title text-accent-primary">
         Experience, Quality, and Reliability You Can Count On
       </h3>
     </div>
@@ -429,7 +437,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
               </div>
-              <p class="review-text">"{review.text}"</p>
+              <p class="review-text text-black">"{review.text}"</p>
               <p class="review-name">— {review.name}</p>
               <div class="flex justify-end text-2xl text-yellow-400">
                 <img

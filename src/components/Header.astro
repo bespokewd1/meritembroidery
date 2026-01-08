@@ -53,6 +53,7 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
                     aria-controls={`submenu-${entry.key}`}
                     class:list={[
                       "cs-li-link cs-dropdown-button squircle-full hover:bg-accent-primary focus-visible:bg-accent-primary eas px-3 py-2 transition-colors duration-400 ease-out before:hidden hover:text-white focus-visible:text-white",
+                      "text-[clamp(1rem,calc(1rem+1vw),1.125rem)]",
                       {
                         "bg-accent-primary text-white":
                           Astro.url.pathname.includes(entry.url),
@@ -69,6 +70,7 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
                     href={entry.url}
                     class:list={[
                       "cs-li-link squircle-full hover:bg-accent-primary focus-visible:bg-accent-primary px-3 py-2 transition-colors duration-400 ease-out before:hidden hover:text-white focus-visible:text-white",
+                      "text-[clamp(1rem,calc(1rem+1vw),1.125rem)]",
                       {
                         "bg-accent-primary text-white":
                           Astro.url.pathname === entry.url,
@@ -92,7 +94,7 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
                       <li class="cs-drop-li">
                         <a
                           href={child.url}
-                          class="cs-li-link cs-drop-link squircle-full hover:bg-accent-primary focus-visible:bg-accent-primary px-3 py-2 transition-colors ease-in before:hidden hover:text-white focus-visible:text-white"
+                          class="cs-li-link cs-drop-link squircle-full hover:bg-accent-primary focus-visible:bg-accent-primary px-3 py-2 text-[clamp(1rem,calc(1rem+1vw),1.125rem)] transition-colors ease-in before:hidden hover:text-white focus-visible:text-white"
                           aria-current={
                             Astro.url.pathname === child.url
                               ? "page"
