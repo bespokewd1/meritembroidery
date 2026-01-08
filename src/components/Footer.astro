@@ -10,9 +10,85 @@ const currentYear = getCurrentYear()
 <!--                   Footer                     -->
 <!-- ============================================ -->
 <footer id="footer">
-  <div class="container">
-    <div class="left-section">
-      <a class="logo" href="/"
+  <div class="w-[80%] lg:w-full flex flex-col justify-center items-center" style="margin:auto;">
+    <div class="flex flex-col md:flex-row justify-evenly items-start gap-8">
+      <div class="md:w-[25%] flex flex-col justify-start items-start">
+        <h1 class="text-xl" style="color:white;font-weight:bold;">Merit Embroidery</h1>
+        <p  style="color:white;margin-bottom: 1rem">& Printing LTD</p>
+        <p  style="color:white;">One of the oldest and largest embroidery, printing, and promotional decor companies in Western Canada. Serving businesses since 1992.</p>
+        <!--Social-->
+       
+              <ul class="cs-social flex flex-row justify-start items-center gap-4" style="padding:0; margin-top:1rem;">
+                  <li class="cs-social-li">
+                      <a href="https://www.facebook.com/meritemb" class="cs-social-link" aria-label="facebook" target="_blank" rel="noopener">
+                          <img class="cs-social-icon cs-default" src="/assets/images/facebook.png" alt="icon" loading="lazy" decoding="async" width="32" height="32" aria-hidden="true" style="filter: brightness(0) invert(1); ">
+                      </a>
+                  </li>
+                  <li class="cs-social-li">
+                      <a href="https://www.instagram.com/meritembroidery/" class="cs-social-link" aria-label="instagram" target="_blank" rel="noopener">
+                          <img class="cs-social-icon cs-default" src="/assets/images/instagram.png" alt="icon" loading="lazy" decoding="async" width="32" height="32" aria-hidden="true" style="filter: brightness(0) invert(1); ">
+                      </a>
+                  </li>
+              </ul>
+        
+      </div>
+      <div>
+        <h1 class="text-xl" style="color:white;font-weight:bold;margin-bottom: 1rem">Our Services</h1>
+        <ul>
+        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/#embroidery">Embroidery</a></li>
+        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/#screenPrinting">Screen Printing</a></li>
+        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/#digitalPrinting">Digital Printing</a></li>
+        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/#artworkServices">Artwork Services</a></li>
+        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/#laserEngraving">Laser Engraving</a></li>
+        </ul>
+      </div>
+      <div>
+         <h1 class="text-xl" style="color:white;font-weight:bold;margin-bottom: 1rem">Quick Links</h1>
+         <ul>
+        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/">Home</a></li>
+        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/about">About Us</a></li>
+        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/portfolio">Gallery</a></li>
+        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/contactUs">Contact Us</a></li>
+        
+         </ul>
+      </div>
+      <div>
+         <h1 class="text-xl" style="color:white;font-weight:bold;margin-bottom: 1rem">Contact Us</h1>
+         <ul>
+        <li class="cs-li flex items-center py-2 text-white">
+          <img src="src/assets/images/location-icon.png" alt="" class="w-8 h-8 mr-2"> 
+          <a href="">3954 76 Ave NW T6B 2P1, Edmonton, AB</a>
+        </li>
+              <li class="cs-li flex items-center py-2 text-white">
+          <img src="src/assets/images/phone-icon.png" alt="" class="w-8 h-8 mr-2">
+          <a href="tel:780-405-3700">Manni Harman – 780-405-3700</a>
+        </li>
+         <li class="cs-li flex items-center py-2 text-white">
+          <img src="src/assets/images/phone-icon.png" alt="" class="w-8 h-8 mr-2">
+          <a href="tel:+1 780-414-6109">Office – +1 780-414-6109</a>
+        </li>
+        <li class="cs-li flex items-center py-2 text-white">
+          <img src="src/assets/images/email-icon.png" alt="" class="w-8 h-8 mr-2">
+          <a href="mailto:sharan@meritembroidery.com">sharan@meritembroidery.com</a>
+        </li>
+        
+         </ul>
+      </div>
+    </div>
+    <div class="w-full flex flex-wrap flex-col justify-center items-center md:px-72 md:flex-row md:justify-around md:items-start"  style="margin-top:1rem;border-top: .5px solid rgba(255,255,255,0.4);">
+      <p  style="color:white;margin-top:.5rem">✓ Serving Canada Since 1992</p>
+      <p style="color:white;margin-top:.5rem">✓ State-of-the-Art Equipment</p>
+      <p style="color:white;margin-top:.5rem">✓ Fast Turnaround</p>
+      <p style="color:white;margin-top:.5rem">✓ 100% Satisfaction Guaranteed</p>
+    </div>
+    <div class="w-full flex flex-col justify-center items-center   md:justify-center md:items-center"  style="margin-top:1rem;border-top: .5px solid rgba(255,255,255,0.4);">
+      <h1  style="color:white;margin-top:.5rem">Digital Marketing by Bespoke Web Design</h1>
+      <h1  style="color:white;">© 2026 Merit Embroidery & Printing LTD. All rights reserved.</h1>
+    </div>
+  </div>
+  <!-- <div class="container">
+    <div class="left-section"> -->
+      <!-- <a class="logo" href="/"
         ><img
           loading="lazy"
           decoding="async"
@@ -21,30 +97,18 @@ const currentYear = getCurrentYear()
           width="264"
           height="78"
         /></a
-      >
-      <!--Social-->
-            <ul class="cs-social">
-                <li class="cs-social-li">
-                    <a href="https://www.facebook.com/meritemb" class="cs-social-link" aria-label="facebook" target="_blank" rel="noopener">
-                        <img class="cs-social-icon cs-default" src="/assets/images/facebook.png" alt="icon" loading="lazy" decoding="async" width="12" height="12" aria-hidden="true">
-                    </a>
-                </li>
-                <li class="cs-social-li">
-                    <a href="https://www.instagram.com/meritembroidery/" class="cs-social-link" aria-label="instagram" target="_blank" rel="noopener">
-                        <img class="cs-social-icon cs-default" src="/assets/images/instagram.png" alt="icon" loading="lazy" decoding="async" width="12" height="12" aria-hidden="true">
-                    </a>
-                </li>
-            </ul>
-          <br>
-          <div class="cta">
+      > -->
+      
+          <!-- <br> -->
+          <!-- <div class="cta">
             <h2>Need Custom Apparel or Promo Gear?</h2>
             <p>
               Let’s make it happen — fast, professional, and done right.
             </p>
             <a href="/contact" class="cs-button-solid">Get a Quote</a>
-          </div>
+          </div> -->
           
-    </div>
+    <!-- </div>
     <div class="right-section">
       <div class="lists">
         <ul>
@@ -101,14 +165,14 @@ const currentYear = getCurrentYear()
       <span>© Copyright 2025 Merit Embroidery.</span>
       <span>Designed and Hand Coded by</span>
       <a href="https://bespokewebdesign.ca/" target="_blank" rel="noopener" style="color: var(--primary);margin: 0 .5rem 0 .5rem;font:bold;font-size: large;">Bespoke Web Design Edmonton</a>
-      <!-- <span class="copyright"> Copyright {currentYear} - Present</span> -->
-    </div>
+      <span class="copyright"> Copyright {currentYear} - Present</span> -->
+    <!-- </div>
     <div class="flex flex-nowrap justify-center items-center">
       <a href="/privacy-policy" style="margin-right: 1rem;">Privacy Policy</a>
       <p>  |  </p>
       <a href="/terms-of-service" style="margin-left: 1rem;">  Terms of Service</a>
     </div>
-  </div>
+  </div> -->
 </footer>
 
 <style lang="less">
@@ -117,8 +181,8 @@ const currentYear = getCurrentYear()
   #footer {
     font-size: ~"min(4vw, 1.2em)";
     padding: (84/16rem) 0 (20/16rem);
-    background: #fff;
-    border-top: 3px solid var(--primary);
+    background: var(--secondary);
+    // border-top: 3px solid var(--primary);
 
     .left-section {
       text-align: center;
@@ -206,28 +270,31 @@ const currentYear = getCurrentYear()
         }
 
         .cs-social-link {
-            width: (32/16rem);
-            height: (32/16rem);
-            // background-color: var(--primary);
-            border: 2px solid var(--primary);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.09); 
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, filter 0.3s;
+
+            .cs-social-icon {
+                filter: brightness(0) invert(1); 
+                transition: filter 0.3s;
+            }
+
             &:hover {
-                background-color: var(--primary);
+                background-color: red; 
 
                 .cs-social-icon {
-                    filter: brightness(0) invert(1);
-                    opacity: 1;
-                    border: none;
+                    filter: brightness(0); 
                 }
             }
         }
-
+       
         .cs-social-icon {
-            width: (16/16rem);
+            width: 32px;
             height: auto;
             display: block;
             // opacity: 0.5;
@@ -404,6 +471,7 @@ const currentYear = getCurrentYear()
           }
 
           li {
+            list-style: none;
             a {
               position: relative;
 
@@ -440,6 +508,9 @@ const currentYear = getCurrentYear()
         display: inline-block;
       }
     }
+  }
+  .cs-li {
+      list-style: none;
   }
 }
 
