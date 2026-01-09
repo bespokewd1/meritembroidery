@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import type { HTMLAttributes } from "astro/types";
+import ButtonLink from "./Ui/ButtonLink.astro";
 
 type Props = HTMLAttributes<"section"> & {
-  showLink?: boolean
-  limit?:number
+  showLink?: boolean;
+  limit?: number;
 };
-const { class: className,showLink = true, limit, ...props } = Astro.props;
+const { class: className, showLink = true, limit, ...props } = Astro.props;
 
 // Load everything in these folders:
 const galleryImports = import.meta.glob(
@@ -14,7 +15,7 @@ const galleryImports = import.meta.glob(
     "/src/assets/images/gallery/*.{jpg,jpeg,png,webp,avif}",
     "/src/assets/images/merit-images/*.{jpg,jpeg,png,webp,avif}",
   ],
-  { eager: true }
+  { eager: true },
 );
 
 // Convert module map -> array of ImageMetadata
@@ -24,7 +25,7 @@ const images = Object.values(galleryImports)
   .sort((a: any, b: any) =>
     String(a.src).localeCompare(String(b.src), undefined, {
       numeric: true,
-    })
+    }),
   );
 
 const normalizedLimit =
@@ -32,8 +33,9 @@ const normalizedLimit =
     ? Math.floor(limit)
     : undefined;
 
-const displayedImages = normalizedLimit ? images.slice(0, normalizedLimit) : images;
-
+const displayedImages = normalizedLimit
+  ? images.slice(0, normalizedLimit)
+  : images;
 ---
 
 <section id="gallery" class:list={[className]} {...props}>
@@ -45,21 +47,24 @@ const displayedImages = normalizedLimit ? images.slice(0, normalizedLimit) : ima
       <div class="columns-[400px]">
         {
           displayedImages.map((src, i) => (
-          <div class="mb-4 break-inside-avoid [page-break-inside:avoid] [-webkit-column-break-inside:avoid] inline-block">
-            <Image
-              aria-hidden="true"
-              src={src}
-              alt={`embroidery product ${i + 1}`}
-              class="object-contain w-full block "
-            />
-        </div>
+            <div class="mb-4 inline-block break-inside-avoid [-webkit-column-break-inside:avoid] [page-break-inside:avoid]">
+              <Image
+                aria-hidden="true"
+                src={src}
+                alt={`embroidery product ${i + 1}`}
+                class="block w-full object-contain"
+              />
+            </div>
           ))
         }
       </div>
     </div>
-    {showLink && 
-
-      <a href="/portfolio" class="cs-button-solid" title="check out our portfolio">Discover More</a>
+    {
+      showLink && (
+        <ButtonLink href="/portfolio" title="check out our portfolio">
+          Discover More
+        </ButtonLink>
+      )
     }
   </div>
 </section>
