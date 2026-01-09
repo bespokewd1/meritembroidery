@@ -27,16 +27,16 @@ export const HoverEffect = ({
       navigate(link);
 
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          // const id = link.substring(link.indexOf("#") + 1);
-          const element = document.getElementById(id);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+        // const id = link.substring(link.indexOf("#") + 1);
+        const element = document.getElementById(id);
+        if (element) {
+          console.log("Scrolling to element with id:", id);
+          element.scrollIntoView({ behavior: "smooth" });
 
-            // const url = `${path}#${id}`;
-            // history.replaceState(null, "", url);
-          }
-        });
+          console.log("Updating URL hash to:", `#${id}`);
+          const url = `${path}#${id}`;
+          history.replaceState(null, "", url);
+        }
       });
     }
   };
