@@ -26,12 +26,12 @@ const {
 
 <section
   id={anchorId}
-  class:list={cn("mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8", className)}
+  class:list={cn("px-4 py-12 sm:px-6 lg:px-8", className)}
   {...props}
 >
   <div
     class:list={cn(
-      "flex flex-col items-center gap-8 lg:flex-row",
+      "mx-auto flex max-w-7xl flex-col items-center gap-8 lg:flex-row",
       isReverse && "lg:flex-row-reverse",
     )}
   >

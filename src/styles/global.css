@@ -117,7 +117,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, transparent 0%, transparent 40%, #f9fafb 100%);
+    background: radial-gradient(ellipse at center, transparent 0%, transparent 60%, #f9fafb 100%);
     pointer-events: none;
     z-index: 0;
 }

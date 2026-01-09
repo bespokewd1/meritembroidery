@@ -130,6 +130,60 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   </section>
 
   <!-- ============================================ -->
+  <!--                Trust badges                  -->
+  <!-- ============================================ -->
+  <section
+    class="bg-grid relative flex flex-col items-center justify-center bg-slate-50 pt-16 pb-8"
+  >
+    <div class="text-center md:w-[50%]">
+      <h3 class="cs-title text-accent-primary">
+        Experience, Quality, and Reliability You Can Count On
+      </h3>
+    </div>
+
+    <div
+      class="flex flex-wrap justify-center md:w-[80%] md:flex-wrap md:justify-around md:gap-4"
+      style="margin-top: 2rem;"
+    >
+      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
+        <Image
+          src={years}
+          alt="30 years badge"
+          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
+        />
+      </div>
+      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
+        <Image
+          src={canada}
+          alt="Canada badge"
+          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
+        />
+      </div>
+      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
+        <Image
+          src={attention}
+          alt="Attention badge"
+          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
+        />
+      </div>
+      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
+        <Image
+          src={onestop}
+          alt="One stop badge"
+          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
+        />
+      </div>
+      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
+        <Image
+          src={satisfaction}
+          alt="Satisfaction badge"
+          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
   <!--                   Services                   -->
   <!-- ============================================ -->
   <section id="services" class="mb-0">
@@ -138,6 +192,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     </div>
   </section>
   <ServiceSection
+    class="bg-accent-primary/5"
     imageSrc={service1}
     imageAlt="Custom Logo Embroidery"
     features={[
@@ -212,6 +267,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <ServiceSection
     id="digitalPrinting"
+    class="bg-accent-primary/5"
     imageSrc={service3}
     imageAlt="Digital Printing & Digital Patches"
     features={[
@@ -281,6 +337,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <ServiceSection
     id="laserEngraving"
+    class="bg-accent-primary/5"
     imageSrc={service5}
     imageAlt="Laser Engraving"
     features={[
@@ -314,10 +371,15 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   </ServiceSection>
 
   <!-- ============================================ -->
+  <!--                   Gallery                    -->
+  <!-- ============================================ -->
+  <ApplicationLogosCarousel />
+
+  <!-- ============================================ -->
   <!--                 About Us                     -->
   <!-- ============================================ -->
 
-  <section id="sbs" class="bg-slate-100">
+  <section id="sbs" class="bg-accent-primary/5">
     <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
@@ -358,71 +420,14 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
           to all our small or high volume clients, delivering between 1,000 and
           2,000 decorated goods daily!
         </p>
-        <a href="/about" class="cs-button-solid bg-accent-primary"
-          >More About Us</a
-        >
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="bg-grid relative flex flex-col items-center justify-center bg-slate-50 pt-16 pb-8"
-  >
-    <div class="text-center md:w-[50%]">
-      <h3 class="cs-title text-accent-primary">
-        Experience, Quality, and Reliability You Can Count On
-      </h3>
-    </div>
-
-    <div
-      class="flex flex-wrap justify-center md:w-[80%] md:flex-wrap md:justify-around md:gap-4"
-      style="margin-top: 2rem;"
-    >
-      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <Image
-          src={years}
-          alt="30 years badge"
-          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
-        />
-      </div>
-      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <Image
-          src={canada}
-          alt="Canada badge"
-          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
-        />
-      </div>
-      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <Image
-          src={attention}
-          alt="Attention badge"
-          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
-        />
-      </div>
-      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <Image
-          src={onestop}
-          alt="One stop badge"
-          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
-        />
-      </div>
-      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <Image
-          src={satisfaction}
-          alt="Satisfaction badge"
-          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
-        />
+        <ButtonLink href="/about"> More About Us </ButtonLink>
       </div>
     </div>
   </section>
   <!-- ============================================ -->
-  <!--                   Gallery                    -->
-  <!-- ============================================ -->
-  <ApplicationLogosCarousel />
-
   <!--                  Reviews                     -->
   <!-- ============================================ -->
-  <section id="reviews-section" class="bg-slate-100">
+  <section id="reviews-section">
     <div class="reviews-container">
       <!-- Header -->
       <div class="reviews-header">
@@ -506,93 +511,23 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
       <!-- CTA -->
       <div class="reviews-cta">
-        <a
+        <ButtonLink
           href="https://www.google.com/maps/place/Merit+Embroidery+%26+Printing+Ltd./@53.512899,-113.4059598,17z/data=!4m18!1m9!3m8!1s0x53a0186ce841d67d:0x43c318ffd01724a5!2sMerit+Embroidery+%26+Printing+Ltd.!8m2!3d53.512899!4d-113.4033849!9m1!1b1!16s%2Fg%2F1trrcwgv!3m7!1s0x53a0186ce841d67d:0x43c318ffd01724a5!8m2!3d53.512899!4d-113.4033849!9m1!1b1!16s%2Fg%2F1trrcwgv?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
+          class={"py-0 rounded-full corner-shape"}
         >
           View More Reviews
-        </a>
+        </ButtonLink>
       </div>
     </div>
   </section>
-  <!-- class={"after:bg-slate-100"}  -->
-  <CTA />
   <!-- ============================================ -->
   <!--                    FAQ                       -->
   <!-- ============================================ -->
   <FAQ />
 
-  <section id="faq-351" class="bg-slate-100">
-    <div class="cs-container">
-      <div class="cs-content">
-        <span class="cs-topper">Frequently Asked Questions</span>
-        <h2 class="cs-title">You have Questions? We have Answers!</h2>
-      </div>
-      <ul class="cs-faq-group">
-        <!-- Active class added as default -->
-        <li class="cs-faq-item active">
-          <button class="cs-button">
-            <span class="cs-button-text">
-              What products can you customize?
-            </span>
-          </button>
-          <p class="cs-item-p">
-            We customize apparel such as t-shirts, hoodies, jackets, hats, bags,
-            and uniforms, as well as promotional items. Have something specific?
-            Email <a href="mailto:info@meritembroidery.com"
-              >info@meritembroidery.com</a
-            >
-            or call (780) 414-6109.
-          </p>
-        </li>
-        <li class="cs-faq-item">
-          <button class="cs-button">
-            <span class="cs-button-text"> How do I get a quote? </span>
-          </button>
-          <p class="cs-item-p">
-            You can email, call, or use our Get a Quote form. We will review
-            your request and send a personalized quote.
-          </p>
-        </li>
-        <li class="cs-faq-item">
-          <button class="cs-button">
-            <span class="cs-button-text">
-              What file formats do you accept?
-            </span>
-          </button>
-          <p class="cs-item-p">
-            We accept PNG, JPEG, PDF, AI, and EPS files. Need help? Contact us
-            and we’ll assist you.
-          </p>
-        </li>
-      </ul>
-      <!--Added second UL, this allows you to open an FAQ item on each side without messing up the flexbox for the other -->
-      <ul class="cs-faq-group">
-        <li class="cs-faq-item">
-          <button class="cs-button">
-            <span class="cs-button-text">
-              How long does it take to complete an order?
-            </span>
-          </button>
-          <p class="cs-item-p">
-            Turnaround time depends on the size and complexity of the order.
-            Small orders typically take [X] days, and larger orders may take
-            [X–X] weeks. Rush orders may be possible — just reach out.
-          </p>
-        </li>
-        <li class="cs-faq-item">
-          <button class="cs-button">
-            <span class="cs-button-text"> Can I request a proof? </span>
-          </button>
-          <p class="cs-item-p">
-            Yes! Digital proofs are provided for review before production.
-            Adjustments can be made as needed.
-          </p>
-        </li>
-      </ul>
-    </div>
-  </section>
+  <CTA />
 </BaseLayout>
 <script>
   const floatingButtons = document.getElementById("floating-buttons");
