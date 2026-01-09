@@ -153,10 +153,19 @@ import ButtonLink from "./Ui/ButtonLink.astro";
       const anchor = target.closest("a");
       if (anchor) {
         const href = anchor.getAttribute("href");
-        if (href && href.startsWith("/")) {
-          console.log("Navigating to:", href);
+        if (href && href.startsWith("/services#")) {
+          console.log("Navigating to this service:", href);
           event.preventDefault();
           navigate(href);
+
+          setTimeout(() => {
+            const id = href.substring(href.indexOf("#") + 1);
+            const element = document.getElementById(id);
+            if (element) {
+              console.log("Scrolling to element with ID:", id);
+              element.scrollIntoView({ behavior: "smooth" });
+            }
+          }, 150);
         }
       }
     });
