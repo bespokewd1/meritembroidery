@@ -20,26 +20,6 @@ export const HoverEffect = ({
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const handleClick = (e: React.MouseEvent, link: string) => {
-    if (link.startsWith("/services#")) {
-      e.preventDefault();
-      const [path, id] = link.split("#");
-      navigate(link);
-
-      requestAnimationFrame(() => {
-        const id = link.substring(link.indexOf("#") + 1);
-        const element = document.getElementById(id);
-        if (element) {
-          console.log("Scrolling to element with id:", id);
-          element.scrollIntoView({ behavior: "smooth" });
-
-          console.log("Updating URL hash to:", `#${id}`);
-          const url = `${path}#${id}`;
-          history.replaceState(null, "", url);
-        }
-      });
-    }
-  };
   return (
     <div
       className={cn(

@@ -169,10 +169,8 @@ import ButtonLink from "./Ui/ButtonLink.astro";
           const el = document.getElementById(id);
           if (!el) return;
 
-          console.log("Scrolling to element:", el);
           el.scrollIntoView({ behavior: "smooth" });
 
-          console.log("Updating URL hash to:", `#${id}`);
           // Put the hash in the URL (no extra history entry)
           history.replaceState(null, "", `${path}#${id}`);
         });
