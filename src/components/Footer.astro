@@ -129,25 +129,29 @@ const currentYear = getCurrentYear();
         </h1>
         <ul>
           <li class="cs-li flex items-center py-2 text-white">
-            <Icon name="tabler:map-pin" class="mr-2 h-8 w-8 text-(--primary)" />
-            <a href="">3954 76 Ave NW T6B 2P1, Edmonton, AB</a>
-          </li>
-          <li class="cs-li flex items-center py-2 text-white">
-            <Icon name="tabler:phone" class="mr-2 h-8 w-8 text-(--primary)" />
-            <a href="tel:780-405-3700">Manni Harman – 780-405-3700</a>
-          </li>
-          <li class="cs-li flex items-center py-2 text-white">
-            <Icon
-              name="tabler:building"
-              class="mr-2 h-8 w-8 text-(--primary)"
-            />
-            <a href="tel:+1 780-414-6109">Office – +1 780-414-6109</a>
-          </li>
-          <li class="cs-li flex items-center py-2 text-white">
-            <Icon name="tabler:mail" class="mr-2 h-8 w-8 text-(--primary)" />
-            <a href="mailto:sharan@meritembroidery.com"
-              >sharan@meritembroidery.com</a
+            <Icon name="tabler:map-pin" class="mr-2 h-8 w-8 text-white" />
+            <!-- <a href="">3954 76 Ave NW T6B 2P1, Edmonton, AB</a> -->
+            <a href={client.address.mapLink}
+              >{client.address.lineOne}, {client.address.lineTwo}</a
             >
+          </li>
+          <li class="cs-li flex items-center py-2 text-white">
+            <Icon name="tabler:phone" class="mr-2 h-8 w-8 text-white" />
+            <a href={`tel:${client.phoneForTel}`}
+              >Manni Harman – {client.phoneFormatted}</a
+            >
+          </li>
+          <li class="cs-li flex items-center py-2 text-white">
+            <Icon name="tabler:building" class="mr-2 h-8 w-8 text-white" />
+            <a href="tel:+1 780-414-6109">Office – +1 {client.phoneForTel}</a>
+          </li>
+          <li class="cs-li flex items-center py-2 text-white">
+            <Icon name="tabler:mail" class="mr-2 h-8 w-8 text-white" />
+            <a href={`mailto:${client.email}`}>{client.email}</a>
+
+            <!-- <a href="mailto:sharan@meritembroidery.com"
+              >sharan@meritembroidery.com</a
+            > -->
           </li>
         </ul>
       </div>

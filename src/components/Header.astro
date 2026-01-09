@@ -1,7 +1,9 @@
 ---
 import navData from "@data/navData.json";
 import { Icon } from "astro-icon/components";
+import client from "@data/client.json";
 import DarkModeToggle from "@components/DarkModeToggle.astro";
+import ButtonLink from "./Ui/ButtonLink.astro";
 ---
 
 <!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
@@ -41,7 +43,7 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
             navData.map((entry) => (
               <li
                 class:list={[
-                  "cs-li",
+                  "cs-li text-black",
                   { "cs-dropdown": entry.children?.length > 0 },
                 ]}
               >
@@ -91,7 +93,7 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
                     class="cs-drop-ul border-accent-primary"
                   >
                     {entry.children.map((child) => (
-                      <li class="cs-drop-li">
+                      <li class="cs-drop-li text-black">
                         <a
                           href={child.url}
                           class="cs-li-link cs-drop-link squircle-full hover:bg-accent-primary focus-visible:bg-accent-primary px-3 py-2 text-[clamp(1rem,calc(1rem+1vw),1.125rem)] transition-colors ease-in before:hidden hover:text-white focus-visible:text-white"
@@ -110,6 +112,25 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
               </li>
             ))
           }
+
+          <li
+            class="cs-li flex items-center border-t-2 border-slate-200 pt-3 text-black lg:hidden"
+          >
+            <Icon name="tabler:phone" class="mr-2 h-8 w-8 text-black" />
+            <a href={`tel:${client.phoneForTel}`}
+              >Manni Harman – {client.phoneFormatted}</a
+            >
+          </li>
+          <li class="cs-li flex items-center text-black lg:hidden">
+            <Icon name="tabler:mail" class="mr-2 h-8 w-8 text-black" />
+            <a href={`mailto:${client.email}`}>{client.email}</a>
+          </li>
+
+          <li class="cs-li flex items-center text-black lg:hidden">
+            <ButtonLink href="/get-a-quote" class={"block max-w-120 w-full"}>
+              Get A Quote
+            </ButtonLink>
+          </li>
         </ul>
       </div>
     </nav>
@@ -122,6 +143,25 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
     <!-- <DarkModeToggle /> -->
   </div>
 </header>
+<script>
+  import { navigate } from "astro:transitions/client";
+
+  // Navigate to the selected option automatically.
+  document.addEventListener("astro:page-load", () => {
+    document.addEventListener("click", (event) => {
+      const target = event.target as Element;
+      const anchor = target.closest("a");
+      if (anchor) {
+        const href = anchor.getAttribute("href");
+        if (href && href.startsWith("/")) {
+          console.log("Navigating to:", href);
+          event.preventDefault();
+          navigate(href);
+        }
+      }
+    });
+  });
+</script>
 
 <style lang="less">
   html {
@@ -180,8 +220,9 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
         .cs-ul-wrapper {
           opacity: 1;
           visibility: visible;
-          transform: scaleX(1);
+          transform: scaleY(1);
           transition-delay: 0.2s;
+          transform-origin: bottom;
         }
 
         .cs-li {
@@ -303,7 +344,8 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
       }
 
       .cs-ul-wrapper {
-        height: 100vh;
+        height: fit-content;
+        width: 100%;
         background-color: #fff;
         box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
         opacity: 0;
@@ -314,20 +356,21 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
         left: auto;
         z-index: -1;
         overflow: hidden;
-        transform: scaleX(0);
+        transform: scaleY(0);
         transition:
           transform 0.4s,
           opacity 0.3s;
-        transform-origin: top right;
+        transform-origin: bottom left;
       }
 
       .cs-ul {
-        width: auto;
+        width: 100%;
+        height: 100%;
         min-width: 40%;
-        height: 65vh;
         margin: 0;
         /* 28px - 40px */
-        padding: (48/16rem) clamp(1.75rem, 3vw, 2.5rem) (32/16rem) (70/16rem);
+        // padding: (48/16rem) clamp(1.75rem, 3vw, 2.5rem) (32/16rem) (70/16rem);
+        padding: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -337,7 +380,7 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
       }
 
       .cs-li {
-        text-align: right;
+        text-align: left;
         list-style: none;
         width: 100%;
         margin-right: 0;
@@ -460,6 +503,7 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
             opacity: 1;
             visibility: visible;
             transform: scale(1);
+            transform-origin: left top;
           }
 
           .cs-drop-link {
@@ -492,13 +536,13 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
         margin: 0;
         box-sizing: border-box;
         padding: 0 (24/16rem) 0 (24/16rem);
-        background-color: var(--primary);
+        background-color: var(--color-accent-primary);
         opacity: 0;
         display: flex;
         visibility: hidden;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-end;
+        align-items: flex-start;
         gap: (12/16rem);
         overflow: hidden;
         transform: scale(0);
@@ -509,7 +553,13 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
           opacity 0.3s,
           transform 0.3s,
           visibility 0.3s;
-        transform-origin: top right;
+        transform-origin: top left;
+
+        border-radius: (16/16rem);
+        @supports (corner-shape: squircle) {
+          corner-shape: squircle;
+          border-radius: (32/16rem);
+        }
       }
 
       .cs-drop-li {
