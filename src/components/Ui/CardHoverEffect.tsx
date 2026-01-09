@@ -1,5 +1,6 @@
 import cn from "@utils/cn";
 import { AnimatePresence, motion } from "motion/react";
+import { navigate } from "astro:transitions/client";
 
 import { useState } from "react";
 
@@ -19,6 +20,21 @@ export const HoverEffect = ({
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  const handleClick = (e: React.MouseEvent, link: string) => {
+    if (link.startsWith("/services#")) {
+      e.preventDefault();
+      navigate(link);
+
+      setTimeout(() => {
+        const id = link.substring(link.indexOf("#") + 1);
+        const element = document.getElementById(id);
+        if (element) {
+          console.log("Scrolling to element with ID:", id);
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 150);
+    }
+  };
   return (
     <div
       className={cn(
@@ -33,6 +49,7 @@ export const HoverEffect = ({
           className="group relative block h-full w-full p-2"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
+          onClick={(e) => handleClick(e, item.link)}
           aria-label={`Link to ${item.title} service page`}
         >
           <AnimatePresence>
