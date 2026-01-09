@@ -5,20 +5,18 @@ import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
 import { Image, Picture } from "astro:assets";
 
-// import service1 from "@assets/images/services/s-1.png";
 import service1 from "@assets/images/merit-images/merit-0261.jpg";
-// import service2 from "@assets/images/services/s-2.png";
 import service2 from "@assets/images/merit-images/merit-0256.jpg";
-// import service3 from "@assets/images/services/s-3.png";
 import service3 from "@assets/images/merit-images/merit-0283.jpg";
-// import service4 from "@assets/images/services/s-4.png";
 import service4 from "@assets/images/gallery/3.jpg";
-// import service5 from "@assets/images/services/s-5.png";
 import service5 from "@assets/images/merit-images/merit-0321.jpg";
-// import service6 from "@assets/images/services/s-6.png";
 import service6 from "@assets/images/merit-images/merit-0318.jpg";
 
-
+import years from "@assets/images/30years.png";
+import canada from "@assets/images/canada.png";
+import attention from "@assets/images/attention.png";
+import onestop from "@assets/images/onestop.png";
+import satisfaction from "@assets/images/satisfaction.png";
 
 import BlazeSlider from "blaze-slider";
 import "blaze-slider/dist/blaze.css";
@@ -47,6 +45,7 @@ import { getImage } from "astro:assets";
 import Gallery from "@components/Gallery.astro";
 import ServiceSection from "@components/ServiceSection.astro";
 import ApplicationLogosCarousel from "@components/ApplicationLogosCarousel.astro";
+import ButtonLink from "@components/Ui/ButtonLink.astro";
 const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 ---
 
@@ -60,33 +59,11 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!-- ============================================ -->
 
   <section id="hero" style="width: 100%;margin: 0;padding: 0;">
-    <!-- <div class="cs-container">
-      <div class="cs-flex-group">
-        <span class="cs-topper">Merit Embroidery</span>
-        <h1 class="cs-title">Proudly producing Edmonton’s top-quality in-house embroidery, screen printing, and apparel decoration.</h1>
-        <p class="cs-text">
-          Turning your visions into unique, impactful branded apparel.
-        </p>
-        <a href="/about" class="cs-button-solid">Explore More</a>
-        <a href="/contact" class="cs-button-transparent">
-          <img
-            class="cs-img"
-            loading="lazy"
-            decoding="async"
-            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJtMjAgOGwtOCA1bC04LTVWNmw4IDVsOC01bTAtMkg0Yy0xLjExIDAtMiAuODktMiAydjEyYTIgMiAwIDAgMCAyIDJoMTZhMiAyIDAgMCAwIDItMlY2YTIgMiAwIDAgMC0yLTIiLz48L3N2Zz4="
-            alt="play icon"
-            width="17"
-            height="17"
-          />
-          Get in Touch
-        </a>
-      </div>
-    </div> -->
     <div
       class="flex w-full flex-col items-center justify-center sm:flex-row"
       style="width: 100%;padding: 0px;"
     >
-      <div class="flex flex-col sm:h-[50vh] md:h-[100vh]" style="width: 100%;">
+      <div class="flex flex-col sm:h-[50vh] md:h-screen" style="width: 100%;">
         <div
           class="flex w-full items-center justify-center bg-red-500 sm:h-[50%]"
           style="padding: 2rem 0 2rem 0;"
@@ -121,43 +98,17 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
           alt="embroidery machines"
           loading="eager"
           fetchpriority="high"
-          class="flex h-[50vh] w-full items-center justify-start object-cover sm:h-[50vh] md:h-[100vh]"
+          class="flex h-[50vh] w-full items-center justify-start object-cover sm:h-[50vh] md:h-screen"
         />
-        <!-- <img -->
-        <!--   class="flex h-[50vh] w-full items-center justify-start sm:h-[50vh] md:h-[100vh]" -->
-        <!--   loading="lazy" -->
-        <!--   decoding="async" -->
-        <!--   src="/assets/images/background-img.jpg" -->
-        <!--   alt="play icon" -->
-        <!--   style="object-fit: cover;" -->
-        <!-- /> -->
       </div>
     </div>
-    <!-- Background Image -->
-    <!-- We can't use Astro <Picture /> as it does not support multiple sources -->
-    <!-- <picture class="cs-picture">
-      <source
-        media="(max-width: 600px)"
-        srcset="/assets/images/hero-m.webp"
-      />
-      <source media="(min-width: 601px)" srcset="/assets/images/hero.jpg" />
-      <img
-        aria-hidden="true"
-        decoding="async"
-        src={optimizedImage.src}
-        alt="new home"
-        width="2500"
-        height="1667"
-        loading="eager"
-      />
-    </picture> -->
     <div
       id="floating-buttons"
-      class="fixed bottom-4 left-1/2 z-50 flex hidden w-full -translate-x-1/2 justify-center gap-3 sm:hidden"
+      class="fixed bottom-4 left-1/2 z-50 hidden w-full -translate-x-1/2 justify-center gap-3 sm:hidden"
     >
       <a
         href="tel:(780) 414-6109"
-        class="flex h-8 w-[40%] items-center justify-center rounded-2xl bg-[var(--primary)] px-4 py-3 text-xs font-medium text-white shadow-lg"
+        class="flex h-8 w-[40%] items-center justify-center rounded-2xl bg-(--primary) px-4 py-3 text-xs font-medium text-white shadow-lg"
       >
         Call Now
       </a>
@@ -172,7 +123,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     <!-- Back to Top Button -->
     <button
       id="backToTop"
-      class="fixed right-2 bottom-15 z-50 hidden h-8 w-8 rounded-full bg-[var(--primary)] p-3 font-bold text-white shadow-md lg:hidden"
+      class="fixed right-2 bottom-15 z-50 hidden h-8 w-8 rounded-full bg-(--primary) p-3 font-bold text-white shadow-md lg:hidden"
     >
       ↑
     </button>
@@ -186,403 +137,182 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       <h3 class="cs-title">Services</h3>
     </div>
   </section>
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="embroidery">
-    <div class="flex flex-col lg:flex-row items-center gap-8">
-      <!-- Image -->
-      <div class="flex-shrink-0 w-full lg:w-1/2">
-        <Image src={service1} alt="Custom Logo Embroidery" class="rounded-lg shadow-lg w-full object-cover">
-      </div>
-
-      <!-- Text content -->
-      <div class="w-full lg:w-1/2">
-        <h2 class="text-2xl sm:text-2xl font-bold text-700 mb-4" style="color: var(--color-accent-primary);">
-          Custom Logo Embroidery & Embroidered Patches
-        </h2>
-        <p class="text-gray-600 mb-6">
-          With over three decades of experience, Merit Embroidery & Printing delivers premium-quality embroidery for apparel, headwear, bags, workwear, and more. Using Barudan multi-head commercial machines and in-house digitizing, we ensure every stitch meets the highest standards — whether it’s a dozen shirts or thousands of hats.
-
-With over 40 sewing heads, we produce thousands of embroidered goods daily — each piece crafted for precision, texture, and lasting impact.
-        </p>
-
-        <!-- Features -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-gray-700">
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Flat embroidery for classic professional look
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            3D/Puff embroidery for bold, dimensional designs
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            FR (Flame Resistant) embroidery for safety wear
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Appliqué techniques for large designs
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Custom patches with up to 15 thread colors
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Compatible with apparel, headwear, bags, leather, towels
-          </div>
-        </div>
-        <h2>Products we Customize</h2>
-        <!-- Products Tags -->
-        <div class="flex flex-wrap gap-2 mb-6">
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Corporate apparel</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Workwear</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Headwear</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Bags</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Leather goods</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Towels & throws</span>
-        </div>
-
-        <!-- Button -->
-        <a href="/contactUs" class="inline-block bg-[var(--primary)] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[var(--color-accent-primary)] transition-colors">
-          Request a Quote
-        </a>
-      </div>
-    </div>
-  </section>
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="screenPrinting">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
-      <!-- Image -->
-      <div class="flex-shrink-0 w-full lg:w-1/2">
-        <Image src={service2} alt="Custom Logo Embroidery" class="rounded-lg shadow-lg w-full object-cover">
-      </div>
-
-      <!-- Text content -->
-      <div class="w-full lg:w-1/2">
-        <h2 class="text-2xl sm:text-2xl font-bold text-700 mb-4" style="color: var(--color-accent-primary);">
-          Screen Printing
-        </h2>
-        <p class="text-gray-600 mb-6">
-         Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour, combining efficiency with exceptional quality. Since expanding into screen printing in 2015, we’ve mastered techniques that make every print vibrant, durable, and true to your brand.
-
-We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty fabrics, using Wilflex plastisol, water-based, and air-dry inks.
-
-Whether you need small runs or large orders, our expert team ensures every print is sharp, consistent, and built to last.
-
-        <!-- Features -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-gray-700">
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Up to 12-color designs
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Reflective ink for safety wear
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Exact Pantone color matching
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Glow-in-the-dark ink options
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            High-density prints for textured feel
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Water-based and plastisol inks
-          </div>
-        </div>
-        <h2>Products we Customize</h2>
-        <!-- Products Tags -->
-        <div class="flex flex-wrap gap-2 mb-6">
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">T-shirts</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Jackets</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Jerseys</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Bags</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Aprons</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Workwear</span>
-        </div>
-
-        <!-- Button -->
-        <a href="/contactUs" class="inline-block bg-[var(--primary)] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[var(--color-accent-primary)] transition-colors">
-          Request a Quote
-        </a>
-      </div>
-    </div>
-  </section>
-   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="digitalPrinting">
-    <div class="flex flex-col lg:flex-row items-center gap-8">
-      <!-- Image -->
-      <div class="flex-shrink-0 w-full lg:w-1/2">
-        <Image src={service3} alt="Custom Logo Embroidery" class="rounded-lg shadow-lg w-full object-cover">
-      </div>
-
-      <!-- Text content -->
-      <div class="w-full lg:w-1/2">
-        <h2 class="text-2xl sm:text-2xl font-bold text-700 mb-4" style="color: var(--color-accent-primary);">
-          Digital Printing & Digital Patches
-        </h2>
-        <p class="text-gray-600 mb-6">
-         When your artwork requires full color and fine detail, our digital printing services bring it to life. Using advanced Mimaki large-format and DTF printers, we produce vibrant prints on apparel, headwear, banners, and more — all made in-house for fast turnaround and consistent color accuracy. Options include Direct to Film, CAD Cut, CAD Print, and Sublimation, plus specialty vinyls like reflective, foil, foam, and debossed finishes.
-        </p>
-
-        <!-- Features -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-gray-700">
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            CMYK full-color printing
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Sublimation printing
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Specialty vinyl (reflective, foil, soft foam)
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            CAD Cut vinyl applications
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Direct to Film (DTF) printing
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            High-density and debossed effects
-          </div>
-        </div>
-        <h2>Products we Customize</h2>
-        <!-- Products Tags -->
-        <div class="flex flex-wrap gap-2 mb-6">
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Apparel</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Headwear</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Banners</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Awards</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Signage</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Promotional materials</span>
-        </div>
-
-        <!-- Button -->
-        <a href="/contactUs" class="inline-block bg-[var(--primary)] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[var(--color-accent-primary)] transition-colors">
-          Request a Quote
-        </a>
-      </div>
-    </div>
-  </section>
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="artworkServices">
-    <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
-      <!-- Image -->
-      <div class="flex-shrink-0 w-full lg:w-1/2">
-        <Image src={service4} alt="Custom Logo Embroidery" class="rounded-lg shadow-lg w-full object-cover">
-      </div>
-
-      <!-- Text content -->
-      <div class="w-full lg:w-1/2">
-        <h2 class="text-2xl sm:text-2xl font-bold text-700 mb-4" style="color: var(--color-accent-primary);">
-          Art & Design Services
-        </h2>
-        <p class="text-gray-600 mb-6">
-        Our experienced in-house graphic design and digitizing team provides complete creative support — from logo design and mockups to vector files, digitizing, and embroidery file edits. Whether you need artwork from scratch or technical adjustments, we ensure your designs are optimized for perfect embroidery and printing results.
-        <!-- Features -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-gray-700">
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Logo design and development
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-           Embroidery digitizing
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Screen separations
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Vector file creation and conversion
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Digital mockups and proofs
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Design consulting and recommendations
-          </div>
-        </div>
-        <h2>Products we Customize</h2>
-        <!-- Products Tags -->
-        <div class="flex flex-wrap gap-2 mb-6">
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Logo design</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Vector files</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Digitizing</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Mockups</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Color separations</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Consulting</span>
-        </div>
-
-        <!-- Button -->
-        <a href="/contactUs" class="inline-block bg-[var(--primary)] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[var(--color-accent-primary)] transition-colors">
-          Request a Quote
-        </a>
-      </div>
-    </div>
-  </section>
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="laserEngraving">
-    <div class="flex flex-col lg:flex-row items-center gap-8">
-      <!-- Image -->
-      <div class="flex-shrink-0 w-full lg:w-1/2">
-        <Image src={service5} alt="Custom Logo Embroidery" class="rounded-lg shadow-lg w-full object-cover">
-      </div>
-
-      <!-- Text content -->
-      <div class="w-full lg:w-1/2">
-        <h2 class="text-2xl sm:text-2xl font-bold text-700 mb-4" style="color: var(--color-accent-primary);">
-          Laser Engraving
-        </h2>
-        <p class="text-gray-600 mb-6">
-        For precise, professional customization, our laser engraving services etch your designs, logos, or text onto a variety of materials, including wood, metal, acrylic, and leather. Using advanced laser technology, we deliver clean, permanent results with intricate detail and sharp edges. Options include single-color engraving, layered effects, and custom textures — all done in-house for fast turnaround and consistent quality.
-        <!-- Features -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-gray-700">
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Intricate designs with fine detail
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-           Custom shapes and sizes
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-           Durable and professional finish
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Multiple fabric and material options
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            On-demand sample production
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="text-[var(--primary)] font-bold">✓</span>
-            Perfect for premium branding
-          </div>
-        </div>
-        <h2>Products we Customize</h2>
-        <!-- Products Tags -->
-        <div class="flex flex-wrap gap-2 mb-6">
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Patches</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Keychains</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Awards</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Bags</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Corporate gifts</span>
-          <span class="bg-[var(--primary)] text-white-800 px-3 py-1 rounded-full text-sm" style="color:white">Promotional items</span>
-        </div>
-
-        <!-- Button -->
-        <a href="/contactUs" class="inline-block bg-[var(--primary)] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[var(--color-accent-primary)] transition-colors">
-          Request a Quote
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- <ServiceSection
-    class="mb-0"
-    anchorId="embroidery"
-    title="Custom Logo Embroidery & Embroidered Patches"
+  <ServiceSection
     imageSrc={service1}
-    imageAlt="Embroidery machines"
-    paragraphs={[
-      "With over three decades of experience, Merit Embroidery & Printing delivers premium-quality embroidery for apparel, headwear, bags, workwear, and more. Using Barudan multi-head commercial machines and in-house digitizing, we ensure every stitch meets the highest standards — whether it’s a dozen shirts or thousands of hats.",
-      "With over 40 sewing heads, we produce thousands of embroidered goods daily — each piece crafted for precision, texture, and lasting impact.",
+    imageAlt="Custom Logo Embroidery"
+    features={[
+      "Flat embroidery for classic professional look",
+      "3D/Puff embroidery for bold, dimensional designs",
+      "FR (Flame Resistant) embroidery for safety wear",
+      "Appliqué techniques for large designs",
+      "Custom patches with up to 15 thread colors",
+      "Compatible with apparel, headwear, bags, leather, towels",
     ]}
-    listTitle="We offer:"
-    listItems={[
-      "Flat, Puff (3D), and FR Embroidery",
-      "Appliqué options: twill, felt, suede, faux leather, sublimated, and more",
-      "Custom embroidered patches with merrowed or custom-cut borders",
-      "Sewing services for woven, PVC, digital, and leather patches",
+    tags={[
+      "Corporate apparel",
+      "Workwear",
+      "Headwear",
+      "Bags",
+      "Leather goods",
+      "Towels & throws",
     ]}
-  />
+  >
+    <Fragment slot="title"
+      >Custom Logo Embroidery & Embroidered Patches</Fragment
+    >
+    <Fragment slot="description">
+      <p>
+        With over three decades of experience, Merit Embroidery & Printing
+        delivers premium-quality embroidery for apparel, headwear, bags,
+        workwear, and more. Using Barudan multi-head commercial machines and
+        in-house digitizing, we ensure every stitch meets the highest standards
+        — whether it’s a dozen shirts or thousands of hats.
+      </p>
+      <p class="mt-4">
+        With over 40 sewing heads, we produce thousands of embroidered goods
+        daily — each piece crafted for precision, texture, and lasting impact.
+      </p>
+    </Fragment>
+  </ServiceSection>
 
   <ServiceSection
-    class="mb-0"
-    anchorId="screenPrinting"
-    isReverse={true}
-    title="Screen Printing"
+    id="screenPrinting"
+    isReverse
     imageSrc={service2}
-    imageAlt="Screen printing press"
-    paragraphs={[
-      "Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour, combining efficiency with exceptional quality. Since expanding into screen printing in 2015, we’ve mastered techniques that make every print vibrant, durable, and true to your brand.",
-      "We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty fabrics, using Wilflex plastisol, water-based, and air-dry inks.",
-      "Whether you need small runs or large orders, our expert team ensures every print is sharp, consistent, and built to last.",
+    imageAlt="Screen Printing"
+    features={[
+      "Up to 12-color designs",
+      "Reflective ink for safety wear",
+      "Exact Pantone color matching",
+      "Glow-in-the-dark ink options",
+      "High-density prints for textured feel",
+      "Water-based and plastisol inks",
     ]}
-    listTitle="Capabilities include:"
-    listItems={[
-      "Up to 12-color prints",
-      "Spot color, high-density, reflective, puff, and glow-in-the-dark effects",
-      "Custom Pantone color matching and heat transfer applications",
-    ]}
-  />
+    tags={["T-shirts", "Jackets", "Jerseys", "Bags", "Aprons", "Workwear"]}
+  >
+    <Fragment slot="title">Screen Printing</Fragment>
+    <Fragment slot="description">
+      <p>
+        Our state-of-the-art M&R automatic screen presses allow us to print up
+        to 1,000 garments per hour, combining efficiency with exceptional
+        quality. Since expanding into screen printing in 2015, we’ve mastered
+        techniques that make every print vibrant, durable, and true to your
+        brand.
+      </p>
+      <p class="mt-4">
+        We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty
+        fabrics, using Wilflex plastisol, water-based, and air-dry inks.
+      </p>
+      <p class="mt-4">
+        Whether you need small runs or large orders, our expert team ensures
+        every print is sharp, consistent, and built to last.
+      </p>
+    </Fragment>
+  </ServiceSection>
 
   <ServiceSection
-    class="mb-0"
-    title="Laser Engraved Faux Leather & Suede Patches"
-    imageSrc={service6}
-    imageAlt="Laser Engraved Faux Leather & Suede Patches"
-    paragraphs={[
-      `
-      For designs too detailed for embroidery, our laser-engraved patches
-      deliver sharp precision and lasting quality. Made locally in Edmonton, we
-      create custom shapes, sizes, and logo cuts on faux leather, faux suede, or
-      real cork — with no minimum orders. Choose from 14 color options and get
-      samples before production to ensure perfect results. We also offer laser
-      engraving on mugs, bottles, awards, keychains, coasters, and more.
-    `,
-    ]}
-  />
-
-  <ServiceSection
-    class="mb-0"
-    anchorId="digitalPrinting"
-    title="Digital Printing & Digital Patches"
+    id="digitalPrinting"
     imageSrc={service3}
-    isReverse={true}
-    imageAlt="Digital printing equipment"
-    paragraphs={[
-      "When your artwork requires full color and fine detail, our digital printing services bring it to life. Using advanced Mimaki large-format and DTF printers, we produce vibrant prints on apparel, headwear, banners, and more — all made in-house for fast turnaround and consistent color accuracy. Options include Direct to Film, CAD Cut, CAD Print, and Sublimation, plus specialty vinyls like reflective, foil, foam, and debossed finishes.",
+    imageAlt="Digital Printing & Digital Patches"
+    features={[
+      "CMYK full-color printing",
+      "Sublimation printing",
+      "Specialty vinyl (reflective, foil, soft foam)",
+      "CAD Cut vinyl applications",
+      "Direct to Film (DTF) printing",
+      "High-density and debossed effects",
     ]}
-  />
+    tags={[
+      "Apparel",
+      "Headwear",
+      "Banners",
+      "Awards",
+      "Signage",
+      "Promotional materials",
+    ]}
+  >
+    <Fragment slot="title">Digital Printing & Digital Patches</Fragment>
+    <Fragment slot="description">
+      <p>
+        When your artwork requires full color and fine detail, our digital
+        printing services bring it to life. Using advanced Mimaki large-format
+        and DTF printers, we produce vibrant prints on apparel, headwear,
+        banners, and more — all made in-house for fast turnaround and consistent
+        color accuracy. Options include Direct to Film, CAD Cut, CAD Print, and
+        Sublimation, plus specialty vinyls like reflective, foil, foam, and
+        debossed finishes.
+      </p>
+    </Fragment>
+  </ServiceSection>
 
   <ServiceSection
-    class="mb-0"
-    title="Art & Design Services"
-    anchorId="artworkServices"
+    id="artworkServices"
+    isReverse
     imageSrc={service4}
-    imageAlt="Graphic design workspace"
-    paragraphs={[
-      "Our experienced in-house graphic design and digitizing team provides complete creative support — from logo design and mockups to vector files, digitizing, and embroidery file edits. Whether you need artwork from scratch or technical adjustments, we ensure your designs are optimized for perfect embroidery and printing results.",
+    imageAlt="Art & Design Services"
+    features={[
+      "Logo design and development",
+      "Embroidery digitizing",
+      "Screen separations",
+      "Vector file creation and conversion",
+      "Digital mockups and proofs",
+      "Design consulting and recommendations",
     ]}
-  />
+    tags={[
+      "Logo design",
+      "Vector files",
+      "Digitizing",
+      "Mockups",
+      "Color separations",
+      "Consulting",
+    ]}
+  >
+    <Fragment slot="title">Art & Design Services</Fragment>
+    <Fragment slot="description">
+      <p>
+        Our experienced in-house graphic design and digitizing team provides
+        complete creative support — from logo design and mockups to vector
+        files, digitizing, and embroidery file edits. Whether you need artwork
+        from scratch or technical adjustments, we ensure your designs are
+        optimized for perfect embroidery and printing results.
+      </p>
+    </Fragment>
+  </ServiceSection>
 
   <ServiceSection
-    class="mb-0"
-    title="Laser Engraving"
-    anchorId="laserEngraving"
+    id="laserEngraving"
     imageSrc={service5}
-    isReverse={true}
-    imageAlt="Laser engraving in progress"
-    paragraphs={[
-      "For precise, professional customization, our laser engraving services etch your designs, logos, or text onto a variety of materials, including wood, metal, acrylic, and leather. Using advanced laser technology, we deliver clean, permanent results with intricate detail and sharp edges. Options include single-color engraving, layered effects, and custom textures — all done in-house for fast turnaround and consistent quality.",
+    imageAlt="Laser Engraving"
+    features={[
+      "Intricate designs with fine detail",
+      "Custom shapes and sizes",
+      "Durable and professional finish",
+      "Multiple fabric and material options",
+      "On-demand sample production",
+      "Perfect for premium branding",
     ]}
-  /> -->
+    tags={[
+      "Patches",
+      "Keychains",
+      "Awards",
+      "Bags",
+      "Corporate gifts",
+      "Promotional items",
+    ]}
+  >
+    <Fragment slot="title">Laser Engraving</Fragment>
+    <Fragment slot="description">
+      <p>
+        For precise, professional customization, our laser engraving services
+        etch your designs, logos, or text onto a variety of materials, including
+        wood, metal, acrylic, and leather. Using advanced laser technology, we
+        deliver clean, permanent results with intricate detail and sharp edges.
+        Options include single-color engraving, layered effects, and custom
+        textures — all done in-house for fast turnaround and consistent quality.
+      </p>
+    </Fragment>
+  </ServiceSection>
+
   <!-- ============================================ -->
   <!--                 About Us                     -->
   <!-- ============================================ -->
@@ -594,54 +324,22 @@ Whether you need small runs or large orders, our expert team ensures every print
         <Picture
           src={aboutImg1}
           formats={["avif", "webp"]}
-          pictureAttributes={{ class: "cs-picture cs-picture1" }}
+          pictureAttributes={{
+            class:
+              "cs-picture cs-picture1 corner-squircle rounded-lg supports-[corner-shape:squircle]:rounded-3xl",
+          }}
           alt="leather embroidered cap"
         />
-        <!-- <picture class="cs-picture cs-picture1"> -->
-        <!--   <source -->
-        <!--     media="(max-width: 600px)" -->
-        <!--     srcset={aboutImg1.src} -->
-        <!--   /> -->
-        <!--   <source -->
-        <!--     media="(min-width: 601px)" -->
-        <!--     srcset={aboutImg1.src} -->
-        <!--   /> -->
-        <!--   <img -->
-        <!--     aria-hidden="true" -->
-        <!--     decoding="async" -->
-        <!--     src={aboutImg1.src} -->
-        <!--     alt="cabinets" -->
-        <!--     loading="lazy" -->
-        <!--     width="400" -->
-        <!--     height="563" -->
-        <!--   /> -->
-        <!-- </picture> -->
 
         <Picture
           src={aboutImg2}
           formats={["avif", "webp"]}
-          pictureAttributes={{ class: "cs-picture cs-picture2" }}
+          pictureAttributes={{
+            class:
+              "cs-picture cs-picture2 corner-squircle rounded-lg supports-[corner-shape:squircle]:rounded-3xl",
+          }}
           alt="lazered cap with text elephanty and elephant logo"
         />
-        <!-- <picture class="cs-picture cs-picture2"> -->
-        <!--   <source -->
-        <!--     media="(max-width: 600px)" -->
-        <!--     srcset="/assets/images/background-img.jpg" -->
-        <!--   /> -->
-        <!--   <source -->
-        <!--     media="(min-width: 601px)" -->
-        <!--     srcset="/assets/images/background-img.jpg" -->
-        <!--   /> -->
-        <!--   <img -->
-        <!--     aria-hidden="true" -->
-        <!--     decoding="async" -->
-        <!--     src="/assets/images/background-img.jpg" -->
-        <!--     alt="house" -->
-        <!--     loading="lazy" -->
-        <!--     width="400" -->
-        <!--     height="563" -->
-        <!--   /> -->
-        <!-- </picture> -->
       </div>
       <!-- Right Content Section-->
       <div class="cs-right">
@@ -681,37 +379,37 @@ Whether you need small runs or large orders, our expert team ensures every print
       style="margin-top: 2rem;"
     >
       <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <img
-          src="/assets/images/30years.png"
-          alt="Logo 1"
+        <Image
+          src={years}
+          alt="30 years badge"
           class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
         />
       </div>
       <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <img
-          src="/assets/images/canada.png"
-          alt="Logo 1"
+        <Image
+          src={canada}
+          alt="Canada badge"
           class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
         />
       </div>
       <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <img
-          src="/assets/images/attention.png"
-          alt="Logo 1"
+        <Image
+          src={attention}
+          alt="Attention badge"
           class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
         />
       </div>
       <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <img
-          src="/assets/images/onestop.png"
-          alt="Logo 1"
+        <Image
+          src={onestop}
+          alt="One stop badge"
           class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
         />
       </div>
       <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <img
-          src="/assets/images/satisfaction.png"
-          alt="Logo 1"
+        <Image
+          src={satisfaction}
+          alt="Satisfaction badge"
           class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
         />
       </div>
@@ -720,11 +418,8 @@ Whether you need small runs or large orders, our expert team ensures every print
   <!-- ============================================ -->
   <!--                   Gallery                    -->
   <!-- ============================================ -->
-
-  <!-- <Gallery class="bg-slate-100" /> -->
   <ApplicationLogosCarousel />
 
-  <!-- ============================================ -->
   <!--                  Reviews                     -->
   <!-- ============================================ -->
   <section id="reviews-section" class="bg-slate-100">

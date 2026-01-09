@@ -1,0 +1,19 @@
+---
+import cn from "@utils/cn";
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a">;
+const {
+  class: className,
+  href: to = "/contactUs",
+  ...props
+} = Astro.props as Props;
+---
+
+<a
+  href={to}
+  class:list={cn("cs-button-solid bg-accent-primary", className)}
+  {...props}
+>
+  <slot> Request a Quote </slot>
+</a>

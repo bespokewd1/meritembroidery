@@ -1,8 +1,10 @@
 @import "tailwindcss" important;
+@plugin "@toolwind/corner-shape";
 
 @theme {
 
   --color-accent-primary: hsl(218, 47%, 47%);
+  --color-primary: var(--primary);
 
   --font-roboto:"Roboto", Arial, sans-serif;
 

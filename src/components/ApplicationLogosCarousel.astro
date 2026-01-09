@@ -31,6 +31,7 @@ import gallery21 from "@assets/images/gallery/21.jpg";
 import gallery22 from "@assets/images/gallery/22.jpg";
 import gallery23 from "@assets/images/gallery/23.jpg";
 import gallery24 from "@assets/images/gallery/24.jpg";
+import ButtonLink from "./Ui/ButtonLink.astro";
 
 export interface AppLogo {
   src: ImageMetadata;
@@ -228,6 +229,12 @@ const sectionClass = cn(
         ))
       }
     </div>
+  </div>
+
+  <div class="mt-6 flex items-center justify-center">
+    <ButtonLink class="mx-auto" href="/portfolio">
+      View Full Gallery
+    </ButtonLink>
   </div>
 
   <!-- <Image

@@ -2,103 +2,92 @@
 import { type HTMLAttributes } from "astro/types";
 import cn from "@utils/cn";
 import { Image } from "astro:assets";
+import ButtonLink from "./Ui/ButtonLink.astro";
 
 type Props = HTMLAttributes<"section"> & {
-  anchorId?: string;
-  title: string;
   imageSrc: ImageMetadata;
   imageAlt: string;
   isReverse?: boolean;
-
-  paragraphs?: string[];
-  listTitle?: string;
-  listItems?: string[];
+  features?: string[];
+  tags?: string[];
 };
 
 const {
-  anchorId,
-  title,
+  id: anchorId,
   imageSrc,
   imageAlt,
   isReverse = false,
-  paragraphs = [],
-  listTitle,
-  listItems = [],
+  features = [],
+  tags = [],
   class: className,
   ...props
 } = Astro.props;
-
-// Float direction only for md–lg
-const floatSide = isReverse
-  ? "md:float-left md:mr-4 lg:mr-10"
-  : "md:float-right md:ml-4 lg:ml-10";
-
-const sectionClass = cn("mb-8 scroll-mt-[100px]", className);
 ---
 
-<section id={anchorId} class:list={sectionClass} {...props}>
-  <div class="mx-auto w-full max-w-384">
-    <div
-      class:list={[
-        // xl and up: back to 2-column layout, with reverse support
-        "xl:flex xl:items-stretch xl:gap-8",
-        isReverse ? "xl:flex-row-reverse" : "xl:flex-row",
-      ]}
-    >
-      <!-- Text block (contains the float image for md–lg) -->
-      <div
-        class:list={[
-          "w-full bg-white md:after:clear-both md:after:block md:after:content-['']",
-          "xl:w-[50%] xl:after:content-none",
-          "xl:flex xl:flex-col xl:items-center xl:justify-center",
-        ]}
+<section
+  id={anchorId}
+  class:list={cn("mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8", className)}
+  {...props}
+>
+  <div
+    class:list={cn(
+      "flex flex-col items-center gap-8 lg:flex-row",
+      isReverse && "lg:flex-row-reverse",
+    )}
+  >
+    <!-- Image -->
+    <div class="w-full shrink-0 lg:w-1/2">
+      <Image
+        src={imageSrc}
+        alt={imageAlt}
+        class="corner-squircle w-full rounded-lg object-cover supports-[corner-shape:squircle]:rounded-3xl"
+      />
+    </div>
+
+    <!-- Text content -->
+    <div class="w-full lg:w-1/2">
+      <h2
+        class="mb-4 text-2xl font-bold"
+        style="color: var(--color-accent-primary);"
       >
-        <!-- Float image: md–lg only (hidden on mobile and xl+) -->
-        <Image
-          class:list={[
-            "hidden bg-neutral-300 object-cover md:mb-4 md:block md:w-90 md:max-lg:mt-6 xl:hidden",
-            floatSide,
-          ]}
-          src={imageSrc}
-          alt={imageAlt}
-        />
-        <!-- md:w-4/5 -->
-        <div class="mx-auto w-[96%] p-6">
-          <h3 class="text-accent-primary mb-4 text-[28px] font-bold">
-            {title}
-          </h3>
+        <slot name="title" />
+      </h2>
 
-          {paragraphs.map((p) => <p class="mb-8">{p}</p>)}
-
-          {
-            listItems.length > 0 && (
-              <>
-                {listTitle && (
-                  <p class="mb-2">
-                    <strong>{listTitle}</strong>
-                  </p>
-                )}
-                <ul class="mb-8 list-none space-y-1">
-                  {listItems.map((item) => (
-                    <li>• {item}</li>
-                  ))}
-                </ul>
-              </>
-            )
-          }
-
-          <slot />
-        </div>
+      <div class="mb-6 text-gray-600">
+        <slot name="description" />
       </div>
 
-      <!-- Side image: visible on mobile and xl+ (hidden only md–lg) -->
-      <div class="block w-full md:hidden xl:block xl:w-[50%]">
-        <Image
-          class="h-full w-full object-cover"
-          src={imageSrc}
-          alt={imageAlt}
-        />
-      </div>
+      {
+        features.length > 0 && (
+          <div class="mb-6 grid grid-cols-1 gap-4 text-gray-700 sm:grid-cols-2">
+            {features.map((feature) => (
+              <div class="flex items-start gap-2">
+                <span class="font-bold text-(--primary)">✓</span>
+                {feature}
+              </div>
+            ))}
+          </div>
+        )
+      }
+
+      {
+        tags.length > 0 && (
+          <>
+            <p class="mb-3 text-sm font-bold text-black">
+              Products we customize:
+            </p>
+            <div class="mb-8 flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-sm">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </>
+        )
+      }
+
+      <ButtonLink href="/contactUs">Request a Quote</ButtonLink>
     </div>
   </div>
 </section>
