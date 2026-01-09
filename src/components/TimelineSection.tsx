@@ -1,7 +1,14 @@
 import React from "react";
 import { Timeline } from "./Ui/Timeline";
 
-import timeline1 from "@assets/images/merit-images/merit-0256.jpg";
+// import timeline1 from "@assets/images/merit-images/merit-0256.jpg";
+
+import timeline1 from "@assets/images/home-hero.jpg";
+import timeline2 from "@assets/images/CTA/background-img.jpg";
+import timeline3 from "@assets/images/merit-images/merit-0256.jpg";
+import timeline4 from "@assets/images/merit-images/merit-0314.jpg";
+import timeline5 from "@assets/images/services/s-1.png";
+import timeline6 from "@assets/images/services/s-6.png";
 import cn from "@utils/cn";
 
 type TimelineItem = {
@@ -16,63 +23,30 @@ type TimelineItem = {
   };
 };
 
-function TimelineCard({
-  item,
-}: {
-  item: TimelineItem;
-}) {
+function TimelineCard({ item }: { item: TimelineItem }) {
   return (
-
-    // <div className="bg-secondary rounded-xl p-6">
-    //   {/* <span className="text-accent font-bold text-lg">{item.year}</span> */}
-
-    //   <h3 className="text-xl font-bold text-foreground mt-2">
-    //     {item.heading}
-    //   </h3>
-
-    //   <p className="text-muted-foreground mt-2">{item.description}</p>
-
-    //   {item.image ? (
-    //     <div className="mt-4 overflow-hidden rounded-lg">
-    //       <img
-    //         src={item.image.src}
-    //         alt={item.image.alt}
-    //         width={item.image.width ?? 1200}
-    //         height={item.image.height ?? 800}
-    //         className="w-full h-48 object-cover"
-    //         loading="lazy"
-    //       />
-    //     </div>
-    //   ) : null}
-    // </div>
-  <div
-      className={cn("group relative pointer-coarse:pb-24 overflow-hidden")}
-    >
-
-       {item.image ? (
-         <div className="mt-4 overflow-hidden rounded-lg">
-      <img
-        src={item.image.src}
-        height={item.image.height ?? 1200}
-        width={item.image.width ?? 800}
-        alt={item.image.alt}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
-         </div>
-       ) : null}
+    <div className={cn("group relative overflow-hidden pointer-coarse:pb-24")}>
+      {item.image ? (
+        <div className="mt-4 overflow-hidden rounded-lg">
+          <img
+            src={item.image.src}
+            height={item.image.height ?? 1200}
+            width={item.image.width ?? 800}
+            alt={item.image.alt}
+            className="h-full max-h-160 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      ) : null}
 
       {/* Overlay that slides up on hover */}
-{/* translate-y-[calc(100%-5rem)] */}
-      <div className="absolute translate-y-0  pointer-coarse:translate-y-0 group-hover:translate-y-0 transition-transform ease-out duration-500 inset-x-0 bottom-0 bg-linear-to-t from-black/90 via-black/70 to-transparent px-4 py-6"
-      >
+      <div className="absolute inset-x-0 bottom-0 translate-y-0 bg-linear-to-t from-black/90 via-black/70 to-transparent px-4 py-6 transition-transform duration-500 ease-out group-hover:translate-y-0 pointer-coarse:translate-y-0">
         {/* Orange accent line */}
-        <div className="w-12 h-1 bg-accent mb-4" />
+        <div className="bg-accent mb-4 h-1 w-12" />
 
-        <h3 className="text-white font-bold text-lg uppercase mb-4">
+        <h3 className="mb-4 text-lg font-bold text-white uppercase">
           {item.heading}
         </h3>
-        <p className="text-white/90 font-semibold mb-4">
-          {item.description}</p>
+        <p className="mb-4 font-semibold text-white/90">{item.description}</p>
 
         <div
           className="pointer-events-none absolute inset-0 -z-1 h-[200%] w-full backdrop-blur-sm"
@@ -84,12 +58,13 @@ function TimelineCard({
         />
 
         <div
-          className="pointer-events-none absolute inset-0 h-full -translate-y-full bg-fore-light/10"
+          className="bg-fore-light/10 pointer-events-none absolute inset-0 h-full -translate-y-full"
           style={{
             mask: "linear-gradient(to top, black 0, black 6px, transparent 6px)",
-            WebkitMask: "linear-gradient(to top, black 0, black 6px, transparent 6px)",
+            WebkitMask:
+              "linear-gradient(to top, black 0, black 6px, transparent 6px)",
             backdropFilter: "blur(4px) brightness(120%)",
-            marginTop: "1px"
+            marginTop: "1px",
           }}
         />
       </div>
@@ -116,7 +91,7 @@ export function TimelineSection() {
       heading: "Facility Expansion",
       description: "Moved to larger 5,000 sq. ft. production facility",
       image: {
-        src: timeline1.src,
+        src: timeline2.src,
         alt: "Facility expansion",
       },
     },
@@ -126,27 +101,25 @@ export function TimelineSection() {
       description:
         "Invested in state-of-the-art multi-head embroidery machines",
       image: {
-        src: timeline1.src,
+        src: timeline3.src,
         alt: "Technology upgrade",
       },
     },
     {
       year: "2015",
       heading: "Added Laser Engraving",
-      description:
-        "Expanded services with precision laser technology",
+      description: "Expanded services with precision laser technology",
       image: {
-        src: timeline1.src,
+        src: timeline4.src,
         alt: "Laser engraving",
       },
     },
     {
       year: "2020",
       heading: "Current Facility",
-      description:
-        "Relocated to 11,000 sq. ft. modern production center",
+      description: "Relocated to 11,000 sq. ft. modern production center",
       image: {
-        src: timeline1.src,
+        src: timeline5.src,
         alt: "Current facility",
       },
     },
@@ -155,7 +128,7 @@ export function TimelineSection() {
       heading: "Industry Leader",
       description: "One of the largest decorators in Western Canada",
       image: {
-        src: timeline1.src,
+        src: timeline6.src,
         alt: "Industry leader",
       },
     },
