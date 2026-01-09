@@ -23,16 +23,21 @@ export const HoverEffect = ({
   const handleClick = (e: React.MouseEvent, link: string) => {
     if (link.startsWith("/services#")) {
       e.preventDefault();
+      const [path, id] = link.split("#");
       navigate(link);
 
-      setTimeout(() => {
-        const id = link.substring(link.indexOf("#") + 1);
-        const element = document.getElementById(id);
-        if (element) {
-          console.log("Scrolling to element with ID:", id);
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 150);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // const id = link.substring(link.indexOf("#") + 1);
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+
+            const url = `${path}#${id}`;
+            history.replaceState(null, "", url);
+          }
+        });
+      });
     }
   };
   return (

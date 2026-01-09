@@ -156,16 +156,23 @@ import ButtonLink from "./Ui/ButtonLink.astro";
         if (href && href.startsWith("/services#")) {
           console.log("Navigating to this service:", href);
           event.preventDefault();
+          const [path, id] = href.split("#");
           navigate(href);
 
-          setTimeout(() => {
-            const id = href.substring(href.indexOf("#") + 1);
-            const element = document.getElementById(id);
-            if (element) {
-              console.log("Scrolling to element with ID:", id);
-              element.scrollIntoView({ behavior: "smooth" });
-            }
-          }, 150);
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              const el = document.getElementById(id);
+              if (!el) return;
+
+              el.scrollIntoView({ behavior: "smooth" });
+
+              // Update the URL AFTER triggering scroll (no extra history entry)
+              const url = `${path}#${id}`;
+              history.replaceState(null, "", url);
+
+              // location.hash = id; // adds history entry in some browsers
+            });
+          });
         }
       }
     });
