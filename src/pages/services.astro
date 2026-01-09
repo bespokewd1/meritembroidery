@@ -1,0 +1,330 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CTA from "@components/CTA.astro";
+
+import ServiceSection from "@components/ServiceSection.astro";
+
+import service1 from "@assets/images/merit-images/merit-0261.jpg";
+import service2 from "@assets/images/merit-images/merit-0256.jpg";
+import service3 from "@assets/images/merit-images/merit-0283.jpg";
+import service4 from "@assets/images/gallery/3.jpg";
+import service5 from "@assets/images/merit-images/merit-0321.jpg";
+import service6 from "@assets/images/merit-images/merit-0318.jpg";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import { getImage } from "astro:assets";
+const optimizedImage = await getImage({ src: landingImage, format: "avif" });
+---
+
+<BaseLayout
+  title="Services | Merit Embroidery & Screen Printing"
+  description="High-quality in-house embroidery, screen printing, and custom apparel decoration in Edmonton. Serving businesses across Alberta and North America with fast, reliable, and professional service."
+  preloadedImage={optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                   Gallery                    -->
+  <!-- ============================================ -->
+
+  <section class="p-0 text-center">
+    <div class="bg-(--primary) px-4 py-8">
+      <h1
+        class="text-(length:--headerFontSize) font-black tracking-wide text-white"
+      >
+        Our Services
+      </h1>
+    </div>
+  </section>
+
+  <ServiceSection
+    id="embroidery"
+    class="bg-accent-primary/5"
+    imageSrc={service1}
+    imageAlt="Custom Logo Embroidery"
+    features={[
+      "Flat embroidery for classic professional look",
+      "3D/Puff embroidery for bold, dimensional designs",
+      "FR (Flame Resistant) embroidery for safety wear",
+      "Appliqué techniques for large designs",
+      "Custom patches with up to 15 thread colors",
+      "Compatible with apparel, headwear, bags, leather, towels",
+    ]}
+    tags={[
+      "Corporate apparel",
+      "Workwear",
+      "Headwear",
+      "Bags",
+      "Leather goods",
+      "Towels & throws",
+    ]}
+  >
+    <Fragment slot="title"
+      >Custom Logo Embroidery & Embroidered Patches</Fragment
+    >
+    <Fragment slot="description">
+      <p>
+        With over three decades of experience, Merit Embroidery & Printing
+        delivers premium-quality embroidery for apparel, headwear, bags,
+        workwear, and more. Using Barudan multi-head commercial machines and
+        in-house digitizing, we ensure every stitch meets the highest standards
+        — whether it’s a dozen shirts or thousands of hats.
+      </p>
+      <p class="mt-4">
+        With over 40 sewing heads, we produce thousands of embroidered goods
+        daily — each piece crafted for precision, texture, and lasting impact.
+      </p>
+    </Fragment>
+  </ServiceSection>
+
+  <ServiceSection
+    id="screenPrinting"
+    isReverse
+    imageSrc={service2}
+    imageAlt="Screen Printing"
+    features={[
+      "Up to 12-color designs",
+      "Reflective ink for safety wear",
+      "Exact Pantone color matching",
+      "Glow-in-the-dark ink options",
+      "High-density prints for textured feel",
+      "Water-based and plastisol inks",
+    ]}
+    tags={["T-shirts", "Jackets", "Jerseys", "Bags", "Aprons", "Workwear"]}
+  >
+    <Fragment slot="title">Screen Printing</Fragment>
+    <Fragment slot="description">
+      <p>
+        Our state-of-the-art M&R automatic screen presses allow us to print up
+        to 1,000 garments per hour, combining efficiency with exceptional
+        quality. Since expanding into screen printing in 2015, we’ve mastered
+        techniques that make every print vibrant, durable, and true to your
+        brand.
+      </p>
+      <p class="mt-4">
+        We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty
+        fabrics, using Wilflex plastisol, water-based, and air-dry inks.
+      </p>
+      <p class="mt-4">
+        Whether you need small runs or large orders, our expert team ensures
+        every print is sharp, consistent, and built to last.
+      </p>
+    </Fragment>
+  </ServiceSection>
+
+  <ServiceSection
+    id="digitalPrinting"
+    class="bg-accent-primary/5"
+    imageSrc={service3}
+    imageAlt="Digital Printing & Digital Patches"
+    features={[
+      "CMYK full-color printing",
+      "Sublimation printing",
+      "Specialty vinyl (reflective, foil, soft foam)",
+      "CAD Cut vinyl applications",
+      "Direct to Film (DTF) printing",
+      "High-density and debossed effects",
+    ]}
+    tags={[
+      "Apparel",
+      "Headwear",
+      "Banners",
+      "Awards",
+      "Signage",
+      "Promotional materials",
+    ]}
+  >
+    <Fragment slot="title">Digital Printing & Digital Patches</Fragment>
+    <Fragment slot="description">
+      <p>
+        When your artwork requires full color and fine detail, our digital
+        printing services bring it to life. Using advanced Mimaki large-format
+        and DTF printers, we produce vibrant prints on apparel, headwear,
+        banners, and more — all made in-house for fast turnaround and consistent
+        color accuracy. Options include Direct to Film, CAD Cut, CAD Print, and
+        Sublimation, plus specialty vinyls like reflective, foil, foam, and
+        debossed finishes.
+      </p>
+    </Fragment>
+  </ServiceSection>
+
+  <ServiceSection
+    id="artworkServices"
+    isReverse
+    imageSrc={service4}
+    imageAlt="Art & Design Services"
+    features={[
+      "Logo design and development",
+      "Embroidery digitizing",
+      "Screen separations",
+      "Vector file creation and conversion",
+      "Digital mockups and proofs",
+      "Design consulting and recommendations",
+    ]}
+    tags={[
+      "Logo design",
+      "Vector files",
+      "Digitizing",
+      "Mockups",
+      "Color separations",
+      "Consulting",
+    ]}
+  >
+    <Fragment slot="title">Art & Design Services</Fragment>
+    <Fragment slot="description">
+      <p>
+        Our experienced in-house graphic design and digitizing team provides
+        complete creative support — from logo design and mockups to vector
+        files, digitizing, and embroidery file edits. Whether you need artwork
+        from scratch or technical adjustments, we ensure your designs are
+        optimized for perfect embroidery and printing results.
+      </p>
+    </Fragment>
+  </ServiceSection>
+
+  <ServiceSection
+    id="laserEngraving"
+    class="bg-accent-primary/5"
+    imageSrc={service5}
+    imageAlt="Laser Engraving"
+    features={[
+      "Intricate designs with fine detail",
+      "Custom shapes and sizes",
+      "Durable and professional finish",
+      "Multiple fabric and material options",
+      "On-demand sample production",
+      "Perfect for premium branding",
+    ]}
+    tags={[
+      "Patches",
+      "Keychains",
+      "Awards",
+      "Bags",
+      "Corporate gifts",
+      "Promotional items",
+    ]}
+  >
+    <Fragment slot="title">Laser Engraving</Fragment>
+    <Fragment slot="description">
+      <p>
+        For precise, professional customization, our laser engraving services
+        etch your designs, logos, or text onto a variety of materials, including
+        wood, metal, acrylic, and leather. Using advanced laser technology, we
+        deliver clean, permanent results with intricate detail and sharp edges.
+        Options include single-color engraving, layered effects, and custom
+        textures — all done in-house for fast turnaround and consistent quality.
+      </p>
+    </Fragment>
+  </ServiceSection>
+
+  <CTA />
+</BaseLayout>
+
+<style lang="less">
+  /* PAGE-SPECIFIC STYLES FOR THE PROJECTS PAGE */
+
+  /*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+  /* Mobile - 360px - Contains hover animation */
+  @media only screen and (min-width: 0em) {
+    #gallery {
+      /* Centers button */
+      text-align: center;
+      padding: var(--sectionPadding);
+      position: relative;
+      /* Prevents overflow from the image going off screen */
+      overflow: hidden;
+      .cs-container {
+        width: 100%;
+        max-width: (1322/16em);
+        margin: auto;
+      }
+
+      .cs-image-group {
+        /* used rem so it doesn't scale with the font size of on parent */
+        font-size: ~"min(1.1vw, 1em)";
+        width: 100%;
+        max-width: (1322/16em);
+        margin: 0 auto (60/16rem);
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: (30/16em);
+      }
+
+      .cs-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: (30/16em);
+      }
+
+      .cs-picture {
+        display: block;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .cs-row-1 {
+        .cs-picture1 {
+          width: (420/16em);
+          height: (567/16em);
+        }
+
+        .cs-picture2 {
+          width: (420/16em);
+          height: (629/16em);
+        }
+
+        .cs-picture3 {
+          width: (420/16em);
+          height: (512/16em);
+        }
+      }
+
+      .cs-row-2 {
+        .cs-picture1 {
+          width: (420/16em);
+          height: (492/16em);
+        }
+
+        .cs-picture2 {
+          width: (420/16em);
+          height: (517/16em);
+        }
+
+        .cs-picture3 {
+          width: (420/16em);
+          height: (629/16em);
+        }
+      }
+
+      .cs-row-3 {
+        .cs-picture1 {
+          width: (420/16em);
+          height: (625/16em);
+        }
+
+        .cs-picture2 {
+          width: (420/16em);
+          height: (452/16em);
+        }
+
+        .cs-picture3 {
+          width: (420/16em);
+          height: (629/16em);
+        }
+      }
+    }
+  }
+</style>

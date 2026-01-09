@@ -6,29 +6,29 @@
   },
   {
     "key": "Services",
-    "url": "/#services",
+    "url": "/services",
     "children": [
       {
         "key": "Embroidery",
-        "url": "/#embroidery"
+        "url": "/services#embroidery"
       },
       {
         "key": "Screen Printing",
-        "url": "/#screenPrinting"
+        "url": "/services#screenPrinting"
       }
       ,
       {
         "key": "Digital Printing",
-        "url": "/#digitalPrinting"
+        "url": "/services#digitalPrinting"
       }
       ,
       {
         "key": "Artwork Services",
-        "url": "/#artworkServices"
+        "url": "/services#artworkServices"
       },
       {
         "key": "Laser Engraving",
-        "url": "/#laserEngraving"
+        "url": "/services#laserEngraving"
       }
     ]
   },
