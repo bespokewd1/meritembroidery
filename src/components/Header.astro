@@ -146,35 +146,37 @@ import ButtonLink from "./Ui/ButtonLink.astro";
 <script>
   import { navigate } from "astro:transitions/client";
 
-  // Navigate to the selected option automatically.
   document.addEventListener("astro:page-load", () => {
-    document.addEventListener("click", (event) => {
-      const target = event.target as Element;
+    document.addEventListener("click", async (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
       const anchor = target.closest("a");
-      if (anchor) {
-        const href = anchor.getAttribute("href");
-        if (href && href.startsWith("/services#")) {
-          console.log("Navigating to this service:", href);
-          event.preventDefault();
-          const [path, id] = href.split("#");
-          navigate(href);
+      if (!anchor) return;
 
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              const el = document.getElementById(id);
-              if (!el) return;
+      const href = anchor.getAttribute("href");
+      if (!href || !href.startsWith("/services#")) return;
 
-              el.scrollIntoView({ behavior: "smooth" });
+      event.preventDefault();
 
-              // Update the URL AFTER triggering scroll (no extra history entry)
-              const url = `${path}#${id}`;
-              history.replaceState(null, "", url);
+      const [path, id] = href.split("#");
 
-              // location.hash = id; // adds history entry in some browsers
-            });
-          });
-        }
-      }
+      // Navigate to the page first (without the hash)
+      await navigate(path);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const el = document.getElementById(id);
+          if (!el) return;
+
+          console.log("Scrolling to element:", el);
+          el.scrollIntoView({ behavior: "smooth" });
+
+          console.log("Updating URL hash to:", `#${id}`);
+          // Put the hash in the URL (no extra history entry)
+          history.replaceState(null, "", `${path}#${id}`);
+        });
+      });
     });
   });
 </script>

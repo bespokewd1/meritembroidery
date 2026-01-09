@@ -27,7 +27,7 @@ export const HoverEffect = ({
       navigate(link);
 
       requestAnimationFrame(() => {
-        // const id = link.substring(link.indexOf("#") + 1);
+        const id = link.substring(link.indexOf("#") + 1);
         const element = document.getElementById(id);
         if (element) {
           console.log("Scrolling to element with id:", id);
@@ -54,7 +54,6 @@ export const HoverEffect = ({
           className="group relative block h-full w-full p-2"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
-          onClick={(e) => handleClick(e, item.link)}
           aria-label={`Link to ${item.title} service page`}
         >
           <AnimatePresence>
