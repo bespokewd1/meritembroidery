@@ -4,7 +4,8 @@ import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
 import { Image, Picture } from "astro:assets";
-import landingImage from "@assets/images/merit-images/merit-0256.jpg";
+import landingImage from "@assets/images/home-hero.jpg";
+import landingImage2 from "@assets/images/merit-images/merit-0318.jpg";
 import aboutImg1 from "@assets/images/merit-images/merit-0290.jpg";
 import aboutImg2 from "@assets/images/merit-images/merit-0314.jpg";
 import { getImage } from "astro:assets";
@@ -52,45 +53,39 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <section id="hero" style="width: 100%;margin: 0;padding: 0;">
     <div
-      class="flex w-full flex-col items-center justify-center sm:flex-row"
+      class="flex size-full max-h-145 w-full flex-col items-center justify-center sm:flex-row lg:h-[calc(100dvh-6.6875rem)] lg:max-h-full"
       style="width: 100%;padding: 0px;"
     >
-      <div class="flex flex-col sm:h-[50vh] md:h-screen" style="width: 100%;">
-        <div
-          class="flex w-full items-center justify-center bg-red-500 sm:h-[50%]"
-          style="padding: 2rem 0 2rem 0;"
-        >
-          <h1
-            class="text-xl font-bold md:text-2xl"
-            style="text-align: center;margin: 0 1rem 0 1rem;color:white"
-          >
-            Your Trusted Promotional Decorators!
-          </h1>
-        </div>
-        <div
-          class="bg-white-500 flex w-full flex-col items-center justify-center sm:h-[50%]"
-          style="padding: 2rem 0 2rem 0;"
-        >
-          <h1
-            class="text-xl font-bold md:text-2xl"
-            style="text-align: center;margin: 0 1rem 0 1rem;color:black"
-          >
-            Quality, Delivery, Service, Innovation
-          </h1>
-          <a
-            href="/get-a-quote"
-            class="cs-button-solid cs-nav-button bg-accent-primary"
-            style="margin-top: 32px;">Get A Quote</a
-          >
-        </div>
-      </div>
-      <div class="flex w-full items-center justify-start">
+      <div class="relative grid size-full max-h-[inherit]">
         <Image
           src={landingImage}
           alt="embroidery machines"
           loading="eager"
           fetchpriority="high"
-          class="flex h-[50vh] w-full items-center justify-start object-cover sm:h-[50vh] md:h-screen"
+          class="relative -z-1 size-full object-cover object-top [grid-area:1/1]"
+        />
+
+        <div
+          class="lg:corner-squircle absolute right-0 bottom-0 left-0 flex flex-col items-center gap-3 p-4 backdrop-blur-md [grid-area:1/1] lg:right-16 lg:bottom-32 lg:left-auto lg:max-w-xl lg:items-start lg:rounded-2xl supports-[corner-shape:squircle]:lg:rounded-4xl"
+        >
+          <h1 class="cs-title m-0 text-center text-white lg:text-left">
+            Your Trusted Promotional Decorators!
+          </h1>
+          <p class="m-0 text-left text-xl font-bold text-white/90 md:text-2xl">
+            Quality, Delivery, Service, Innovation
+          </p>
+          <ButtonLink href="/get-a-quote" class={"mt-6"}>
+            Get A Quote
+          </ButtonLink>
+        </div>
+      </div>
+      <div class="hidden size-full items-center justify-start xl:flex">
+        <Image
+          src={landingImage2}
+          alt="embroidery machines"
+          loading="eager"
+          fetchpriority="high"
+          class="flex size-full items-center justify-start object-cover"
         />
       </div>
     </div>
@@ -116,35 +111,35 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         <Image
           src={years}
           alt="30 years badge"
-          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
+          class="size-25 object-contain md:h-50 md:w-50"
         />
       </div>
       <div class="flex w-[40%] items-center justify-center md:w-[15%]">
         <Image
           src={canada}
           alt="Canada badge"
-          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
+          class="size-25 object-contain md:h-50 md:w-50"
         />
       </div>
       <div class="flex w-[40%] items-center justify-center md:w-[15%]">
         <Image
           src={attention}
           alt="Attention badge"
-          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
+          class="size-25 object-contain md:h-50 md:w-50"
         />
       </div>
       <div class="flex w-[40%] items-center justify-center md:w-[15%]">
         <Image
           src={onestop}
           alt="One stop badge"
-          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
+          class="size-25 object-contain md:h-50 md:w-50"
         />
       </div>
       <div class="flex w-[40%] items-center justify-center md:w-[15%]">
         <Image
           src={satisfaction}
           alt="Satisfaction badge"
-          class="h-[100px] w-[100px] object-contain md:h-[200px] md:w-[200px]"
+          class="size-25 object-contain md:h-50 md:w-50"
         />
       </div>
     </div>
