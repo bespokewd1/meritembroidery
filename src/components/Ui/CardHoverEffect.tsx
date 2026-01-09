@@ -33,8 +33,8 @@ export const HoverEffect = ({
           if (element) {
             element.scrollIntoView({ behavior: "smooth" });
 
-            const url = `${path}#${id}`;
-            history.replaceState(null, "", url);
+            // const url = `${path}#${id}`;
+            // history.replaceState(null, "", url);
           }
         });
       });
