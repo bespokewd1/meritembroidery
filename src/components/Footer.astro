@@ -1,94 +1,181 @@
 ---
 import client from "@data/client.json";
 import navData from "@data/navData.json";
-import { getCurrentYear } from "@js/utils"
+import { getCurrentYear } from "@js/utils";
+import { Icon } from "astro-icon/components";
 
-const currentYear = getCurrentYear()
+const currentYear = getCurrentYear();
 ---
 
-<!-- ============================================ -->
-<!--                   Footer                     -->
-<!-- ============================================ -->
+<!-- ============================================ --><!--                   Footer                     --><!-- ============================================ -->
 <footer id="footer">
-  <div class="w-[80%] lg:w-full flex flex-col justify-center items-center" style="margin:auto;">
-    <div class="flex flex-col md:flex-row justify-evenly items-start gap-8">
-      <div class="md:w-[25%] flex flex-col justify-start items-start">
-        <h1 class="text-xl" style="color:white;font-weight:bold;">Merit Embroidery</h1>
-        <p  style="color:white;margin-bottom: 1rem">& Printing LTD</p>
-        <p  style="color:white;">One of the oldest and largest embroidery, printing, and promotional decor companies in Western Canada. Serving businesses since 1992.</p>
+  <div
+    class="flex w-[80%] flex-col items-center justify-center lg:w-full"
+    style="margin:auto;"
+  >
+    <div class="flex flex-col items-start justify-evenly gap-8 md:flex-row">
+      <div class="flex flex-col items-start justify-start md:w-[25%]">
+        <h1 class="text-xl" style="color:white;font-weight:bold;">
+          Merit Embroidery
+        </h1>
+        <p style="color:white;margin-bottom: 1rem">& Printing LTD</p>
+        <p style="color:white;">
+          One of the oldest and largest embroidery, printing, and promotional
+          decor companies in Western Canada. Serving businesses since 1992.
+        </p>
         <!--Social-->
-       
-              <ul class="cs-social flex flex-row justify-start items-center gap-4" style="padding:0; margin-top:1rem;">
-                  <li class="cs-social-li">
-                      <a href="https://www.facebook.com/meritemb" class="cs-social-link" aria-label="facebook" target="_blank" rel="noopener">
-                          <img class="cs-social-icon cs-default" src="/assets/images/facebook.png" alt="icon" loading="lazy" decoding="async" width="32" height="32" aria-hidden="true" style="filter: brightness(0) invert(1); ">
-                      </a>
-                  </li>
-                  <li class="cs-social-li">
-                      <a href="https://www.instagram.com/meritembroidery/" class="cs-social-link" aria-label="instagram" target="_blank" rel="noopener">
-                          <img class="cs-social-icon cs-default" src="/assets/images/instagram.png" alt="icon" loading="lazy" decoding="async" width="32" height="32" aria-hidden="true" style="filter: brightness(0) invert(1); ">
-                      </a>
-                  </li>
-              </ul>
-        
-      </div>
-      <div>
-        <h1 class="text-xl" style="color:white;font-weight:bold;margin-bottom: 1rem">Our Services</h1>
-        <ul>
-        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/#embroidery">Embroidery</a></li>
-        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/#screenPrinting">Screen Printing</a></li>
-        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/#digitalPrinting">Digital Printing</a></li>
-        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/#artworkServices">Artwork Services</a></li>
-        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/#laserEngraving">Laser Engraving</a></li>
+
+        <ul
+          class="cs-social flex flex-row items-center justify-start gap-4"
+          style="padding:0; margin-top:1rem;"
+        >
+          <li class="cs-social-li">
+            <a
+              href="https://www.facebook.com/meritemb"
+              class="cs-social-link"
+              aria-label="facebook"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="cs-social-icon cs-default"
+                src="/assets/images/facebook.png"
+                alt="icon"
+                loading="lazy"
+                decoding="async"
+                width="32"
+                height="32"
+                aria-hidden="true"
+                style="filter: brightness(0) invert(1); "
+              />
+            </a>
+          </li>
+          <li class="cs-social-li">
+            <a
+              href="https://www.instagram.com/meritembroidery/"
+              class="cs-social-link"
+              aria-label="instagram"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="cs-social-icon cs-default"
+                src="/assets/images/instagram.png"
+                alt="icon"
+                loading="lazy"
+                decoding="async"
+                width="32"
+                height="32"
+                aria-hidden="true"
+                style="filter: brightness(0) invert(1); "
+              />
+            </a>
+          </li>
         </ul>
       </div>
       <div>
-         <h1 class="text-xl" style="color:white;font-weight:bold;margin-bottom: 1rem">Quick Links</h1>
-         <ul>
-        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/">Home</a></li>
-        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/about">About Us</a></li>
-        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/portfolio">Gallery</a></li>
-        <li class="cs-li" style="color:white;padding: 10px 0"><a href="/contactUs">Contact Us</a></li>
-        
-         </ul>
+        <h1
+          class="text-xl"
+          style="color:white;font-weight:bold;margin-bottom: 1rem"
+        >
+          Our Services
+        </h1>
+        <ul>
+          <li class="cs-li" style="color:white;padding: 10px 0">
+            <a href="/#embroidery">Embroidery</a>
+          </li>
+          <li class="cs-li" style="color:white;padding: 10px 0">
+            <a href="/#screenPrinting">Screen Printing</a>
+          </li>
+          <li class="cs-li" style="color:white;padding: 10px 0">
+            <a href="/#digitalPrinting">Digital Printing</a>
+          </li>
+          <li class="cs-li" style="color:white;padding: 10px 0">
+            <a href="/#artworkServices">Artwork Services</a>
+          </li>
+          <li class="cs-li" style="color:white;padding: 10px 0">
+            <a href="/#laserEngraving">Laser Engraving</a>
+          </li>
+        </ul>
       </div>
       <div>
-         <h1 class="text-xl" style="color:white;font-weight:bold;margin-bottom: 1rem">Contact Us</h1>
-         <ul>
-        <li class="cs-li flex items-center py-2 text-white">
-          <img src="src/assets/images/location-icon.png" alt="" class="w-8 h-8 mr-2"> 
-          <a href="">3954 76 Ave NW T6B 2P1, Edmonton, AB</a>
-        </li>
-              <li class="cs-li flex items-center py-2 text-white">
-          <img src="src/assets/images/phone-icon.png" alt="" class="w-8 h-8 mr-2">
-          <a href="tel:780-405-3700">Manni Harman – 780-405-3700</a>
-        </li>
-         <li class="cs-li flex items-center py-2 text-white">
-          <img src="src/assets/images/phone-icon.png" alt="" class="w-8 h-8 mr-2">
-          <a href="tel:+1 780-414-6109">Office – +1 780-414-6109</a>
-        </li>
-        <li class="cs-li flex items-center py-2 text-white">
-          <img src="src/assets/images/email-icon.png" alt="" class="w-8 h-8 mr-2">
-          <a href="mailto:sharan@meritembroidery.com">sharan@meritembroidery.com</a>
-        </li>
-        
-         </ul>
+        <h1
+          class="text-xl"
+          style="color:white;font-weight:bold;margin-bottom: 1rem"
+        >
+          Quick Links
+        </h1>
+        <ul>
+          <li class="cs-li" style="color:white;padding: 10px 0">
+            <a href="/">Home</a>
+          </li>
+          <li class="cs-li" style="color:white;padding: 10px 0">
+            <a href="/about">About Us</a>
+          </li>
+          <li class="cs-li" style="color:white;padding: 10px 0">
+            <a href="/portfolio">Gallery</a>
+          </li>
+          <li class="cs-li" style="color:white;padding: 10px 0">
+            <a href="/contactUs">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h1
+          class="text-xl"
+          style="color:white;font-weight:bold;margin-bottom: 1rem"
+        >
+          Contact Us
+        </h1>
+        <ul>
+          <li class="cs-li flex items-center py-2 text-white">
+            <Icon name="tabler:map-pin" class="mr-2 h-8 w-8 text-(--primary)" />
+            <a href="">3954 76 Ave NW T6B 2P1, Edmonton, AB</a>
+          </li>
+          <li class="cs-li flex items-center py-2 text-white">
+            <Icon name="tabler:phone" class="mr-2 h-8 w-8 text-(--primary)" />
+            <a href="tel:780-405-3700">Manni Harman – 780-405-3700</a>
+          </li>
+          <li class="cs-li flex items-center py-2 text-white">
+            <Icon
+              name="tabler:building"
+              class="mr-2 h-8 w-8 text-(--primary)"
+            />
+            <a href="tel:+1 780-414-6109">Office – +1 780-414-6109</a>
+          </li>
+          <li class="cs-li flex items-center py-2 text-white">
+            <Icon name="tabler:mail" class="mr-2 h-8 w-8 text-(--primary)" />
+            <a href="mailto:sharan@meritembroidery.com"
+              >sharan@meritembroidery.com</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="w-full flex flex-wrap flex-col justify-center items-center md:px-72 md:flex-row md:justify-around md:items-start"  style="margin-top:1rem;border-top: .5px solid rgba(255,255,255,0.4);">
-      <p  style="color:white;margin-top:.5rem">✓ Serving Canada Since 1992</p>
+    <div
+      class="flex w-full flex-col flex-wrap items-center justify-center md:flex-row md:items-start md:justify-around md:px-72"
+      style="margin-top:1rem;border-top: .5px solid rgba(255,255,255,0.4);"
+    >
+      <p style="color:white;margin-top:.5rem">✓ Serving Canada Since 1992</p>
       <p style="color:white;margin-top:.5rem">✓ State-of-the-Art Equipment</p>
       <p style="color:white;margin-top:.5rem">✓ Fast Turnaround</p>
       <p style="color:white;margin-top:.5rem">✓ 100% Satisfaction Guaranteed</p>
     </div>
-    <div class="w-full flex flex-col justify-center items-center   md:justify-center md:items-center"  style="margin-top:1rem;border-top: .5px solid rgba(255,255,255,0.4);">
-      <h1  style="color:white;margin-top:.5rem">Digital Marketing by Bespoke Web Design</h1>
-      <h1  style="color:white;">© 2026 Merit Embroidery & Printing LTD. All rights reserved.</h1>
+    <div
+      class="flex w-full flex-col items-center justify-center md:items-center md:justify-center"
+      style="margin-top:1rem;border-top: .5px solid rgba(255,255,255,0.4);"
+    >
+      <h1 style="color:white;margin-top:.5rem">
+        Digital Marketing by Bespoke Web Design
+      </h1>
+      <h1 style="color:white;">
+        © 2026 Merit Embroidery & Printing LTD. All rights reserved.
+      </h1>
     </div>
   </div>
   <!-- <div class="container">
     <div class="left-section"> -->
-      <!-- <a class="logo" href="/"
+  <!-- <a class="logo" href="/"
         ><img
           loading="lazy"
           decoding="async"
@@ -98,17 +185,17 @@ const currentYear = getCurrentYear()
           height="78"
         /></a
       > -->
-      
-          <!-- <br> -->
-          <!-- <div class="cta">
+
+  <!-- <br> -->
+  <!-- <div class="cta">
             <h2>Need Custom Apparel or Promo Gear?</h2>
             <p>
               Let’s make it happen — fast, professional, and done right.
             </p>
             <a href="/contact" class="cs-button-solid">Get a Quote</a>
           </div> -->
-          
-    <!-- </div>
+
+  <!-- </div>
     <div class="right-section">
       <div class="lists">
         <ul>
@@ -166,7 +253,7 @@ const currentYear = getCurrentYear()
       <span>Designed and Hand Coded by</span>
       <a href="https://bespokewebdesign.ca/" target="_blank" rel="noopener" style="color: var(--primary);margin: 0 .5rem 0 .5rem;font:bold;font-size: large;">Bespoke Web Design Edmonton</a>
       <span class="copyright"> Copyright {currentYear} - Present</span> -->
-    <!-- </div>
+  <!-- </div>
     <div class="flex flex-nowrap justify-center items-center">
       <a href="/privacy-policy" style="margin-right: 1rem;">Privacy Policy</a>
       <p>  |  </p>
@@ -177,37 +264,63 @@ const currentYear = getCurrentYear()
 
 <style lang="less">
   /* Mobile */
-@media only screen and (min-width: 0em) {
-  #footer {
-    font-size: ~"min(4vw, 1.2em)";
-    padding: (84/16rem) 0 (20/16rem);
-    background: var(--secondary);
-    // border-top: 3px solid var(--primary);
+  @media only screen and (min-width: 0em) {
+    #footer {
+      font-size: ~"min(4vw, 1.2em)";
+      padding: (84/16rem) 0 (20/16rem);
+      background: var(--secondary);
+      // border-top: 3px solid var(--primary);
 
-    .left-section {
-      text-align: center;
-      margin: auto;
-      margin-bottom: (50/16rem);
-      .logo {
-        // text-align: center;
-        width: 96%; 
-        height: (48/16em);
+      .left-section {
+        text-align: center;
         margin: auto;
-        margin-bottom: (30/16em);
-        display: inline-block;
+        margin-bottom: (50/16rem);
+        .logo {
+          // text-align: center;
+          width: 96%;
+          height: (48/16em);
+          margin: auto;
+          margin-bottom: (30/16em);
+          display: inline-block;
 
-        img {
-          width: auto;
-          height: 100%;
-          display: block;
+          img {
+            width: auto;
+            height: 100%;
+            display: block;
+          }
         }
-      }
-      .cta{
-        justify-content: left;
-        display: flex;
-        flex-direction: column;
-        h2{
-          text-align: left;
+        .cta {
+          justify-content: left;
+          display: flex;
+          flex-direction: column;
+          h2 {
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 21/18em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            position: relative;
+          }
+
+          p {
+            text-align: left;
+            font-size: (14/16rem);
+            line-height: 27/14;
+            // text-align: center;
+            width: 100%;
+            width: 307/14rem;
+            margin: auto;
+            color: #000;
+            opacity: 0.9;
+            margin-bottom: (30/16em);
+          }
+          .cs-button-solid {
+            width: fit-content;
+          }
+        }
+        h2 {
           font-size: 1.125rem;
           font-weight: 700;
           line-height: 21/18em;
@@ -218,10 +331,9 @@ const currentYear = getCurrentYear()
         }
 
         p {
-          text-align: left;
           font-size: (14/16rem);
           line-height: 27/14;
-          // text-align: center;
+          text-align: center;
           width: 100%;
           width: 307/14rem;
           margin: auto;
@@ -229,298 +341,271 @@ const currentYear = getCurrentYear()
           opacity: 0.9;
           margin-bottom: (30/16em);
         }
-        .cs-button-solid{
-          width: fit-content;
-        }
-
-      }
-      h2{
-        font-size: 1.125rem;
-        font-weight: 700;
-        line-height: 21/18em;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        color: var(--primary);
-        position: relative;
-      }
-
-      p {
-        font-size: (14/16rem);
-        line-height: 27/14;
-        text-align: center;
-        width: 100%;
-        width: 307/14rem;
-        margin: auto;
-        color: #000;
-        opacity: 0.9;
-        margin-bottom: (30/16em);
-      }
-      .cs-social {
-        width: 96%;
-        margin: auto;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        // justify-content:center;
-        gap: (8/16rem);
+        .cs-social {
+          width: 96%;
+          margin: auto;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          // justify-content:center;
+          gap: (8/16rem);
         }
 
         .cs-social-li {
-            list-style: none;
+          list-style: none;
         }
 
         .cs-social-link {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(0, 0, 0, 0.09); 
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s, filter 0.3s;
+          width: 60px;
+          height: 60px;
+          background-color: rgba(0, 0, 0, 0.09);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition:
+            background-color 0.3s,
+            filter 0.3s;
+
+          .cs-social-icon {
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s;
+          }
+
+          &:hover {
+            background-color: red;
 
             .cs-social-icon {
-                filter: brightness(0) invert(1); 
-                transition: filter 0.3s;
+              filter: brightness(0);
             }
-
-            &:hover {
-                background-color: red; 
-
-                .cs-social-icon {
-                    filter: brightness(0); 
-                }
-            }
+          }
         }
-       
+
         .cs-social-icon {
-            width: 32px;
-            height: auto;
-            display: block;
-            // opacity: 0.5;
+          width: 32px;
+          height: auto;
+          display: block;
+          // opacity: 0.5;
         }
-        
+      }
 
-    }
-
-    .right-section {
-      width: 96%;
-      max-width: (407/16rem);
-      margin: auto;
-      .lists {
+      .right-section {
         width: 96%;
-        max-width: (307/16rem);
-        // margin: auto;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        ul {
-          margin-top: 0;
-          margin-bottom: 0;
-          padding: 0;
-
-          &:nth-of-type(3) {
-            margin-top: (50/16rem);
-            li {
-              margin-bottom: (16/16rem);
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-
-              &:last-of-type {
-                margin-bottom: 0;
-              }
-            }
-          }
-
-          li {
-            font-size: (18/16rem);
-            list-style: none;
-            margin-bottom: (12/16rem);
-            color: #000;
-            opacity: 0.9;
-
-            a {
-              line-height: 21/18em;
-              text-decoration: none;
-              color: #000;
-              transition: color 0.3s;
-              &:hover {
-                color: var(--primary);
-              }
-            }
-          }
-          h2 {
-            font-size: (18/16rem);
-            font-weight: bold;
-            line-height: 21/18em;
-            text-transform: uppercase;
-            margin-bottom: (37/16rem);
-            color: #000;
-            position: relative;
-
-            &:before {
-              content: "";
-              width: (97/16rem);
-              height: (2/16rem);
-              background: var(--primary);
-              opacity: 1;
-              display: block;
-              position: absolute;
-              bottom: (-16/16rem);
-              left: 0;
-            }
-          }
-        }
-      }
-
-      .buttons {
-        display: flex;
-        justify-content: center;
-      }
-
-      .cs-button-solid {
-        width: (250/16rem);
-        height: (53/16rem);
-        margin: 0;
-        padding-top: (3/16rem);
-      }
-    }
-
-    .credit {
-      font-size: (16/16rem);
-      line-height: (36/16rem);
-      text-align: center;
-      width: 96%;
-      margin: auto;
-      margin-top: (100/16rem);
-      color: #000;
-
-      a {
-        font-size: (16/16rem);
-        text-decoration: none;
-        color: var(--primary);
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-
-      .copyright {
-        font-size: (16/16rem);
-        display: block;
-      }
-    }
-  }
-}
-
-/* Small Desktop */
-@media only screen and (min-width: 64em) {
-  #footer {
-    font-size: ~"min(1.2vw, 1em)";
-    .container {
-      width: 96%;
-      max-width: (1320/16rem);
-      margin: auto;
-      padding: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: nowrap;
-    }
-
-    .left-section {
-      text-align: left;
-      width: (409/16rem);
-      margin: 0;
-
-      .logo {
-        text-align: left;
-        height: (72/16rem);
-        margin-left: 0;
-      }
-
-      p {
-        text-align: left;
-        margin-left: 0;
-      }
-      .cs-social{
-        margin: 0;
-      }
-    }
-
-    .right-section {
-      width: (801/16rem);
-      max-width: none;
-      margin: 0;
-      .lists {
-        width: 96%;
-        max-width: (769/16rem);
-        max-width: initial;
-        margin: 0;
-        justify-content: right;
-        gap: 20%;
-
-        ul {
-          &:nth-of-type(3) {
+        max-width: (407/16rem);
+        margin: auto;
+        .lists {
+          width: 96%;
+          max-width: (307/16rem);
+          // margin: auto;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          ul {
             margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
 
-            li:first-of-type {
-              margin-bottom: 0;
+            &:nth-of-type(3) {
+              margin-top: (50/16rem);
+              li {
+                margin-bottom: (16/16rem);
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                &:last-of-type {
+                  margin-bottom: 0;
+                }
+              }
             }
-          }
 
-          li {
-            list-style: none;
-            a {
+            li {
+              font-size: (18/16rem);
+              list-style: none;
+              margin-bottom: (12/16rem);
+              color: #000;
+              opacity: 0.9;
+
+              a {
+                line-height: 21/18em;
+                text-decoration: none;
+                color: #000;
+                transition: color 0.3s;
+                &:hover {
+                  color: var(--primary);
+                }
+              }
+            }
+            h2 {
+              font-size: (18/16rem);
+              font-weight: bold;
+              line-height: 21/18em;
+              text-transform: uppercase;
+              margin-bottom: (37/16rem);
+              color: #000;
               position: relative;
 
               &:before {
                 content: "";
-                width: 0%;
+                width: (97/16rem);
                 height: (2/16rem);
                 background: var(--primary);
                 opacity: 1;
                 display: block;
                 position: absolute;
-                bottom: (-3/16rem);
+                bottom: (-16/16rem);
                 left: 0;
-                transition: width 0.3s;
               }
+            }
+          }
+        }
 
-              &:hover {
+        .buttons {
+          display: flex;
+          justify-content: center;
+        }
+
+        .cs-button-solid {
+          width: (250/16rem);
+          height: (53/16rem);
+          margin: 0;
+          padding-top: (3/16rem);
+        }
+      }
+
+      .credit {
+        font-size: (16/16rem);
+        line-height: (36/16rem);
+        text-align: center;
+        width: 96%;
+        margin: auto;
+        margin-top: (100/16rem);
+        color: #000;
+
+        a {
+          font-size: (16/16rem);
+          text-decoration: none;
+          color: var(--primary);
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .copyright {
+          font-size: (16/16rem);
+          display: block;
+        }
+      }
+    }
+  }
+
+  /* Small Desktop */
+  @media only screen and (min-width: 64em) {
+    #footer {
+      font-size: ~"min(1.2vw, 1em)";
+      .container {
+        width: 96%;
+        max-width: (1320/16rem);
+        margin: auto;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+      }
+
+      .left-section {
+        text-align: left;
+        width: (409/16rem);
+        margin: 0;
+
+        .logo {
+          text-align: left;
+          height: (72/16rem);
+          margin-left: 0;
+        }
+
+        p {
+          text-align: left;
+          margin-left: 0;
+        }
+        .cs-social {
+          margin: 0;
+        }
+      }
+
+      .right-section {
+        width: (801/16rem);
+        max-width: none;
+        margin: 0;
+        .lists {
+          width: 96%;
+          max-width: (769/16rem);
+          max-width: initial;
+          margin: 0;
+          justify-content: right;
+          gap: 20%;
+
+          ul {
+            &:nth-of-type(3) {
+              margin-top: 0;
+
+              li:first-of-type {
+                margin-bottom: 0;
+              }
+            }
+
+            li {
+              list-style: none;
+              a {
+                position: relative;
+
                 &:before {
-                  width: 100%;
+                  content: "";
+                  width: 0%;
+                  height: (2/16rem);
+                  background: var(--primary);
+                  opacity: 1;
+                  display: block;
+                  position: absolute;
+                  bottom: (-3/16rem);
+                  left: 0;
+                  transition: width 0.3s;
+                }
+
+                &:hover {
+                  &:before {
+                    width: 100%;
+                  }
                 }
               }
             }
           }
         }
+
+        .buttons {
+          justify-content: flex-start;
+        }
       }
 
-      .buttons {
-        justify-content: flex-start;
+      .credit {
+        .copyright {
+          display: inline-block;
+        }
       }
     }
-
-    .credit {
-      .copyright {
-        display: inline-block;
-      }
-    }
-  }
-  .cs-li {
+    .cs-li {
       list-style: none;
+    }
   }
-}
 
-// /* Dark Mode */
-// @media only screen and (min-width: 0em) {
-//   body.dark-mode {
-//     #footer {
-//       background: #061623;
-//     }
-//   }
-// }
-
+  // /* Dark Mode */
+  // @media only screen and (min-width: 0em) {
+  //   body.dark-mode {
+  //     #footer {
+  //       background: #061623;
+  //     }
+  //   }
+  // }
 </style>

@@ -1,19 +1,13 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
-import Landing from "@components/Landing.astro";
-import FAQ from "@components/FAQ.astro";
 import Gallery from "@components/Gallery.astro";
-import {TimelineSection} from "@components/TimelineSection.tsx";
-import { Image } from "astro:assets";
 import "../styles/global.css";
 
-import timeline1 from "@assets/images/merit-images/merit-0256.jpg";
-// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from "@assets/images/landing.jpg";
 import { getImage } from "astro:assets";
+import { TimelineSection } from "@components/TimelineSection";
 const optimizedImage = await getImage({ src: landingImage, format: "avif" });
-
 ---
 
 <BaseLayout
@@ -21,18 +15,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   description="High-quality in-house embroidery, screen printing, and custom apparel decoration in Edmonton. Serving businesses across Alberta and North America with fast, reliable, and professional service."
   preloadedImage={optimizedImage}
 >
-  <!-- ============================================ -->
-  <!--                    LANDING                   -->
-  <!-- ============================================ -->
-
-  <!-- <Landing
-    title="About Us"
-    image={optimizedImage}
-  /> -->
-
-  <!-- ============================================ -->
-  <!--                     About                    -->
-  <!-- ============================================ -->
   <section class="py-8 text-center">
     <h2 style="color: var(--primary);" class="cs-topper">
       Crafting Timeless Threads of Excellence
@@ -74,10 +56,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     </div>
   </section>
 
-
-  <!-- ============================================ -->
-  <!--                  Foundation                   -->
-  <!-- ============================================ -->
   <section id="foundation">
     <div class="cs-container">
       <div class="cs-content">
@@ -94,8 +72,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
             alt="icon"
             aria-hidden="true"
           />
-
-          <!-- Text Grouped For Flexbox-->
           <div class="cs-text-group">
             <h3 class="cs-h3">Our Vision</h3>
             <p class="cs-item-text">
@@ -138,7 +114,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
             alt="icon"
             aria-hidden="true"
           />
-          <!-- Text Grouped For Flexbox-->
           <div class="cs-text-group">
             <h3 class="cs-h3">Our Promise</h3>
             <p class="cs-item-text">
@@ -161,7 +136,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
             alt="icon"
             aria-hidden="true"
           />
-          <!-- Text Grouped For Flexbox-->
           <div class="cs-text-group">
             <h3 class="cs-h3">Our Value</h3>
             <p class="cs-item-text">
@@ -186,87 +160,12 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!--                 SOME OF OUR WORKS            -->
-  <!-- ============================================ -->
   <TimelineSection client:visible />
-
-  <Gallery limit={20}/>
-
-  <!-- <section -->
-  <!--   class="flex flex-col items-center justify-center" -->
-  <!--   style="margin-bottom: 8rem;" -->
-  <!-- > -->
-  <!--   <h2 class="cs-topper">Showcasing Our Finest Creations</h2> -->
-  <!--   <h2 class="cs-title" style="margin-bottom: 4rem;">Some of Our Works</h2> -->
-  <!--   <div -->
-  <!--     class="grid w-[90%] grid-cols-1 justify-center gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4" -->
-  <!--   > -->
-  <!--     <div class="flex items-center justify-center"> -->
-  <!--       <img -->
-  <!--         src="/assets/images/portfolio/port1.jpg" -->
-  <!--         alt="Gallery 1" -->
-  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
-  <!--       /> -->
-  <!--     </div> -->
-  <!---->
-  <!--     <div class="flex items-center justify-center"> -->
-  <!--       <img -->
-  <!--         src="/assets/images/portfolio/port2.jpg" -->
-  <!--         alt="Gallery 2" -->
-  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
-  <!--       /> -->
-  <!--     </div> -->
-  <!---->
-  <!--     <div class="flex items-center justify-center"> -->
-  <!--       <img -->
-  <!--         src="/assets/images/portfolio/port3.jpg" -->
-  <!--         alt="Gallery 3" -->
-  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
-  <!--       /> -->
-  <!--     </div> -->
-  <!---->
-  <!--     <div class="flex items-center justify-center"> -->
-  <!--       <img -->
-  <!--         src="/assets/images/portfolio/port4.jpg" -->
-  <!--         alt="Gallery 4" -->
-  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
-  <!--       /> -->
-  <!--     </div> -->
-  <!---->
-  <!--     <div class="flex items-center justify-center"> -->
-  <!--       <img -->
-  <!--         src="/assets/images/portfolio/port5.jpg" -->
-  <!--         alt="Gallery 5" -->
-  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
-  <!--       /> -->
-  <!--     </div> -->
-  <!---->
-  <!--     <div class="flex items-center justify-center"> -->
-  <!--       <img -->
-  <!--         src="/assets/images/portfolio/port6.jpg" -->
-  <!--         alt="Gallery 6" -->
-  <!--         class="h-full w-[80%] object-cover sm:w-[60%] md:w-full" -->
-  <!--       /> -->
-  <!--     </div> -->
-  <!--   </div> -->
-  <!--   <a -->
-  <!--     href="https://www.instagram.com" -->
-  <!--     class="cs-button-solid cs-nav-button" -->
-  <!--     style="margin-top: 32px;">View More on Instagram</a -->
-  <!--   > -->
-  <!-- </section> -->
-
+  <Gallery limit={20} />
   <CTA />
 </BaseLayout>
 
 <style lang="less">
-  /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
-
-  /*-- -------------------------- -->
-<---          About          -->
-<--- -------------------------- -*/
-
   @media only screen and (min-width: 0em) {
     #about {
       margin-bottom: 32px;
@@ -322,7 +221,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
           flex-direction: row;
           .left {
             width: 45%;
-            // min-width: 500px;
             margin: auto;
             .content {
               width: 80%;
@@ -341,11 +239,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     }
   }
 
-  /*-- -------------------------- -->
-<---       Side By Side         -->
-<--- -------------------------- -*/
-
-  /* Mobile - 360px */
   @media only screen and (min-width: 0em) {
     #sbs {
       padding: var(--sectionPadding);
@@ -362,9 +255,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       }
 
       .cs-left {
-        /* scaling the font size with the view width */
         font-size: ~"min(2.31vw, .7em)";
-        /* using ems so we can use font size to scale the whole section */
         width: (631/16em);
         height: (636/16em);
         position: relative;
@@ -374,12 +265,10 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         border-radius: (24/16em);
         display: block;
         position: absolute;
-        /* clips img tag corners */
         overflow: hidden;
         img {
           width: 100%;
           height: 100%;
-          /* makes image act like a background image */
           object-fit: cover;
           position: absolute;
           top: 0;
@@ -399,7 +288,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         height: (400/16em);
         background-color: #fff;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
-        /* 6px - 12px */
         border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
         right: 0;
         bottom: 0;
@@ -432,7 +320,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       }
 
       .cs-flex-group {
-        /* 16px - 32px */
         padding: clamp(1rem, 3vw, 2rem);
         background-color: #f7f7f7;
         border-radius: (16/16rem);
@@ -440,7 +327,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       }
 
       .cs-flex-p {
-        /* 14px - 16px */
         font-size: clamp(0.875rem, 1.5vw, 1rem);
         line-height: 1.5em;
         margin: 0 0 (16/16rem);
@@ -465,11 +351,9 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       }
 
       .cs-quote-icon {
-        /* 60px - 136px */
         width: clamp(3.75rem, 10vw, 8.5rem);
         height: auto;
         position: absolute;
-        /* 16px - 32px */
         right: clamp(1rem, 4vw, 2rem);
         bottom: (0/16rem);
       }
@@ -480,7 +364,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     }
   }
 
-  /* Desktop - 1024px */
   @media only screen and (min-width: 64em) {
     #sbs {
       .cs-container {
@@ -500,56 +383,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     }
   }
 
-  // /* Dark Mode */
-  // @media only screen and (min-width: 0em) {
-  //   body.dark-mode {
-  //     #sbs {
-  //       .cs-left {
-  //         &:before,
-  //         &:after {
-  //           background: var(--accent);
-  //         }
-  //       }
-
-  //       .cs-picture2 {
-  //         background-color: var(--dark);
-  //         /* 6px - 12px */
-  //         border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-  //       }
-
-  //       .cs-topper {
-  //         color: var(--primaryLight);
-  //       }
-
-  //       .cs-title,
-  //       .cs-text,
-  //       .cs-h3,
-  //       .cs-flex-p,
-  //       .cs-name {
-  //         color: var(--bodyTextColorWhite);
-  //       }
-
-  //       .cs-flex-group {
-  //         background-color: var(--accent);
-  //       }
-
-  //       .cs-job {
-  //         color: var(--bodyTextColorWhite);
-  //         opacity: 0.8;
-  //       }
-
-  //       .cs-quote-icon {
-  //         opacity: 0.2;
-  //       }
-  //     }
-  //   }
-  // }
-
-  /*-- -------------------------- -->
-<---          Services          -->
-<--- -------------------------- -*/
-
-  /* Mobile - 360px */
   @media only screen and (min-width: 0rem) {
     #foundation {
       padding: var(--sectionPadding);
@@ -561,7 +394,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* 48px - 64px */
         gap: clamp(3rem, 6vw, 4rem);
       }
 
@@ -569,14 +401,11 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         width: 100%;
         display: flex;
         flex-direction: column;
-        /* centers content horizontally, set to flex-start to left align */
         align-items: center;
-        /* set text align to left if content needs to be left aligned */
         text-align: center;
       }
 
       .cs-card-group {
-        /* changes to 1280px at desktop */
         max-width: (900/16rem);
         width: 100%;
         margin: 0;
@@ -605,14 +434,12 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         height: (80/16rem);
         margin-bottom: (20/16rem);
         box-sizing: border-box;
-        /* prevents border from affecting height and width */
         background-color: #f7f7f7;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
-        /* prevents flexbox from squishing it */
         flex: none;
       }
 
@@ -632,7 +459,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       }
 
       .cs-item-text {
-        /* 14px - 16px */
         font-size: clamp(0.875rem, 1.5vw, 1rem);
         line-height: 1.5em;
         margin: 0;
@@ -642,12 +468,10 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
       .cs-button-solid {
         font-size: (16/16rem);
-        /* 46px - 56px */
         line-height: clamp(2.875rem, 5.5vw, 3.5rem);
         font-weight: 700;
         min-width: (150/16rem);
         margin: 0;
-        /* prevents padding from adding to the width */
         box-sizing: border-box;
         padding: 0 (24/16rem);
         color: #fff;
@@ -680,8 +504,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       }
     }
   }
-
-  /* Tablet - 768px */
   @media only screen and (min-width: 48rem) {
     #foundation {
       .cs-card-group {
@@ -695,7 +517,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     }
   }
 
-  /* Large Desktop - 1300px */
   @media only screen and (min-width: 81.25rem) {
     #foundation {
       .cs-card-group {
@@ -708,40 +529,4 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       }
     }
   }
-
-  // /* Dark Mode */
-  // @media only screen and (min-width: 0rem) {
-  //     body.dark-mode {
-  //         #foundation {
-  //             .cs-topper {
-  //                 color: var(--primaryLight);
-  //             }
-
-  //             .cs-item {
-  //                 background-color: var(--medium);
-  //             }
-
-  //             .cs-text,
-  //             .cs-item-text {
-  //                 opacity: 0.8;
-  //             }
-
-  //             .cs-picture {
-  //                 background-color: var(--accent);
-  //             }
-
-  //             .cs-icon {
-  //                 /* turns it white */
-  //                 filter: grayscale(1) brightness(1000%);
-  //             }
-
-  //             .cs-title,
-  //             .cs-text,
-  //             .cs-h3,
-  //             .cs-item-text {
-  //                 color: var(--bodyTextColorWhite);
-  //             }
-  //         }
-  //     }
-  // }
 </style>
