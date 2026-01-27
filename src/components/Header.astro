@@ -92,19 +92,16 @@ import ButtonLink from "./Ui/ButtonLink.astro";
 
                   <ul
                     id={`submenu-${entry.key}`}
-                    class="cs-drop-ul corner-squircle rounded-xl rounded-tl-none border-none supports-corner-shape:rounded-3xl supports-corner-shape:rounded-tl-none"
+                    class="cs-drop-ul corner-squircle divide-accent-primary divide-y-2 rounded-xl rounded-tl-none border-none supports-corner-shape:rounded-3xl supports-corner-shape:rounded-tl-none"
                   >
                     {/* idx + 1 === entry.children.length */}
                     {entry.children.map((child, idx) => (
-                      <li class="cs-drop-li hover:bg-accent-primary focus-visible:bg-accent-primary group px-4 text-black transition-colors ease-in">
+                      <li class="cs-drop-li hover:bg-accent-primary focus-visible:bg-accent-primary group text-black transition-colors ease-in">
                         <a
                           href={child.url}
                           class:list={[
                             "cs-li-link cs-drop-link px-3 py-2 text-[clamp(1rem,calc(1rem+1vw),1.125rem)] before:hidden",
                             "group-hover:bg-transparent group-hover:text-white group-focus-visible:text-white",
-                            idx + 1 === 1
-                              ? ""
-                              : "border-accent-primary border-t-2",
                           ]}
                           aria-current={
                             Astro.url.pathname === child.url
