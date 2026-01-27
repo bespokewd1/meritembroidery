@@ -4,7 +4,7 @@ import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
 import { Image, Picture } from "astro:assets";
-import landingImage from "@assets/images/home-hero.jpg";
+import landingImage from "@assets/images/logo.png";
 import landingImage2 from "@assets/images/merit-images/merit-0318.jpg";
 import aboutImg1 from "@assets/images/merit-images/merit-0290.jpg";
 import aboutImg2 from "@assets/images/merit-images/merit-0314.jpg";
@@ -51,42 +51,44 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!--                    Hero                      -->
   <!-- ============================================ -->
 
-  <section id="hero" style="width: 100%;margin: 0;padding: 0;">
+  <section id="hero" class="hero-gradient m-0 w-full p-0">
     <div
-      class="flex size-full max-h-145 w-full flex-col items-center justify-center sm:flex-row lg:h-[calc(100dvh-6.6875rem)] lg:max-h-full"
-      style="width: 100%;padding: 0px;"
+      class="flex size-full h-[50dvh] max-h-145 flex-col items-center justify-center p-0 sm:flex-row lg:h-[calc(100dvh-6.6875rem)] lg:max-h-full"
     >
-      <div class="relative grid size-full max-h-[inherit]">
+      <div class="hidden size-full items-center justify-center xl:flex">
         <Image
           src={landingImage}
           alt="embroidery machines"
           loading="eager"
           fetchpriority="high"
-          class="relative -z-1 size-full object-cover object-top [grid-area:1/1]"
+          class="flex size-full h-auto max-w-150 items-center justify-start object-cover"
         />
-
+      </div>
+      <div class="relative grid size-full max-h-[inherit]">
+        <!-- class:list={[
+            "absolute right-0 bottom-0 left-0 flex flex-col items-center gap-3 p-4 backdrop-blur-md [grid-area:1/1]",
+            "lg:top-0 lg:right-auto lg:bottom-auto lg:left-0 lg:max-w-xl lg:-translate-1/2 lg:items-start",
+            "lg:corner-squircle lg:rounded-2xl supports-[corner-shape:squircle]:lg:rounded-4xl",
+          ]} -->
         <div
-          class="lg:corner-squircle absolute right-0 bottom-0 left-0 flex flex-col items-center gap-3 p-4 backdrop-blur-md [grid-area:1/1] lg:right-16 lg:bottom-32 lg:left-auto lg:max-w-xl lg:items-start lg:rounded-2xl supports-[corner-shape:squircle]:lg:rounded-4xl"
+          class:list={[
+            "absolute top-1/2 left-1/2 flex -translate-1/2 flex-col items-center gap-3 p-4 backdrop-blur-md [grid-area:1/1]",
+            "lg:left-0 lg:max-w-xl lg:translate-x-0 lg:items-start",
+            "lg:corner-squircle lg:rounded-2xl supports-[corner-shape:squircle]:lg:rounded-4xl",
+          ]}
         >
           <h1 class="cs-title m-0 text-center text-white lg:text-left">
             Your Trusted Promotional Decorators!
           </h1>
-          <p class="m-0 text-left text-xl font-bold text-white/90 md:text-2xl">
+          <p
+            class="m-0 text-center text-xl font-bold text-white/90 md:text-2xl lg:text-left"
+          >
             Quality, Delivery, Service, Innovation
           </p>
           <ButtonLink href="/get-a-quote" class={"mt-6"}>
             Get A Quote
           </ButtonLink>
         </div>
-      </div>
-      <div class="hidden size-full items-center justify-start xl:flex">
-        <Image
-          src={landingImage2}
-          alt="embroidery machines"
-          loading="eager"
-          fetchpriority="high"
-          class="flex size-full items-center justify-start object-cover"
-        />
       </div>
     </div>
   </section>
@@ -316,6 +318,33 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 </BaseLayout>
 
 <style lang="less">
+  /* Hero Gradient Background */
+  .hero-gradient {
+    background:
+      radial-gradient(
+        ellipse 80% 100% at 25% 50%,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(180, 210, 255, 0.8) 5%,
+        rgba(70, 130, 220, 0.6) 25%,
+        rgba(30, 70, 160, 0.4) 45%,
+        transparent 75%
+      ),
+      radial-gradient(
+        ellipse 60% 80% at 20% 60%,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(100, 160, 230, 0.3) 30%,
+        transparent 60%
+      ),
+      linear-gradient(
+        to right,
+        #1e3a8a 0%,
+        #1e40af 30%,
+        var(--color-accent-light) 70%
+      );
+
+    // #1e3a8a 70%,
+    background-color: var(--color-accent-light);
+  }
   /* STYLES FOR ABOVE THE FOLD */
 
   /*-- -------------------------- -->
