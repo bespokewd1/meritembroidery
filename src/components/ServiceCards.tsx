@@ -46,15 +46,18 @@ export const ServiceCards = () => {
   ];
 
   return (
-    <section className="bg-accent-primary/10 p-(--sectionPadding)">
-      <div className="">
-        <span className="cs-topper text-center">Our Services</span>
-        <h2 className="cs-title text-accent-primary text-center">
-          Premium Decoration Services for Your Brand
-        </h2>
-      </div>
-      <div className="mx-auto max-w-7xl">
-        <HoverEffect items={serviceItems} />
+    <section className="bg-accent-light relative p-(--sectionPadding)">
+      <div className="bg-accent-dark corner-t-squircle rounded-t-full pt-16 pb-24">
+        <div className="">
+          <span className="cs-topper text-center">Our Services</span>
+          <h2 className="cs-title text-body-light text-center">
+            Premium Decoration Services for Your Brand
+          </h2>
+        </div>
+        {/* max-w-7xl */}
+        <div className="mx-auto">
+          <HoverEffect items={serviceItems} />
+        </div>
       </div>
     </section>
   );

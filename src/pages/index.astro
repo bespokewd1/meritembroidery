@@ -22,6 +22,14 @@ import satisfaction from "@assets/images/satisfaction.png";
 import BlazeSlider from "blaze-slider";
 import "blaze-slider/dist/blaze.css";
 
+const badges: ImageMetadata[] = [
+  years,
+  canada,
+  attention,
+  onestop,
+  satisfaction,
+];
+
 // Reviews data
 const reviews = [
   {
@@ -96,53 +104,37 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!-- ============================================ -->
   <!--                Trust badges                  -->
   <!-- ============================================ -->
+  <!-- trust-badges-section -->
   <section
-    class="bg-grid relative flex flex-col items-center justify-center bg-slate-50 pt-16 pb-8"
+    class="bg-accent-light relative overflow-hidden p-(--sectionPadding) pr-0 pl-5 md:pl-20"
   >
-    <div class="text-center md:w-[50%]">
-      <h3 class="cs-title text-accent-primary">
-        Experience, Quality, and Reliability You Can Count On
-      </h3>
-    </div>
-
+    <!-- Main content container with rounded left edge -->
     <div
-      class="flex flex-wrap justify-center md:w-[80%] md:flex-wrap md:justify-around md:gap-4"
-      style="margin-top: 2rem;"
+      class="bg-accent-dark relative ml-auto flex w-[min(100rem,97%)] flex-col items-end justify-end rounded-l-full py-24 pr-2 pl-8 md:px-8 md:py-16"
     >
-      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <Image
-          src={years}
-          alt="30 years badge"
-          class="size-25 object-contain md:h-50 md:w-50"
-        />
+      <!-- Title -->
+      <div class="mb-8 text-right md:mb-0">
+        <h3 class="text-heading font-bold text-white italic">
+          Experience, <br class="inline sm:hidden" /> Quality And Delivery<br />
+          You Can Count On!
+        </h3>
       </div>
-      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <Image
-          src={canada}
-          alt="Canada badge"
-          class="size-25 object-contain md:h-50 md:w-50"
-        />
-      </div>
-      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <Image
-          src={attention}
-          alt="Attention badge"
-          class="size-25 object-contain md:h-50 md:w-50"
-        />
-      </div>
-      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <Image
-          src={onestop}
-          alt="One stop badge"
-          class="size-25 object-contain md:h-50 md:w-50"
-        />
-      </div>
-      <div class="flex w-[40%] items-center justify-center md:w-[15%]">
-        <Image
-          src={satisfaction}
-          alt="Satisfaction badge"
-          class="size-25 object-contain md:h-50 md:w-50"
-        />
+
+      <!-- Badges -->
+      <div
+        class="flex flex-wrap items-center justify-around gap-4 md:flex-nowrap md:gap-6"
+      >
+        {
+          badges.map((badge) => (
+            <div class="flex max-w-40 items-center justify-center md:max-w-60">
+              <Image
+                src={badge}
+                alt="One stop badge"
+                class="aspect-square w-full object-contain"
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -341,6 +333,18 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         #1e40af 30%,
         var(--color-accent-light) 70%
       );
+
+    // #1e3a8a 70%,
+    background-color: var(--color-accent-light);
+  }
+
+  .trust-badges-section {
+    background: linear-gradient(
+      to right,
+      #1e3a8a 0%,
+      #1e40af 30%,
+      var(--color-accent-light) 70%
+    );
 
     // #1e3a8a 70%,
     background-color: var(--color-accent-light);
