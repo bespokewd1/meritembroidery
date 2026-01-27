@@ -2,8 +2,12 @@
 @plugin "@toolwind/corner-shape";
 
 @theme {
-
-  --color-accent-primary: hsl(218, 47%, 47%);
+ /* hsl(218, 47%, 47%) */
+  --color-accent-primary: #4069B1;
+  --color-accent-dark: #060658;
+  --color-accent-light:#0E46AE;
+--color-body-light:var(--bodyTextColorWhite);
+--color-body-dark: var(--bodyTextColor);
   --color-primary: var(--primary);
 
   --font-roboto:"Roboto", Arial, sans-serif;
