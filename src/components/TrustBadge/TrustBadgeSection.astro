@@ -1,0 +1,57 @@
+---
+
+import { Image, Picture } from "astro:assets";
+
+import years from "@assets/images/30years.png";
+import canada from "@assets/images/canada.png";
+import attention from "@assets/images/attention.png";
+import onestop from "@assets/images/onestop.png";
+import satisfaction from "@assets/images/satisfaction.png";
+
+
+const badges: ImageMetadata[] = [
+  onestop,
+  attention,
+  years,
+  canada,
+  satisfaction,
+];
+---
+
+  <!-- ============================================ -->
+  <!--                Trust badges                  -->
+  <!-- ============================================ -->
+  <!-- trust-badges-section -->
+  <section
+    class="bg-accent-light relative overflow-hidden p-(--sectionPadding) pr-0 pl-5 md:pl-20"
+  >
+    <!-- Main content container with rounded left edge -->
+    <div
+      class="bg-accent-dark relative ml-auto flex w-[min(100rem,97%)] flex-col items-end justify-end rounded-l-full py-24 pr-2 pl-8 md:px-8 md:py-16"
+    >
+      <!-- Title -->
+      <div class="mb-8 text-right md:mb-0">
+        <h3 class="text-heading font-bold text-white italic">
+          Experience, <br class="inline sm:hidden" /> Quality And Delivery<br />
+          You Can Count On!
+        </h3>
+      </div>
+
+      <!-- Badges -->
+      <div
+        class="flex flex-wrap items-center justify-around gap-4 md:flex-nowrap md:gap-6"
+      >
+        {
+          badges.map((badge) => (
+            <div class="flex max-w-40 items-center justify-center md:max-w-60">
+              <Image
+                src={badge}
+                alt="One stop badge"
+                class="aspect-square w-full object-contain"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>

@@ -46,7 +46,7 @@ export const ServiceCards = () => {
   ];
 
   return (
-    <section className="bg-accent-light relative p-(--sectionPadding)">
+    <section className="bg-accent-light relative p-(--sectionPadding) pb-0">
       <div className="bg-accent-dark corner-t-squircle rounded-t-full pt-16 pb-24">
         <div className="">
           <span className="cs-topper text-center">Our Services</span>

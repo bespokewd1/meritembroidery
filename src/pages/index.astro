@@ -12,23 +12,10 @@ import { getImage } from "astro:assets";
 import ApplicationLogosCarousel from "@components/ApplicationLogosCarousel.astro";
 import ButtonLink from "@components/Ui/ButtonLink.astro";
 import { ServiceCards } from "@components/ServiceCards";
-
-import years from "@assets/images/30years.png";
-import canada from "@assets/images/canada.png";
-import attention from "@assets/images/attention.png";
-import onestop from "@assets/images/onestop.png";
-import satisfaction from "@assets/images/satisfaction.png";
+import TrustBadgeSection from "@components/TrustBadge/TrustBadgeSection.astro";
 
 import BlazeSlider from "blaze-slider";
 import "blaze-slider/dist/blaze.css";
-
-const badges: ImageMetadata[] = [
-  years,
-  canada,
-  attention,
-  onestop,
-  satisfaction,
-];
 
 // Reviews data
 const reviews = [
@@ -101,58 +88,20 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!--                Trust badges                  -->
-  <!-- ============================================ -->
-  <!-- trust-badges-section -->
-  <section
-    class="bg-accent-light relative overflow-hidden p-(--sectionPadding) pr-0 pl-5 md:pl-20"
+  <TrustBadgeSection />
+
+  <div
+    class="bg-accent-dark corner-t-squircle mt-section rounded-t-[3rem] supports-[corner-shape:squircle]:rounded-t-[6rem]"
   >
-    <!-- Main content container with rounded left edge -->
-    <div
-      class="bg-accent-dark relative ml-auto flex w-[min(100rem,97%)] flex-col items-end justify-end rounded-l-full py-24 pr-2 pl-8 md:px-8 md:py-16"
-    >
-      <!-- Title -->
-      <div class="mb-8 text-right md:mb-0">
-        <h3 class="text-heading font-bold text-white italic">
-          Experience, <br class="inline sm:hidden" /> Quality And Delivery<br />
-          You Can Count On!
-        </h3>
-      </div>
-
-      <!-- Badges -->
-      <div
-        class="flex flex-wrap items-center justify-around gap-4 md:flex-nowrap md:gap-6"
-      >
-        {
-          badges.map((badge) => (
-            <div class="flex max-w-40 items-center justify-center md:max-w-60">
-              <Image
-                src={badge}
-                alt="One stop badge"
-                class="aspect-square w-full object-contain"
-              />
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!--                   Services                   -->
-  <!-- ============================================ -->
-  <!-- <section id="services" class="mb-0">
-    <div class="title-banner">
-      <h3 class="cs-title">Services</h3>
-    </div>
-  </section> -->
-  <ServiceCards client:visible />
-
-  <!-- ============================================ -->
-  <!--                   Gallery                    -->
-  <!-- ============================================ -->
-  <ApplicationLogosCarousel />
+    <!-- ============================================ -->
+    <!--                   Services                   -->
+    <!-- ============================================ -->
+    <ServiceCards client:visible />
+    <!-- ============================================ -->
+    <!--                   Gallery                    -->
+    <!-- ============================================ -->
+    <ApplicationLogosCarousel />
+  </div>
 
   <!-- ============================================ -->
   <!--                 About Us                     -->

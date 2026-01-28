@@ -172,14 +172,19 @@ const IMAGES: AppLogo[] = [
 
 type Props = HTMLAttributes<"section">;
 const { class: className, ...props } = Astro.props;
-const sectionClass = cn(
-  "relative overflow-hidden p-(--sectionPadding)",
-  className,
-);
 ---
 
-<section class:list={[sectionClass]} {...props}>
-  <div class="mx-auto px-4">
+<section
+  class:list={[
+    cn(
+      "bg-accent-light relative z-1 overflow-hidden p-(--sectionPadding)",
+      "before:bg-accent-dark before:absolute before:inset-0 before:z-0 before:mx-8",
+      className,
+    ),
+  ]}
+  {...props}
+>
+  <div class="z-2 mx-auto bg-white px-4">
     <span class="cs-topper text-center">Gallery</span>
     <h2 class="cs-title text-accent-primary mb-12 text-center">
       Showcasing Our Finest Creations
@@ -193,7 +198,7 @@ const sectionClass = cn(
         [...Array(2)].map((_, i) => (
           <div
             aria-hidden={i === 1}
-            class="animate-move-to-right grid auto-cols-[1fr] grid-flow-col grid-rows-1 gap-32.5 pl-32.5"
+            class="animate-move-to-right grid auto-cols-[1fr] grid-flow-col grid-rows-1 gap-16 pl-16"
           >
             {IMAGES.slice(0, IMAGES.length / 2).map(
               ({ src, alt, calcWidth }) => (
@@ -217,7 +222,7 @@ const sectionClass = cn(
         [...Array(2)].map((_, i) => (
           <div
             aria-hidden={i === 1}
-            class="animate-move-to-left grid auto-cols-[1fr] grid-flow-col grid-rows-1 gap-32.5 pr-32.5"
+            class="animate-move-to-left grid auto-cols-[1fr] grid-flow-col grid-rows-1 gap-16 pr-16"
           >
             {IMAGES.slice(IMAGES.length / 2).map(({ src, alt, calcWidth }) => (
               <div
@@ -231,12 +236,11 @@ const sectionClass = cn(
         ))
       }
     </div>
-  </div>
-
-  <div class="mt-6 flex items-center justify-center">
-    <ButtonLink class="mx-auto" href="/portfolio">
-      View Full Gallery
-    </ButtonLink>
+    <div class="mt-6 flex items-center justify-center">
+      <ButtonLink class="mx-auto" href="/portfolio">
+        View Full Gallery
+      </ButtonLink>
+    </div>
   </div>
 
   <!-- <Image
