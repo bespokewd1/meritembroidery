@@ -1,0 +1,481 @@
+---
+import ButtonLink from "@components/Ui/ButtonLink.astro";
+
+// Reviews data
+const reviews = [
+  {
+    text: "If I could give Sharan and her team 10 stars, I would!!! With impossible timelines due to many hiccups on our end, they were able to get our order done perfectly, on time, and at less cost than expected. Everyone at Merit was great to work with, incredibly responsive, respectful, professional and just, well, lovely. We can't thank them enough (!!!!) for helping our choir shine in their new shirts on their Tuscany Tour. DO HIGHLY RECOMMEND and we will definitely call them for our next project!",
+    name: "Lisa Leflar",
+  },
+  {
+    text: "Always have a fantastic experience at Merit Embroidery! The attention to detail in their work is impressive, and the staff is friendly and helpful. They always complete my order promptly, and the final product exceeds my expectations. I highly recommend for all your embroidery/printing needs!",
+    name: "Mitch W",
+  },
+  {
+    text: "We have used this company for many years! Not only are they amazing at what they do… and prices great.. the staff is so nice and absolutely amazing to deal with :) 110% recommend them!! :)",
+    name: "Ashley R",
+  },
+];
+---
+
+<section id="reviews-section" class="bg-accent-light relative">
+  <div
+    class="bg-accent-dark absolute inset-0 z-1 mx-[min(20rem,90%)] my-[min(3rem,95%)] rounded-full supports-[corner-shape:squircle]:rounded-full"
+  >
+  </div>
+  <div class="reviews-container relative z-2 py-16">
+    <!-- Header -->
+    <div class="reviews-header">
+      <span
+        class="cs-topper text-topper text-center font-semibold tracking-wider"
+      >
+        Client Testimonials
+      </span>
+      <h2 class="cs-title text-body-light text-center text-6xl font-semibold">
+        What Our Clients Say
+      </h2>
+    </div>
+
+    <!-- Desktop: 3-column grid -->
+    <div class="reviews-grid">
+      {
+        reviews.map((review) => (
+          <div class="review-card">
+            <div class="flex justify-end text-2xl text-yellow-400">★★★★★</div>
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+            <p class="review-text text-black">"{review.text}"</p>
+            <p class="review-name">— {review.name}</p>
+            <div class="flex justify-end text-2xl text-yellow-400">
+              <img
+                src="/assets/images/google-icon.webp"
+                alt="google icon"
+                class="inline-block h-5 w-5"
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Mobile Slider -->
+    <div class="reviews-slider-wrapper">
+      <div class="blaze-slider" id="reviews-blaze">
+        <div class="blaze-container">
+          <div class="blaze-track-container">
+            <div class="blaze-track">
+              {
+                reviews.map((review) => (
+                  <div class="blaze-slide">
+                    <div class="review-card">
+                      <div class="flex justify-end text-2xl text-yellow-400">
+                        ★★★★★
+                      </div>
+                      <div class="quote-icon">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                      </div>
+                      <p class="review-text">"{review.text}"</p>
+                      <p class="review-name">— {review.name}</p>
+                      <div class="flex justify-end text-2xl text-yellow-400">
+                        <img
+                          src="/assets/images/google-icon.webp"
+                          alt="google icon"
+                          class="inline-block h-5 w-5"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="blaze-prev">
+            <img src="../assets/images/back.png" alt="Previous" />
+          </button>
+
+          <div class="blaze-pagination"></div>
+
+          <button class="blaze-next">
+            <img src="../assets/images/next.png" alt="Next" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="reviews-cta">
+      <ButtonLink
+        href="https://www.google.com/maps/place/Merit+Embroidery+%26+Printing+Ltd./@53.512899,-113.4059598,17z/data=!4m18!1m9!3m8!1s0x53a0186ce841d67d:0x43c318ffd01724a5!2sMerit+Embroidery+%26+Printing+Ltd.!8m2!3d53.512899!4d-113.4033849!9m1!1b1!16s%2Fg%2F1trrcwgv!3m7!1s0x53a0186ce841d67d:0x43c318ffd01724a5!8m2!3d53.512899!4d-113.4033849!9m1!1b1!16s%2Fg%2F1trrcwgv?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        rel="noopener noreferrer"
+        class={"py-0 rounded-full corner-shape"}
+      >
+        View More Reviews
+      </ButtonLink>
+    </div>
+  </div>
+</section>
+
+<style lang="less">
+  #reviews-section {
+    background-color: #fff;
+    padding: 4rem 0;
+
+    @media (min-width: 768px) {
+      padding: 5rem 0;
+    }
+
+    .reviews-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---------- HEADER ---------- */
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      .reviews-subtitle {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.875rem;
+        letter-spacing: 0.05em;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .reviews-title {
+        font-size: 2rem;
+        color: #111827;
+        font-family: serif;
+
+        @media (min-width: 768px) {
+          font-size: 2.25rem;
+        }
+      }
+    }
+
+    /* ---------- DESKTOP GRID ---------- */
+    .reviews-grid {
+      display: none;
+
+      @media (min-width: 1024px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+
+      .review-card {
+        background-color: #f9fafb;
+        border-radius: 1rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .quote-icon {
+          margin-bottom: 1.5rem;
+
+          svg {
+            width: 2.5rem;
+            height: 2.5rem;
+            fill: var(--secondary);
+            opacity: 0.5;
+          }
+        }
+
+        .review-text {
+          color: #374151;
+          line-height: 1.6;
+          flex-grow: 1;
+          margin-bottom: 1.5rem;
+        }
+
+        .review-name {
+          font-weight: 600;
+          color: #111827;
+        }
+      }
+    }
+
+    /* ---------- MOBILE SLIDER ---------- */
+    .reviews-slider-wrapper {
+      display: block;
+
+      @media (min-width: 1024px) {
+        display: none;
+      }
+
+      .review-card {
+        background-color: #f9fafb;
+        border-radius: 1rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .quote-icon svg {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: var(--secondary);
+        opacity: 0.5;
+        margin-bottom: 1.5rem;
+      }
+
+      .review-text {
+        color: #374151;
+        line-height: 1.6;
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+      }
+
+      .review-name {
+        font-weight: 600;
+        color: #111827;
+      }
+
+      /* --- Slider Controls --- */
+      .slider-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
+
+        /* --- Navigation Buttons --- */
+        .blaze-prev,
+        .blaze-next {
+          background-color: var(--secondary);
+          border: none;
+          border-radius: 50%;
+          width: 48px;
+          height: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          transition: all 0.25s ease;
+
+          img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+          }
+
+          &:hover {
+            background-color: var(--primary);
+            transform: scale(1.1);
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+
+        /* --- Pagination Dots --- */
+        .blaze-pagination {
+          display: flex;
+          gap: 0.6rem;
+
+          button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #d1d5db;
+            border: none;
+            transition: all 0.2s ease;
+
+            &.active {
+              background-color: var(--primary);
+            }
+
+            &:hover {
+              background-color: var(--secondary);
+              transform: scale(1.15);
+            }
+          }
+        }
+      }
+    }
+
+    /* ---------- CTA BUTTON ---------- */
+    .reviews-cta {
+      text-align: center;
+      margin-top: 3rem;
+
+      a {
+        display: inline-block;
+        background-color: var(--primary);
+        color: #fff;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #000;
+        }
+      }
+    }
+  }
+
+  /* PAGE-SPECIFIC STYLES FOR THE HOME PAGE */
+
+  /*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0em) {
+    #reviews {
+      /* Centers the button */
+      text-align: center;
+      padding: var(--sectionPadding);
+
+      .cs-container {
+        width: 100%;
+        max-width: (1104/16rem);
+        margin: auto;
+      }
+
+      .cs-topper {
+        text-align: center;
+        margin-bottom: (16/16rem);
+      }
+
+      .cs-title {
+        text-align: center;
+        max-width: (700/16rem);
+      }
+
+      .cs-text {
+        text-align: center;
+        max-width: (650/16rem);
+        /* 88px - 104px */
+        margin-bottom: clamp(5.5em, 10.2vw, 6.5em);
+      }
+
+      .cs-card-group {
+        /* 48px - 64px */
+        margin: 0 auto clamp(3rem, 5vw, 4rem);
+        padding: 0;
+      }
+
+      .cs-item {
+        text-align: left;
+        list-style: none;
+        width: 100%;
+        max-width: (542/16rem);
+        margin: 0 auto (64/16rem);
+        /* Prevents padding from affecting height & width */
+        box-sizing: border-box;
+        /* Padding L & R - 16px - 32px */
+        padding: (60/16rem) clamp(1rem, 3.2vw, 2rem) 0;
+        /* 32px - 40px */
+        padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
+        background: #fff;
+        box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
+        border-radius: (4/16rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      .cs-item-img {
+        width: (80/16rem);
+        height: (80/16rem);
+        position: absolute;
+        top: (-40/16rem);
+      }
+
+      .cs-item-p {
+        font-size: (16/16rem);
+        line-height: 1.5em;
+        margin: 0 0 (20/16rem);
+        padding-bottom: (20/16rem);
+        color: var(--bodyTextColor);
+        border-bottom: 1px solid #e8e9ec;
+      }
+
+      .cs-reviewer {
+        font-size: (16/16rem);
+        font-weight: 700;
+        line-height: 1.5em;
+        width: 40%;
+        margin: 0 auto 0 0;
+        color: var(--headerColor);
+        display: block;
+      }
+
+      .cs-desc {
+        font-size: (14/16rem);
+        font-weight: 400;
+        color: var(#353535);
+        display: block;
+      }
+
+      .cs-item-stars {
+        width: (96/16rem);
+        height: (16/16rem);
+      }
+    }
+  }
+
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48em) {
+    #reviews {
+      .cs-card-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: (16/16rem);
+      }
+
+      .cs-item {
+        /* reset margin so it won't interfere with flexbox */
+        margin: 0;
+      }
+    }
+  }
+
+  // /* Dark Mode */
+  // @media only screen and (min-width: 0em) {
+  //   body.dark-mode {
+  //     #reviews {
+  //       .cs-title,
+  //       .cs-text,
+  //       .cs-item-p,
+  //       .cs-reviewer {
+  //         color: var(--bodyTextColorWhite);
+  //       }
+
+  //       .cs-item {
+  //         background: var(--medium);
+  //       }
+
+  //       .cs-desc {
+  //         color: var(--primaryLight);
+  //       }
+  //     }
+  //   }
+  // }
+</style>
