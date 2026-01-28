@@ -90,28 +90,30 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <TrustBadgeSection />
 
-  <div
-    class="bg-accent-dark corner-t-squircle mt-section rounded-t-[3rem] supports-[corner-shape:squircle]:rounded-t-[6rem]"
-  >
+  <div class="bg-accent-light relative p-0 pb-24">
+    <div
+      class="corner-squircle bg-accent-dark absolute inset-0 z-1 mx-[min(4rem,95%)] mb-[min(1rem,95%)] rounded-t-[400px] rounded-b-[100px] supports-[corner-shape:squircle]:rounded-t-[800px] supports-[corner-shape:squircle]:rounded-b-[150px]"
+    >
+    </div>
     <!-- ============================================ -->
     <!--                   Services                   -->
     <!-- ============================================ -->
-    <ServiceCards client:visible />
+    <ServiceCards className="z-2" client:visible />
     <!-- ============================================ -->
     <!--                   Gallery                    -->
     <!-- ============================================ -->
-    <ApplicationLogosCarousel />
+    <ApplicationLogosCarousel class="z-2" />
   </div>
 
   <!-- ============================================ -->
   <!--                 About Us                     -->
   <!-- ============================================ -->
 
-  <section id="sbs" class="bg-accent-primary/5">
+  <section id="sbs" class="bg-accent-light">
     <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
-        <Picture
+        <!-- <Picture
           src={aboutImg1}
           formats={["avif", "webp"]}
           pictureAttributes={{
@@ -119,29 +121,33 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
               "cs-picture cs-picture1 corner-squircle rounded-lg supports-[corner-shape:squircle]:rounded-3xl",
           }}
           alt="leather embroidered cap"
-        />
+        /> -->
 
         <Picture
           src={aboutImg2}
           formats={["avif", "webp"]}
           pictureAttributes={{
             class:
-              "cs-picture cs-picture2 corner-squircle rounded-lg supports-[corner-shape:squircle]:rounded-3xl",
+              "size-full cs-picture cs-picture2 corner-squircle rounded-lg supports-[corner-shape:squircle]:rounded-3xl",
           }}
           alt="lazered cap with text elephanty and elephant logo"
         />
       </div>
       <!-- Right Content Section-->
       <div class="cs-right">
-        <span class="cs-topper">About Us</span>
-        <h2 class="cs-title text-accent-primary">About Merit Embroidery</h2>
-        <p class="cs-text">
+        <span class="cs-topper text-topper font-semibold tracking-wider"
+          >About Us</span
+        >
+        <h2 class="cs-title text-body-light text-6xl font-semibold">
+          About Merit Embroidery
+        </h2>
+        <p class="cs-text text-body-light text-lg leading-7">
           Merit Embroidery is one of the largest wholesale embroidery houses in
           Western Canada. We have been in the business of apparel decorating for
           over 20 years serving customers in the local Alberta market as well as
           all across North America.
         </p>
-        <p class="cs-text">
+        <p class="cs-text text-body-light text-lg leading-7">
           Our extensive experience in the garment decorating field along with
           our state of the art machinery allows us to be one of the best in the
           west. Our 4,600 square feet production facility and warehouse caters
@@ -152,6 +158,12 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       </div>
     </div>
   </section>
+
+  <!-- ============================================ -->
+  <!--                    FAQ                       -->
+  <!-- ============================================ -->
+  <FAQ />
+
   <!-- ============================================ -->
   <!--                  Reviews                     -->
   <!-- ============================================ -->
@@ -250,10 +262,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       </div>
     </div>
   </section>
-  <!-- ============================================ -->
-  <!--                    FAQ                       -->
-  <!-- ============================================ -->
-  <FAQ />
 
   <CTA />
 </BaseLayout>

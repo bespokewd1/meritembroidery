@@ -11,7 +11,9 @@
   --color-primary: var(--primary);
 
   --font-roboto:"Roboto", Arial, sans-serif;
+
   --text-heading: var(--headerFontSize);
+  --text-topper: var(--text-3xl);
 
 
   --animate-move-to-left: move-to-left 35s infinite linear;

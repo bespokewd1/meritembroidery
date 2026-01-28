@@ -5,8 +5,9 @@ import service2 from "@assets/images/merit-images/merit-0256.jpg";
 import service3 from "@assets/images/merit-images/merit-0283.jpg";
 import service4 from "@assets/images/gallery/3.jpg";
 import service5 from "@assets/images/merit-images/merit-0321.jpg";
+import cn from "@utils/cn";
 
-export const ServiceCards = () => {
+export const ServiceCards = ({ className }: { className?: string }) => {
   const serviceItems: ItemsTypes[] = [
     {
       title: "Custom Logo Embroidery & Embroidered Patches",
@@ -46,17 +47,22 @@ export const ServiceCards = () => {
   ];
 
   return (
-    <section className="bg-accent-light relative p-(--sectionPadding) pb-0">
-      <div className="bg-accent-dark corner-t-squircle rounded-t-full pt-16 pb-24">
+    <section className={cn("relative bg-transparent p-0", className)}>
+      <div className="pt-16 pb-24">
         <div className="">
-          <span className="cs-topper text-center">Our Services</span>
-          <h2 className="cs-title text-body-light text-center">
+          <span className="cs-topper text-topper text-center font-semibold tracking-wider">
+            Our Services
+          </span>
+          <h2 className="cs-title text-body-light text-center text-6xl font-semibold">
             Premium Decoration Services for Your Brand
           </h2>
         </div>
         {/* max-w-7xl */}
         <div className="mx-auto">
-          <HoverEffect items={serviceItems} />
+          <HoverEffect
+            className="px-[min(2rem,95%)] pt-16"
+            items={serviceItems}
+          />
         </div>
       </div>
     </section>

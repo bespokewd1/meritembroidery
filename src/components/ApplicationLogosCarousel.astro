@@ -177,22 +177,23 @@ const { class: className, ...props } = Astro.props;
 <section
   class:list={[
     cn(
-      "bg-accent-light relative z-1 overflow-hidden p-(--sectionPadding)",
-      "before:bg-accent-dark before:absolute before:inset-0 before:z-0 before:mx-8",
+      "corner-squircle relative overflow-hidden rounded-[100px] bg-white p-(--sectionPadding) supports-[corner-shape:squircle]:rounded-[150px]",
       className,
     ),
   ]}
   {...props}
 >
-  <div class="z-2 mx-auto bg-white px-4">
-    <span class="cs-topper text-center">Gallery</span>
-    <h2 class="cs-title text-accent-primary mb-12 text-center">
+  <div class="mx-auto">
+    <span class="cs-topper text-topper text-center font-semibold tracking-wider"
+      >Gallery</span
+    >
+    <h2 class="cs-title text-accent-dark text-center text-6xl font-semibold">
       Showcasing Our Finest Creations
     </h2>
 
     <!-- Logos Carousel -->
     <div
-      class="scrollbar-hide mask-bg-3 relative mx-auto mb-8 flex w-full items-center justify-end"
+      class="scrollbar-hide mask-bg-3 relative mx-auto my-8 flex w-full items-center justify-end"
     >
       {
         [...Array(2)].map((_, i) => (
@@ -237,8 +238,13 @@ const { class: className, ...props } = Astro.props;
       }
     </div>
     <div class="mt-6 flex items-center justify-center">
-      <ButtonLink class="mx-auto" href="/portfolio">
-        View Full Gallery
+      <ButtonLink
+        class="mx-auto h-auto py-3 leading-4 font-semibold tracking-wider"
+        href="/portfolio"
+      >
+        View Our Full
+        <br />
+        <span class="text-2xl leading-5 tracking-widest">Gallery</span>
       </ButtonLink>
     </div>
   </div>

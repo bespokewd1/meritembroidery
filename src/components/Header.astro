@@ -46,7 +46,7 @@ import ButtonLink from "./Ui/ButtonLink.astro";
             navData.map((entry) => (
               <li
                 class:list={[
-                  "cs-li text-black",
+                  "cs-li text-black uppercase",
                   { "cs-dropdown": entry.children?.length > 0 },
                 ]}
               >
@@ -57,7 +57,7 @@ import ButtonLink from "./Ui/ButtonLink.astro";
                     aria-expanded="false"
                     aria-controls={`submenu-${entry.key}`}
                     class:list={[
-                      "cs-li-link cs-dropdown-button squircle-full text-body-light px-3 py-2",
+                      "cs-li-link cs-dropdown-button squircle-full text-body-light px-3 py-2 uppercase",
                       "text-[clamp(1rem,calc(1rem+1vw),1.125rem)]",
                       {
                         "cs-active": Astro.url.pathname.includes(entry.url),

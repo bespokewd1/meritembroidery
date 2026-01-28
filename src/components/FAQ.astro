@@ -1,9 +1,14 @@
-<section id="faq-351" class="bg-accent-primary/5">
-  <div class="cs-container">
-    <div class="cs-content">
-      <span class="cs-topper">Frequently Asked Questions</span>
-      <h2 class="cs-title text-accent-primary">
-        You have Questions? We have Answers!
+<section id="faq-351" class="bg-accent-light px-0">
+  <!-- py-24 pr-2 pl-8 md:px-8 md:py-16 -->
+  <div class="cs-container bg-accent-dark ml-0 rounded-r-full py-8 pl-8">
+    <div class="cs-content items-start text-left">
+      <span
+        class="cs-topper text-topper text-left font-semibold tracking-wider"
+      >
+        Frequently Asked Questions
+      </span>
+      <h2 class="cs-title text-body-light text-left text-6xl font-semibold">
+        You have Questions? <br /> We have Answers!
       </h2>
     </div>
     <ul class="cs-faq-group">
@@ -39,9 +44,6 @@
           we’ll assist you.
         </p>
       </li>
-    </ul>
-    <!--Added second UL, this allows you to open an FAQ item on each side without messing up the flexbox for the other -->
-    <ul class="cs-faq-group">
       <li class="cs-faq-item">
         <button class="cs-button">
           <span class="cs-button-text">
@@ -87,233 +89,168 @@
 </script>
 
 <style lang="less">
+  /*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
   /* Mobile - 360px */
   @media only screen and (min-width: 0rem) {
-    #faq-1741 {
+    #faq-351 {
       padding: var(--sectionPadding);
+      // background: #f7f7f7;
+    }
+    #faq-351 .cs-container {
+      width: 100%;
+      /* changes to 1280px at desktop */
+      max-width: 34.375rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      row-gap: clamp(3rem, 6vw, 4rem);
+    }
+    #faq-351 .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+    #faq-351 .cs-title {
+      margin: 0;
+    }
+    #faq-351 .cs-faq-group {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #faq-351 .cs-faq-item {
+      list-style: none;
+      width: 100%;
+      border-bottom: 1px solid #e8e8e8;
+      transition: border-bottom 0.3s;
+    }
+    #faq-351 .cs-faq-item.active {
+      border-color: var(--primary);
+    }
+    #faq-351 .cs-faq-item.active .cs-button {
+      background-color: var(--color-primary);
+    }
+    #faq-351 .cs-faq-item.active .cs-button:before {
+      background-color: var(--color-red-50);
+      transform: rotate(315deg);
+    }
+    #faq-351 .cs-faq-item.active .cs-button:after {
+      background-color: var(--color-red-50);
+      transform: rotate(-315deg);
+    }
+    #faq-351 .cs-faq-item.active .cs-item-p {
+      height: auto;
+      /* 20px - 24px bottom */
+      /* 16px - 24px left & right */
+      padding: clamp(1.25rem, 1.3vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
+      opacity: 1;
+      color: var(--color-body-light);
+    }
+    #faq-351 .cs-button {
+      font-size: 1.5rem;
+      line-height: 1.2em;
+      text-align: left;
+      font-weight: bold;
+      /* 16px - 20px */
+      padding: clamp(1rem, 1.3vw, 1.25rem);
+      border: none;
+      background: transparent;
+      color: var(--color-body-light);
+      display: block;
+      width: 100%;
       position: relative;
-
-      .cs-container {
-        width: 100%;
-        /* changes to 1280px at desktop */
-        max-width: (584/16rem);
-        margin: 2em auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* 48px - 64px */
-        gap: clamp(3rem, 6vw, 4rem);
-      }
-
-      .cs-content {
-        /* set text align to left if content needs to be left aligned */
-        text-align: center;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        /* centers content horizontally, set to flex-start to left align */
-        align-items: center;
-      }
-
-      .cs-title {
-        max-width: 15ch;
-        margin: 0 0 (32/16rem);
-      }
-
-      .cs-faq-group {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: (12/16rem);
-      }
-
-      .cs-faq-item {
-        list-style: none;
-        width: 100%;
-        /* clips all corners of the button that overlap the rounded border */
-        overflow: hidden;
-        transition: border-bottom 0.3s;
-
-        &.active {
-          .cs-button {
-            background-color: var(--primary);
-            color: var(--bodyTextColorWhite);
-
-            &:before {
-              background-color: var(--bodyTextColorWhite);
-              transform: rotate(315deg);
-            }
-
-            &:after {
-              background-color: var(--bodyTextColorWhite);
-              transform: rotate(-315deg);
-            }
-          }
-
-          .cs-item-text {
-            height: auto;
-            /* 16px - 24px */
-            padding: (16/16rem) clamp(1rem, 2vw, 1.5rem);
-            opacity: 1;
-            border: 1px solid #e8e8e8;
-          }
-        }
-      }
-
-      .cs-button {
-        /* 16px - 20px */
-        font-size: clamp(1rem, 2.5vw, 1.25rem);
-        font-weight: bold;
-        line-height: 1.2em;
-        text-align: left;
-        width: 100%;
-        padding: (16/16rem);
-        padding-left: (52/16rem);
-        background-color: transparent;
-        color: var(--headerColor);
-        border: 1px solid #e8e8e8;
-        display: block;
-        position: relative;
-        transition:
-          background-color 0.3s,
-          color 0.3s;
-
-        &:hover {
-          cursor: pointer;
-        }
-
-        &:before {
-          /* left line */
-          content: "";
-          width: (8/16rem);
-          height: (2/16rem);
-          background-color: var(--headerColor);
-          opacity: 1;
-          display: block;
-          position: absolute;
-          top: 45%;
-          left: (18/16rem);
-          transform: rotate(45deg);
-          transition: transform 0.5s;
-          /* animate the transform from the left side of the x axis, and the center of the y */
-          transform-origin: left center;
-        }
-
-        &:after {
-          /* right line */
-          content: "";
-          width: (8/16rem);
-          height: (2/16rem);
-          background-color: var(--headerColor);
-          opacity: 1;
-          display: block;
-          position: absolute;
-          top: 45%;
-          left: (21/16rem);
-          transform: rotate(-45deg);
-          transition: transform 0.5s;
-          /* animate the transform from the right side of the x axis, and the center of the y */
-          transform-origin: right center;
-        }
-      }
-
-      .cs-item-text {
-        /* 14px - 16px */
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
-        line-height: 1.5em;
-        height: 0;
-        margin: 0;
-        /* clips the text so it doesn't show up */
-        overflow: hidden;
-        color: var(--bodyTextColor);
-        opacity: 0;
-        transition:
-          opacity 0.3s,
-          padding-bottom 0.3s;
-      }
+      transition:
+        background-color 0.3s,
+        color 0.3s;
+    }
+    #faq-351 .cs-button:hover {
+      cursor: pointer;
+    }
+    #faq-351 .cs-button:before {
+      /* left line */
+      content: "";
+      width: 0.5rem;
+      height: 0.125rem;
+      background-color: var(--color-body-light);
+      opacity: 1;
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      top: 45%;
+      right: 1.5rem;
+      transform: rotate(45deg);
+      /* animate the transform from the left side of the x axis, and the center of the y */
+      transform-origin: left center;
+      transition: transform 0.5s;
+    }
+    #faq-351 .cs-button:after {
+      /* right line */
+      content: "";
+      width: 0.5rem;
+      height: 0.125rem;
+      background-color: var(--color-body-light);
+      opacity: 1;
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      top: 45%;
+      right: 1.3125rem;
+      transform: rotate(-45deg);
+      /* animate the transform from the right side of the x axis, and the center of the y */
+      transform-origin: right center;
+      transition: transform 0.5s;
+    }
+    #faq-351 .cs-button-text {
+      width: 80%;
+      display: block;
+    }
+    #faq-351 .cs-item-p {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      line-height: 1.5em;
+      width: 90%;
+      height: 0;
+      margin: 0;
+      /* 16px - 24px */
+      padding: 0 clamp(1rem, 2vw, 1.5rem);
+      opacity: 0;
+      color: var(--bodyTextColor);
+      /* clips the text so it doesn't show up */
+      overflow: hidden;
+      transition:
+        opacity 0.3s,
+        padding-bottom 0.3s;
     }
   }
-
-  /* Tablet - 768px */
-  @media only screen and (min-width: 48rem) {
-    #faq-1741 {
-      .cs-gallery {
-        max-width: (1720/16rem);
-      }
-
-      .cs-picture {
-        grid-column: span 1;
-      }
-    }
-  }
-
   /* Desktop - 1024px */
   @media only screen and (min-width: 64rem) {
-    #faq-1741 {
-      .cs-container {
-        max-width: (1280/16rem);
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: stretch;
-      }
-
-      .cs-content {
-        text-align: left;
-        width: 40%;
-        align-items: flex-start;
-        /* prevents flexbox from squishing it */
-        flex: none;
-      }
+    #faq-351 .cs-container {
+      max-width: 80rem;
+      flex-direction: row;
+      justify-content: space-between;
+      /* push everything to the top */
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    #faq-351 .cs-content {
+      width: 100%;
+    }
+    #faq-351 .cs-faq-group {
+      width: 48%;
     }
   }
-
-  // /* Dark Mode */
-  // @media only screen and (min-width: 0rem) {
-  //   body.dark-mode {
-  //     #faq-1741 {
-  //       .cs-title,
-  //       .cs-item-text {
-  //         color: var(--bodyTextColorWhite);
-  //       }
-
-  //       .cs-topper {
-  //         color: var(--primaryLight);
-  //       }
-
-  //       .cs-faq-item {
-  //         &.active {
-  //           .cs-button {
-  //             background-color: var(--secondary);
-  //             color: var(--bodyTextColorWhite);
-
-  //             &:before,
-  //             &:after {
-  //               background-color: var(--bodyTextColorWhite);
-  //             }
-  //           }
-
-  //           .cs-item-text {
-  //             /* 20px - 24px */
-  //             padding-top: clamp(1.25rem, 1.3vw, 1.5rem);
-  //             border-color: var(--accent);
-  //           }
-  //         }
-  //       }
-
-  //       .cs-button {
-  //         color: var(--bodyTextColorWhite);
-  //         border-color: var(--accent);
-
-  //         &:before,
-  //         &:after {
-  //           background-color: var(--bodyTextColorWhite);
-  //         }
-  //       }
-  //     }
+  // .cs-button:active .cs-button-text {
+  //     color: var(--primary);
   //   }
-  // }
 </style>
