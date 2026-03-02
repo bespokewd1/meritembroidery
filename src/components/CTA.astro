@@ -5,131 +5,95 @@ type Props = HTMLAttributes<"section">;
 
 const { class: className, ...props } = Astro.props;
 
-/**
- * * Example use case of the CSPicture component if you need to use different images on mobile and desktop, for art direction.
- * * If you're fine with using the same image on all devices, you can use an >Image /> or <Picture /> component.
- **/
-// Import the component and all the images you want to use with it
 import CSPicture from "@components/TemplateComponents/CSPicture.astro";
 import mobileImage from "@assets/images/CTA/background-img.jpg";
 import desktopImage from "@assets/images/CTA/background-img.jpg";
 import fallbackImage from "@assets/images/CTA/background-img.jpg";
 import ButtonLink from "./Ui/ButtonLink.astro";
+import { Image } from "astro:assets";
 ---
 
-<section id="cta" class:list={[className]} {...props}>
-  <div class="container">
-    <h2 class="title">
-      Need Custom Apparel or
-      <br />
-      Promo Gear?
-    </h2>
-    <p>Let’s make it happen — fast, professional, and done right.</p>
-    <ButtonLink href="/get-a-quote">Get an Estimate Now</ButtonLink>
+<section
+  id="cta"
+  class:list={[
+    "relative min-h-[400px] overflow-hidden md:min-h-[450px] lg:min-h-[520px]",
+    className,
+  ]}
+  {...props}
+>
+  <!-- Overlay: gradient from blue-ish top to a dark scrim for readability -->
+  <div
+    class="pointer-events-none absolute inset-0 z-1 bg-gradient-to-b from-[hsl(218,50%,65%)]/80 via-transparent to-black/30 md:bg-gradient-to-br md:from-[hsl(218,50%,65%)]/70 md:via-transparent md:to-black/20"
+  >
   </div>
-  <CSPicture
+
+  <!-- Content -->
+  <div
+    class="relative z-10 mx-auto flex h-full max-w-full flex-col items-center px-6 py-12 text-center md:items-end md:px-10 md:py-16 md:text-right lg:px-16 lg:py-20"
+  >
+    <h2
+      class="text-accent-dark font-poppins mb-4 text-[clamp(3rem,3dvw+1rem,6rem)] leading-tight font-bold tracking-tight md:mb-6"
+    >
+      Need Custom Apparel Or
+      <br />
+      Promo Gear Decorated?
+    </h2>
+    <!-- 2.25 4.5 -->
+    <p
+      class="font-poppins text-primary mb-8 text-[clamp(1.875rem,3dvw+1rem,3.75rem)] leading-snug font-medium italic md:mb-10"
+    >
+      Let&rsquo;s make it happen!
+      <br />
+      Fast, Reliable, and
+      <br />
+      Done Right.
+    </p>
+
+    <!-- <ButtonLink
+      href="/get-a-quote"
+      class="border-accent-dark/20! text-accent-dark! rounded-lg! border-2! bg-white/90! px-8! py-3! text-base! font-bold! tracking-wide! uppercase! shadow-lg! backdrop-blur-sm! transition-all! duration-300! hover:bg-white! hover:shadow-xl! md:text-lg!"
+    >
+      Get a Quote
+    </ButtonLink> -->
+
+    <ButtonLink
+      class="mt-6 h-auto px-3 py-4 text-xl font-normal tracking-widest uppercase"
+      href="/portfolio"
+    >
+      Get a Quote
+    </ButtonLink>
+  </div>
+
+  <!-- Background Image -->
+  <!-- <CSPicture
     mobileImgUrl={mobileImage}
     mobileMediaWidth="600px"
     desktopImgUrl={desktopImage}
     desktopMediaWidth="601px"
     fallbackImgUrl={fallbackImage}
     alt=""
+  /> -->
+  <Image
+    src={desktopImage}
+    alt={"cta bg"}
+    class="absolute inset-0 z-0 size-full object-cover"
   />
 </section>
 
-<style lang="less">
-  /* Mobile */
-  @media only screen and (min-width: 0em) {
-    #cta {
-      padding: (50/16rem) 0;
-      position: relative;
-
-      &:before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: #000;
-        opacity: 0.7;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-      }
-
-      .container {
-        text-align: center;
-      }
-
-      .title {
-        font-size: ~"min(9vw, 3rem)";
-        font-weight: 900;
-        line-height: 58/48;
-        text-align: center;
-        margin-bottom: (36/16rem);
-        color: #fff;
-        position: relative;
-      }
-
-      p {
-        text-align: center;
-        width: 96%;
-        max-width: (598/16rem);
-        margin: auto;
-        margin-bottom: (36/16rem);
-        color: #fff;
-        opacity: 1;
-      }
-    }
+<style>
+  /* Ensure CSPicture img fills the section as a background */
+  #cta :global(picture) {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  /* Small Desktop */
-  @media only screen and (min-width: 64em) {
-    #cta {
-      padding: (168/16rem) 0;
-    }
+  #cta :global(picture img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
   }
-
-  /* Large Desktop */
-  @media only screen and (min-width: 1300px) {
-    #cta {
-      margin-top: (100/16rem);
-      position: relative;
-      &:before {
-        display: none;
-      }
-      &:after {
-        content: "";
-        // width: (2000/16rem);
-        width: 100%; /* a fixed width causes overflow on desktop */
-        height: (1108/16rem);
-        // background: url("/assets/svgs/cta-squares.svg");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        opacity: 1;
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        z-index: -3;
-        transform: translateX(-50%);
-      }
-      .container {
-        width: 90.0625%;
-        margin: auto;
-      }
-    }
-  }
-
-  // /* Dark Mode */
-  // @media only screen and (min-width: 0em) {
-  //   body.dark-mode {
-  //     #cta {
-  //       &:after {
-  //         display: none;
-  //       }
-  //     }
-  //   }
-  // }
 </style>
