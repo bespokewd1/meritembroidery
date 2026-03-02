@@ -18,20 +18,22 @@ const reviews = [
 ];
 ---
 
-<section id="reviews-section" class="bg-accent-light relative">
+<section id="reviews-section" class="bg-bg-light relative">
   <div
-    class="bg-accent-dark absolute inset-0 z-1 mx-[min(20rem,90%)] my-[min(3rem,95%)] rounded-full supports-[corner-shape:squircle]:rounded-full"
+    class="bg-accent-light absolute inset-0 z-1 mx-[min(20rem,90%)] my-[min(3rem,95%)] rounded-full supports-[corner-shape:squircle]:rounded-full"
   >
   </div>
   <div class="reviews-container relative z-2 py-16">
     <!-- Header -->
     <div class="reviews-header">
       <span
-        class="cs-topper text-topper text-center font-semibold tracking-wider"
+        class="cs-topper text-topper font-poppins text-center font-medium tracking-wider"
       >
         Client Testimonials
       </span>
-      <h2 class="cs-title text-body-light text-center text-6xl font-semibold">
+      <h2
+        class="cs-title text-body-light text-header font-poppins text-center font-medium"
+      >
         What Our Clients Say
       </h2>
     </div>
@@ -113,12 +115,14 @@ const reviews = [
     <!-- CTA -->
     <div class="reviews-cta">
       <ButtonLink
+        class="font-poppins bg-accent-primary mx-auto h-auto py-3 leading-4 font-medium tracking-wider"
         href="https://www.google.com/maps/place/Merit+Embroidery+%26+Printing+Ltd./@53.512899,-113.4059598,17z/data=!4m18!1m9!3m8!1s0x53a0186ce841d67d:0x43c318ffd01724a5!2sMerit+Embroidery+%26+Printing+Ltd.!8m2!3d53.512899!4d-113.4033849!9m1!1b1!16s%2Fg%2F1trrcwgv!3m7!1s0x53a0186ce841d67d:0x43c318ffd01724a5!8m2!3d53.512899!4d-113.4033849!9m1!1b1!16s%2Fg%2F1trrcwgv?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D"
-        target="_blank"
         rel="noopener noreferrer"
-        class={"py-0 rounded-full corner-shape"}
+        target="_blank"
       >
-        View More Reviews
+        View More
+        <br />
+        <span class="text-2xl leading-5 tracking-widest">Reviews</span>
       </ButtonLink>
     </div>
   </div>

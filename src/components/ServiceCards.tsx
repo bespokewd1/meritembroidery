@@ -50,17 +50,18 @@ export const ServiceCards = ({ className }: { className?: string }) => {
     <section className={cn("relative bg-transparent p-0", className)}>
       <div className="pt-16 pb-24">
         <div className="">
-          <span className="cs-topper text-topper text-center font-semibold tracking-wider">
+          <span className="cs-topper text-topper font-poppins text-center font-medium tracking-wider">
             Our Services
           </span>
-          <h2 className="cs-title text-body-light text-center text-6xl font-semibold">
+          {/* text-[clamp(2.25rem,3dvw+1rem,4rem)]  */}
+          <h2 className="cs-title font-poppins text-body-light max-w-350 text-center text-4xl font-medium text-balance md:text-6xl">
             Premium Decoration Services for Your Brand
           </h2>
         </div>
         {/* max-w-7xl */}
         <div className="mx-auto">
           <HoverEffect
-            className="px-[min(2rem,95%)] pt-16"
+            className="px-[min(0.5rem,5vw)] pt-16"
             items={serviceItems}
           />
         </div>

@@ -30,9 +30,10 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!--                    Hero                      -->
   <!-- ============================================ -->
 
-  <section id="hero" class="hero-gradient m-0 w-full p-0">
+  <section id="hero" class="hero-gradient font-poppins m-0 w-full p-0">
+    <!-- class="bg-bg-light flex size-full h-[50dvh] max-h-145 flex-col items-center justify-center p-0 sm:flex-row lg:h-[calc(100dvh-6.6875rem)] lg:max-h-full" -->
     <div
-      class="flex size-full h-[50dvh] max-h-145 flex-col items-center justify-center p-0 sm:flex-row lg:h-[calc(100dvh-6.6875rem)] lg:max-h-full"
+      class="bg-bg-light flex size-full h-[50dvh] max-h-145 flex-col items-center justify-center p-0 sm:flex-row lg:max-h-full"
     >
       <div class="hidden size-full items-center justify-center xl:flex">
         <Image
@@ -51,33 +52,31 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
           ]} -->
         <div
           class:list={[
-            "absolute top-1/2 left-1/2 flex -translate-1/2 flex-col items-center gap-3 p-4 backdrop-blur-md [grid-area:1/1]",
-            "lg:left-0 lg:max-w-xl lg:translate-x-0 lg:items-start",
+            "absolute top-1/2 left-1/2 flex -translate-1/2 flex-col items-center gap-4 p-4 backdrop-blur-md [grid-area:1/1]",
+            "lg:left-0 lg:translate-x-0 lg:items-start",
             "lg:corner-squircle lg:rounded-2xl supports-[corner-shape:squircle]:lg:rounded-4xl",
           ]}
         >
-          <h1 class="cs-title m-0 text-center text-white lg:text-left">
+          <h1
+            class="cs-title text-accent-primary m-0 text-center font-medium tracking-wider lg:text-left lg:text-6xl"
+          >
             <!-- Your Trusted Promotional Decorators! -->
-            Your Trusted One Stop Promotional Decorators
+            Your Trusted <br /> Promotional Decorators!
           </h1>
           <p
-            class="m-0 text-center text-xl font-bold text-white/90 md:text-2xl lg:text-left"
+            class="text-accent-primary m-0 text-center text-xl font-medium md:text-3xl lg:text-left"
           >
-            Quality, Delivery, Service, Innovation
+            Quality. Delivery. Service. Innovation.
           </p>
           <!-- <ButtonLink href="/get-a-quote" class={"mt-6"}>
             Get A Quote
           </ButtonLink> -->
 
           <ButtonLink
-            class="h-auto py-3 leading-4 font-normal tracking-wider"
+            class="mt-6 h-auto px-3 py-4 text-xl font-normal tracking-widest uppercase"
             href="/portfolio"
           >
-            Get Started with
-            <br />
-            <span class="text-2xl leading-5 font-semibold tracking-widest">
-              a Quote Today!
-            </span>
+            Get a Quote
           </ButtonLink>
         </div>
       </div>
@@ -86,9 +85,9 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <TrustBadgeSection />
 
-  <div class="bg-accent-light relative p-0 pb-32">
+  <div class="bg-bg-light relative p-0 pb-32">
     <div
-      class="corner-squircle bg-accent-dark absolute inset-0 z-1 mx-[min(4rem,95%)] mb-[min(1rem,95%)] rounded-t-[400px] rounded-b-[100px] supports-[corner-shape:squircle]:rounded-t-[800px] supports-[corner-shape:squircle]:rounded-b-[150px]"
+      class="corner-squircle bg-accent-light absolute inset-0 z-1 mx-[max(0.5rem,3vw)] mb-[min(1rem,95%)] rounded-t-[400px] rounded-b-none supports-[corner-shape:squircle]:rounded-t-[800px] supports-[corner-shape:squircle]:rounded-b-none"
     >
     </div>
     <!-- ============================================ -->
@@ -104,7 +103,9 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!-- ============================================ -->
   <!--                 About Us                     -->
   <!-- ============================================ -->
-  <AboutUs />
+  <div class="hidden">
+    <AboutUs />
+  </div>
 
   <!-- ============================================ -->
   <!--                    FAQ                       -->
@@ -122,6 +123,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 <style lang="less">
   /* Hero Gradient Background */
   .hero-gradient {
+    /*
     background:
       radial-gradient(
         ellipse 80% 100% at 25% 50%,
@@ -143,9 +145,10 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         #1e40af 30%,
         var(--color-accent-light) 70%
       );
-
+*/
+    /*    background: #d7e3ee; */
     // #1e3a8a 70%,
-    background-color: var(--color-accent-light);
+    // background-color: var(--color-accent-light);
   }
 
   .trust-badges-section {

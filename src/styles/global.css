@@ -1,19 +1,60 @@
 @import "tailwindcss" important;
 @plugin "@toolwind/corner-shape";
 
+
+  @font-face {
+    font-style: normal;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-display: swap;
+    src:
+      local(""),
+      url("/assets/fonts/poppins-latin-400-normal.woff2") format("woff2"),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url("/assets/fonts/poppins-latin-400-normal.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  @font-face {
+    font-style: normal;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-display: swap;
+    src:
+      local(""),
+      url("/assets/fonts/poppins-latin-500-normal.woff2") format("woff2"),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url("/assets/fonts/poppins-latin-500-normal.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  @font-face {
+    font-style: normal;
+    font-family: "Poppins";
+    font-weight:600;
+    font-display: swap;
+    src:
+      local(""),
+      url("/assets/fonts/poppins-latin-600-normal.woff2") format("woff2"),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url("/assets/fonts/poppins-latin-600-normal.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
 @theme {
  /* hsl(218, 47%, 47%) */
   --color-accent-primary: #4069B1;
   --color-accent-dark: #060658;
   --color-accent-light:#0E46AE;
+  --color-bg-light: #d7e3ee;
 --color-body-light:var(--bodyTextColorWhite);
 --color-body-dark: var(--bodyTextColor);
   --color-primary: var(--primary);
 
   --font-roboto:"Roboto", Arial, sans-serif;
+  --font-poppins:"Poppins", Arial, sans-serif;
 
   --text-heading: var(--headerFontSize);
+  /* --text-topper: var(--text-3xl); */
   --text-topper: var(--text-3xl);
+  --text-header: clamp(2.25rem,3dvw + 1rem,4.5rem);
 
 
   --animate-move-to-left: move-to-left 35s infinite linear;
