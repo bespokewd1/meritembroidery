@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
-
 import ServiceSection from "@components/ServiceSection.astro";
 
 import service1 from "@assets/images/merit-images/merit-0261.jpg";
@@ -11,10 +10,12 @@ import service4 from "@assets/images/gallery/3.jpg";
 import service5 from "@assets/images/merit-images/merit-0321.jpg";
 import service6 from "@assets/images/merit-images/merit-0318.jpg";
 
-// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from "@assets/images/landing.jpg";
 import { getImage } from "astro:assets";
-const optimizedImage = await getImage({ src: landingImage, format: "avif" });
+const optimizedImage = await getImage({
+  src: landingImage,
+  format: "avif",
+});
 ---
 
 <BaseLayout
@@ -22,10 +23,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   description="High-quality in-house embroidery, screen printing, and custom apparel decoration in Edmonton. Serving businesses across Alberta and North America with fast, reliable, and professional service."
   preloadedImage={optimizedImage}
 >
-  <!-- ============================================ -->
-  <!--                   Gallery                    -->
-  <!-- ============================================ -->
-
   <section class="p-0 text-center">
     <div class="bg-(--primary) px-4 py-8">
       <h1
@@ -38,7 +35,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <ServiceSection
     id="embroidery"
-    class="bg-accent-primary/5"
     imageSrc={service1}
     imageAlt="Custom Logo Embroidery"
     features={[
@@ -49,25 +45,23 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       "Custom patches with up to 15 thread colors",
       "Compatible with apparel, headwear, bags, leather, towels",
     ]}
-    tags={[
-      "Corporate apparel",
-      "Workwear",
-      "Headwear",
-      "Bags",
-      "Leather goods",
-      "Towels & throws",
+    subtypes={[
+      { image: service1, label: "Double Layer Puff Embroidery" },
+      { image: service1, label: "Puff Embroidery" },
+      { image: service1, label: "FR Embroidery" },
+      { image: service1, label: "Split Front Embroidery" },
+      { image: service1, label: "Metallic Embroidery" },
     ]}
+    galleryHref="/gallery#embroidery"
   >
-    <Fragment slot="title"
-      >Custom Logo Embroidery & Embroidered Patches</Fragment
-    >
+    <Fragment slot="title">Embroidery</Fragment>
     <Fragment slot="description">
       <p>
         With over three decades of experience, Merit Embroidery & Printing
         delivers premium-quality embroidery for apparel, headwear, bags,
         workwear, and more. Using Barudan multi-head commercial machines and
         in-house digitizing, we ensure every stitch meets the highest standards
-        — whether it’s a dozen shirts or thousands of hats.
+        — whether it's a dozen shirts or thousands of hats.
       </p>
       <p class="mt-4">
         With over 40 sewing heads, we produce thousands of embroidered goods
@@ -78,7 +72,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <ServiceSection
     id="screenPrinting"
-    isReverse
     imageSrc={service2}
     imageAlt="Screen Printing"
     features={[
@@ -89,14 +82,21 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       "High-density prints for textured feel",
       "Water-based and plastisol inks",
     ]}
-    tags={["T-shirts", "Jackets", "Jerseys", "Bags", "Aprons", "Workwear"]}
+    subtypes={[
+      { image: service2, label: "Double Layer Applique" },
+      { image: service2, label: "Faux Leather/Suede Applique" },
+      { image: service2, label: "Pro-Twill Applique" },
+      { image: service2, label: "Felt Applique" },
+      { image: service2, label: "Multi Media Applique" },
+    ]}
+    galleryHref="/gallery#screenPrinting"
   >
-    <Fragment slot="title">Screen Printing</Fragment>
+    <Fragment slot="title">Applique</Fragment>
     <Fragment slot="description">
       <p>
         Our state-of-the-art M&R automatic screen presses allow us to print up
         to 1,000 garments per hour, combining efficiency with exceptional
-        quality. Since expanding into screen printing in 2015, we’ve mastered
+        quality. Since expanding into screen printing in 2015, we've mastered
         techniques that make every print vibrant, durable, and true to your
         brand.
       </p>
@@ -104,16 +104,11 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty
         fabrics, using Wilflex plastisol, water-based, and air-dry inks.
       </p>
-      <p class="mt-4">
-        Whether you need small runs or large orders, our expert team ensures
-        every print is sharp, consistent, and built to last.
-      </p>
     </Fragment>
   </ServiceSection>
 
   <ServiceSection
     id="digitalPrinting"
-    class="bg-accent-primary/5"
     imageSrc={service3}
     imageAlt="Digital Printing & Digital Patches"
     features={[
@@ -124,32 +119,29 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       "Direct to Film (DTF) printing",
       "High-density and debossed effects",
     ]}
-    tags={[
-      "Apparel",
-      "Headwear",
-      "Banners",
-      "Awards",
-      "Signage",
-      "Promotional materials",
+    subtypes={[
+      { image: service3, label: "Digital Printed Patches" },
+      { image: service3, label: "Laser Engraved Patches" },
+      { image: service3, label: "Sublimated Patches" },
+      { image: service3, label: "Embroided Patches" },
+      { image: service3, label: "Woven Pathches" },
     ]}
+    galleryHref="/gallery#digitalPrinting"
   >
-    <Fragment slot="title">Digital Printing & Digital Patches</Fragment>
+    <Fragment slot="title">Patches</Fragment>
     <Fragment slot="description">
       <p>
         When your artwork requires full color and fine detail, our digital
         printing services bring it to life. Using advanced Mimaki large-format
         and DTF printers, we produce vibrant prints on apparel, headwear,
         banners, and more — all made in-house for fast turnaround and consistent
-        color accuracy. Options include Direct to Film, CAD Cut, CAD Print, and
-        Sublimation, plus specialty vinyls like reflective, foil, foam, and
-        debossed finishes.
+        color accuracy.
       </p>
     </Fragment>
   </ServiceSection>
 
   <ServiceSection
     id="artworkServices"
-    isReverse
     imageSrc={service4}
     imageAlt="Art & Design Services"
     features={[
@@ -160,16 +152,16 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       "Digital mockups and proofs",
       "Design consulting and recommendations",
     ]}
-    tags={[
-      "Logo design",
-      "Vector files",
-      "Digitizing",
-      "Mockups",
-      "Color separations",
-      "Consulting",
+    subtypes={[
+      { image: service4, label: "Glow-in-the-Dark Print" },
+      { image: service4, label: "Puff Print" },
+      { image: service4, label: "Hd Print" },
+      { image: service4, label: "Distressed and Fashion Print" },
+      { image: service4, label: "Gel Ink Print" },
     ]}
+    galleryHref="/gallery#artwork"
   >
-    <Fragment slot="title">Art & Design Services</Fragment>
+    <Fragment slot="title">Screen Printing</Fragment>
     <Fragment slot="description">
       <p>
         Our experienced in-house graphic design and digitizing team provides
@@ -183,7 +175,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
   <ServiceSection
     id="laserEngraving"
-    class="bg-accent-primary/5"
     imageSrc={service5}
     imageAlt="Laser Engraving"
     features={[
@@ -194,14 +185,45 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
       "On-demand sample production",
       "Perfect for premium branding",
     ]}
-    tags={[
-      "Patches",
-      "Keychains",
-      "Awards",
-      "Bags",
-      "Corporate gifts",
-      "Promotional items",
+    subtypes={[
+      { image: service5, label: "Colormax Direct to Film" },
+      { image: service5, label: "CAD Print/Cut" },
+      { image: service5, label: "Specialty Vinyl" },
+      { image: service5, label: "Sublimation" },
+      { image: service5, label: "UV Colormax Direct to Film" },
     ]}
+    galleryHref="/gallery#laserEngraving"
+  >
+    <Fragment slot="title">Digital Printing</Fragment>
+    <Fragment slot="description">
+      <p>
+        For precise, professional customization, our laser engraving services
+        etch your designs, logos, or text onto a variety of materials, including
+        wood, metal, acrylic, and leather. Using advanced laser technology, we
+        deliver clean, permanent results with intricate detail and sharp edges.
+      </p>
+    </Fragment>
+  </ServiceSection>
+
+  <ServiceSection
+    id="laserEngraving-2"
+    imageSrc={service5}
+    imageAlt="Laser Engraving"
+    features={[
+      "Intricate designs with fine detail",
+      "Custom shapes and sizes",
+      "Durable and professional finish",
+      "Multiple fabric and material options",
+      "On-demand sample production",
+      "Perfect for premium branding",
+    ]}
+    subtypes={[
+      { image: service5, label: "Bottle Wraps" },
+      { image: service5, label: "Engraved Glass" },
+      { image: service5, label: "Engraved Coaster" },
+      { image: service5, label: "Trophies/Medals" },
+    ]}
+    galleryHref="/gallery#laserEngraving-2"
   >
     <Fragment slot="title">Laser Engraving</Fragment>
     <Fragment slot="description">
@@ -210,121 +232,40 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         etch your designs, logos, or text onto a variety of materials, including
         wood, metal, acrylic, and leather. Using advanced laser technology, we
         deliver clean, permanent results with intricate detail and sharp edges.
-        Options include single-color engraving, layered effects, and custom
-        textures — all done in-house for fast turnaround and consistent quality.
       </p>
     </Fragment>
   </ServiceSection>
 
+  <ServiceSection
+    id="laserEngraving-3"
+    imageSrc={service5}
+    imageAlt="Laser Engraving"
+    features={[
+      "Intricate designs with fine detail",
+      "Custom shapes and sizes",
+      "Durable and professional finish",
+      "Multiple fabric and material options",
+      "On-demand sample production",
+      "Perfect for premium branding",
+    ]}
+    subtypes={[
+      { image: service5, label: "Vectorize Logos" },
+      { image: service5, label: "Digitize for Embroidery" },
+      { image: service5, label: "Edit Designs" },
+      { image: service5, label: "Make Production-Ready Designs" },
+      { image: service5, label: "Add Text/Personalize Designs" },
+    ]}
+    galleryHref="/gallery#laserEngraving-3"
+  >
+    <Fragment slot="title">Artwork and Digitizing Services</Fragment>
+    <Fragment slot="description">
+      <p>
+        For precise, professional customization, our laser engraving services
+        etch your designs, logos, or text onto a variety of materials, including
+        wood, metal, acrylic, and leather. Using advanced laser technology, we
+        deliver clean, permanent results with intricate detail and sharp edges.
+      </p>
+    </Fragment>
+  </ServiceSection>
   <CTA />
 </BaseLayout>
-
-<style lang="less">
-  /* PAGE-SPECIFIC STYLES FOR THE PROJECTS PAGE */
-
-  /*-- -------------------------- -->
-<---          Gallery           -->
-<--- -------------------------- -*/
-
-  /* Mobile - 360px - Contains hover animation */
-  @media only screen and (min-width: 0em) {
-    #gallery {
-      /* Centers button */
-      text-align: center;
-      padding: var(--sectionPadding);
-      position: relative;
-      /* Prevents overflow from the image going off screen */
-      overflow: hidden;
-      .cs-container {
-        width: 100%;
-        max-width: (1322/16em);
-        margin: auto;
-      }
-
-      .cs-image-group {
-        /* used rem so it doesn't scale with the font size of on parent */
-        font-size: ~"min(1.1vw, 1em)";
-        width: 100%;
-        max-width: (1322/16em);
-        margin: 0 auto (60/16rem);
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: (30/16em);
-      }
-
-      .cs-row {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        gap: (30/16em);
-      }
-
-      .cs-picture {
-        display: block;
-        position: relative;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
-
-      .cs-row-1 {
-        .cs-picture1 {
-          width: (420/16em);
-          height: (567/16em);
-        }
-
-        .cs-picture2 {
-          width: (420/16em);
-          height: (629/16em);
-        }
-
-        .cs-picture3 {
-          width: (420/16em);
-          height: (512/16em);
-        }
-      }
-
-      .cs-row-2 {
-        .cs-picture1 {
-          width: (420/16em);
-          height: (492/16em);
-        }
-
-        .cs-picture2 {
-          width: (420/16em);
-          height: (517/16em);
-        }
-
-        .cs-picture3 {
-          width: (420/16em);
-          height: (629/16em);
-        }
-      }
-
-      .cs-row-3 {
-        .cs-picture1 {
-          width: (420/16em);
-          height: (625/16em);
-        }
-
-        .cs-picture2 {
-          width: (420/16em);
-          height: (452/16em);
-        }
-
-        .cs-picture3 {
-          width: (420/16em);
-          height: (629/16em);
-        }
-      }
-    }
-  }
-</style>
