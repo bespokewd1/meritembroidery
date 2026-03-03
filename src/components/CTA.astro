@@ -8,6 +8,7 @@ const { class: className, ...props } = Astro.props;
 import CSPicture from "@components/TemplateComponents/CSPicture.astro";
 import mobileImage from "@assets/images/CTA/background-img.jpg";
 import desktopImage from "@assets/images/CTA/background-img.jpg";
+import ctaImg from "@assets/images/merit-cta.webp";
 import fallbackImage from "@assets/images/CTA/background-img.jpg";
 import ButtonLink from "./Ui/ButtonLink.astro";
 import { Image } from "astro:assets";
@@ -29,10 +30,10 @@ import { Image } from "astro:assets";
 
   <!-- Content -->
   <div
-    class="relative z-10 mx-auto flex h-full max-w-full flex-col items-center px-6 py-12 text-center md:items-end md:px-10 md:py-16 md:text-right lg:px-16 lg:py-20"
+    class="relative z-10 mx-auto flex h-full max-w-full flex-col items-center px-6 pt-6 pb-12 text-center md:items-end md:px-10 md:pb-16 md:text-right lg:px-16 lg:pb-20"
   >
     <h2
-      class="text-accent-dark font-poppins mb-4 text-[clamp(3rem,3dvw+1rem,6rem)] leading-tight font-bold tracking-tight md:mb-6"
+      class="text-accent-dark font-poppins text-[clamp(3.25rem,3dvw+1rem,4.25rem)] leading-tight font-bold tracking-tight"
     >
       Need Custom Apparel Or
       <br />
@@ -40,7 +41,7 @@ import { Image } from "astro:assets";
     </h2>
     <!-- 2.25 4.5 -->
     <p
-      class="font-poppins text-primary mb-8 text-[clamp(1.875rem,3dvw+1rem,3.75rem)] leading-snug font-medium italic md:mb-10"
+      class="font-poppins text-primary mb-8 text-[clamp(1.75rem,3dvw+1rem,2.25rem)] leading-snug font-medium italic md:mb-10"
     >
       Let&rsquo;s make it happen!
       <br />
@@ -74,9 +75,9 @@ import { Image } from "astro:assets";
     alt=""
   /> -->
   <Image
-    src={desktopImage}
+    src={ctaImg}
     alt={"cta bg"}
-    class="absolute inset-0 z-0 size-full object-cover"
+    class="absolute inset-0 z-0 size-full object-cover object-top-left md:object-top-right"
   />
 </section>
 
