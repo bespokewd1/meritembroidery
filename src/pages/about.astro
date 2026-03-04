@@ -86,107 +86,167 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     </div>
   </section>
 
-  <section id="foundation">
-    <div class="cs-container">
-      <div class="cs-content">
-        <span class="cs-topper">What We Believe In, and Why It Matters</span>
-        <h2 class="cs-title">Our Foundation</h2>
+  <!-- Foundations Section Redesign -->
+  <section
+    id="foundation"
+    class="bg-bg-light font-poppins relative pt-12 pb-24"
+  >
+    <!-- The Blue Background Oval Shape -->
+    <!-- We use absolute positioning and huge border radius to create the ellipse backdrop -->
+    <div
+      class="bg-accent-primary absolute top-0 left-1/2 h-[85%] w-[180%] -translate-x-1/2 rounded-[100%] md:w-[120%]"
+    >
+    </div>
+
+    <div class="relative z-10 container mx-auto px-4">
+      <!-- Section Header -->
+      <div class="mb-12 text-center md:mb-16">
+        <span
+          class="mb-2 block font-medium tracking-wide text-[#ef4444] uppercase"
+        >
+          What We Believe In, and Why It Matters
+        </span>
+        <h2 class="text-4xl font-bold text-white md:text-5xl">
+          Our Foundations
+        </h2>
       </div>
-      <ul class="cs-card-group">
-        <li class="cs-item">
-          <img
-            class=""
-            src="/assets/images/AboutUs-OurVision.jpg"
-            loading="lazy"
-            decoding="async"
-            alt="icon"
-            aria-hidden="true"
-          />
-          <div class="cs-text-group">
-            <h3 class="cs-h3">Our Vision</h3>
-            <p class="cs-item-text">
-              Merit Embroidery strives to be a stitch above the competition by
-              producing high quality apparel decorating, providing excellent
-              customer service and completing projects in a timely manner. We
-              love to take on challenging jobs and always find ways to complete
-              a project no matter how tricky or tough it looks.
-            </p>
+
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <!-- 1. Our Mission (Target Icon) -->
+        <div
+          class="rounded-3xl bg-white p-8 text-center shadow-lg transition-transform hover:-translate-y-2"
+        >
+          <div
+            class="text-accent-primary mx-auto mb-6 flex h-20 w-20 items-center justify-center"
+          >
+            <!-- Target Icon SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-16 w-16"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+              <path d="M22 12h-4"></path>
+              <path d="M6 12H2"></path>
+              <path d="M12 6V2"></path>
+              <path d="M12 22v-4"></path>
+            </svg>
           </div>
-        </li>
-        <li class="cs-item">
-          <img
-            class=""
-            src="/assets/images/AboutUs-OurMission.jpg"
-            loading="lazy"
-            decoding="async"
-            alt="icon"
-            aria-hidden="true"
-          />
-          <!-- Text Grouped For Flexbox-->
-          <div class="cs-text-group">
-            <h3 class="cs-h3">Our Mission</h3>
-            <p class="cs-item-text">
-              Merit Embroidery is a family owned and operated independent
-              commercial garment finishing business with the goal of providing
-              100% customer satisfaction to our valued clients. Our mission is
-              to produce top quality digitizing and above average garment
-              decorating and to ensure that your project due dates are met
-              consistently.
-            </p>
+          <h3 class="text-accent-primary mb-4 text-xl font-bold">
+            Our Mission
+          </h3>
+          <div class="mb-4 h-1 w-full bg-gray-100"></div>
+          <p class="text-body-dark text-sm leading-relaxed">
+            To provide 100% customer satisfaction by producing top quality
+            digitizing and above average garment decorating, ensuring project
+            due dates are met consistently.
+          </p>
+        </div>
+
+        <!-- 2. Our Vision (Eye Icon) -->
+        <div
+          class="rounded-3xl bg-white p-8 text-center shadow-lg transition-transform hover:-translate-y-2"
+        >
+          <div
+            class="text-accent-primary mx-auto mb-6 flex h-20 w-20 items-center justify-center"
+          >
+            <!-- Eye Icon SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-16 w-16"
+            >
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
           </div>
-        </li>
-        <li class="cs-item">
-          <img
-            class=""
-            src="/assets/images/AboutUs-OurPromise.jpg"
-            loading="lazy"
-            decoding="async"
-            alt="icon"
-            aria-hidden="true"
-          />
-          <div class="cs-text-group">
-            <h3 class="cs-h3">Our Promise</h3>
-            <p class="cs-item-text">
-              Merit embroidery promises to run our business with utmost honesty
-              and integrity. We will provide the same level of quality and
-              service to all our valued clients regardless of the size of their
-              order or account. Our in-house digitizing department and
-              production staff will ensure that every item that leaves our
-              production facility meets the highest standards of garment
-              decorating.
-            </p>
+          <h3 class="text-accent-primary mb-4 text-xl font-bold">Our Vision</h3>
+          <div class="mb-4 h-1 w-full bg-gray-100"></div>
+          <p class="text-body-dark text-sm leading-relaxed">
+            Striving to be a stitch above the competition by producing high
+            quality apparel decorating. We love to take on challenging jobs and
+            find ways to complete any project.
+          </p>
+        </div>
+
+        <!-- 3. Our Value (Diamond Icon) -->
+        <div
+          class="rounded-3xl bg-white p-8 text-center shadow-lg transition-transform hover:-translate-y-2"
+        >
+          <div
+            class="text-accent-primary mx-auto mb-6 flex h-20 w-20 items-center justify-center"
+          >
+            <!-- Diamond Icon SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-16 w-16"
+            >
+              <path d="M6 3h12l4 6-10 13L2 9Z"></path>
+              <path d="M11 3 8 9l4 13 4-13-3-6"></path>
+              <path d="M2 9h20"></path>
+            </svg>
           </div>
-        </li>
-        <li class="cs-item">
-          <img
-            class=""
-            src="/assets/images/AboutUs-OurValue.jpg"
-            loading="lazy"
-            decoding="async"
-            alt="icon"
-            aria-hidden="true"
-          />
-          <div class="cs-text-group">
-            <h3 class="cs-h3">Our Value</h3>
-            <p class="cs-item-text">
-              Merit Embroidery digitizing department has over 25 years of
-              combined experience in setting up any types of complex and
-              intricate designs. Our production staff with over 35 years of
-              combined stitching experience is fully capable of handling all
-              types of stretchy, velour, lightweight or heavy garments to ensure
-              that your decorating requirements are met. We stock over 125
-              shades of Isacord polyester thread to facilitate pantone matching.
-              We have over 100 stock fonts for text and numbers.
-              <br />
-              Artwork can be sent to us in any format, ranging from vector files to
-              hand drawn logos. With the state of the art Japanese Barudan brand industrial
-              embroidery machines that allow us to embroider logos in up to 15 different
-              thread colours, you can rest assured that when we stitch your logo,
-              it will look like a work of art.
-            </p>
+          <h3 class="text-accent-primary mb-4 text-xl font-bold">Our Values</h3>
+          <div class="mb-4 h-1 w-full bg-gray-100"></div>
+          <p class="text-body-dark text-sm leading-relaxed">
+            With 25+ years of digitizing experience and 35+ years of stitching
+            experience, we handle complex designs with ease using
+            state-of-the-art machinery.
+          </p>
+        </div>
+
+        <!-- 4. Our Promise (Hand/Badge Icon) -->
+        <div
+          class="rounded-3xl bg-white p-8 text-center shadow-lg transition-transform hover:-translate-y-2"
+        >
+          <div
+            class="text-accent-primary mx-auto mb-6 flex h-20 w-20 items-center justify-center"
+          >
+            <!-- Badge/Hand Icon SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-16 w-16"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
           </div>
-        </li>
-      </ul>
+          <h3 class="text-accent-primary mb-4 text-xl font-bold">
+            Our Promise
+          </h3>
+          <div class="mb-4 h-1 w-full bg-gray-100"></div>
+          <p class="text-body-dark text-sm leading-relaxed">
+            We run our business with utmost honesty and integrity. Every item
+            that leaves our facility meets the highest standards of garment
+            decorating, regardless of order size.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -194,369 +254,3 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <Gallery limit={20} />
   <CTA />
 </BaseLayout>
-
-<style lang="less">
-  @media only screen and (min-width: 0em) {
-    #about {
-      margin-bottom: 32px;
-      .title-banner {
-        padding: 32px 16px;
-        background: var(--primary);
-        .cs-title {
-          color: #fff;
-          text-align: center;
-          margin: 0;
-        }
-      }
-      .container {
-        width: 100%;
-        .left-right {
-          display: flex;
-          flex-direction: column;
-          gap: 32px;
-          .left {
-            .content {
-              width: 96%;
-              margin: auto;
-
-              .cs-title {
-                color: var(--primary);
-                font-size: 28px;
-                font-weight: 700;
-                margin: 16px 0;
-              }
-              .cs-text {
-                margin-bottom: 32px;
-              }
-              ul {
-                margin-bottom: 32px;
-              }
-            }
-          }
-          .right {
-          }
-        }
-      }
-    }
-  }
-
-  @media only screen and (min-width: 64em) {
-    #about {
-      .title-banner {
-        .cs-title {
-        }
-      }
-      .container {
-        .left-right {
-          flex-direction: row;
-          .left {
-            width: 45%;
-            margin: auto;
-            .content {
-              width: 80%;
-              margin: auto;
-              .cs-title {
-              }
-              .cs-text {
-              }
-            }
-          }
-          .right {
-            width: 55%;
-          }
-        }
-      }
-    }
-  }
-
-  @media only screen and (min-width: 0em) {
-    #sbs {
-      padding: var(--sectionPadding);
-
-      .cs-container {
-        width: 100%;
-        max-width: (1280/16rem);
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        row-gap: (40/16rem);
-      }
-
-      .cs-left {
-        font-size: ~"min(2.31vw, .7em)";
-        width: (631/16em);
-        height: (636/16em);
-        position: relative;
-      }
-
-      .cs-picture {
-        border-radius: (24/16em);
-        display: block;
-        position: absolute;
-        overflow: hidden;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
-
-      .cs-picture1 {
-        width: (522/16em);
-        height: (581/16em);
-        top: 0;
-        left: 0;
-      }
-
-      .cs-picture2 {
-        width: (414/16em);
-        height: (400/16em);
-        background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
-        border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
-        right: 0;
-        bottom: 0;
-      }
-
-      .cs-right {
-        max-width: (542/16rem);
-        margin: auto;
-      }
-
-      .cs-topper {
-        text-align: left;
-        margin-bottom: (4/16rem);
-      }
-
-      .cs-title {
-        text-align: left;
-        max-width: (800/16rem);
-      }
-
-      .cs-text {
-        text-align: left;
-        max-width: (750/16rem);
-        margin-bottom: (16/16rem);
-        color: var(--bodyTextColor);
-
-        &:last-of-type {
-          margin-bottom: (32/16rem);
-        }
-      }
-
-      .cs-flex-group {
-        padding: clamp(1rem, 3vw, 2rem);
-        background-color: #f7f7f7;
-        border-radius: (16/16rem);
-        position: relative;
-      }
-
-      .cs-flex-p {
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
-        line-height: 1.5em;
-        margin: 0 0 (16/16rem);
-        color: #353535;
-      }
-
-      .cs-name {
-        font-size: (16/16rem);
-        font-weight: bold;
-        line-height: 1.2em;
-        text-transform: uppercase;
-        margin: 0 0 (4/16rem);
-        color: var(--headerColor);
-        display: block;
-      }
-
-      .cs-job {
-        font-size: (14/16rem);
-        line-height: 1.5em;
-        color: #353535;
-        display: block;
-      }
-
-      .cs-quote-icon {
-        width: clamp(3.75rem, 10vw, 8.5rem);
-        height: auto;
-        position: absolute;
-        right: clamp(1rem, 4vw, 2rem);
-        bottom: (0/16rem);
-      }
-
-      .cs-button-solid {
-        margin-top: (32/16rem);
-      }
-    }
-  }
-
-  @media only screen and (min-width: 64em) {
-    #sbs {
-      .cs-container {
-        flex-flow: row;
-        justify-content: space-between;
-        gap: (52/16rem);
-      }
-
-      .cs-left {
-        font-size: ~"min(1.2vw, 1em)";
-        flex: none;
-      }
-
-      .cs-right {
-        margin: 0;
-      }
-    }
-  }
-
-  @media only screen and (min-width: 0rem) {
-    #foundation {
-      padding: var(--sectionPadding);
-
-      .cs-container {
-        max-width: (1280/16rem);
-        width: 100%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: clamp(3rem, 6vw, 4rem);
-      }
-
-      .cs-content {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .cs-card-group {
-        max-width: (900/16rem);
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        justify-content: center;
-        gap: (16/16rem);
-      }
-
-      .cs-item {
-        list-style: none;
-        max-width: (368/16rem);
-        width: 100%;
-        margin: 0;
-        box-sizing: border-box;
-        padding: (16/16rem);
-        border: 1px solid #e8e8e8;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: left;
-      }
-
-      .cs-picture {
-        width: (80/16rem);
-        height: (80/16rem);
-        margin-bottom: (20/16rem);
-        box-sizing: border-box;
-        background-color: #f7f7f7;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        flex: none;
-      }
-
-      .cs-icon {
-        width: (30/16rem);
-        height: auto;
-        display: block;
-      }
-
-      .cs-h3 {
-        font-size: (20/16rem);
-        line-height: 1.5em;
-        margin: 0;
-        margin-bottom: (8/16rem);
-        color: var(--headerColor);
-        text-align: center;
-      }
-
-      .cs-item-text {
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
-        line-height: 1.5em;
-        margin: 0;
-        color: var(--bodyTextColor);
-        text-align: center;
-      }
-
-      .cs-button-solid {
-        font-size: (16/16rem);
-        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-        font-weight: 700;
-        min-width: (150/16rem);
-        margin: 0;
-        box-sizing: border-box;
-        padding: 0 (24/16rem);
-        color: #fff;
-        background-color: var(--primary);
-        text-decoration: none;
-        display: inline-block;
-        position: relative;
-        z-index: 1;
-        text-align: center;
-
-        &:before {
-          content: "";
-          width: 0%;
-          height: 100%;
-          background: #000;
-          opacity: 1;
-          border-radius: (4/16rem);
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: -1;
-          transition: width 0.3s;
-        }
-
-        &:hover {
-          &:before {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-  @media only screen and (min-width: 48rem) {
-    #foundation {
-      .cs-card-group {
-        grid-template-columns: repeat(2, 1fr);
-        gap: (20/16rem);
-      }
-
-      .cs-item {
-        margin: 0;
-      }
-    }
-  }
-
-  @media only screen and (min-width: 81.25rem) {
-    #foundation {
-      .cs-card-group {
-        max-width: (1280/16rem);
-      }
-
-      .cs-item {
-        max-width: none;
-        padding: (32/16rem) (24/16rem);
-      }
-    }
-  }
-</style>
