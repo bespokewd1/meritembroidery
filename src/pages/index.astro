@@ -38,56 +38,35 @@ const optimizedImage = await getImage({
   <section id="hero" class="hero-gradient font-poppins m-0 w-full p-0">
     <!-- class="bg-bg-light flex size-full h-[50dvh] max-h-145 flex-col items-center justify-center p-0 sm:flex-row lg:h-[calc(100dvh-6.6875rem)] lg:max-h-full" -->
     <div
-      class="bg-bg-light flex size-full h-[50dvh] max-h-145 flex-col items-center justify-center p-0 sm:flex-row lg:max-h-full"
+      class="bg-bg-light flex size-full flex-col items-center justify-center gap-6 p-0 lg:max-h-full lg:flex-row"
     >
-      <div
-        class="flex size-full items-center justify-center lg:justify-end xl:flex"
-      >
-        <Image
-          src={optimizedImage.src}
-          width={optimizedImage.options.width ?? landingImage.width}
-          height={optimizedImage.options.height ?? landingImage.height}
-          alt="embroidery machines"
-          loading="eager"
-          fetchpriority="high"
-          class="flex size-full h-auto max-w-150 items-center justify-start object-cover"
-        />
-      </div>
-      <div class="relative grid size-full max-h-[inherit]">
-        <!-- class:list={[
-            "absolute right-0 bottom-0 left-0 flex flex-col items-center gap-3 p-4 backdrop-blur-md [grid-area:1/1]",
-            "lg:top-0 lg:right-auto lg:bottom-auto lg:left-0 lg:max-w-xl lg:-translate-1/2 lg:items-start",
-            "lg:corner-squircle lg:rounded-2xl supports-[corner-shape:squircle]:lg:rounded-4xl",
-          ]} -->
-        <div
-          class:list={[
-            "absolute top-1/2 left-1/2 flex w-full -translate-1/2 flex-col items-center gap-4 px-4 pt-8 pb-4 backdrop-blur-md [grid-area:1/1] md:pt-4",
-            "lg:left-0 lg:translate-x-0 lg:items-start",
-            "lg:corner-squircle lg:rounded-2xl supports-[corner-shape:squircle]:lg:rounded-4xl",
-          ]}
+      <Image
+        src={optimizedImage.src}
+        width={optimizedImage.options.width ?? landingImage.width}
+        height={optimizedImage.options.height ?? landingImage.height}
+        alt="embroidery machines"
+        loading="eager"
+        fetchpriority="high"
+        class="flex size-full h-auto max-w-150 items-center justify-start object-cover"
+      />
+      <div class="flex flex-col items-center lg:mx-4 lg:items-start">
+        <h1
+          class="cs-title text-accent-primary m-0 text-center font-medium tracking-wider lg:text-left lg:text-6xl"
         >
-          <h1
-            class="cs-title text-accent-primary m-0 text-center font-medium tracking-wider lg:text-left lg:text-6xl"
-          >
-            <!-- Your Trusted Promotional Decorators! -->
-            Your Trusted <br /> Promotional Decorators!
-          </h1>
-          <p
-            class="text-accent-primary m-0 text-center text-xl font-medium md:text-3xl lg:text-left"
-          >
-            Quality. Delivery. Service. Innovation.
-          </p>
-          <!-- <ButtonLink href="/get-a-quote" class={"mt-6"}>
-            Get A Quote
-          </ButtonLink> -->
-
-          <ButtonLink
-            class="mt-6 h-auto px-3 py-4 text-xl font-normal tracking-widest uppercase"
-            href="/portfolio"
-          >
-            Get a Quote
-          </ButtonLink>
-        </div>
+          <!-- Your Trusted Promotional Decorators! -->
+          Your Trusted <br /> Promotional Decorators!
+        </h1>
+        <p
+          class="text-accent-primary m-0 text-center text-xl font-medium md:text-3xl lg:text-left"
+        >
+          Quality. Delivery. Service. Innovation.
+        </p>
+        <ButtonLink
+          class="mt-6 h-auto px-3 py-4 text-xl font-normal tracking-widest uppercase"
+          href="/get-a-quote"
+        >
+          Get a Quote
+        </ButtonLink>
       </div>
     </div>
   </section>

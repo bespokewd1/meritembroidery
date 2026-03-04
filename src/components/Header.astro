@@ -140,18 +140,23 @@ import cn from "@utils/cn";
           </li>
 
           <li class="cs-li flex items-center text-black lg:hidden">
-            <ButtonLink href="/get-a-quote" class={"block max-w-120 w-full"}>
-              Get A Quote
+            <ButtonLink
+              class="h-auto px-3 py-4 text-xl font-normal tracking-widest uppercase"
+              href="/get-a-quote"
+            >
+              Get a Quote
             </ButtonLink>
           </li>
         </ul>
       </div>
     </nav>
-    <a
+    <ButtonLink
+      class="h-auto p-2 text-lg font-normal tracking-widest whitespace-nowrap uppercase xl:px-3 xl:py-4 xl:text-xl"
       href="/get-a-quote"
-      class="cs-button-solid cs-nav-button squircle-full bg-accent-primary"
-      >Get A Quote</a
     >
+      Get a Quote
+    </ButtonLink>
+
     <!--Dark Mode toggle: remove component if you don't want to enable a dark mode toggle-->
     <!-- <DarkModeToggle /> -->
   </div>
