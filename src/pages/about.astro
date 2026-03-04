@@ -15,42 +15,72 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   description="High-quality in-house embroidery, screen printing, and custom apparel decoration in Edmonton. Serving businesses across Alberta and North America with fast, reliable, and professional service."
   preloadedImage={optimizedImage}
 >
-  <section class="py-8 text-center">
-    <h2 style="color: var(--primary);" class="cs-topper">
-      Crafting Timeless Threads of Excellence
-    </h2>
-    <h2 class="cs-title">About Us</h2>
-  </section>
-  <section id="about">
-    <div class="container">
-      <div class="left-right flex flex-wrap items-stretch md:flex-nowrap">
-        <div class="left flex w-full items-center bg-white md:w-1/2">
-          <div class="content p-6">
-            <h3 class="cs-title">About Merit Embroidery</h3>
-            <p class="cs-text">
+  <!-- Main About Section Redesign -->
+  <section
+    class="bg-bg-light font-poppins relative overflow-hidden py-16 md:py-24"
+  >
+    <div class="container mx-auto px-4 md:px-8">
+      <!-- 1. Header Section (Blue Bar with Red Text) -->
+      <div class="relative mb-16 flex items-center justify-center md:mb-24">
+        <!-- The Blue Pill Bar -->
+        <div
+          class="bg-accent-primary absolute top-1/2 h-6 w-full max-w-4xl -translate-y-1/2 rounded-full md:h-8"
+        >
+        </div>
+
+        <!-- The Text (Background color matches section bg to create the 'cutout' effect) -->
+        <h1
+          class="bg-bg-light relative z-10 px-6 text-4xl font-bold tracking-wide text-[#ef4444] uppercase md:text-6xl"
+        >
+          About Us
+        </h1>
+      </div>
+
+      <!-- 2. Content Grid -->
+      <div class="flex flex-col items-center gap-12 lg:flex-row lg:gap-20">
+        <!-- Left Column: Arched Image -->
+        <div class="flex w-full justify-center lg:w-1/2 lg:justify-end">
+          <div class="relative aspect-[3/4] w-full max-w-md">
+            <!-- Arch Shape Container -->
+            <div
+              class="border-accent-primary h-full w-full overflow-hidden rounded-t-full border-8 bg-white shadow-xl md:border-[12px]"
+            >
+              <img
+                class="h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/about.jpg"
+                alt="Merit Embroidery Team"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Text Content -->
+        <div class="text-body-dark w-full space-y-6 lg:w-1/2">
+          <h2 class="text-accent-primary text-3xl font-bold md:text-4xl">
+            About Merit Embroidery
+          </h2>
+
+          <div class="space-y-6 text-lg leading-relaxed">
+            <p>
               Merit Embroidery is one of the largest wholesale promotional
               decorators in Western Canada. We’ve been in the apparel decorating
               business for over 30 years, proudly serving customers across
               Canada and throughout North America.
             </p>
-            <p class="cs-text">
+
+            <!-- Horizontal Divider Line (mimicking the lines in the mockup) -->
+            <hr class="border-accent-primary/20 w-1/3 border-t-2" />
+
+            <p>
               Our extensive experience, combined with state-of-the-art
               machinery, makes us one of the best in the West. With an 11,000
               sq. ft. production facility and warehouse, we’re equipped to
               handle both small and large-volume orders — producing up to 10,000
-              decorated garments per day. best.
+              decorated garments per day.
             </p>
           </div>
-        </div>
-
-        <div class="right flex w-full items-stretch md:w-1/2">
-          <img
-            class="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-            src="/assets/images/about.jpg"
-            alt="Embroidery machines"
-          />
         </div>
       </div>
     </div>
@@ -148,11 +178,11 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
               shades of Isacord polyester thread to facilitate pantone matching.
               We have over 100 stock fonts for text and numbers.
               <br />
-              Artwork can be sent to us in any format, ranging from vector files
-              to hand drawn logos. With the state of the art Japanese Barudan brand
-              industrial embroidery machines that allow us to embroider logos in
-              up to 15 different thread colours, you can rest assured that when we
-              stitch your logo, it will look like a work of art.
+              Artwork can be sent to us in any format, ranging from vector files to
+              hand drawn logos. With the state of the art Japanese Barudan brand industrial
+              embroidery machines that allow us to embroider logos in up to 15 different
+              thread colours, you can rest assured that when we stitch your logo,
+              it will look like a work of art.
             </p>
           </div>
         </li>
