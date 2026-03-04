@@ -57,6 +57,7 @@
   --text-header: clamp(2.25rem,3dvw + 1rem,3.75rem);
   --text-header-xl: clamp(2.5rem,3dvw + 1rem,4.5rem);
 
+  --container-8xl: 96rem;
 
   --animate-move-to-left: move-to-left 35s infinite linear;
   --animate-move-to-right: move-to-right 35s infinite linear;

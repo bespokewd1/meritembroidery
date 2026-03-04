@@ -93,22 +93,25 @@ import cn from "@utils/cn";
 
                   <ul
                     id={`submenu-${entry.key}`}
-                    class="cs-drop-ul bg-bg-light/80 corner-squircle rounded-xl rounded-tl-none supports-corner-shape:rounded-3xl supports-corner-shape:rounded-tl-none"
+                    class="cs-drop-ul bg-bg-light/80 corner-squircle rounded-xl rounded-tl-none border-none supports-corner-shape:rounded-3xl supports-corner-shape:rounded-tl-none"
                   >
                     {/* idx + 1 === entry.children.length */}
                     {entry.children.map((child, idx) => (
                       <li
                         class:list={cn([
-                          "cs-drop-li group group-hover:bg-bg-light border-accent-primary border-b px-4 text-black",
-                          entry.children.length === idx + 1 && "border-b-none",
+                          "cs-drop-li group hover:bg-bg-light px-4 text-black",
                         ])}
                       >
                         <a
                           href={child.url}
-                          class:list={[
+                          class:list={cn([
                             "cs-li-link cs-drop-link text-body-dark px-3 py-2 text-[clamp(1rem,calc(1rem+1vw),1.125rem)] before:hidden",
                             "group-hover:bg-bg-light group-hover:text-white group-focus-visible:text-white",
-                          ]}
+                            "border-accent-dark",
+                            entry.children.length === idx + 1
+                              ? "border-b-none"
+                              : "border-b",
+                          ])}
                           aria-current={
                             Astro.url.pathname === child.url
                               ? "page"

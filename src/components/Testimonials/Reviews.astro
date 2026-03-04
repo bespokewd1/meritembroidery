@@ -19,8 +19,9 @@ const reviews = [
 ---
 
 <section id="reviews-section" class="bg-bg-light relative">
+  <!-- mx-[min(20rem,90%)]  -->
   <div
-    class="bg-accent-light absolute inset-0 z-1 mx-[min(20rem,90%)] my-[min(3rem,95%)] rounded-full supports-[corner-shape:squircle]:rounded-full"
+    class="bg-accent-light absolute inset-0 z-1 mx-auto my-[min(3rem,95%)] max-w-312.5 rounded-full supports-[corner-shape:squircle]:rounded-full"
   >
   </div>
   <div class="reviews-container relative z-2 py-16">
@@ -42,7 +43,7 @@ const reviews = [
     <div class="reviews-grid">
       {
         reviews.map((review) => (
-          <div class="review-card">
+          <div class="review-card border-accent-light border-2">
             <div class="flex justify-end text-2xl text-yellow-400">★★★★★</div>
             <div class="quote-icon">
               <svg viewBox="0 0 24 24">

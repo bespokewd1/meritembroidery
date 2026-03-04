@@ -40,7 +40,9 @@ const optimizedImage = await getImage({
     <div
       class="bg-bg-light flex size-full h-[50dvh] max-h-145 flex-col items-center justify-center p-0 sm:flex-row lg:max-h-full"
     >
-      <div class="hidden size-full items-center justify-end xl:flex">
+      <div
+        class="flex size-full items-center justify-center lg:justify-end xl:flex"
+      >
         <Image
           src={optimizedImage.src}
           width={optimizedImage.options.width ?? landingImage.width}
@@ -59,7 +61,7 @@ const optimizedImage = await getImage({
           ]} -->
         <div
           class:list={[
-            "absolute top-1/2 left-1/2 flex -translate-1/2 flex-col items-center gap-4 p-4 backdrop-blur-md [grid-area:1/1]",
+            "absolute top-1/2 left-1/2 flex w-full -translate-1/2 flex-col items-center gap-4 px-4 pt-8 pb-4 backdrop-blur-md [grid-area:1/1] md:pt-4",
             "lg:left-0 lg:translate-x-0 lg:items-start",
             "lg:corner-squircle lg:rounded-2xl supports-[corner-shape:squircle]:lg:rounded-4xl",
           ]}
