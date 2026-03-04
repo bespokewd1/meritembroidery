@@ -140,5 +140,5 @@ export function TimelineSection() {
     content: <TimelineCard item={item} />,
   }));
 
-  return <Timeline data={data} />;
+  return <Timeline class="pb-25" data={data} />;
 }

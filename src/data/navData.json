@@ -14,21 +14,29 @@
       },
       {
         "key": "Screen Printing",
-        "url": "/services#screenPrinting"
+        "url": "/services#screen-printing"
       }
       ,
       {
         "key": "Digital Printing",
-        "url": "/services#digitalPrinting"
+        "url": "/services#digital-printing"
       }
       ,
       {
-        "key": "Artwork Services",
-        "url": "/services#artworkServices"
+        "key": "Laser Engraving",
+        "url": "/services#laser-engraving"
       },
       {
-        "key": "Laser Engraving",
-        "url": "/services#laserEngraving"
+        "key": "Patches & Crests",
+        "url": "/services#patches"
+      },
+      {
+        "key": "Custom Applique",
+        "url": "/services#applique"
+      },
+      {
+        "key": "Artwork Services",
+        "url": "/services#artwork"
       }
     ]
   },

@@ -2,11 +2,15 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import Gallery from "@components/Gallery.astro";
+import ApplicationLogosCarousel from "@components/ApplicationLogosCarousel.astro";
 import "../styles/global.css";
 
-import landingImage from "@assets/images/landing.jpg";
-import { getImage } from "astro:assets";
+// import landingImage from "@assets/images/merit-gold.webp";
+import landingImage from "@assets/images/merit-dark-gold.webp";
+
+import { getImage, Image } from "astro:assets";
 import { TimelineSection } from "@components/TimelineSection";
+import LandingTitle from "@components/LandingTitle.astro";
 const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 ---
 
@@ -20,49 +24,31 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     class="bg-bg-light font-poppins relative overflow-hidden py-16 md:py-24"
   >
     <div class="container mx-auto px-4 md:px-8">
-      <!-- 1. Header Section (Blue Bar with Red Text) -->
-      <div class="relative mb-16 flex items-center justify-center md:mb-24">
-        <!-- The Blue Pill Bar -->
-        <div
-          class="bg-accent-primary absolute top-1/2 h-6 w-full max-w-4xl -translate-y-1/2 rounded-full md:h-8"
-        >
-        </div>
+      <LandingTitle title="About Us" />
 
-        <!-- The Text (Background color matches section bg to create the 'cutout' effect) -->
-        <h1
-          class="bg-bg-light relative z-10 px-6 text-4xl font-bold tracking-wide text-[#ef4444] uppercase md:text-6xl"
-        >
-          About Us
-        </h1>
-      </div>
-
-      <!-- 2. Content Grid -->
       <div class="flex flex-col items-center gap-12 lg:flex-row lg:gap-20">
-        <!-- Left Column: Arched Image -->
         <div class="flex w-full justify-center lg:w-1/2 lg:justify-end">
-          <div class="relative aspect-[3/4] w-full max-w-md">
-            <!-- Arch Shape Container -->
+          <div class="relative aspect-3/4 w-full max-w-md">
             <div
-              class="border-accent-primary h-full w-full overflow-hidden rounded-t-full border-8 bg-white shadow-xl md:border-[12px]"
+              class="border-accent-light h-full w-full overflow-hidden rounded-t-full border-8 bg-white shadow-xl md:border-12"
             >
-              <img
-                class="h-full w-full object-cover"
-                loading="lazy"
-                decoding="async"
-                src="/assets/images/about.jpg"
-                alt="Merit Embroidery Team"
+              <Image
+                src={landingImage}
+                class={"h-full w-full object-cover"}
+                alt={"merit logo in gold"}
               />
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Text Content -->
         <div class="text-body-dark w-full space-y-6 lg:w-1/2">
-          <h2 class="text-accent-primary text-3xl font-bold md:text-4xl">
+          <h2
+            class="text-accent-primary font-poppins text-3xl font-medium md:text-4xl"
+          >
             About Merit Embroidery
           </h2>
 
-          <div class="space-y-6 text-lg leading-relaxed">
+          <div class="font-poppins space-y-6 text-lg leading-relaxed">
             <p>
               Merit Embroidery is one of the largest wholesale promotional
               decorators in Western Canada. We’ve been in the apparel decorating
@@ -70,7 +56,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
               Canada and throughout North America.
             </p>
 
-            <!-- Horizontal Divider Line (mimicking the lines in the mockup) -->
             <hr class="border-accent-primary/20 w-1/3 border-t-2" />
 
             <p>
@@ -86,29 +71,21 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     </div>
   </section>
 
-  <!-- Foundations Section Redesign -->
   <section
     id="foundation"
     class="bg-bg-light font-poppins relative pt-12 pb-24"
   >
-    <!-- The Blue Background Oval Shape -->
-    <!-- We use absolute positioning and huge border radius to create the ellipse backdrop -->
     <div
-      class="bg-accent-primary absolute top-0 left-1/2 h-[85%] w-[180%] -translate-x-1/2 rounded-[100%] md:w-[120%]"
+      class="bg-accent-light relative z-10 container mx-auto rounded-[100%] p-10"
     >
-    </div>
-
-    <div class="relative z-10 container mx-auto px-4">
       <!-- Section Header -->
       <div class="mb-12 text-center md:mb-16">
         <span
-          class="mb-2 block font-medium tracking-wide text-[#ef4444] uppercase"
+          class="cs-topper text-primary font-poppins mb-2 block text-2xl font-medium tracking-wide uppercase"
         >
           What We Believe In, and Why It Matters
         </span>
-        <h2 class="text-4xl font-bold text-white md:text-5xl">
-          Our Foundations
-        </h2>
+        <h2 class="text-header text-body-light font-bold">Our Foundations</h2>
       </div>
 
       <!-- Cards Grid -->
@@ -118,7 +95,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
           class="rounded-3xl bg-white p-8 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <div
-            class="text-accent-primary mx-auto mb-6 flex h-20 w-20 items-center justify-center"
+            class="text-accent-dark mx-auto mb-6 flex h-20 w-20 items-center justify-center"
           >
             <!-- Target Icon SVG -->
             <svg
@@ -129,7 +106,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-16 w-16"
+              class="size-20"
             >
               <circle cx="12" cy="12" r="10"></circle>
               <circle cx="12" cy="12" r="6"></circle>
@@ -140,9 +117,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
               <path d="M12 22v-4"></path>
             </svg>
           </div>
-          <h3 class="text-accent-primary mb-4 text-xl font-bold">
-            Our Mission
-          </h3>
+          <h3 class="text-accent-dark mb-4 text-xl font-bold">Our Mission</h3>
           <div class="mb-4 h-1 w-full bg-gray-100"></div>
           <p class="text-body-dark text-sm leading-relaxed">
             To provide 100% customer satisfaction by producing top quality
@@ -156,7 +131,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
           class="rounded-3xl bg-white p-8 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <div
-            class="text-accent-primary mx-auto mb-6 flex h-20 w-20 items-center justify-center"
+            class="text-accent-dark mx-auto mb-6 flex h-20 w-20 items-center justify-center"
           >
             <!-- Eye Icon SVG -->
             <svg
@@ -167,13 +142,13 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-16 w-16"
+              class="size-20"
             >
               <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
               <circle cx="12" cy="12" r="3"></circle>
             </svg>
           </div>
-          <h3 class="text-accent-primary mb-4 text-xl font-bold">Our Vision</h3>
+          <h3 class="text-accent-dark mb-4 text-xl font-bold">Our Vision</h3>
           <div class="mb-4 h-1 w-full bg-gray-100"></div>
           <p class="text-body-dark text-sm leading-relaxed">
             Striving to be a stitch above the competition by producing high
@@ -187,7 +162,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
           class="rounded-3xl bg-white p-8 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <div
-            class="text-accent-primary mx-auto mb-6 flex h-20 w-20 items-center justify-center"
+            class="text-accent-dark mx-auto mb-6 flex h-20 w-20 items-center justify-center"
           >
             <!-- Diamond Icon SVG -->
             <svg
@@ -198,14 +173,14 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-16 w-16"
+              class="size-20"
             >
               <path d="M6 3h12l4 6-10 13L2 9Z"></path>
               <path d="M11 3 8 9l4 13 4-13-3-6"></path>
               <path d="M2 9h20"></path>
             </svg>
           </div>
-          <h3 class="text-accent-primary mb-4 text-xl font-bold">Our Values</h3>
+          <h3 class="text-accent-dark mb-4 text-xl font-bold">Our Values</h3>
           <div class="mb-4 h-1 w-full bg-gray-100"></div>
           <p class="text-body-dark text-sm leading-relaxed">
             With 25+ years of digitizing experience and 35+ years of stitching
@@ -219,7 +194,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
           class="rounded-3xl bg-white p-8 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <div
-            class="text-accent-primary mx-auto mb-6 flex h-20 w-20 items-center justify-center"
+            class="text-accent-dark mx-auto mb-6 flex h-20 w-20 items-center justify-center"
           >
             <!-- Badge/Hand Icon SVG -->
             <svg
@@ -236,9 +211,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
               <path d="m9 12 2 2 4-4"></path>
             </svg>
           </div>
-          <h3 class="text-accent-primary mb-4 text-xl font-bold">
-            Our Promise
-          </h3>
+          <h3 class="text-accent-dark mb-4 text-xl font-bold">Our Promise</h3>
           <div class="mb-4 h-1 w-full bg-gray-100"></div>
           <p class="text-body-dark text-sm leading-relaxed">
             We run our business with utmost honesty and integrity. Every item
@@ -251,6 +224,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   </section>
 
   <TimelineSection client:visible />
-  <Gallery limit={20} />
+
+  <ApplicationLogosCarousel class="mx-0 -mt-25 mb-15 border-transparent" />
   <CTA />
 </BaseLayout>

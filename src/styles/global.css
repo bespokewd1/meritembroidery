@@ -53,8 +53,9 @@
 
   --text-heading: var(--headerFontSize);
   /* --text-topper: var(--text-3xl); */
-  --text-topper: var(--text-3xl);
-  --text-header: clamp(2.25rem,3dvw + 1rem,4.5rem);
+  --text-topper: var(--text-2xl);
+  --text-header: clamp(2.25rem,3dvw + 1rem,3.75rem);
+  --text-header-xl: clamp(2.5rem,3dvw + 1rem,4.5rem);
 
 
   --animate-move-to-left: move-to-left 35s infinite linear;

@@ -1,0 +1,29 @@
+---
+import cn from "@utils/cn";
+import { type HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"div"> & {
+  title: string;
+};
+
+const { title, class: className, ...rest } = Astro.props;
+---
+
+<div
+  class:list={cn([
+    "relative mx-auto mb-16 flex max-w-360 items-center justify-center md:mb-24",
+    className,
+  ])}
+  {...rest}
+>
+  <div
+    class="bg-accent-primary absolute bottom-0 h-6 w-full max-w-4xl rounded-full md:h-8 xl:bottom-2"
+  >
+  </div>
+
+  <h1
+    class="text-header-xl font-poppins text-primary relative z-10 px-6 font-medium tracking-wide"
+  >
+    {title}
+  </h1>
+</div>

@@ -4,7 +4,7 @@ import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import "../styles/global.css";
 import { Image, Picture } from "astro:assets";
-import landingImage from "@assets/images/logo.png";
+import landingImage from "@assets/images/logo.webp";
 import landingImage2 from "@assets/images/merit-images/merit-0318.jpg";
 import { getImage } from "astro:assets";
 import ApplicationLogosCarousel from "@components/ApplicationLogosCarousel.astro";
@@ -18,7 +18,12 @@ import "blaze-slider/dist/blaze.css";
 import AboutUs from "@components/About/AboutUs.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-const optimizedImage = await getImage({ src: landingImage, format: "avif" });
+const optimizedImage = await getImage({
+  src: landingImage,
+  format: "avif",
+  width: landingImage.width,
+  height: landingImage.height,
+});
 ---
 
 <BaseLayout
@@ -35,9 +40,11 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     <div
       class="bg-bg-light flex size-full h-[50dvh] max-h-145 flex-col items-center justify-center p-0 sm:flex-row lg:max-h-full"
     >
-      <div class="hidden size-full items-center justify-center xl:flex">
+      <div class="hidden size-full items-center justify-end xl:flex">
         <Image
-          src={landingImage}
+          src={optimizedImage.src}
+          width={optimizedImage.options.width ?? landingImage.width}
+          height={optimizedImage.options.height ?? landingImage.height}
           alt="embroidery machines"
           loading="eager"
           fetchpriority="high"

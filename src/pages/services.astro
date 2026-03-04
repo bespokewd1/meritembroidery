@@ -12,6 +12,7 @@ import service6 from "@assets/images/merit-images/merit-0318.jpg";
 
 import landingImage from "@assets/images/landing.jpg";
 import { getImage } from "astro:assets";
+import LandingTitle from "@components/LandingTitle.astro";
 const optimizedImage = await getImage({
   src: landingImage,
   format: "avif",
@@ -23,14 +24,8 @@ const optimizedImage = await getImage({
   description="High-quality in-house embroidery, screen printing, and custom apparel decoration in Edmonton. Serving businesses across Alberta and North America with fast, reliable, and professional service."
   preloadedImage={optimizedImage}
 >
-  <section class="p-0 text-center">
-    <div class="bg-(--primary) px-4 py-8">
-      <h1
-        class="text-(length:--headerFontSize) font-black tracking-wide text-white"
-      >
-        Our Services
-      </h1>
-    </div>
+  <section class="p-0 pt-16 text-center md:pt-24">
+    <LandingTitle title="Our Services" />
   </section>
 
   <ServiceSection
@@ -71,77 +66,7 @@ const optimizedImage = await getImage({
   </ServiceSection>
 
   <ServiceSection
-    id="screenPrinting"
-    imageSrc={service2}
-    imageAlt="Screen Printing"
-    features={[
-      "Up to 12-color designs",
-      "Reflective ink for safety wear",
-      "Exact Pantone color matching",
-      "Glow-in-the-dark ink options",
-      "High-density prints for textured feel",
-      "Water-based and plastisol inks",
-    ]}
-    subtypes={[
-      { image: service2, label: "Double Layer Applique" },
-      { image: service2, label: "Faux Leather/Suede Applique" },
-      { image: service2, label: "Pro-Twill Applique" },
-      { image: service2, label: "Felt Applique" },
-      { image: service2, label: "Multi Media Applique" },
-    ]}
-    galleryHref="/gallery#screenPrinting"
-  >
-    <Fragment slot="title">Applique</Fragment>
-    <Fragment slot="description">
-      <p>
-        Our state-of-the-art M&R automatic screen presses allow us to print up
-        to 1,000 garments per hour, combining efficiency with exceptional
-        quality. Since expanding into screen printing in 2015, we've mastered
-        techniques that make every print vibrant, durable, and true to your
-        brand.
-      </p>
-      <p class="mt-4">
-        We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty
-        fabrics, using Wilflex plastisol, water-based, and air-dry inks.
-      </p>
-    </Fragment>
-  </ServiceSection>
-
-  <ServiceSection
-    id="digitalPrinting"
-    imageSrc={service3}
-    imageAlt="Digital Printing & Digital Patches"
-    features={[
-      "CMYK full-color printing",
-      "Sublimation printing",
-      "Specialty vinyl (reflective, foil, soft foam)",
-      "CAD Cut vinyl applications",
-      "Direct to Film (DTF) printing",
-      "High-density and debossed effects",
-    ]}
-    subtypes={[
-      { image: service3, label: "Digital Printed Patches" },
-      { image: service3, label: "Laser Engraved Patches" },
-      { image: service3, label: "Sublimated Patches" },
-      { image: service3, label: "Embroided Patches" },
-      { image: service3, label: "Woven Pathches" },
-    ]}
-    galleryHref="/gallery#digitalPrinting"
-  >
-    <Fragment slot="title">Patches</Fragment>
-    <Fragment slot="description">
-      <p>
-        When your artwork requires full color and fine detail, our digital
-        printing services bring it to life. Using advanced Mimaki large-format
-        and DTF printers, we produce vibrant prints on apparel, headwear,
-        banners, and more — all made in-house for fast turnaround and consistent
-        color accuracy.
-      </p>
-    </Fragment>
-  </ServiceSection>
-
-  <ServiceSection
-    id="artworkServices"
+    id="screen-printing"
     imageSrc={service4}
     imageAlt="Art & Design Services"
     features={[
@@ -174,9 +99,9 @@ const optimizedImage = await getImage({
   </ServiceSection>
 
   <ServiceSection
-    id="laserEngraving"
+    id="digital-printing"
     imageSrc={service5}
-    imageAlt="Laser Engraving"
+    imageAlt="digital printing"
     features={[
       "Intricate designs with fine detail",
       "Custom shapes and sizes",
@@ -192,7 +117,7 @@ const optimizedImage = await getImage({
       { image: service5, label: "Sublimation" },
       { image: service5, label: "UV Colormax Direct to Film" },
     ]}
-    galleryHref="/gallery#laserEngraving"
+    galleryHref="/gallery"
   >
     <Fragment slot="title">Digital Printing</Fragment>
     <Fragment slot="description">
@@ -206,7 +131,7 @@ const optimizedImage = await getImage({
   </ServiceSection>
 
   <ServiceSection
-    id="laserEngraving-2"
+    id="laser-engraving"
     imageSrc={service5}
     imageAlt="Laser Engraving"
     features={[
@@ -218,12 +143,13 @@ const optimizedImage = await getImage({
       "Perfect for premium branding",
     ]}
     subtypes={[
+      { image: service5, label: "Engraved Tummblers/Bottles" },
       { image: service5, label: "Bottle Wraps" },
       { image: service5, label: "Engraved Glass" },
-      { image: service5, label: "Engraved Coaster" },
+      { image: service5, label: "Engraved Coasters" },
       { image: service5, label: "Trophies/Medals" },
     ]}
-    galleryHref="/gallery#laserEngraving-2"
+    galleryHref="/gallery"
   >
     <Fragment slot="title">Laser Engraving</Fragment>
     <Fragment slot="description">
@@ -237,9 +163,79 @@ const optimizedImage = await getImage({
   </ServiceSection>
 
   <ServiceSection
-    id="laserEngraving-3"
+    id="patches"
+    imageSrc={service3}
+    imageAlt="Digital Printing & Digital Patches"
+    features={[
+      "CMYK full-color printing",
+      "Sublimation printing",
+      "Specialty vinyl (reflective, foil, soft foam)",
+      "CAD Cut vinyl applications",
+      "Direct to Film (DTF) printing",
+      "High-density and debossed effects",
+    ]}
+    subtypes={[
+      { image: service3, label: "Digital Printed Patches" },
+      { image: service3, label: "Laser Engraved Patches" },
+      { image: service3, label: "Sublimated Patches" },
+      { image: service3, label: "Embroided Patches" },
+      { image: service3, label: "Woven Pathches" },
+    ]}
+    galleryHref="/gallery#digitalPrinting"
+  >
+    <Fragment slot="title">Patches & Crests</Fragment>
+    <Fragment slot="description">
+      <p>
+        When your artwork requires full color and fine detail, our digital
+        printing services bring it to life. Using advanced Mimaki large-format
+        and DTF printers, we produce vibrant prints on apparel, headwear,
+        banners, and more — all made in-house for fast turnaround and consistent
+        color accuracy.
+      </p>
+    </Fragment>
+  </ServiceSection>
+
+  <ServiceSection
+    id="applique"
+    imageSrc={service2}
+    imageAlt="Screen Printing"
+    features={[
+      "Up to 12-color designs",
+      "Reflective ink for safety wear",
+      "Exact Pantone color matching",
+      "Glow-in-the-dark ink options",
+      "High-density prints for textured feel",
+      "Water-based and plastisol inks",
+    ]}
+    subtypes={[
+      { image: service2, label: "Double Layer Applique" },
+      { image: service2, label: "Faux Leather/Suede Applique" },
+      { image: service2, label: "Pro-Twill Applique" },
+      { image: service2, label: "Felt Applique" },
+      { image: service2, label: "Multi Media Applique" },
+    ]}
+    galleryHref="/gallery"
+  >
+    <Fragment slot="title">Applique</Fragment>
+    <Fragment slot="description">
+      <p>
+        Our state-of-the-art M&R automatic screen presses allow us to print up
+        to 1,000 garments per hour, combining efficiency with exceptional
+        quality. Since expanding into screen printing in 2015, we've mastered
+        techniques that make every print vibrant, durable, and true to your
+        brand.
+      </p>
+      <p class="mt-4">
+        We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty
+        fabrics, using Wilflex plastisol, water-based, and air-dry inks.
+      </p>
+    </Fragment>
+  </ServiceSection>
+
+  <ServiceSection
+    id="artwork"
     imageSrc={service5}
-    imageAlt="Laser Engraving"
+    imageAlt="Artwork and digitizing"
     features={[
       "Intricate designs with fine detail",
       "Custom shapes and sizes",

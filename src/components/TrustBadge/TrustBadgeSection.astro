@@ -22,32 +22,34 @@ const badges: ImageMetadata[] = [
 >
   <!-- Main content container with rounded left edge -->
   <div
-    class="bg-accent-light relative ml-auto flex flex-col items-end justify-end rounded-l-full py-24 pr-2 pl-8 md:px-8 md:py-16"
+    class="bg-accent-light relative ml-auto flex max-w-360 flex-col items-end justify-end rounded-l-full py-24 pr-2 pl-8 md:px-8 md:py-16"
   >
-    <!-- Title -->
-    <div class="font-poppins mb-8 w-full text-right font-medium md:mb-0">
-      <!-- 2.25rem 4.5rem -->
-      <h3 class="text-header font-medium text-white italic">
-        Experience, <br class="inline sm:hidden" /> Quality And Delivery<br />
-        You Can Count On!
-      </h3>
-    </div>
+    <div class="mr-0 ml-auto contents max-w-360">
+      <!-- Title -->
+      <div class="font-poppins mb-8 w-full text-right font-medium md:mb-0">
+        <!-- 2.25rem 4.5rem -->
+        <h3 class="text-header font-medium text-white italic">
+          Experience, <br class="inline sm:hidden" /> Quality And Delivery<br />
+          You Can Count On!
+        </h3>
+      </div>
 
-    <!-- Badges -->
-    <div
-      class="flex w-full flex-wrap items-center justify-around gap-4 md:flex-nowrap md:gap-6"
-    >
-      {
-        badges.map((badge) => (
-          <div class="flex max-w-40 items-center justify-center md:max-w-60">
-            <Image
-              src={badge}
-              alt="One stop badge"
-              class="aspect-square w-full object-contain"
-            />
-          </div>
-        ))
-      }
+      <!-- Badges -->
+      <div
+        class="flex w-full flex-wrap items-center justify-around gap-4 md:flex-nowrap md:gap-6"
+      >
+        {
+          badges.map((badge) => (
+            <div class="flex max-w-40 items-center justify-center md:max-w-60">
+              <Image
+                src={badge}
+                alt="One stop badge"
+                class="aspect-square w-full object-contain"
+              />
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>

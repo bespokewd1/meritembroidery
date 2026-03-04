@@ -4,6 +4,7 @@ import { Icon } from "astro-icon/components";
 import client from "@data/client.json";
 import DarkModeToggle from "@components/DarkModeToggle.astro";
 import ButtonLink from "./Ui/ButtonLink.astro";
+import cn from "@utils/cn";
 ---
 
 <!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
@@ -57,7 +58,7 @@ import ButtonLink from "./Ui/ButtonLink.astro";
                     aria-expanded="false"
                     aria-controls={`submenu-${entry.key}`}
                     class:list={[
-                      "cs-li-link cs-dropdown-button squircle-full text-body-light px-3 py-2 uppercase",
+                      "cs-li-link cs-dropdown-button squircle-full text-body-dark px-3 py-2 uppercase",
                       "text-[clamp(1rem,calc(1rem+1vw),1.125rem)]",
                       {
                         "cs-active": Astro.url.pathname.includes(entry.url),
@@ -73,7 +74,7 @@ import ButtonLink from "./Ui/ButtonLink.astro";
                   <a
                     href={entry.url}
                     class:list={[
-                      "cs-li-link squircle-full lg:text-body-light px-3 py-2",
+                      "cs-li-link squircle-full lg:text-body-dark px-3 py-2",
                       "text-[clamp(1rem,calc(1rem+1vw),1.125rem)]",
                       {
                         "cs-active": Astro.url.pathname === entry.url,
@@ -92,16 +93,21 @@ import ButtonLink from "./Ui/ButtonLink.astro";
 
                   <ul
                     id={`submenu-${entry.key}`}
-                    class="cs-drop-ul corner-squircle divide-accent-primary divide-y-2 rounded-xl rounded-tl-none border-none supports-corner-shape:rounded-3xl supports-corner-shape:rounded-tl-none"
+                    class="cs-drop-ul bg-bg-light/80 corner-squircle rounded-xl rounded-tl-none supports-corner-shape:rounded-3xl supports-corner-shape:rounded-tl-none"
                   >
                     {/* idx + 1 === entry.children.length */}
                     {entry.children.map((child, idx) => (
-                      <li class="cs-drop-li hover:bg-accent-primary focus-visible:bg-accent-primary group text-black transition-colors ease-in">
+                      <li
+                        class:list={cn([
+                          "cs-drop-li group group-hover:bg-bg-light border-accent-primary border-b px-4 text-black",
+                          entry.children.length === idx + 1 && "border-b-none",
+                        ])}
+                      >
                         <a
                           href={child.url}
                           class:list={[
-                            "cs-li-link cs-drop-link px-3 py-2 text-[clamp(1rem,calc(1rem+1vw),1.125rem)] before:hidden",
-                            "group-hover:bg-transparent group-hover:text-white group-focus-visible:text-white",
+                            "cs-li-link cs-drop-link text-body-dark px-3 py-2 text-[clamp(1rem,calc(1rem+1vw),1.125rem)] before:hidden",
+                            "group-hover:bg-bg-light group-hover:text-white group-focus-visible:text-white",
                           ]}
                           aria-current={
                             Astro.url.pathname === child.url
@@ -123,9 +129,7 @@ import ButtonLink from "./Ui/ButtonLink.astro";
             class="cs-li flex items-center border-t-2 border-slate-200 pt-3 text-black lg:hidden"
           >
             <Icon name="tabler:phone" class="mr-2 h-8 w-8 text-black" />
-            <a href={`tel:${client.phoneForTel}`}
-              >Manni Harman – {client.phoneFormatted}</a
-            >
+            <a href={`tel:${client.phoneForTel}`}>{client.phoneFormatted}</a>
           </li>
           <li class="cs-li flex items-center text-black lg:hidden">
             <Icon name="tabler:mail" class="mr-2 h-8 w-8 text-black" />
