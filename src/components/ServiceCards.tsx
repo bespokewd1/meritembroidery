@@ -47,14 +47,17 @@ export const ServiceCards = ({ className }: { className?: string }) => {
   ];
 
   return (
-    <section className={cn("relative bg-transparent p-0", className)}>
+    <section
+      className={cn("@container relative bg-transparent p-0", className)}
+    >
       <div className="pt-16 pb-24">
-        <div className="">
-          <span className="cs-topper text-topper font-poppins text-center font-medium tracking-wider">
+        <div className="mx-auto max-w-225 xl:max-w-full">
+          <span className="cs-topper text-topper font-acumin text-center font-medium tracking-wider">
             Our Services
           </span>
           {/* text-[clamp(2.25rem,3dvw+1rem,4rem)]  */}
-          <h2 className="cs-title font-poppins text-body-light max-w-350 px-2 text-center text-4xl font-medium text-balance md:text-6xl">
+          {/* text-[clamp(2.25rem,3vw+1rem,2.75rem)]  */}
+          <h2 className="cs-title font-acumin text-header text-body-light px-2 text-center font-black text-balance">
             Premium Decoration Services for Your Brand
           </h2>
         </div>

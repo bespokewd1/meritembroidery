@@ -47,11 +47,11 @@ export const Timeline = ({
       ref={containerRef}
     >
       <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 lg:px-10">
-        <span className="cs-topper font-poppins text-left text-xl font-medium tracking-wider lg:text-2xl">
+        <span className="cs-topper text-topper text-left font-medium tracking-wider">
           Three decades of growth, innovation, and excellence.
         </span>
 
-        <h2 className="font-poppins text-body-light max-w-4xl text-(length:--headerFontSize) font-black">
+        <h2 className="text-body-light text-header max-w-4xl font-black">
           Our Journey
         </h2>
       </div>
@@ -66,7 +66,7 @@ export const Timeline = ({
               <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-white md:left-3">
                 <div className="h-4 w-4 rounded-full border border-neutral-300 bg-(--primary) p-2" />
               </div>
-              <h3 className="text-body-light hidden text-xl font-bold md:block md:pl-20 md:text-5xl">
+              <h3 className="text-body-light font-acumin text-header hidden font-bold md:block md:pl-20">
                 {item.title}
               </h3>
             </div>

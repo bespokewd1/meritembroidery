@@ -122,7 +122,7 @@ const IMAGES: AppLogo[] = [
   <!--                    Hero                      -->
   <!-- ============================================ -->
 
-  <section id="hero" class="hero-gradient font-poppins m-0 w-full p-0">
+  <section id="hero" class="hero-gradient font-acumin m-0 w-full p-0">
     <!-- class="bg-bg-light flex size-full h-[50dvh] max-h-145 flex-col items-center justify-center p-0 sm:flex-row lg:h-[calc(100dvh-6.6875rem)] lg:max-h-full" -->
     <div
       class="bg-bg-light flex size-full flex-col items-center justify-center gap-6 p-0 lg:max-h-full lg:flex-row"
@@ -138,18 +138,18 @@ const IMAGES: AppLogo[] = [
       />
       <div class="flex flex-col items-center lg:items-start">
         <h1
-          class="cs-title text-accent-primary m-0 text-center font-medium tracking-wider lg:text-left lg:text-6xl"
+          class="cs-title text-header-xl text-accent-primary m-0 text-center font-black tracking-wider lg:text-left"
         >
           <!-- Your Trusted Promotional Decorators! -->
           Your Trusted <br /> Promotional Decorators!
         </h1>
         <p
-          class="text-accent-primary m-0 text-center text-xl font-medium md:text-3xl lg:text-left"
+          class="text-accent-primary m-0 text-center text-xl font-black md:text-3xl lg:text-left"
         >
           Quality. Delivery. Service. Innovation.
         </p>
         <ButtonLink
-          class="mt-6 h-auto px-3 py-4 text-xl font-normal tracking-widest uppercase"
+          class="mt-6 h-auto px-3 py-4 text-xl tracking-widest uppercase"
           href="/get-a-quote"
         >
           Get a Quote
@@ -172,7 +172,11 @@ const IMAGES: AppLogo[] = [
     <!-- ============================================ -->
     <!--                   Gallery                    -->
     <!-- ============================================ -->
-    <ApplicationLogosCarousel class="z-2" images={IMAGES} />
+    <ApplicationLogosCarousel
+      class="z-2"
+      images={IMAGES}
+      carouselDuration="35s"
+    />
   </div>
 
   <!-- ============================================ -->

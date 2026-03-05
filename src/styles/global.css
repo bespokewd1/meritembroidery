@@ -38,29 +38,42 @@
         url("/assets/fonts/poppins-latin-600-normal.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
+  @font-face {
+    font-style: normal;
+    font-family: "Acumin Variable Concept";
+    font-display: swap;
+    src:
+      local(""),
+        url("/assets/fonts/acumin-concept-variable.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+
 @theme {
  /* hsl(218, 47%, 47%) */
   --color-accent-primary: #4069B1;
   --color-accent-dark: #060658;
   --color-accent-light:#0E46AE;
-  --color-bg-light: #d7e3ee;
+  --color-bg-light: #dae3ed;
 --color-body-light:var(--bodyTextColorWhite);
 --color-body-dark: var(--bodyTextColor);
   --color-primary: var(--primary);
 
   --font-roboto:"Roboto", Arial, sans-serif;
   --font-poppins:"Poppins", Arial, sans-serif;
+  --font-acumin: "Acumin Variable Concept",Arial, sans-serif;
 
   --text-heading: var(--headerFontSize);
   /* --text-topper: var(--text-3xl); */
-  --text-topper: var(--text-2xl);
+  --text-topper: clamp(var(--text-2xl), 2vw + 1rem, var(--text-3xl)) ;
   --text-header: clamp(2.25rem,3dvw + 1rem,3.75rem);
   --text-header-xl: clamp(2.5rem,3dvw + 1rem,4.5rem);
 
   --container-8xl: 96rem;
 
-  --animate-move-to-left: move-to-left 35s infinite linear;
-  --animate-move-to-right: move-to-right 35s infinite linear;
+  --carousel-spd: 35s;
+
+  --animate-move-to-left: move-to-left var(--carousel-spd) infinite linear;
+  --animate-move-to-right: move-to-right var(--carousel-spd) infinite linear;
   --animate-move-to-top: move-to-top 30s infinite linear;
 }
 

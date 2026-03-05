@@ -16,8 +16,14 @@ const imageHeight = "h-[320px]";
 
 type Props = HTMLAttributes<"section"> & {
   images: AppLogo[];
+  carouselDuration?: `${number}s`;
 };
-const { class: className, images, ...props } = Astro.props;
+const {
+  class: className,
+  images,
+  carouselDuration = "15s",
+  ...props
+} = Astro.props;
 ---
 
 <section
@@ -31,13 +37,10 @@ const { class: className, images, ...props } = Astro.props;
   {...props}
 >
   <div class="mx-auto">
-    <span
-      class="cs-topper text-topper font-poppins text-center font-medium tracking-wider"
+    <span class="cs-topper text-topper text-center font-medium tracking-wider"
       >Gallery</span
     >
-    <h2
-      class="cs-title text-accent-dark text-header font-poppins text-center font-medium"
-    >
+    <h2 class="cs-title text-accent-dark text-header text-center font-black">
       Showcasing Our Finest Creations
     </h2>
 
@@ -50,6 +53,7 @@ const { class: className, images, ...props } = Astro.props;
           <div
             aria-hidden={i === 1}
             class="animate-move-to-right grid auto-cols-[1fr] grid-flow-col grid-rows-1 gap-16 pl-16"
+            style={`animation-duration: ${carouselDuration} !important;`}
           >
             {images
               .slice(0, images.length / 2)
@@ -80,6 +84,7 @@ const { class: className, images, ...props } = Astro.props;
           <div
             aria-hidden={i === 1}
             class="animate-move-to-left grid auto-cols-[1fr] grid-flow-col grid-rows-1 gap-16 pr-16"
+            style={`animation-duration: ${carouselDuration} !important;`}
           >
             {images.slice(images.length / 2).map(({ src, alt, calcWidth }) => (
               // style={`width: ${calcWidth}px;`}
@@ -98,7 +103,7 @@ const { class: className, images, ...props } = Astro.props;
     </div>
     <div class="mt-6 flex items-center justify-center">
       <ButtonLink
-        class="font-poppins mx-auto h-auto py-3 leading-4 font-medium tracking-wider"
+        class="mx-auto h-auto py-3 leading-4 font-medium tracking-wider"
         href="/portfolio"
       >
         View Our Full

@@ -115,6 +115,11 @@ const { description, title, preloadedImage } = Astro.props as Props;
 
     <!-- Sitewide Scripts -->
     <script src="@js/nav.js"></script>
+    <!-- <link
+      href="https://db.onlinewebfonts.com/c/066ce24dae3730ed6c648b09efaea93a?family=Acumin+Variable+Concept"
+      rel="stylesheet"
+      type="text/css"
+    /> -->
   </head>
   <body>
     <!-- Screen reader skip main nav -->
@@ -123,7 +128,7 @@ const { description, title, preloadedImage } = Astro.props as Props;
     >
 
     <Header />
-    <main id="main" class="bg-bg-light">
+    <main id="main" class="bg-bg-light font-acumin">
       <slot />
     </main>
     <Footer />

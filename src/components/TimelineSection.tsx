@@ -43,10 +43,12 @@ function TimelineCard({ item }: { item: TimelineItem }) {
         {/* Orange accent line */}
         <div className="bg-accent mb-4 h-1 w-12" />
 
-        <h3 className="mb-4 text-lg font-bold text-white uppercase">
+        <h3 className="font-acumin mb-4 text-2xl font-bold text-white uppercase">
           {item.heading}
         </h3>
-        <p className="mb-4 font-semibold text-white/90">{item.description}</p>
+        <p className="font-acumin mb-4 text-lg font-medium text-white/90">
+          {item.description}
+        </p>
 
         <div
           className="pointer-events-none absolute inset-0 -z-1 h-[200%] w-full backdrop-blur-sm"

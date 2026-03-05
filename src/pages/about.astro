@@ -77,9 +77,7 @@ const IMAGES: AppLogo[] = [
   preloadedImage={optimizedImage}
 >
   <!-- Main About Section Redesign -->
-  <section
-    class="bg-bg-light font-poppins relative overflow-hidden py-16 md:py-24"
-  >
+  <section class="bg-bg-light relative overflow-hidden py-16 md:py-24">
     <div class="container mx-auto px-4 md:px-8">
       <LandingTitle title="About Us" />
 
@@ -99,13 +97,11 @@ const IMAGES: AppLogo[] = [
         </div>
 
         <div class="text-body-dark w-full space-y-6 lg:w-1/2">
-          <h2
-            class="text-accent-primary font-poppins text-3xl font-medium md:text-4xl"
-          >
+          <h2 class="text-accent-primary text-header font-black">
             About Merit Embroidery
           </h2>
 
-          <div class="font-poppins space-y-6 text-lg leading-relaxed">
+          <div class="space-y-6 text-lg leading-relaxed font-medium">
             <p>
               Merit Embroidery is one of the largest wholesale promotional
               decorators in Western Canada. We’ve been in the apparel decorating
@@ -128,10 +124,7 @@ const IMAGES: AppLogo[] = [
     </div>
   </section>
 
-  <section
-    id="foundation"
-    class="bg-bg-light font-poppins relative pt-12 pb-24"
-  >
+  <section id="foundation" class="bg-bg-light relative pt-12 pb-24">
     <div
       class="bg-accent-light absolute inset-0 z-1 mx-auto my-[min(3rem,95%)] max-w-375 rounded-full lg:rounded-[100%]"
     >
@@ -140,11 +133,11 @@ const IMAGES: AppLogo[] = [
       <!-- Section Header -->
       <div class="mb-12 text-center md:mb-16">
         <span
-          class="cs-topper text-primary font-poppins mt-8 mb-2 block px-10 text-xl font-medium tracking-wide uppercase lg:text-2xl"
+          class="cs-topper text-primary text-topper mt-8 mb-2 block px-10 font-medium tracking-wide uppercase"
         >
           What We Believe In, and Why It Matters
         </span>
-        <h2 class="text-header text-body-light font-bold">Our Foundations</h2>
+        <h2 class="text-header text-body-light font-black">Our Foundations</h2>
       </div>
 
       <!-- Cards Grid -->
@@ -176,9 +169,9 @@ const IMAGES: AppLogo[] = [
               <path d="M12 22v-4"></path>
             </svg>
           </div>
-          <h3 class="text-accent-dark mb-4 text-xl font-bold">Our Mission</h3>
+          <h3 class="text-accent-dark mb-4 text-3xl font-bold">Our Mission</h3>
           <div class="mb-4 h-1 w-full bg-gray-100"></div>
-          <p class="text-body-dark text-sm leading-relaxed">
+          <p class="text-body-dark text-lg leading-relaxed">
             To provide 100% customer satisfaction by producing top quality
             digitizing and above average garment decorating, ensuring project
             due dates are met consistently.
@@ -207,9 +200,9 @@ const IMAGES: AppLogo[] = [
               <circle cx="12" cy="12" r="3"></circle>
             </svg>
           </div>
-          <h3 class="text-accent-dark mb-4 text-xl font-bold">Our Vision</h3>
+          <h3 class="text-accent-dark mb-4 text-3xl font-bold">Our Vision</h3>
           <div class="mb-4 h-1 w-full bg-gray-100"></div>
-          <p class="text-body-dark text-sm leading-relaxed">
+          <p class="text-body-dark text-lg leading-relaxed">
             Striving to be a stitch above the competition by producing high
             quality apparel decorating. We love to take on challenging jobs and
             find ways to complete any project.
@@ -239,9 +232,9 @@ const IMAGES: AppLogo[] = [
               <path d="M2 9h20"></path>
             </svg>
           </div>
-          <h3 class="text-accent-dark mb-4 text-xl font-bold">Our Values</h3>
+          <h3 class="text-accent-dark mb-4 text-3xl font-bold">Our Values</h3>
           <div class="mb-4 h-1 w-full bg-gray-100"></div>
-          <p class="text-body-dark text-sm leading-relaxed">
+          <p class="text-body-dark text-lg leading-relaxed">
             With 25+ years of digitizing experience and 35+ years of stitching
             experience, we handle complex designs with ease using
             state-of-the-art machinery.
@@ -270,9 +263,9 @@ const IMAGES: AppLogo[] = [
               <path d="m9 12 2 2 4-4"></path>
             </svg>
           </div>
-          <h3 class="text-accent-dark mb-4 text-xl font-bold">Our Promise</h3>
+          <h3 class="text-accent-dark mb-4 text-3xl font-bold">Our Promise</h3>
           <div class="mb-4 h-1 w-full bg-gray-100"></div>
-          <p class="text-body-dark text-sm leading-relaxed">
+          <p class="text-body-dark text-lg leading-relaxed">
             We run our business with utmost honesty and integrity. Every item
             that leaves our facility meets the highest standards of garment
             decorating, regardless of order size.
@@ -287,6 +280,7 @@ const IMAGES: AppLogo[] = [
   <ApplicationLogosCarousel
     class="mx-0 -mt-25 mb-15 border-transparent"
     images={IMAGES}
+    carouselDuration="20s"
   />
   <CTA />
 </BaseLayout>

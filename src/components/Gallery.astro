@@ -12,7 +12,8 @@ const { class: className, showLink = true, limit, ...props } = Astro.props;
 // Load everything in these folders:
 const galleryImports = import.meta.glob(
   [
-    "/src/assets/images/gallery/*.{jpg,jpeg,png,webp,avif}",
+    "/src/assets/images/gallery/home/*.{jpg,jpeg,png,webp,avif}",
+    "/src/assets/images/gallery/about/*.{jpg,jpeg,png,webp,avif}",
     "/src/assets/images/merit-images/*.{jpg,jpeg,png,webp,avif}",
   ],
   { eager: true },
@@ -38,18 +39,20 @@ const displayedImages = normalizedLimit
   : images;
 ---
 
-<section id="gallery" class:list={[className]} {...props}>
-  <div class="cs-container">
-    <span class="cs-topper">Showcasing Our Finest Creations</span>
+<section id="gallery" class:list={["relative", className]} {...props}>
+  <div
+    class="cs-container corner-squircle max-w-380 rounded-t-[150px] rounded-b-none bg-white px-12 py-18 supports-[corner-shape:squircle]:rounded-t-[300px] supports-[corner-shape:squircle]:rounded-b-none"
+  >
+    <!-- <span class="cs-topper">Showcasing Our Finest Creations</span>
     <h2 class="cs-title text-accent-primary" style="margin-bottom: 4rem;">
       Some of Our Works
-    </h2>
+    </h2> -->
     <!-- <div class="max-h-150 overflow-auto"> -->
-    <div class="max-h-340 overflow-y-auto">
-      <div class="columns-[400px]">
+    <div class="">
+      <div class="columns-[400px] gap-6">
         {
           displayedImages.map((src, i) => (
-            <div class="mb-4 inline-block break-inside-avoid [-webkit-column-break-inside:avoid] [page-break-inside:avoid]">
+            <div class="mb-6 inline-block break-inside-avoid [-webkit-column-break-inside:avoid] [page-break-inside:avoid]">
               <Image
                 aria-hidden="true"
                 src={src}
