@@ -42,18 +42,19 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-xl bg-white p-0 transition duration-200",
+        "group/bento relative row-span-1 flex flex-col justify-between space-y-4 rounded-xl bg-white p-0 transition duration-200",
         className,
       )}
     >
       {/* If Image exists, render it as background */}
       {image ? (
-        <div className="h-full w-full flex-1 overflow-hidden">
+        <div className="h-full w-full flex-1">
           <img
             src={typeof image === "string" ? image : image.src}
             alt={alt}
             className="h-full w-full object-contain object-center transition duration-500 group-hover/bento:scale-105"
             loading="lazy"
+            decoding="async"
           />
         </div>
       ) : (

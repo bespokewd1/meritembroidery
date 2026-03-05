@@ -47,6 +47,7 @@ import merit20 from "@assets/images/merit-images/merit-0317.jpg";
 import merit21 from "@assets/images/merit-images/merit-0318.jpg";
 import merit22 from "@assets/images/merit-images/merit-0319.jpg";
 import merit23 from "@assets/images/merit-images/merit-0321.jpg";
+import cn from "@utils/cn";
 
 // Define the structure for our gallery items
 interface GalleryItem {
@@ -133,20 +134,78 @@ const galleryItems: GalleryItem[] = [
   },
 ];
 
+const rawImages = [
+  home1,
+  home2,
+  home3,
+  home4,
+  home5,
+  home6,
+  merit9,
+  merit10,
+  merit11,
+  merit12,
+  merit13,
+  merit14,
+  merit15,
+  home7,
+  home8,
+  home9,
+  home10,
+  home11,
+  home12,
+  home13,
+  merit16,
+  merit17,
+  merit18,
+  merit19,
+  merit20,
+  merit21,
+  merit22,
+  merit23,
+  about1,
+  about2,
+  about3,
+  merit5,
+  merit6,
+  merit7,
+  merit8,
+  about4,
+  about5,
+  about6,
+  about7,
+  about8,
+  merit1,
+  merit2,
+  merit3,
+  merit4,
+];
+
 export function GalleryBento() {
   return (
-    <BentoGrid className="mx-auto max-w-7xl px-4 md:px-0">
-      {galleryItems.map((item, i) => (
-        <BentoGridItem
-          key={item.id}
-          image={item.image}
-          // Pass the class explicitly defined in the object
-          className={item.className}
-          // Optional: Pass title/desc if you want the overlay
-          title={item.title}
-          description={item.description}
-        />
-      ))}
-    </BentoGrid>
+    <section className="">
+      <div className="corner-squircle max-w-8xl mx-auto rounded-t-[150px] rounded-b-none bg-white py-18 supports-[corner-shape:squircle]:rounded-t-[300px] supports-[corner-shape:squircle]:rounded-b-none">
+        <BentoGrid className={cn(["mx-auto max-w-7xl px-4 md:px-0"])}>
+          {rawImages.map((img, i) => {
+            // Calculate the aspect ratio (Width divided by Height)
+            const ratio = img.width / img.height;
+
+            // THRESHOLD LOGIC:
+            // 1.0 = Perfect Square
+            // 1.25 = Width must be 25% larger than height to be considered "Wide"
+            // You can tweak this number:
+            // - Lower (1.1) makes it easier to trigger a wide span
+            // - Higher (1.4) makes it harder (only very wide images will span)
+            const isSignificantlyWide = ratio > 1.6;
+
+            const spanClass = isSignificantlyWide
+              ? "md:col-span-2"
+              : "md:col-span-1";
+
+            return <BentoGridItem key={i} image={img} className={spanClass} />;
+          })}
+        </BentoGrid>
+      </div>
+    </section>
   );
 }
