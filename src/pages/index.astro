@@ -18,31 +18,21 @@ import AboutUs from "@components/About/AboutUs.astro";
 
 import BlazeSlider from "blaze-slider";
 import "blaze-slider/dist/blaze.css";
-import gallery1 from "@assets/images/gallery/1.jpg";
-import gallery2 from "@assets/images/gallery/2.jpg";
-import gallery3 from "@assets/images/gallery/3.jpg";
-import gallery4 from "@assets/images/gallery/4.jpg";
-import gallery5 from "@assets/images/gallery/5.jpg";
-import gallery6 from "@assets/images/gallery/6.jpg";
-import gallery7 from "@assets/images/gallery/7.jpg";
-import gallery8 from "@assets/images/gallery/8.jpg";
-import gallery9 from "@assets/images/gallery/9.jpg";
-import gallery10 from "@assets/images/gallery/10.jpg";
-import gallery11 from "@assets/images/gallery/11.jpg";
-import gallery12 from "@assets/images/gallery/12.jpg";
-import gallery13 from "@assets/images/gallery/13.jpg";
-import gallery14 from "@assets/images/gallery/14.jpg";
-import gallery15 from "@assets/images/gallery/15.jpg";
-import gallery16 from "@assets/images/gallery/16.jpg";
-import gallery17 from "@assets/images/gallery/17.jpg";
-import gallery18 from "@assets/images/gallery/18.jpg";
-import gallery19 from "@assets/images/gallery/19.jpg";
-import gallery20 from "@assets/images/gallery/20.jpg";
-import gallery21 from "@assets/images/gallery/21.jpg";
-import gallery22 from "@assets/images/gallery/22.jpg";
-import gallery23 from "@assets/images/gallery/23.jpg";
-import gallery24 from "@assets/images/gallery/24.jpg";
 import { getCalculatedWidth } from "@utils/utils";
+
+import gallery1 from "@assets/images/gallery/home/1.webp";
+import gallery2 from "@assets/images/gallery/home/2.webp";
+import gallery3 from "@assets/images/gallery/home/3.webp";
+import gallery4 from "@assets/images/gallery/home/4.webp";
+import gallery5 from "@assets/images/gallery/home/5.webp";
+import gallery6 from "@assets/images/gallery/home/6.webp";
+import gallery7 from "@assets/images/gallery/home/7.webp";
+import gallery8 from "@assets/images/gallery/home/8.webp";
+import gallery9 from "@assets/images/gallery/home/9.webp";
+import gallery10 from "@assets/images/gallery/home/10.webp";
+import gallery11 from "@assets/images/gallery/home/11.webp";
+import gallery12 from "@assets/images/gallery/home/12.webp";
+import gallery13 from "@assets/images/gallery/home/13.webp";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 const optimizedImage = await getImage({
@@ -119,61 +109,6 @@ const IMAGES: AppLogo[] = [
     src: gallery13,
     alt: "Gallery Image 13",
     calcWidth: getCalculatedWidth(gallery13, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery14,
-    alt: "Gallery Image 14",
-    calcWidth: getCalculatedWidth(gallery14, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery15,
-    alt: "Gallery Image 15",
-    calcWidth: getCalculatedWidth(gallery15, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery16,
-    alt: "Gallery Image 16",
-    calcWidth: getCalculatedWidth(gallery16, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery17,
-    alt: "Gallery Image 17",
-    calcWidth: getCalculatedWidth(gallery17, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery18,
-    alt: "Gallery Image 18",
-    calcWidth: getCalculatedWidth(gallery18, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery19,
-    alt: "Gallery Image 19",
-    calcWidth: getCalculatedWidth(gallery19, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery20,
-    alt: "Gallery Image 20",
-    calcWidth: getCalculatedWidth(gallery20, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery21,
-    alt: "Gallery Image 21",
-    calcWidth: getCalculatedWidth(gallery21, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery22,
-    alt: "Gallery Image 22",
-    calcWidth: getCalculatedWidth(gallery22, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery23,
-    alt: "Gallery Image 23",
-    calcWidth: getCalculatedWidth(gallery23, TARGET_HEIGHT_PX),
-  },
-  {
-    src: gallery24,
-    alt: "Gallery Image 24",
-    calcWidth: getCalculatedWidth(gallery24, TARGET_HEIGHT_PX),
   },
 ];
 ---
