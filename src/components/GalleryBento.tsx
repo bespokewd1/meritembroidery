@@ -1,8 +1,6 @@
-// src/components/GalleryBento.tsx
 import { BentoGrid, BentoGridItem } from "./Ui/BentoGrid";
+import cn from "@utils/cn";
 
-// Importing specific images for the Bento Grid
-// Note: You can change these imports to whichever images you want to feature
 import home1 from "@assets/images/gallery/home/1.webp";
 import home2 from "@assets/images/gallery/home/2.webp";
 import home3 from "@assets/images/gallery/home/3.webp";
@@ -47,92 +45,6 @@ import merit20 from "@assets/images/merit-images/merit-0317.jpg";
 import merit21 from "@assets/images/merit-images/merit-0318.jpg";
 import merit22 from "@assets/images/merit-images/merit-0319.jpg";
 import merit23 from "@assets/images/merit-images/merit-0321.jpg";
-import cn from "@utils/cn";
-
-// Define the structure for our gallery items
-interface GalleryItem {
-  id: number;
-  image: ImageMetadata | string; // Type for Vite imported images
-  className: string;
-  title?: string; // Optional: if you want hover text
-  description?: string; // Optional
-}
-
-// Configuration Array
-// We explicitly define the classNames here to avoid dynamic class issues in Tailwind
-const galleryItems: GalleryItem[] = [
-  {
-    id: 1,
-    image: home1,
-    className: "md:col-span-1", // Standard square
-    title: "Precision Embroidery",
-    description: "high quality thread work",
-  },
-  {
-    id: 2,
-    image: home2,
-    className: "md:col-span-2",
-    title: "Custom Patches",
-    description: "Durable and colorful",
-  },
-  {
-    id: 3,
-    image: home3,
-    className: "md:col-span-2",
-  },
-  {
-    id: 4,
-    image: home4,
-    className: "md:col-span-2",
-    title: "Bulk Production",
-    description: "Handling large scale orders with ease",
-  },
-  {
-    id: 5,
-    image: home5,
-    className: "md:col-span-2",
-  },
-  {
-    id: 6,
-    image: home6,
-    className: "md:col-span-2",
-  },
-  {
-    id: 7,
-    image: home7,
-    className: "md:col-span-2",
-  },
-  {
-    id: 8,
-    image: home8,
-    className: "md:col-span-2",
-  },
-  {
-    id: 9,
-    image: home9,
-    className: "md:col-span-2",
-  },
-  {
-    id: 10,
-    image: home10,
-    className: "md:col-span-1",
-  },
-  {
-    id: 11,
-    image: home11,
-    className: "md:col-span-2",
-  },
-  {
-    id: 12,
-    image: home12,
-    className: "md:col-span-2",
-  },
-  {
-    id: 13,
-    image: home13,
-    className: "md:col-span-2",
-  },
-];
 
 const rawImages = [
   home1,

@@ -1,4 +1,3 @@
-// src/components/Ui/BentoGrid.tsx
 import cn from "@utils/cn";
 
 export const BentoGrid = ({
@@ -11,8 +10,6 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        // Changed max-w-7xl to w-full to fit your container
-        // md:auto-rows-[20rem] makes the images a bit taller/nicer
         "mx-auto grid w-full grid-flow-row-dense grid-cols-1 gap-4 md:auto-rows-[20rem] md:grid-cols-3",
         className,
       )}
@@ -36,7 +33,7 @@ export const BentoGridItem = ({
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
-  image?: string | { src: string }; // Handle string path or imported Astro/Vite image object
+  image?: string | { src: string };
   alt?: string;
 }) => {
   return (
@@ -46,7 +43,6 @@ export const BentoGridItem = ({
         className,
       )}
     >
-      {/* If Image exists, render it as background */}
       {image ? (
         <div className="h-full w-full flex-1">
           <img
@@ -58,7 +54,6 @@ export const BentoGridItem = ({
           />
         </div>
       ) : (
-        // Fallback to original text-based card if no image provided
         <div className="flex h-full flex-col justify-between p-4">
           {header}
           <div className="transition duration-200 group-hover/bento:translate-x-2">
