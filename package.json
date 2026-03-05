@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@astrojs/react": "^4.4.2",
 		"@astrojs/sitemap": "^3.6.0",
+		"@tabler/icons-react": "^3.38.0",
 		"@tailwindcss/vite": "^4.1.16",
 		"@toolwind/corner-shape": "^0.0.8-3",
 		"@types/react": "^19.2.7",
