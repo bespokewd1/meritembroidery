@@ -1,35 +1,29 @@
-import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
+// src/components/GalleryBento.tsx
 import { BentoGrid, BentoGridItem } from "./Ui/BentoGrid";
 
-import gallery1 from "@assets/images/gallery/home/1.webp";
-import gallery2 from "@assets/images/gallery/home/2.webp";
-import gallery3 from "@assets/images/gallery/home/3.webp";
-import gallery4 from "@assets/images/gallery/home/4.webp";
-import gallery5 from "@assets/images/gallery/home/5.webp";
-import gallery6 from "@assets/images/gallery/home/6.webp";
-import gallery7 from "@assets/images/gallery/home/7.webp";
-import gallery8 from "@assets/images/gallery/home/8.webp";
-import gallery9 from "@assets/images/gallery/home/9.webp";
-import gallery10 from "@assets/images/gallery/home/10.webp";
-import gallery11 from "@assets/images/gallery/home/11.webp";
-import gallery12 from "@assets/images/gallery/home/12.webp";
-import gallery13 from "@assets/images/gallery/home/13.webp";
-import gallery14 from "@assets/images/gallery/about/1.webp";
-import gallery15 from "@assets/images/gallery/about/2.webp";
-import gallery16 from "@assets/images/gallery/about/3.webp";
-import gallery17 from "@assets/images/gallery/about/4.webp";
-import gallery18 from "@assets/images/gallery/about/5.webp";
-import gallery19 from "@assets/images/gallery/about/6.webp";
-import gallery20 from "@assets/images/gallery/about/7.webp";
-import gallery21 from "@assets/images/gallery/about/8.webp";
+// Importing specific images for the Bento Grid
+// Note: You can change these imports to whichever images you want to feature
+import home1 from "@assets/images/gallery/home/1.webp";
+import home2 from "@assets/images/gallery/home/2.webp";
+import home3 from "@assets/images/gallery/home/3.webp";
+import home4 from "@assets/images/gallery/home/4.webp";
+import home5 from "@assets/images/gallery/home/5.webp";
+import home6 from "@assets/images/gallery/home/6.webp";
+import home7 from "@assets/images/gallery/home/7.webp";
+import home8 from "@assets/images/gallery/home/8.webp";
+import home9 from "@assets/images/gallery/home/9.webp";
+import home10 from "@assets/images/gallery/home/10.webp";
+import home11 from "@assets/images/gallery/home/11.webp";
+import home12 from "@assets/images/gallery/home/12.webp";
+import home13 from "@assets/images/gallery/home/13.webp";
+import about1 from "@assets/images/gallery/about/1.webp";
+import about2 from "@assets/images/gallery/about/2.webp";
+import about3 from "@assets/images/gallery/about/3.webp";
+import about4 from "@assets/images/gallery/about/4.webp";
+import about5 from "@assets/images/gallery/about/5.webp";
+import about6 from "@assets/images/gallery/about/6.webp";
+import about7 from "@assets/images/gallery/about/7.webp";
+import about8 from "@assets/images/gallery/about/8.webp";
 import merit1 from "@assets/images/merit-images/merit-0256.jpg";
 import merit2 from "@assets/images/merit-images/merit-0261.jpg";
 import merit3 from "@assets/images/merit-images/merit-0278.jpg";
@@ -54,67 +48,105 @@ import merit21 from "@assets/images/merit-images/merit-0318.jpg";
 import merit22 from "@assets/images/merit-images/merit-0319.jpg";
 import merit23 from "@assets/images/merit-images/merit-0321.jpg";
 
+// Define the structure for our gallery items
+interface GalleryItem {
+  id: number;
+  image: ImageMetadata | string; // Type for Vite imported images
+  className: string;
+  title?: string; // Optional: if you want hover text
+  description?: string; // Optional
+}
+
+// Configuration Array
+// We explicitly define the classNames here to avoid dynamic class issues in Tailwind
+const galleryItems: GalleryItem[] = [
+  {
+    id: 1,
+    image: home1,
+    className: "md:col-span-1", // Standard square
+    title: "Precision Embroidery",
+    description: "high quality thread work",
+  },
+  {
+    id: 2,
+    image: home2,
+    className: "md:col-span-2",
+    title: "Custom Patches",
+    description: "Durable and colorful",
+  },
+  {
+    id: 3,
+    image: home3,
+    className: "md:col-span-2",
+  },
+  {
+    id: 4,
+    image: home4,
+    className: "md:col-span-2",
+    title: "Bulk Production",
+    description: "Handling large scale orders with ease",
+  },
+  {
+    id: 5,
+    image: home5,
+    className: "md:col-span-2",
+  },
+  {
+    id: 6,
+    image: home6,
+    className: "md:col-span-2",
+  },
+  {
+    id: 7,
+    image: home7,
+    className: "md:col-span-2",
+  },
+  {
+    id: 8,
+    image: home8,
+    className: "md:col-span-2",
+  },
+  {
+    id: 9,
+    image: home9,
+    className: "md:col-span-2",
+  },
+  {
+    id: 10,
+    image: home10,
+    className: "md:col-span-1",
+  },
+  {
+    id: 11,
+    image: home11,
+    className: "md:col-span-2",
+  },
+  {
+    id: 12,
+    image: home12,
+    className: "md:col-span-2",
+  },
+  {
+    id: 13,
+    image: home13,
+    className: "md:col-span-2",
+  },
+];
+
 export function GalleryBento() {
   return (
-    <BentoGrid className="mx-auto">
-      {items.map((item, i) => (
+    <BentoGrid className="mx-auto max-w-7xl px-4 md:px-0">
+      {galleryItems.map((item, i) => (
         <BentoGridItem
-          key={i}
+          key={item.id}
+          image={item.image}
+          // Pass the class explicitly defined in the object
+          className={item.className}
+          // Optional: Pass title/desc if you want the overlay
           title={item.title}
           description={item.description}
-          header={item.header}
-          icon={item.icon}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
         />
       ))}
     </BentoGrid>
   );
 }
-const Skeleton = () => (
-  <div className="flex h-full min-h-[6rem] w-full flex-1 rounded-xl bg-gradient-to-br from-neutral-200 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800"></div>
-);
-const items = [
-  {
-    title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
-    header: <Skeleton />,
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Digital Revolution",
-    description: "Dive into the transformative power of technology.",
-    header: <Skeleton />,
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Art of Design",
-    description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton />,
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Power of Communication",
-    description:
-      "Understand the impact of effective communication in our lives.",
-    header: <Skeleton />,
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Pursuit of Knowledge",
-    description: "Join the quest for understanding and enlightenment.",
-    header: <Skeleton />,
-    icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Joy of Creation",
-    description: "Experience the thrill of bringing ideas to life.",
-    header: <Skeleton />,
-    icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Spirit of Adventure",
-    description: "Embark on exciting journeys and thrilling discoveries.",
-    header: <Skeleton />,
-    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
-  },
-];
