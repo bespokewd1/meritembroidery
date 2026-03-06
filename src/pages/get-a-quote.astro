@@ -7,6 +7,8 @@ import "../styles/global.css";
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { getImage } from "astro:assets";
+import LandingTitle from "@components/LandingTitle.astro";
+import CTA from "@components/CTA.astro";
 const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 ---
 
@@ -117,30 +119,20 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <!-- ============================================ -->
   <!--                   Contact                    -->
   <!-- ============================================ -->
-  <section class="text-center" style="padding-top: 8rem;padding-bottom: 2rem;">
+  <!-- <section class="text-center" style="padding-top: 8rem;padding-bottom: 2rem;">
     <h2 style="color: var(--primary);" class="cs-topper">
       Tailored craftsmanship for every design
     </h2>
     <h2 class="cs-title">Get a Quote</h2>
-  </section>
-  <section id="contact">
-    <div class="container">
-      <div class="left">
-        <div class="upper">
-          <h3 class="cs-title">Get a Free Quote</h3>
-          <p class="cs-text">
-            Fill out our quick form to get a personalized quote.
-          </p>
-        </div>
-        <!-- <div class="lower"> -->
-        <!-- <h3 class="cs-title">Chat with our virtual assistant and get a custom quote</h3> -->
-        <!-- <p class="cs-text">Start a conversation to get a custom quote instantly.</p> -->
-        <!-- <a class="chat-button" href="#">Start Chat</a> -->
-        <!-- </div> -->
-      </div>
-      <div class="right">
-        <h3 class="cs-title">Minimum Order 24 Pieces</h3>
-        <div class="form-wrapper">
+  </section> -->
+
+  <section id="contact" class="px-4 pb-15 md:px-8">
+    <LandingTitle title="Get a Quote!" class="mb-6 md:mb-12" />
+
+    <div class="container mx-auto my-0 max-w-240.75">
+      <div class="right flex-1">
+        <!-- <h3 class="cs-title">Minimum Order 24 Pieces</h3> -->
+        <div class="form-wrapper bg-bg-light mt-0 max-w-full p-0">
           <form
             id="myForm"
             action="https://api.web3forms.com/submit"
@@ -154,51 +146,58 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
             <!-- 2️⃣ Hidden field for Cloudinary file URL -->
             <input type="hidden" id="file_url" name="File URL" />
             <div class="form-group">
-              <label>Name <span class="required">*</span></label>
+              <label class="text-accent-light text-lg font-bold">Name </label>
               <div class="row">
                 <input
                   type="text"
                   name="name"
-                  placeholder="First Name"
                   required
+                  class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
                 />
-                <input
+                <!-- <input
                   type="text"
                   name="lastname"
                   placeholder="Last Name"
                   required
-                />
+                /> -->
               </div>
             </div>
 
             <div class="form-group">
-              <label>Email <span class="required">*</span></label>
+              <label class="text-accent-light text-lg font-bold">Email</label>
               <input
                 type="email"
                 name="email"
-                placeholder="Your Email"
+                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
                 required
               />
             </div>
 
             <div class="form-group">
-              <label>Phone Number <span class="required">*</span></label>
+              <label class="text-accent-light text-lg font-bold">Phone</label>
               <input
                 type="tel"
                 name="phone"
-                placeholder="(000) 000-0000"
+                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
                 required
               />
-              <small>Please enter a valid phone number.</small>
+              <small class="text-accent-light"
+                >Please enter a valid phone number.</small
+              >
             </div>
 
             <div class="form-group">
-              <label>Company Name</label>
-              <input type="text" name="company" placeholder="Optional" />
-              <small>Or tell us if it’s personal!</small>
+              <label class="text-accent-light text-lg font-bold"
+                >Company Name</label
+              >
+              <input
+                type="text"
+                name="company"
+                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
+              />
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label>Contact Method <span class="required">*</span></label>
               <select name="contactMethod" required>
                 <option value="" disabled selected>Please Select</option>
@@ -206,35 +205,54 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
                 <option value="text">Text me</option>
                 <option value="email">Email me</option>
               </select>
-            </div>
+            </div> -->
 
             <div class="form-group">
-              <label>Message <span class="required">*</span></label>
-              <textarea name="message" placeholder="Your Message" required
+              <label class="text-accent-light text-lg font-bold">Message</label>
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
               ></textarea>
             </div>
 
             <div class="form-group">
-              <label>File Upload</label>
-              <div class="file-upload">
+              <label class="text-accent-light text-lg font-bold"
+                >File Upload</label
+              >
+
+              <!-- class="" -->
+              <div class="file-upload border-neutral-500">
                 <input type="file" id="file" accept=".jpg,.png,.pdf" required />
-                <div class="upload-box" id="uploadBox">
+                <div
+                  class="upload-box ring-accent-light bg-body-light h-auto min-h-50 place-content-center rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
+                  id="uploadBox"
+                >
                   <label class="upload-icon" for="file">📁</label>
                   <p id="status"></p>
-                  <strong>Share Art and Project Files</strong>
+                  <p class="text-lg">
+                    <strong class="text-lg">Share Art and Project Files</strong>
+                  </p>
                   <p>Drag and drop files here, or click to browse</p>
                 </div>
               </div>
               <div id="fileList"></div>
             </div>
 
-            <button type="submit" id="submitBtn">Submit</button>
+            <button
+              type="submit"
+              id="submitBtn"
+              class="cs-button-solid bg-accent-primary font-acumin hover:text-body-light focus-visible:text-body-light mx-auto mt-2 ml-auto h-auto px-8 py-2 text-lg font-medium tracking-widest uppercase before:rounded-[inherit]"
+              >Submit</button
+            >
             <p id="formMessage" style="display:none;"></p>
           </form>
         </div>
       </div>
     </div>
   </section>
+  <CTA />
 </BaseLayout>
 <script>
   const form = document.getElementById("myForm");
