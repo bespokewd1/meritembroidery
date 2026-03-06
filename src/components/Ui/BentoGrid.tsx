@@ -27,6 +27,7 @@ export const BentoGridItem = ({
   icon,
   image,
   alt = "Gallery image",
+  imgClass = "",
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -35,6 +36,7 @@ export const BentoGridItem = ({
   icon?: React.ReactNode;
   image?: string | { src: string };
   alt?: string;
+  imgClass?: string;
 }) => {
   return (
     <div
@@ -48,7 +50,10 @@ export const BentoGridItem = ({
           <img
             src={typeof image === "string" ? image : image.src}
             alt={alt}
-            className="h-full w-full object-contain object-center transition duration-500 group-hover/bento:scale-105"
+            className={cn([
+              "h-full w-full border object-contain object-center transition duration-500 group-hover/bento:scale-105",
+              imgClass,
+            ])}
             loading="lazy"
             decoding="async"
           />

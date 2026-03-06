@@ -46,58 +46,91 @@ import merit21 from "@assets/images/merit-images/merit-0318.jpg";
 import merit22 from "@assets/images/merit-images/merit-0319.jpg";
 import merit23 from "@assets/images/merit-images/merit-0321.jpg";
 
+import other1 from "@assets/images/gallery/others/2.jpg";
+import other2 from "@assets/images/gallery/others/3.jpg";
+import other3 from "@assets/images/gallery/others/4.jpg";
+import other4 from "@assets/images/gallery/others/5.jpg";
+import other5 from "@assets/images/gallery/others/7.jpg";
+import other6 from "@assets/images/gallery/others/9.jpg";
+import other7 from "@assets/images/gallery/others/11.jpg";
+import other8 from "@assets/images/gallery/others/12.jpg";
+import other9 from "@assets/images/gallery/others/15.jpg";
+import other10 from "@assets/images/gallery/others/16.jpg";
+import other11 from "@assets/images/gallery/others/17.jpg";
+import other12 from "@assets/images/gallery/others/18.jpg";
+import other13 from "@assets/images/gallery/others/20.jpg";
+
 const rawImages = [
   home1,
   home2,
   home3,
+  other1,
   home4,
   home5,
   home6,
+  other2,
   merit9,
   merit10,
   merit11,
+  other3,
   merit12,
   merit13,
   merit14,
   merit15,
+  other4,
   home7,
   home8,
   home9,
+  other5,
   home10,
   home11,
   home12,
   home13,
+  other6,
   merit16,
   merit17,
   merit18,
+  other7,
   merit19,
   merit20,
   merit21,
   merit22,
   merit23,
+  other8,
   about1,
   about2,
   about3,
+  other9,
   merit5,
   merit6,
   merit7,
   merit8,
+  other10,
   about4,
   about5,
   about6,
   about7,
   about8,
+  other11,
   merit1,
   merit2,
   merit3,
   merit4,
+  other12,
+  other13,
 ];
 
 export function GalleryBento() {
   return (
     <section className="">
-      <div className="corner-squircle max-w-8xl mx-auto rounded-t-[150px] rounded-b-none bg-white py-18 supports-[corner-shape:squircle]:rounded-t-[300px] supports-[corner-shape:squircle]:rounded-b-none">
-        <BentoGrid className={cn(["mx-auto max-w-7xl px-4 md:px-0"])}>
+      <div
+        className={cn([
+          "corner-squircle mx-auto max-w-7xl bg-white py-18 xl:px-18",
+          "rounded-t-[75px] rounded-b-none lg:rounded-t-[100px]",
+          "supports-[corner-shape:squircle]:rounded-t-[150px] supports-[corner-shape:squircle]:rounded-b-none lg:supports-[corner-shape:squircle]:rounded-t-[200px]",
+        ])}
+      >
+        <BentoGrid className={cn(["mx-auto px-4 md:px-6 xl:px-0"])}>
           {rawImages.map((img, i) => {
             // Calculate the aspect ratio (Width divided by Height)
             const ratio = img.width / img.height;
@@ -108,13 +141,34 @@ export function GalleryBento() {
             // You can tweak this number:
             // - Lower (1.1) makes it easier to trigger a wide span
             // - Higher (1.4) makes it harder (only very wide images will span)
-            const isSignificantlyWide = ratio > 1.6;
+            // const isSignificantlyWide = ratio > 1.6;
 
-            const spanClass = isSignificantlyWide
-              ? "md:col-span-2"
-              : "md:col-span-1";
+            // const spanClass = isSignificantlyWide
+            //   ? "md:col-span-2"
+            //   : "md:col-span-1";
 
-            return <BentoGridItem key={i} image={img} className={spanClass} />;
+            let spanClass = "md:col-span-1"; // Default square
+            let imgClass = "object-cover";
+
+            if (ratio > 1.6) {
+              // Wide: Landscape
+              spanClass = "md:col-span-2";
+              imgClass = "";
+              // } else if (ratio < 0.8) {
+            } else if (ratio < 0.9) {
+              // Tall: Portrait
+              spanClass = "md:row-span-2";
+              imgClass = "";
+            }
+
+            return (
+              <BentoGridItem
+                key={i}
+                image={img}
+                className={spanClass}
+                imgClass={imgClass}
+              />
+            );
           })}
         </BentoGrid>
       </div>
