@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 import CTA from "@components/CTA.astro";
 import Landing from "@components/Landing.astro";
 import FAQ from "@components/FAQ.astro";
@@ -9,8 +10,10 @@ import { Icon } from "astro-icon/components";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import meritMap from "@assets/images/merit-map.png"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { getImage } from "astro:assets";
 import MapPinFilled from "@components/MapPinFilled.astro";
+import LandingTitle from "@components/LandingTitle.astro";
 const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
 const phoneDisplay = "+1 780-729-0978";
@@ -24,8 +27,7 @@ const addressTwo = client.address.lineTwo?.trim() || "10625 40 Ave NW";
 const phoneNumber = client.phoneForTel?.trim() || "10625 40 Ave NW";
 const emailAddress = client.email?.trim() || "10625 40 Ave NW";
 const mapHref =
-  client.address.mapLink ||
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.612254114085!2d-113.51028162603954!3d53.47538949128358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f3c749cbe89%3A0x6a72e2d6f72946d0!2s10625%2040%20Ave%20NW!5e0!3m2!1sen!2sph!4v1759943839747!5m2!1sen!2sph";
+  client.address.mapLink || "https://maps.app.goo.gl/5mASptDbZWLEcpT5A";
 
 const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
 ---
@@ -50,9 +52,10 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
 
   <section id="contact-2320">
     <div class="cs-container">
-      <div class="cs-content">
-        <span class="cs-topper">Contact Us</span>
-        <h2 class="cs-title">Get In Touch With Merit Embroidery</h2>
+      <div class="cs-content py-0">
+        <!-- <span class="cs-topper">Contact Us</span>
+        <h2 class="cs-title">Get In Touch With Merit Embroidery</h2> -->
+        <LandingTitle title="Contact Us" class="mb-4 md:mb-4" />
         <!--Form-->
         <form
           class="cs-form"
@@ -61,57 +64,68 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
           method="post"
           netlify
         >
-          <label class="cs-label">
+          <label class="cs-label text-lg font-medium">
             Name
             <input
-              class="cs-input"
+              class="cs-input ring-accent-light h-auto p-2 font-medium ring outline-none focus-visible:ring-2"
               required
               type="text"
               name="name"
               placeholder="Name"
             />
           </label>
-          <label class="cs-label cs-email">
+          <label class="cs-label cs-email text-lg">
             Email
             <input
-              class="cs-input"
+              class="cs-input ring-accent-light h-auto p-2 font-medium ring outline-none focus-visible:ring-2"
               required
               type="email"
               name="email"
               placeholder="Email"
             />
           </label>
-          <label class="cs-label cs-phone">
+          <label class="cs-label cs-phone w-full text-lg">
             Phone
             <input
-              class="cs-input"
+              class="cs-input ring-accent-light h-auto p-2 font-medium ring outline-none focus-visible:ring-2"
               required
               type="tel"
               name="phone"
               placeholder="Phone"
             />
           </label>
-          <label class="cs-label">
+          <label class="cs-label text-lg">
             Message
             <textarea
-              class="cs-input cs-textarea"
+              class="cs-textarea cs-input ring-accent-light h-auto p-2 font-medium ring outline-none focus-visible:ring-2"
               required
               name="Message"
               placeholder="Write message..."></textarea>
           </label>
-          <button class="cs-button-solid cs-submit" type="submit"
-            >Send Message</button
+          <button
+            class="cs-button-solid bg-accent-primary font-acumin mt-2 mr-0 ml-auto h-auto px-3 py-4 text-xl font-medium tracking-widest uppercase before:rounded-[inherit]"
+            type="submit">Send Message</button
           >
+
+          <!-- "cs-button-solid bg-accent-primary font-acumin font-medium", -->
+          <!-- <ButtonLink
+          class="mt-6 h-auto px-3 py-4 text-xl tracking-widest uppercase"
+          href="/get-a-quote"
+        >
+          Get a Quote
+        </ButtonLink> -->
         </form>
 
         <div class="contact-info flex flex-col gap-4">
-          <h2 class="cs-header">Contact Info</h2>
+          <h2 class="cs-header text-accent-dark text-3xl">Contact Info</h2>
 
           <div>
-            <h3>ADDRESS</h3>
+            <h3 class="text-accent-dark">ADDRESS</h3>
             <a
-              class="group cs-text mt-1 ml-2 inline-flex items-center gap-2 transition-colors duration-300 hover:text-red-950 hover:underline"
+              class="group text-accent-dark cs-text mt-1 ml-2 inline-flex items-center gap-2 font-medium transition-colors duration-300 hover:text-red-950 hover:underline"
               href={mapHref}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {addressOne}, {addressTwo}
               <Icon
@@ -122,9 +136,9 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
           </div>
 
           <div>
-            <h3>PHONE</h3>
+            <h3 class="text-accent-dark">PHONE</h3>
             <a
-              class="group cs-text mt-1 ml-2 inline-flex items-center gap-2 transition-colors duration-300 hover:text-red-950 hover:underline"
+              class="group cs-text text-accent-dark mt-1 ml-2 inline-flex items-center gap-2 font-medium transition-colors duration-300 hover:text-red-950 hover:underline"
               href={`tel:${phoneNumber}`}
             >
               {phoneNumber}
@@ -136,17 +150,17 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
           </div>
 
           <div>
-            <h3>WORKING HOURS</h3>
-            <p class="cs-text mt-1 ml-2">
+            <h3 class="text-accent-dark">WORKING HOURS</h3>
+            <p class="cs-text text-accent-dark mt-1 ml-2 font-medium">
               <strong>Mon - Fri:</strong> 8:00 am – 4:30 pm
             </p>
           </div>
 
           <div>
-            <h3>EMAIL</h3>
+            <h3 class="text-accent-dark">EMAIL</h3>
 
             <a
-              class="group cs-text mt-1 ml-2 inline-flex items-center gap-2 transition-colors duration-300 hover:text-red-950 hover:underline"
+              class="group cs-text text-accent-dark mt-1 ml-2 inline-flex items-center gap-2 font-medium transition-colors duration-300 hover:text-red-950 hover:underline"
               href={`mailto:${emailAddress}`}
             >
               {emailAddress}
@@ -158,11 +172,13 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
           </div>
 
           <div>
-            <h3>EMPLOYMENT OPPORTUNITIES</h3>
-            <p class="cs-text mt-1 ml-2">Please submit your resume to:</p>
+            <h3 class="text-accent-dark">EMPLOYMENT OPPORTUNITIES</h3>
+            <p class="cs-text text-accent-dark mt-1 ml-2 font-medium">
+              Please submit your resume to:
+            </p>
 
             <a
-              class="group cs-text ml-2 inline-flex items-center gap-2 transition-colors duration-300 hover:text-red-950 hover:underline"
+              class="group cs-text text-accent-dark ml-2 inline-flex items-center gap-2 font-medium transition-colors duration-300 hover:text-red-950 hover:underline"
               href={`mailto:jobs@meritembroidery.com`}
             >
               jobs@meritembroidery.com
@@ -175,46 +191,21 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
         </div>
       </div>
       <!--Map Image, pin is made in the Figma then export as one image-->
-      <div class="cs-map">
-        <div class="cs-iframe-wrapper">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4059.2710844829853!2d-113.4038975274644!3d53.51237639588471!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a0186ce841d67d%3A0x43c318ffd01724a5!2sMerit%20Embroidery%20%26%20Printing%20Ltd.!5e1!3m2!1sen!2sus!4v1762867446743!5m2!1sen!2sus"
-            width="600"
-            height="450"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <!-- <iframe
-            src={`${mapHref}&output=embed&maptype=satellite`}
-            width="600"
-            height="450"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-        </div>
-        <!-- <div class="cs-box">
-                <img class="cs-icon" decoding="async" loading="lazy" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/yellow-pin.svg" alt="icon" width="40" height="40" aria-hidden="true">
-                <div class="cs-flex">
-                    <span class="cs-header">Location</span>
-                    <span class="cs-address">38 Bridge Street, Andover, England, SP10 1BW
-                    </span>
-                </div>
-            </div> -->
+      <div class="cs-map min-h-250">
+        <a
+          href={mapHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block aspect-9/16 size-full overflow-hidden rounded-tr-[250px] border-t-15 border-r-15 border-[#224ca1]"
+        >
+          <Image
+            src={meritMap}
+            alt="merit map in edmonton"
+            class="aspect-9/16 size-full scale-102"
+          />
+        </a>
       </div>
     </div>
-    <!-- <div class="cs-container2">
-        <picture class="cs-background">
-            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/house.jpg">
-            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/house.jpg">
-            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/house.jpg" alt="house" width="1280" height="243">
-        </picture>
-        <div class="cs-hours">
-            <div class="cs-topper">Working Hours</div>
-            <span class="cs-hours-info">Mon - Fri: 8:00 AM - 4:30 PM</span>
-        </div>
-    </div> -->
   </section>
 
   <CTA />
