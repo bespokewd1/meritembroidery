@@ -1,7 +1,9 @@
 ---
 import navData from "@data/navData.json";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import client from "@data/client.json";
+import navLogo from "@assets/images/merit-bg-transparent.png";
 import DarkModeToggle from "@components/DarkModeToggle.astro";
 import ButtonLink from "./Ui/ButtonLink.astro";
 import cn from "@utils/cn";
@@ -15,14 +17,19 @@ import cn from "@utils/cn";
   <div class="cs-container">
     <!--Nav Logo-->
     <a href="/" class="cs-logo lg:m-0" aria-label="back to home">
-      <img
+      <Image
+        src={navLogo}
+        alt={"merit M logo with Merit text"}
+        class="ml-4 scale-130 lg:ml-0 lg:scale-100"
+      />
+      <!-- <img
         src="/assets/images/Merit_Logo.png"
         alt=""
         width="210"
         height="29"
         aria-hidden="true"
         decoding="async"
-      />
+      /> -->
     </a>
     <!--Navigation List-->
     <nav class="cs-nav lg:mx-auto" role="navigation">
@@ -93,7 +100,7 @@ import cn from "@utils/cn";
 
                   <ul
                     id={`submenu-${entry.key}`}
-                    class="cs-drop-ul bg-bg-light/80 corner-squircle rounded-xl rounded-tl-none border-none supports-corner-shape:rounded-3xl supports-corner-shape:rounded-tl-none"
+                    class="cs-drop-ul bg-bg-light/80 corner-squircle rounded-xl rounded-tl-none border-none backdrop-blur-xs supports-corner-shape:rounded-3xl supports-corner-shape:rounded-tl-none"
                   >
                     {/* idx + 1 === entry.children.length */}
                     {entry.children.map((child, idx) => (
