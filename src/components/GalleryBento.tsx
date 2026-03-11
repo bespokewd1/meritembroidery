@@ -108,6 +108,43 @@ import mix4 from "@assets/images/gallery/mix/4.JPG";
 import mix5 from "@assets/images/gallery/mix/5.JPG";
 import mix6 from "@assets/images/gallery/mix/6.JPG";
 
+import applique1 from  "@assets/images/gallery/applique/1.JPG";
+import applique2 from  "@assets/images/gallery/applique/2.JPG";
+import applique3 from  "@assets/images/gallery/applique/3.JPG";
+import applique4 from  "@assets/images/gallery/applique/4.JPG";
+import applique5 from  "@assets/images/gallery/applique/5.JPG";
+import applique6 from  "@assets/images/gallery/applique/6.JPG";
+import applique7 from  "@assets/images/gallery/applique/7.JPG";
+import applique8 from  "@assets/images/gallery/applique/8.JPG";
+import applique9 from  "@assets/images/gallery/applique/9.JPG";
+import applique10 from  "@assets/images/gallery/applique/10.JPG";
+import applique11 from  "@assets/images/gallery/applique/11.JPG";
+import applique12 from  "@assets/images/gallery/applique/12.JPG";
+import applique13 from  "@assets/images/gallery/applique/13.JPG";
+import applique14 from  "@assets/images/gallery/applique/14.JPG";
+import applique15 from  "@assets/images/gallery/applique/15.JPG";
+import applique16 from  "@assets/images/gallery/applique/16.JPG";
+import applique17 from  "@assets/images/gallery/applique/17.JPG";
+
+
+import patches1 from  "@assets/images/gallery/patches/1.jpg";
+import patches2 from  "@assets/images/gallery/patches/2.JPG";
+import patches3 from  "@assets/images/gallery/patches/3.JPG";
+import patches4 from  "@assets/images/gallery/patches/4.JPG";
+import patches5 from  "@assets/images/gallery/patches/5.JPG";
+import patches6 from  "@assets/images/gallery/patches/6.JPG";
+import patches7 from  "@assets/images/gallery/patches/7.JPG";
+import patches8 from  "@assets/images/gallery/patches/8.JPG";
+import patches9 from  "@assets/images/gallery/patches/9.JPG";
+import patches10 from  "@assets/images/gallery/patches/10.JPG";
+import patches11 from  "@assets/images/gallery/patches/11.JPG";
+import patches12 from  "@assets/images/gallery/patches/12.JPG";
+import patches13 from  "@assets/images/gallery/patches/13.JPG";
+import patches14 from  "@assets/images/gallery/patches/14.JPG";
+import patches15 from  "@assets/images/gallery/patches/15.JPG";
+import patches16 from  "@assets/images/gallery/patches/16.jpg";
+import patches17 from  "@assets/images/gallery/patches/17.jpg";
+
 
 const rawImagesBak = [
   home1,
@@ -225,28 +262,62 @@ const rawImages:ImageMetadata[] = [
   mix4,
   mix5,
   mix6,
+  applique1,
+  applique2,
+  applique3,
+  applique4,
+  applique5,
+  applique6,
+  applique7,
+  applique8,
+  applique9,
+  applique10,
+  applique11,
+  applique12,
+  applique13,
+  applique14,
+  applique15,
+  applique16,
+  applique17,
+  patches1,
+  patches2,
+  patches3,
+  patches4,
+  patches5,
+  patches6,
+  patches7,
+  patches8,
+  patches9,
+  patches10,
+  patches11,
+  patches12,
+  patches13,
+  patches14,
+  patches15,
+  patches16,
+  patches17,
 
   home1,
   home2,
-  home3,
-  home4,
-  home5,
-  home6,
-  home7,
-  home8,
-  home9,
-  home10,
-  home11,
-  home12,
-  home13,
+  // home3,
+  // home4,
+  // home5,
+  // home6,
+  // home7,
+  // home8,
+  // home9,
+  // home10,
+  // home11,
+  // home12,
+  // home13,
   about1,
-  about2,
-  about3,
-  about4,
-  about5,
-  about6,
-  about7,
-  about8,
+  // about2,
+  // about3,
+  // about4,
+  // about5,
+  // about6,
+  // about7,
+  // about8,
 ];
 
 export function GalleryBento() {

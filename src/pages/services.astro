@@ -32,6 +32,28 @@ import glass  from "@assets/images/gallery/engraving/7.JPG";
 import coasters  from "@assets/images/gallery/engraving/4.JPG";
 import trophies  from "@assets/images/gallery/mix/6.JPG";
 
+import patches  from "@assets/images/gallery/patches/13.JPG";
+import digitalPatch  from "@assets/images/gallery/patches/15.JPG";
+import laserPatch  from "@assets/images/gallery/patches/2.JPG";
+import sublimatedPatch  from "@assets/images/gallery/patches/11.JPG";
+import embroidedPatch  from "@assets/images/gallery/patches/14.JPG";
+import wovenPatch  from "@assets/images/gallery/patches/12.JPG";
+
+
+import applique  from "@assets/images/gallery/applique/1.JPG";
+import doubleLayerApplique  from "@assets/images/gallery/applique/3.JPG";
+import leatherApplique  from "@assets/images/gallery/applique/2.JPG";
+import proTwillApplique  from "@assets/images/gallery/applique/5.JPG";
+import feltApplique  from "@assets/images/gallery/applique/14.JPG";
+import multiMediaApplique  from "@assets/images/gallery/applique/9.JPG";
+
+
+import artwork  from "@assets/images/gallery/engraving/2.JPG";
+import vectorizeLogo  from "@assets/images/gallery/digital/12.JPG";
+import digitizeEmbroidery  from "@assets/images/gallery/others/3.jpg";
+import editDesign  from "@assets/images/gallery/screen-print/9.JPG";
+import productionReady  from "@assets/images/gallery/engraving/6.JPG";
+import personalizeDesign  from "@assets/images/gallery/mix/3.JPG";
 
 import service1 from "@assets/images/merit-images/merit-0261.jpg";
 import service2 from "@assets/images/merit-images/merit-0256.jpg";
@@ -195,7 +217,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="patches"
-    imageSrc={service3}
+    imageSrc={patches}
     imageAlt="Digital Printing & Digital Patches"
     features={[
       "CMYK full-color printing",
@@ -206,11 +228,11 @@ const optimizedImage = await getImage({
       "High-density and debossed effects",
     ]}
     subtypes={[
-      { image: service3, label: "Digital Printed Patches" },
-      { image: service3, label: "Laser Engraved Patches" },
-      { image: service3, label: "Sublimated Patches" },
-      { image: service3, label: "Embroided Patches" },
-      { image: service3, label: "Woven Pathches" },
+      { image: digitalPatch, label: "Digital Printed Patches" },
+      { image: laserPatch, label: "Laser Engraved Patches" },
+      { image: sublimatedPatch, label: "Sublimated Patches" },
+      { image: embroidedPatch, label: "Embroided Patches" },
+      { image: wovenPatch, label: "Woven Pathches" },
     ]}
     galleryHref="/portfolio"
   >
@@ -228,8 +250,8 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="applique"
-    imageSrc={service2}
-    imageAlt="Screen Printing"
+    imageSrc={applique}
+    imageAlt="applique shirt with alberta print"
     features={[
       "Up to 12-color designs",
       "Reflective ink for safety wear",
@@ -239,11 +261,11 @@ const optimizedImage = await getImage({
       "Water-based and plastisol inks",
     ]}
     subtypes={[
-      { image: service2, label: "Double Layer Applique" },
-      { image: service2, label: "Faux Leather/Suede Applique" },
-      { image: service2, label: "Pro-Twill Applique" },
-      { image: service2, label: "Felt Applique" },
-      { image: service2, label: "Multi Media Applique" },
+      { image: doubleLayerApplique, label: "Double Layer Applique" },
+      { image: leatherApplique, label: "Faux Leather/Suede Applique" },
+      { image: proTwillApplique, label: "Pro-Twill Applique" },
+      { image: feltApplique, label: "Felt Applique" },
+      { image: multiMediaApplique, label: "Multi Media Applique" },
     ]}
     galleryHref="/portfolio"
   >
@@ -265,7 +287,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="artwork"
-    imageSrc={service5}
+    imageSrc={artwork}
     imageAlt="Artwork and digitizing"
     features={[
       "Intricate designs with fine detail",
@@ -276,11 +298,11 @@ const optimizedImage = await getImage({
       "Perfect for premium branding",
     ]}
     subtypes={[
-      { image: service5, label: "Vectorize Logos" },
-      { image: service5, label: "Digitize for Embroidery" },
-      { image: service5, label: "Edit Designs" },
-      { image: service5, label: "Make Production-Ready Designs" },
-      { image: service5, label: "Add Text/Personalize Designs" },
+      { image: vectorizeLogo, label: "Vectorize Logos" },
+      { image: digitizeEmbroidery, label: "Digitize for Embroidery" },
+      { image: editDesign, label: "Edit Designs" },
+      { image: productionReady, label: "Make Production-Ready Designs" },
+      { image: personalizeDesign, label: "Add Text/Personalize Designs" },
     ]}
     galleryHref="/portfolio"
   >
