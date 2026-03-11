@@ -34,7 +34,8 @@ export const BentoGridItem = ({
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
-  image?: string | { src: string };
+  image?: ImageMetadata;
+  // image?: string | { src: string };
   alt?: string;
   imgClass?: string;
 }) => {
@@ -50,6 +51,8 @@ export const BentoGridItem = ({
           <img
             src={typeof image === "string" ? image : image.src}
             alt={alt}
+            width={typeof image === "string" ? undefined : image.width}
+            height={typeof image === "string" ? undefined : image.height}
             className={cn([
               "h-full w-full border object-contain object-center transition duration-500 group-hover/bento:scale-105",
               imgClass,

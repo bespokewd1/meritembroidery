@@ -75,64 +75,98 @@ import screenPrint7 from "@assets/images/gallery/screen-print/7.JPG";
 import screenPrint8 from "@assets/images/gallery/screen-print/8.JPG";
 import screenPrint9 from "@assets/images/gallery/screen-print/9.JPG";
 
-const rawImages = [
+import digital1 from "@assets/images/gallery/digital/1.JPG";
+import digital2 from "@assets/images/gallery/digital/2.JPG";
+import digital3 from "@assets/images/gallery/digital/3.JPG";
+import digital4 from "@assets/images/gallery/digital/4.JPG";
+import digital5 from "@assets/images/gallery/digital/5.JPG";
+import digital6 from "@assets/images/gallery/digital/6.JPG";
+import digital7 from "@assets/images/gallery/digital/7.JPG";
+import digital8 from "@assets/images/gallery/digital/8.JPG";
+import digital9 from "@assets/images/gallery/digital/9.JPG";
+import digital10 from "@assets/images/gallery/digital/10.JPG";
+import digital11 from "@assets/images/gallery/digital/11.JPG";
+import digital12 from "@assets/images/gallery/digital/12.JPG";
+import digital13 from "@assets/images/gallery/digital/13.JPG";
+import digital14 from "@assets/images/gallery/digital/14.jpg";
+import digital15 from "@assets/images/gallery/digital/15.jpg";
+import digital16 from "@assets/images/gallery/digital/16.jpg";
+
+
+import engraving1 from "@assets/images/gallery/digital/1.JPG";
+import engraving2 from "@assets/images/gallery/digital/2.JPG";
+import engraving3 from "@assets/images/gallery/digital/3.JPG";
+import engraving4 from "@assets/images/gallery/digital/4.JPG";
+import engraving5 from "@assets/images/gallery/digital/5.JPG";
+import engraving6 from "@assets/images/gallery/digital/6.JPG";
+import engraving7 from "@assets/images/gallery/digital/7.JPG";
+
+import mix1 from "@assets/images/gallery/mix/1.JPG";
+import mix2 from "@assets/images/gallery/mix/2.JPG";
+import mix3 from "@assets/images/gallery/mix/3.JPG";
+import mix4 from "@assets/images/gallery/mix/4.JPG";
+import mix5 from "@assets/images/gallery/mix/5.JPG";
+import mix6 from "@assets/images/gallery/mix/6.JPG";
+
+
+const rawImagesBak = [
   home1,
   home2,
   home3,
-  other1,
+  // other1,
   home4,
   home5,
   home6,
-  other2,
+  // other2,
   merit9,
   merit10,
   merit11,
-  other3,
+  // other3,
   merit12,
   merit13,
   merit14,
   merit15,
-  other4,
+  // other4,
   home7,
   home8,
   home9,
-  other5,
+  // other5,
   home10,
   home11,
   home12,
   home13,
-  other6,
+  // other6,
   merit16,
   merit17,
   merit18,
-  other7,
+  // other7,
   merit19,
   merit20,
   merit21,
   merit22,
   merit23,
-  other8,
+  // other8,
   about1,
   about2,
   about3,
-  other9,
+  // other9,
   merit5,
   merit6,
   merit7,
   merit8,
-  other10,
+  // other10,
   about4,
   about5,
   about6,
   about7,
   about8,
-  other11,
+  // other11,
   merit1,
   merit2,
   merit3,
   merit4,
-  other12,
-  other13,
+  // other12,
+  // other13,
   embroidery1,
   embroidery2,
   embroidery3,
@@ -146,6 +180,73 @@ const rawImages = [
   screenPrint7,
   screenPrint8,
   screenPrint9,
+];
+
+const rawImages:ImageMetadata[] = [
+  embroidery1,
+  embroidery2,
+  embroidery3,
+  embroidery4,
+  screenPrint1,
+  screenPrint2,
+  screenPrint3,
+  screenPrint4,
+  screenPrint5,
+  screenPrint6,
+  screenPrint7,
+  screenPrint8,
+  screenPrint9,
+  digital1,
+  digital2,
+  digital3,
+  digital4,
+  digital5,
+  digital6,
+  digital7,
+  digital8,
+  digital9,
+  digital10,
+  digital11,
+  digital12,
+  digital13,
+  digital14,
+  digital15,
+  digital16,
+  engraving1,
+  engraving2,
+  engraving3,
+  engraving4,
+  engraving5,
+  engraving6,
+  engraving7,
+  mix1,
+  mix2,
+  mix3,
+  mix4,
+  mix5,
+  mix6,
+
+  home1,
+  home2,
+  home3,
+  home4,
+  home5,
+  home6,
+  home7,
+  home8,
+  home9,
+  home10,
+  home11,
+  home12,
+  home13,
+  about1,
+  about2,
+  about3,
+  about4,
+  about5,
+  about6,
+  about7,
+  about8,
 ];
 
 export function GalleryBento() {
