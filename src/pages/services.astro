@@ -3,6 +3,28 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import ServiceSection from "@components/ServiceSection.astro";
 
+
+import embroidery from "@assets/images/gallery/embroidery/2.JPG";
+import doubleLayer from "@assets/images/merit-images/merit-0261.jpg";
+import puffEmbroidery from "@assets/images/gallery/embroidery/3.JPG";
+import frEmbroidery from "@assets/images/gallery/others/4.jpg";
+import splitEmbroidery from "@assets/images/gallery/embroidery/4.JPG";
+import metalEmbroidery from "@assets/images/gallery/embroidery/1.jpg";
+
+import screenPrint from "@assets/images/gallery/screen-print/2.JPG";
+import glowInDark from "@assets/images/gallery/screen-print/6.JPG";
+import puffPrint from "@assets/images/gallery/screen-print/1.JPG";
+import hdPrint from "@assets/images/gallery/screen-print/3.JPG";
+import distressedPrint from "@assets/images/gallery/screen-print/7.JPG";
+import gelPrint from "@assets/images/gallery/screen-print/6.JPG";
+
+import digitalPrint  from "@assets/images/gallery/digital/15.jpg";
+import colorMax  from "@assets/images/gallery/digital/9.JPG";
+import cad  from "@assets/images/gallery/digital/8.JPG";
+import vinyl  from "@assets/images/gallery/digital/10.JPG";
+import sublimation  from "@assets/images/gallery/digital/7.JPG";
+import uvMax  from "@assets/images/gallery/digital/4.JPG";
+
 import service1 from "@assets/images/merit-images/merit-0261.jpg";
 import service2 from "@assets/images/merit-images/merit-0256.jpg";
 import service3 from "@assets/images/merit-images/merit-0283.jpg";
@@ -13,6 +35,7 @@ import service6 from "@assets/images/merit-images/merit-0318.jpg";
 import landingImage from "@assets/images/landing.jpg";
 import { getImage } from "astro:assets";
 import LandingTitle from "@components/LandingTitle.astro";
+import { discriminatedUnion } from "astro:schema";
 const optimizedImage = await getImage({
   src: landingImage,
   format: "avif",
@@ -30,7 +53,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="embroidery"
-    imageSrc={service1}
+    imageSrc={embroidery}
     imageAlt="Custom Logo Embroidery"
     features={[
       "Flat embroidery for classic professional look",
@@ -41,11 +64,11 @@ const optimizedImage = await getImage({
       "Compatible with apparel, headwear, bags, leather, towels",
     ]}
     subtypes={[
-      { image: service1, label: "Double Layer Puff Embroidery" },
-      { image: service1, label: "Puff Embroidery" },
-      { image: service1, label: "FR Embroidery" },
-      { image: service1, label: "Split Front Embroidery" },
-      { image: service1, label: "Metallic Embroidery" },
+      { image: doubleLayer, label: "Double Layer Puff Embroidery" },
+      { image: puffEmbroidery, label: "Puff Embroidery" },
+      { image: frEmbroidery, label: "FR Embroidery" },
+      { image: splitEmbroidery, label: "Split Front Embroidery" },
+      { image: metalEmbroidery, label: "Metallic Embroidery" },
     ]}
     galleryHref="/portfolio"
   >
@@ -67,7 +90,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="screen-printing"
-    imageSrc={service4}
+    imageSrc={screenPrint}
     imageAlt="Art & Design Services"
     features={[
       "Logo design and development",
@@ -78,11 +101,11 @@ const optimizedImage = await getImage({
       "Design consulting and recommendations",
     ]}
     subtypes={[
-      { image: service4, label: "Glow-in-the-Dark Print" },
-      { image: service4, label: "Puff Print" },
-      { image: service4, label: "Hd Print" },
-      { image: service4, label: "Distressed and Fashion Print" },
-      { image: service4, label: "Gel Ink Print" },
+      { image: glowInDark, label: "Glow-in-the-Dark Print" },
+      { image: puffPrint, label: "Puff Print" },
+      { image: hdPrint, label: "Hd Print" },
+      { image: distressedPrint, label: "Distressed and Fashion Print" },
+      { image: gelPrint, label: "Gel Ink Print" },
     ]}
     galleryHref="/portfolio"
   >
@@ -100,7 +123,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="digital-printing"
-    imageSrc={service5}
+    imageSrc={digitalPrint}
     imageAlt="digital printing"
     features={[
       "Intricate designs with fine detail",
@@ -111,11 +134,11 @@ const optimizedImage = await getImage({
       "Perfect for premium branding",
     ]}
     subtypes={[
-      { image: service5, label: "Colormax Direct to Film" },
-      { image: service5, label: "CAD Print/Cut" },
-      { image: service5, label: "Specialty Vinyl" },
-      { image: service5, label: "Sublimation" },
-      { image: service5, label: "UV Colormax Direct to Film" },
+      { image: colorMax, label: "Colormax Direct to Film" },
+      { image: cad, label: "CAD Print/Cut" },
+      { image: vinyl, label: "Specialty Vinyl" },
+      { image: sublimation, label: "Sublimation" },
+      { image: uvMax, label: "UV Colormax Direct to Film" },
     ]}
     galleryHref="/portfolio"
   >

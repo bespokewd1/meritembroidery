@@ -60,6 +60,21 @@ import other11 from "@assets/images/gallery/others/17.jpg";
 import other12 from "@assets/images/gallery/others/18.jpg";
 import other13 from "@assets/images/gallery/others/20.jpg";
 
+import embroidery1 from "@assets/images/gallery/embroidery/1.jpg";
+import embroidery2 from "@assets/images/gallery/embroidery/2.JPG";
+import embroidery3 from "@assets/images/gallery/embroidery/3.JPG";
+import embroidery4 from "@assets/images/gallery/embroidery/4.JPG";
+
+import screenPrint1 from "@assets/images/gallery/screen-print/1.JPG";
+import screenPrint2 from "@assets/images/gallery/screen-print/2.JPG";
+import screenPrint3 from "@assets/images/gallery/screen-print/3.JPG";
+import screenPrint4 from "@assets/images/gallery/screen-print/4.JPG";
+import screenPrint5 from "@assets/images/gallery/screen-print/5.JPG";
+import screenPrint6 from "@assets/images/gallery/screen-print/6.JPG";
+import screenPrint7 from "@assets/images/gallery/screen-print/7.JPG";
+import screenPrint8 from "@assets/images/gallery/screen-print/8.JPG";
+import screenPrint9 from "@assets/images/gallery/screen-print/9.JPG";
+
 const rawImages = [
   home1,
   home2,
@@ -118,6 +133,19 @@ const rawImages = [
   merit4,
   other12,
   other13,
+  embroidery1,
+  embroidery2,
+  embroidery3,
+  embroidery4,
+  screenPrint1,
+  screenPrint2,
+  screenPrint3,
+  screenPrint4,
+  screenPrint5,
+  screenPrint6,
+  screenPrint7,
+  screenPrint8,
+  screenPrint9,
 ];
 
 export function GalleryBento() {
