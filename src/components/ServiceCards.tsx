@@ -1,10 +1,10 @@
 import { HoverEffect, type ItemsTypes } from "./Ui/CardHoverEffect";
 
-import service1 from "@assets/images/merit-images/merit-0261.jpg";
-import service2 from "@assets/images/merit-images/merit-0256.jpg";
-import service3 from "@assets/images/merit-images/merit-0283.jpg";
-import service4 from "@assets/images/gallery/3.jpg";
-import service5 from "@assets/images/merit-images/merit-0321.jpg";
+import service1 from "@assets/images/gallery/embroidery/2.JPG";
+import service2 from "@assets/images/gallery/screen-print/2.JPG";
+import service3 from "@assets/images/gallery/digital/15.jpg";
+import service5 from "@assets/images/gallery/engraving/3.JPG";
+import service4 from "@assets/images/gallery/engraving/2.JPG";
 import cn from "@utils/cn";
 
 export const ServiceCards = ({ className }: { className?: string }) => {
@@ -31,18 +31,18 @@ export const ServiceCards = ({ className }: { className?: string }) => {
       imgData: service3,
     },
     {
-      title: "Art & Design Services",
-      description:
-        "Professional design services to bring your vision to life. From concept to production-ready files, we handle it all.",
-      link: "/services#artworkServices",
-      imgData: service4,
-    },
-    {
       title: "Laser Engraving",
       description:
         "Precision laser engraving creates intricate designs with stunning detail on faux leather, suede, and other materials.",
       link: "/services#laserEngraving",
       imgData: service5,
+    },
+    {
+      title: "Art & Design Services",
+      description:
+        "Professional design services to bring your vision to life. From concept to production-ready files, we handle it all.",
+      link: "/services#artworkServices",
+      imgData: service4,
     },
   ];
 
