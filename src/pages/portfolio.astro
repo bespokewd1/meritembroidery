@@ -8,7 +8,7 @@ import Landing from "@components/Landing.astro";
 import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import { getImage } from "astro:assets";
 import LandingTitle from "@components/LandingTitle.astro";
-import { GalleryBento } from "@components/GalleryBento";
+import GalleryBento from "@components/GalleryBento.astro";
 
 const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 ---
@@ -26,7 +26,7 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
     <LandingTitle class="mb-10 md:mb-20" title="Our Gallery" />
   </section>
 
-  <GalleryBento client:visible />
+  <GalleryBento/>
 
   <!-- <Gallery showLink={false} class="hidden pt-8" /> -->
 

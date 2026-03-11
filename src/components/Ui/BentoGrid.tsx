@@ -1,5 +1,12 @@
 import cn from "@utils/cn";
 
+type BentoImage = {
+  src: string;
+  width: number;
+  height: number;
+  alt?: string;
+};
+
 export const BentoGrid = ({
   className,
   children,
@@ -34,8 +41,7 @@ export const BentoGridItem = ({
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
-  image?: ImageMetadata;
-  // image?: string | { src: string };
+  image?: BentoImage;
   alt?: string;
   imgClass?: string;
 }) => {
@@ -47,12 +53,12 @@ export const BentoGridItem = ({
       )}
     >
       {image ? (
-        <div className="h-full w-full flex-1">
+        <div className="h-full w-full flex-1 overflow-hidden ">
           <img
-            src={typeof image === "string" ? image : image.src}
-            alt={alt}
-            width={typeof image === "string" ? undefined : image.width}
-            height={typeof image === "string" ? undefined : image.height}
+            src={image.src}
+            alt={image.alt ?? alt}
+            width={image.width}
+            height={image.height}
             className={cn([
               "h-full w-full border object-contain object-center transition duration-500 group-hover/bento:scale-105",
               imgClass,
