@@ -643,9 +643,11 @@ const IMAGES: AppLogo[] = [
 </style>
 
 <script>
+
   import BlazeSlider from "blaze-slider";
   import "blaze-slider/dist/blaze.css";
 
+document.addEventListener('astro:page-load', () => {
   document.querySelectorAll(".blaze-slider").forEach((el) => {
     new BlazeSlider(el as HTMLElement, {
       all: {
@@ -662,4 +664,5 @@ const IMAGES: AppLogo[] = [
       },
     });
   });
+});
 </script>
