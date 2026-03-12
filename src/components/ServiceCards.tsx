@@ -1,19 +1,14 @@
 import { HoverEffect, type ItemsTypes } from "./Ui/CardHoverEffect";
 
 
-import embroidery from "@assets/images/gallery/embroidery/2.JPG";
-import screenPrint from "@assets/images/gallery/screen-print/2.JPG";
-import digitalPrint  from "@assets/images/gallery/digital/15.jpg";
-import engraving  from "@assets/images/gallery/engraving/3.JPG";
-import patches  from "@assets/images/gallery/patches/13.JPG";
-import applique  from "@assets/images/gallery/applique/1.JPG";
-import artwork  from "@assets/images/gallery/engraving/2.JPG";
+import embroidery from "@assets/images/gallery/embroidery/2.webp";
+import screenPrint from "@assets/images/gallery/screen-print/2.webp";
+import digitalPrint  from "@assets/images/gallery/digital/15.webp";
+import engraving  from "@assets/images/gallery/engraving/3.webp";
+import patches  from "@assets/images/gallery/patches/13.webp";
+// import applique  from "@assets/images/gallery/applique/1.JPG";
+// import artwork  from "@assets/images/gallery/engraving/2.JPG";
 
-import service1 from "@assets/images/gallery/embroidery/2.JPG";
-import service2 from "@assets/images/gallery/screen-print/2.JPG";
-import service3 from "@assets/images/gallery/digital/15.jpg";
-import service5 from "@assets/images/gallery/engraving/3.JPG";
-import service4 from "@assets/images/gallery/engraving/2.JPG";
 import cn from "@utils/cn";
 
 export const ServiceCards = ({ className }: { className?: string }) => {
