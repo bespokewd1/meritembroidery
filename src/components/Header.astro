@@ -194,7 +194,7 @@ import cn from "@utils/cn";
           const el = document.getElementById(id);
           if (!el) return;
 
-          el.scrollIntoView({ behavior: "smooth" });
+          el.scrollIntoView({ behavior: "smooth",block: "center" });
 
           // Put the hash in the URL (no extra history entry)
           history.replaceState(null, "", `${path}#${id}`);
