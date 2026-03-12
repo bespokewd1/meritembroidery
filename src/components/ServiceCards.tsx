@@ -1,5 +1,14 @@
 import { HoverEffect, type ItemsTypes } from "./Ui/CardHoverEffect";
 
+
+import embroidery from "@assets/images/gallery/embroidery/2.JPG";
+import screenPrint from "@assets/images/gallery/screen-print/2.JPG";
+import digitalPrint  from "@assets/images/gallery/digital/15.jpg";
+import engraving  from "@assets/images/gallery/engraving/3.JPG";
+import patches  from "@assets/images/gallery/patches/13.JPG";
+import applique  from "@assets/images/gallery/applique/1.JPG";
+import artwork  from "@assets/images/gallery/engraving/2.JPG";
+
 import service1 from "@assets/images/gallery/embroidery/2.JPG";
 import service2 from "@assets/images/gallery/screen-print/2.JPG";
 import service3 from "@assets/images/gallery/digital/15.jpg";
@@ -10,40 +19,59 @@ import cn from "@utils/cn";
 export const ServiceCards = ({ className }: { className?: string }) => {
   const serviceItems: ItemsTypes[] = [
     {
-      title: "Custom Logo Embroidery & Embroidered Patches",
+      title: "Embroidery",
       description:
         "Premium embroidery services for corporate apparel, workwear, and promotional products. Our multi-head machines deliver consistent, high-quality results.",
       link: "/services#embroidery",
-      imgData: service1,
+      imgData: embroidery,
     },
     {
       title: "Screen Printing",
       description:
         "High-quality screen printing with vibrant colors and durable results. Perfect for large orders and promotional campaigns.",
-      link: "/services#screenPrinting",
-      imgData: service2,
+      link: "/services#screen-printing",
+      imgData: screenPrint,
     },
     {
-      title: "Digital Printing & Digital Patches",
+      title: "Digital Printing",
       description:
         "Full-color digital printing solutions for complex designs and photo-realistic imagery. Multiple techniques for any application.",
-      link: "/services#digitalPrinting",
-      imgData: service3,
+      link: "/services#digital-printing",
+      imgData: digitalPrint,
     },
     {
       title: "Laser Engraving",
       description:
         "Precision laser engraving creates intricate designs with stunning detail on faux leather, suede, and other materials.",
-      link: "/services#laserEngraving",
-      imgData: service5,
+      link: "/services#laser-engraving",
+      imgData: engraving,
     },
     {
-      title: "Art & Design Services",
+      title: "Patches & Crests",
       description:
         "Professional design services to bring your vision to life. From concept to production-ready files, we handle it all.",
-      link: "/services#artworkServices",
-      imgData: service4,
+      link: "/services#patches",
+      imgData: patches,
     },
+    // {
+    //   title: "Custom Applique",
+    //   description:
+    //     ` Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour, 
+    //     combining efficiency with exceptional quality. `,
+    //   link: "/services#applique",
+    //   imgData: applique,
+    // },
+    // {
+    //   title: "Artwork and Digitizing Services",
+    //   description:
+    //     ` 
+    //     For precise, professional customization, our laser engraving services
+    //     etch your designs, logos, or text onto a variety of materials, including
+    //     wood, metal, acrylic, and leather. 
+    //      `,
+    //   link: "/services#artwork",
+    //   imgData: artwork,
+    // },
   ];
 
   return (
