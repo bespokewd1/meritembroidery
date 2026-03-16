@@ -9,6 +9,7 @@ export type ItemsTypes = {
   description: string;
   link: string;
   imgData: ImageMetadata;
+  className?: string;
 };
 
 export const HoverEffect = ({
@@ -23,7 +24,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-5",
+        "grid grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-10",
         className,
       )}
     >
@@ -31,7 +32,7 @@ export const HoverEffect = ({
         <a
           href={item?.link}
           key={item?.link}
-          className="group relative block h-full w-full p-2"
+          className={cn("group relative block h-full w-full p-2 lg:col-span-2 ", item.className)}
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
           aria-label={`Link to ${item.title} service page`}

@@ -6,8 +6,8 @@ import screenPrint from "@assets/images/gallery/screen-print/2.webp";
 import digitalPrint  from "@assets/images/gallery/digital/15.webp";
 import engraving  from "@assets/images/gallery/engraving/3.webp";
 import patches  from "@assets/images/gallery/patches/13.webp";
-// import applique  from "@assets/images/gallery/applique/1.JPG";
-// import artwork  from "@assets/images/gallery/engraving/2.JPG";
+import applique  from "@assets/images/gallery/applique/1.JPG";
+import artwork  from "@assets/images/gallery/engraving/2.JPG";
 
 import cn from "@utils/cn";
 
@@ -48,25 +48,27 @@ export const ServiceCards = ({ className }: { className?: string }) => {
       link: "/services#patches",
       imgData: patches,
     },
-    // {
-    //   title: "Custom Applique",
-    //   description:
-    //     ` Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour, 
-    //     combining efficiency with exceptional quality. `,
-    //   link: "/services#applique",
-    //   imgData: applique,
-    // },
-    // {
-    //   title: "Artwork and Digitizing Services",
-    //   description:
-    //     ` 
-    //     For precise, professional customization, our laser engraving services
-    //     etch your designs, logos, or text onto a variety of materials, including
-    //     wood, metal, acrylic, and leather. 
-    //      `,
-    //   link: "/services#artwork",
-    //   imgData: artwork,
-    // },
+    {
+      title: "Custom Applique",
+      description:
+        ` Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour, 
+        combining efficiency with exceptional quality. `,
+      link: "/services#applique",
+      imgData: applique,
+      className: "lg:row-start-2 lg:col-start-4"
+    },
+    {
+      title: "Artwork and Digitizing Services",
+      description:
+        ` 
+        For precise, professional customization, our laser engraving services
+        etch your designs, logos, or text onto a variety of materials, including
+        wood, metal, acrylic, and leather. 
+         `,
+      link: "/services#artwork",
+      imgData: artwork,
+      className:"lg:row-start-2 lg:col-start-6"
+    },
   ];
 
   return (
@@ -75,9 +77,9 @@ export const ServiceCards = ({ className }: { className?: string }) => {
     >
       <div className="pt-16 pb-24">
         <div className="mx-auto max-w-225 xl:max-w-full">
-          <span className="cs-topper text-topper font-acumin text-center font-medium tracking-wider">
+          {/* <span className="cs-topper text-topper font-acumin text-center font-medium tracking-wider">
             Our Services
-          </span>
+          </span> */}
           {/* text-[clamp(2.25rem,3dvw+1rem,4rem)]  */}
           {/* text-[clamp(2.25rem,3vw+1rem,2.75rem)]  */}
           <h2 className="cs-title font-acumin text-header text-body-light px-2 text-center font-black text-balance">

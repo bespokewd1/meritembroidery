@@ -12,7 +12,7 @@ export interface AppLogo {
   calcWidth: number;
 }
 
-const imageHeight = "h-[320px]";
+const imageHeight = "h-[250px]";
 
 type Props = HTMLAttributes<"section"> & {
   images: AppLogo[];
@@ -29,8 +29,8 @@ const {
 <section
   class:list={[
     cn(
-      "corner-squircle border-accent-primary relative overflow-hidden rounded-[100px] border-4 bg-white p-(--sectionPadding) supports-[corner-shape:squircle]:rounded-[150px]",
-      "mx-[min(3vw,0.5rem)]",
+      "corner-squircle border-accent-primary relative overflow-hidden rounded-[100px] border-4 bg-white p-(--sectionPadding) lg:py-10 supports-[corner-shape:squircle]:rounded-[150px]",
+      "mx-[min(3vw,0.5rem)] lg:min-h-[50dvh]",
       className,
     ),
   ]}
