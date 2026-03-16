@@ -19,7 +19,7 @@ export default function GalleryBentoReact({
     <section className="">
       <div
         className={cn([
-          "corner-squircle mx-auto max-w-7xl bg-white py-18 xl:px-18",
+          "corner-squircle mx-auto bg-white py-18 xl:px-18",
           "rounded-t-[75px] rounded-b-none lg:rounded-t-[100px]",
           "supports-[corner-shape:squircle]:rounded-t-[150px] supports-[corner-shape:squircle]:rounded-b-none lg:supports-[corner-shape:squircle]:rounded-t-[200px]",
         ])}

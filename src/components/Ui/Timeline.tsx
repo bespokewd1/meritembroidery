@@ -47,11 +47,11 @@ export const Timeline = ({
       ref={containerRef}
     >
       <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 lg:px-10">
-        <span className="cs-topper text-topper text-left font-medium tracking-wider">
+        <span className="cs-topper font-acumin text-topper text-left font-medium tracking-wider">
           Three decades of growth, innovation, and excellence.
         </span>
 
-        <h2 className="text-body-light text-header max-w-4xl font-black">
+        <h2 className="font-acumin text-body-light text-header max-w-4xl font-black">
           Our Journey
         </h2>
       </div>

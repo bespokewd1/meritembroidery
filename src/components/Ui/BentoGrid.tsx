@@ -60,7 +60,7 @@ export const BentoGridItem = ({
             width={image.width}
             height={image.height}
             className={cn([
-              "h-full w-full border object-contain object-center transition duration-500 group-hover/bento:scale-105",
+              "h-full w-full  object-cover object-center transition duration-500 group-hover/bento:scale-105 ",
               imgClass,
             ])}
             loading="lazy"
