@@ -24,7 +24,8 @@ const emailHref = `mailto:${email}`;
 const clinicName = client.name || "Merit Embroidery";
 const addressOne = client.address.lineOne?.trim() || "10625 40 Ave NW";
 const addressTwo = client.address.lineTwo?.trim() || "10625 40 Ave NW";
-const phoneNumber = client.phoneForTel?.trim() || "10625 40 Ave NW";
+const phoneNumber = client.phoneForTel?.trim();
+const phoneNumber2 = client.phoneForTel2?.trim();
 const emailAddress = client.email?.trim() || "10625 40 Ave NW";
 const mapHref =
   client.address.mapLink || "https://maps.app.goo.gl/5mASptDbZWLEcpT5A";
@@ -141,7 +142,17 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
               class="group cs-text text-accent-dark mt-1 ml-2 inline-flex items-center gap-2 font-medium transition-colors duration-300 hover:text-red-950 hover:underline"
               href={`tel:${phoneNumber}`}
             >
-              {phoneNumber}
+              {client.phoneFormatted}
+              <Icon
+                name="tabler:external-link"
+                class={"invisible opacity-0 group-hover:visible transition-[opacity,visibility] group-hover:opacity-100"}
+              />
+            </a>
+            <a
+              class="group cs-text text-accent-dark mt-1 ml-2 inline-flex items-center gap-2 font-medium transition-colors duration-300 hover:text-red-950 hover:underline"
+              href={`tel:${phoneNumber2}`}
+            >
+              {client.phoneFormatted2}
               <Icon
                 name="tabler:external-link"
                 class={"invisible opacity-0 group-hover:visible transition-[opacity,visibility] group-hover:opacity-100"}

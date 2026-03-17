@@ -146,6 +146,10 @@ const currentYear = getCurrentYear();
             <a href={`tel:${client.phoneForTel}`}>{client.phoneFormatted}</a>
           </li>
           <li class="cs-li flex items-center py-2 text-white">
+            <Icon name="tabler:phone" class="mr-2 h-8 w-8 text-white" />
+            <a href={`tel:${client.phoneForTel2}`}>{client.phoneFormatted2}</a>
+          </li>
+          <li class="cs-li flex items-center py-2 text-white">
             <Icon name="tabler:building" class="mr-2 h-8 w-8 text-white" />
             <a class="uppercase" href={client.address.mapLink}>
               8:00AM-4:30PM &ThinSpace; MON.-FRI.
