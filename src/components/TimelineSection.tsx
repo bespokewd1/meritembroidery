@@ -33,7 +33,7 @@ function TimelineCard({ item }: { item: TimelineItem }) {
             height={item.image.height ?? 1200}
             width={item.image.width ?? 800}
             alt={item.image.alt}
-            className="h-full max-h-160 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full max-h-150 w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
       ) : null}
@@ -43,10 +43,10 @@ function TimelineCard({ item }: { item: TimelineItem }) {
         {/* Orange accent line */}
         <div className="bg-accent mb-4 h-1 w-12" />
 
-        <h3 className="font-acumin mb-4 text-4xl font-bold text-white uppercase">
+        <h3 className="font-acumin text-title mb-4 font-bold text-white uppercase">
           {item.heading}
         </h3>
-        <p className="font-acumin mb-4 text-xl font-medium text-white/90">
+        <p className="font-acumin text-body mb-4 font-medium text-white/90">
           {item.description}
         </p>
 

@@ -64,7 +64,9 @@
   /* --text-topper: var(--text-3xl); */
   --text-topper: clamp(var(--text-2xl), 2vw + 1rem, var(--text-3xl));
   --text-header: clamp(2.25rem, 3dvw + 1rem, 3.75rem);
+  --text-header--line-height: 1;
   --text-header-xl: clamp(2.5rem, 3dvw + 1rem, 4.5rem);
+  --text-header-xl--line-height: 1;
   --text-title: clamp(var(--text-xl), 2vw + 0.5rem, var(--text-2xl));
   --text-title--line-height: 1.111;
   --text-body: clamp(var(--text-base), 1vw + 0.5rem, var(--text-lg));
