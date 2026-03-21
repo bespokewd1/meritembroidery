@@ -3,7 +3,6 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import ServiceSection from "@components/ServiceSection.astro";
 
-
 import embroidery from "@assets/images/gallery/embroidery/2.JPG";
 import doubleLayer from "@assets/images/merit-images/merit-0261.jpg";
 import puffEmbroidery from "@assets/images/gallery/embroidery/3.JPG";
@@ -18,42 +17,40 @@ import hdPrint from "@assets/images/gallery/screen-print/3.JPG";
 import distressedPrint from "@assets/images/gallery/screen-print/7.JPG";
 import gelPrint from "@assets/images/gallery/screen-print/6.JPG";
 
-import digitalPrint  from "@assets/images/gallery/digital/15.jpg";
-import colorMax  from "@assets/images/gallery/digital/9.JPG";
-import cad  from "@assets/images/gallery/digital/8.JPG";
-import vinyl  from "@assets/images/gallery/digital/10.JPG";
-import sublimation  from "@assets/images/gallery/digital/7.JPG";
-import uvMax  from "@assets/images/gallery/digital/4.JPG";
+import digitalPrint from "@assets/images/gallery/digital/15.jpg";
+import colorMax from "@assets/images/gallery/digital/9.JPG";
+import cad from "@assets/images/gallery/digital/8.JPG";
+import vinyl from "@assets/images/gallery/digital/10.JPG";
+import sublimation from "@assets/images/gallery/digital/7.JPG";
+import uvMax from "@assets/images/gallery/digital/4.JPG";
 
-import engraving  from "@assets/images/gallery/engraving/3.JPG";
-import tumbler  from "@assets/images/gallery/engraving/1.JPG";
-import bottle  from "@assets/images/gallery/mix/2.JPG";
-import glass  from "@assets/images/gallery/engraving/7.JPG";
-import coasters  from "@assets/images/gallery/engraving/4.JPG";
-import trophies  from "@assets/images/gallery/mix/6.JPG";
+import engraving from "@assets/images/gallery/engraving/3.JPG";
+import tumbler from "@assets/images/gallery/engraving/1.JPG";
+import bottle from "@assets/images/gallery/mix/2.JPG";
+import glass from "@assets/images/gallery/engraving/7.JPG";
+import coasters from "@assets/images/gallery/engraving/4.JPG";
+import trophies from "@assets/images/gallery/mix/6.JPG";
 
-import patches  from "@assets/images/gallery/patches/13.JPG";
-import digitalPatch  from "@assets/images/gallery/patches/15.JPG";
-import laserPatch  from "@assets/images/gallery/patches/2.JPG";
-import sublimatedPatch  from "@assets/images/gallery/patches/11.JPG";
-import embroidedPatch  from "@assets/images/gallery/patches/14.JPG";
-import wovenPatch  from "@assets/images/gallery/patches/12.JPG";
+import patches from "@assets/images/gallery/patches/13.JPG";
+import digitalPatch from "@assets/images/gallery/patches/15.JPG";
+import laserPatch from "@assets/images/gallery/patches/2.JPG";
+import sublimatedPatch from "@assets/images/gallery/patches/11.JPG";
+import embroidedPatch from "@assets/images/gallery/patches/14.JPG";
+import wovenPatch from "@assets/images/gallery/patches/12.JPG";
 
+import applique from "@assets/images/gallery/applique/1.JPG";
+import doubleLayerApplique from "@assets/images/gallery/applique/3.JPG";
+import leatherApplique from "@assets/images/gallery/applique/2.JPG";
+import proTwillApplique from "@assets/images/gallery/applique/5.JPG";
+import feltApplique from "@assets/images/gallery/applique/14.JPG";
+import multiMediaApplique from "@assets/images/gallery/applique/9.JPG";
 
-import applique  from "@assets/images/gallery/applique/1.JPG";
-import doubleLayerApplique  from "@assets/images/gallery/applique/3.JPG";
-import leatherApplique  from "@assets/images/gallery/applique/2.JPG";
-import proTwillApplique  from "@assets/images/gallery/applique/5.JPG";
-import feltApplique  from "@assets/images/gallery/applique/14.JPG";
-import multiMediaApplique  from "@assets/images/gallery/applique/9.JPG";
-
-
-import artwork  from "@assets/images/gallery/engraving/2.JPG";
-import vectorizeLogo  from "@assets/images/gallery/digital/12.JPG";
-import digitizeEmbroidery  from "@assets/images/gallery/others/3.jpg";
-import editDesign  from "@assets/images/gallery/screen-print/9.JPG";
-import productionReady  from "@assets/images/gallery/engraving/6.JPG";
-import personalizeDesign  from "@assets/images/gallery/mix/3.JPG";
+import artwork from "@assets/images/gallery/engraving/2.JPG";
+import vectorizeLogo from "@assets/images/gallery/digital/12.JPG";
+import digitizeEmbroidery from "@assets/images/gallery/others/3.jpg";
+import editDesign from "@assets/images/gallery/screen-print/9.JPG";
+import productionReady from "@assets/images/gallery/engraving/6.JPG";
+import personalizeDesign from "@assets/images/gallery/mix/3.JPG";
 
 import service1 from "@assets/images/merit-images/merit-0261.jpg";
 import service2 from "@assets/images/merit-images/merit-0256.jpg";
@@ -104,14 +101,14 @@ const optimizedImage = await getImage({
   >
     <Fragment slot="title">Embroidery</Fragment>
     <Fragment slot="description">
-      <p>
+      <p class="text-body">
         With over three decades of experience, Merit Embroidery & Printing
         delivers premium-quality embroidery for apparel, headwear, bags,
         workwear, and more. Using Barudan multi-head commercial machines and
         in-house digitizing, we ensure every stitch meets the highest standards
         — whether it's a dozen shirts or thousands of hats.
       </p>
-      <p class="mt-4">
+      <p class="text-body mt-4">
         With over 40 sewing heads, we produce thousands of embroidered goods
         daily — each piece crafted for precision, texture, and lasting impact.
       </p>
@@ -141,7 +138,7 @@ const optimizedImage = await getImage({
   >
     <Fragment slot="title">Screen Printing</Fragment>
     <Fragment slot="description">
-      <p>
+      <p class="text-body">
         Our experienced in-house graphic design and digitizing team provides
         complete creative support — from logo design and mockups to vector
         files, digitizing, and embroidery file edits. Whether you need artwork
@@ -174,7 +171,7 @@ const optimizedImage = await getImage({
   >
     <Fragment slot="title">Digital Printing</Fragment>
     <Fragment slot="description">
-      <p>
+      <p class="text-body">
         For precise, professional customization, our laser engraving services
         etch your designs, logos, or text onto a variety of materials, including
         wood, metal, acrylic, and leather. Using advanced laser technology, we
@@ -206,7 +203,7 @@ const optimizedImage = await getImage({
   >
     <Fragment slot="title">Laser Engraving</Fragment>
     <Fragment slot="description">
-      <p>
+      <p class="text-body">
         For precise, professional customization, our laser engraving services
         etch your designs, logos, or text onto a variety of materials, including
         wood, metal, acrylic, and leather. Using advanced laser technology, we
@@ -238,7 +235,7 @@ const optimizedImage = await getImage({
   >
     <Fragment slot="title">Patches & Crests</Fragment>
     <Fragment slot="description">
-      <p>
+      <p class="text-body">
         When your artwork requires full color and fine detail, our digital
         printing services bring it to life. Using advanced Mimaki large-format
         and DTF printers, we produce vibrant prints on apparel, headwear,
@@ -271,14 +268,14 @@ const optimizedImage = await getImage({
   >
     <Fragment slot="title">Custom Applique</Fragment>
     <Fragment slot="description">
-      <p>
+      <p class="text-body">
         Our state-of-the-art M&R automatic screen presses allow us to print up
         to 1,000 garments per hour, combining efficiency with exceptional
         quality. Since expanding into screen printing in 2015, we've mastered
         techniques that make every print vibrant, durable, and true to your
         brand.
       </p>
-      <p class="mt-4">
+      <p class="text-body mt-4">
         We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty
         fabrics, using Wilflex plastisol, water-based, and air-dry inks.
       </p>
@@ -308,7 +305,7 @@ const optimizedImage = await getImage({
   >
     <Fragment slot="title">Artwork and Digitizing Services</Fragment>
     <Fragment slot="description">
-      <p>
+      <p class="text-body font-medium">
         For precise, professional customization, our laser engraving services
         etch your designs, logos, or text onto a variety of materials, including
         wood, metal, acrylic, and leather. Using advanced laser technology, we
