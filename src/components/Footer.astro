@@ -8,18 +8,16 @@ const currentYear = getCurrentYear();
 ---
 
 <!-- ============================================ --><!--                   Footer                     --><!-- ============================================ -->
-<footer id="footer" class="bg-accent-light">
+<footer id="footer" class="bg-accent-light font-acumin">
   <div
     class="flex w-[80%] flex-col items-center justify-center lg:w-full"
     style="margin:auto;"
   >
     <div class="flex flex-col items-start justify-evenly gap-8 md:flex-row">
       <div class="flex flex-col items-start justify-start md:w-[25%]">
-        <h1 class="text-xl" style="color:white;font-weight:bold;">
-          Merit Embroidery
-        </h1>
-        <p style="color:white;margin-bottom: 1rem">& Printing LTD</p>
-        <p style="color:white;">
+        <h1 class="text-body-light text-title font-bold">Merit Embroidery</h1>
+        <p class="text-body-light text-body mb-4">& Printing LTD</p>
+        <p class="text-body-light text-body">
           One of the oldest and largest embroidery, printing, and promotional
           decor companies in Western Canada. Serving businesses since 1992.
         </p>
@@ -73,7 +71,7 @@ const currentYear = getCurrentYear();
           </li>
         </ul>
       </div>
-      <div>
+      <!-- <div>
         <h1
           class="text-xl"
           style="color:white;font-weight:bold;margin-bottom: 1rem"
@@ -103,8 +101,8 @@ const currentYear = getCurrentYear();
             <a href="/services#artwork">Artwork and Digitizing Services</a>
           </li>
         </ul>
-      </div>
-      <div>
+      </div> -->
+      <!-- <div>
         <h1
           class="text-xl"
           style="color:white;font-weight:bold;margin-bottom: 1rem"
@@ -125,39 +123,53 @@ const currentYear = getCurrentYear();
             <a href="/contactUs">Contact Us</a>
           </li>
         </ul>
-      </div>
+      </div> -->
       <div>
-        <h1
-          class="text-xl"
-          style="color:white;font-weight:bold;margin-bottom: 1rem"
-        >
-          Contact Us
-        </h1>
-        <ul>
-          <li class="cs-li flex items-center py-2 text-white">
-            <Icon name="tabler:map-pin" class="mr-2 h-8 w-8 text-white" />
+        <h1 class="text-title text-body-light mb-4 font-bold">Contact Us</h1>
+        <ul class="text-body">
+          <li
+            class="cs-li text-body-light flex items-center py-2 text-[size:inherit]"
+          >
+            <Icon name="tabler:map-pin" class="text-body-light mr-2 h-8 w-8" />
             <!-- <a href="">3954 76 Ave NW T6B 2P1, Edmonton, AB</a> -->
-            <a href={client.address.mapLink}
+            <a class="text-[size:inherit]" href={client.address.mapLink}
               >{client.address.lineOne}, {client.address.lineTwo}</a
             >
           </li>
-          <li class="cs-li flex items-center py-2 text-white">
-            <Icon name="tabler:phone" class="mr-2 h-8 w-8 text-white" />
-            <a href={`tel:${client.phoneForTel}`}>{client.phoneFormatted}</a>
+          <li
+            class="cs-li text-body-light flex items-center py-2 text-[size:inherit]"
+          >
+            <Icon name="tabler:phone" class="text-body-light mr-2 h-8 w-8" />
+            <a class="text-[size:inherit]" href={`tel:${client.phoneForTel}`}
+              >{client.phoneFormatted}</a
+            >
           </li>
-          <li class="cs-li flex items-center py-2 text-white">
-            <Icon name="tabler:phone" class="mr-2 h-8 w-8 text-white" />
-            <a href={`tel:${client.phoneForTel2}`}>{client.phoneFormatted2}</a>
+          <li
+            class="cs-li text-body-light flex items-center py-2 text-[size:inherit]"
+          >
+            <Icon name="tabler:phone" class="text-body-light mr-2 h-8 w-8" />
+            <a class="text-[size:inherit]" href={`tel:${client.phoneForTel2}`}
+              >{client.phoneFormatted2}</a
+            >
           </li>
-          <li class="cs-li flex items-center py-2 text-white">
-            <Icon name="tabler:building" class="mr-2 h-8 w-8 text-white" />
-            <a class="uppercase" href={client.address.mapLink}>
+          <li
+            class="cs-li text-body-light flex items-center py-2 text-[size:inherit]"
+          >
+            <Icon name="tabler:building" class="text-body-light mr-2 h-8 w-8" />
+            <a
+              class="text-[size:inherit] uppercase"
+              href={client.address.mapLink}
+            >
               8:00AM-4:30PM &ThinSpace; MON.-FRI.
             </a>
           </li>
-          <li class="cs-li flex items-center py-2 text-white">
-            <Icon name="tabler:mail" class="mr-2 h-8 w-8 text-white" />
-            <a href={`mailto:${client.email}`}>{client.email}</a>
+          <li
+            class="cs-li text-body-light flex items-center py-2 text-[size:inherit]"
+          >
+            <Icon name="tabler:mail" class="text-body-light mr-2 h-8 w-8" />
+            <a class="text-[size:inherit]" href={`mailto:${client.email}`}
+              >{client.email}</a
+            >
 
             <!-- <a href="mailto:sharan@meritembroidery.com"
               >sharan@meritembroidery.com</a
@@ -167,20 +179,33 @@ const currentYear = getCurrentYear();
       </div>
     </div>
     <div
-      class="flex w-full flex-col flex-wrap items-center justify-center md:flex-row md:items-start md:justify-around md:px-72"
+      class="text-body flex w-full flex-col flex-wrap items-center justify-center md:flex-row md:items-start md:justify-around md:px-72"
       style="margin-top:1rem;border-top: .5px solid rgba(255,255,255,0.4);"
     >
-      <p style="color:white;margin-top:.5rem">✓ Serving Canada Since 1992</p>
-      <p style="color:white;margin-top:.5rem">✓ State-of-the-Art Equipment</p>
-      <p style="color:white;margin-top:.5rem">✓ Fast Turnaround</p>
-      <p style="color:white;margin-top:.5rem">✓ 100% Satisfaction Guaranteed</p>
+      <p class="text-body-light mt-2 text-[size:inherit]">
+        ✓ Serving Canada Since 1992
+      </p>
+      <p class="text-body-light mt-2 text-[size:inherit]">
+        ✓ State-of-the-Art Equipment
+      </p>
+      <p class="text-body-light mt-2 text-[size:inherit]">✓ Fast Turnaround</p>
+      <p class="text-body-light mt-2 text-[size:inherit]">
+        ✓ 100% Satisfaction Guaranteed
+      </p>
     </div>
     <div
       class="flex w-full flex-col items-center justify-center md:items-center md:justify-center"
       style="margin-top:1rem;border-top: .5px solid rgba(255,255,255,0.4);"
     >
       <h1 style="color:white;margin-top:.5rem">
-        Digital Marketing by <a href="https://bespokewebdesign.ca/" class="underline" target="_blank" rel="noopener noreferrer"> Bespoke Web Design </a>
+        Digital Marketing by <a
+          href="https://bespokewebdesign.ca/"
+          class="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Bespoke Web Design
+        </a>
       </h1>
       <h1 style="color:white;">
         © 2026 Merit Embroidery & Printing LTD. All rights reserved.

@@ -1,5 +1,6 @@
 import cn from "@utils/cn";
 import { AnimatePresence, motion } from "motion/react";
+import { IconArrowRight } from "@tabler/icons-react";
 import { navigate } from "astro:transitions/client";
 
 import { useState } from "react";
@@ -32,7 +33,10 @@ export const HoverEffect = ({
         <a
           href={item?.link}
           key={item?.link}
-          className={cn("group relative block h-full w-full p-2 lg:col-span-2 ", item.className)}
+          className={cn(
+            "group relative block h-full w-full p-2 lg:col-span-2",
+            item.className,
+          )}
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
           aria-label={`Link to ${item.title} service page`}
@@ -56,27 +60,17 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <CardImg imgMetadata={item.imgData} alt={item.title} />
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription className="flex-1">
+            <CardTitle className="text-title">{item.title}</CardTitle>
+            <CardDescription className="text-body flex-1">
               {item.description}
             </CardDescription>
-            <span className="text-accent-primary inline-flex items-center gap-2 text-sm font-semibold">
+            <span className="text-accent-primary text-body inline-flex items-center gap-2 font-semibold">
               Learn More
-              <svg
-                className="lucide lucide-arrow-right h-4 w-4 transition-transform group-hover:translate-x-1"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
+              <IconArrowRight
+                width={20}
+                height={20}
+                className="size-5 transition-transform group-hover:translate-x-1"
+              />
             </span>
           </Card>
         </a>
@@ -136,9 +130,9 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h3 
+    <h3
       className={cn(
-        "group-hover:text-accent-primary mt-4 text-title font-bold tracking-wide text-black",
+        "group-hover:text-accent-primary text-title mt-4 font-bold tracking-wide text-black",
         className,
       )}
     >
@@ -157,7 +151,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-2 pb-4 text-body leading-relaxed tracking-wide text-black/90",
+        "text-body mt-2 pb-4 leading-relaxed tracking-wide text-black/90",
         className,
       )}
     >

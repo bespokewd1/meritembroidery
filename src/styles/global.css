@@ -1,75 +1,73 @@
 @import "tailwindcss" important;
 @plugin "@toolwind/corner-shape";
 
+@font-face {
+  font-style: normal;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local(""),
+    url("/assets/fonts/poppins-latin-400-normal.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/assets/fonts/poppins-latin-400-normal.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
-  @font-face {
-    font-style: normal;
-    font-family: "Poppins";
-    font-weight: 400;
-    font-display: swap;
-    src:
-      local(""),
-      url("/assets/fonts/poppins-latin-400-normal.woff2") format("woff2"),
-      /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("/assets/fonts/poppins-latin-400-normal.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
+@font-face {
+  font-style: normal;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-display: swap;
+  src:
+    local(""),
+    url("/assets/fonts/poppins-latin-500-normal.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/assets/fonts/poppins-latin-500-normal.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
-  @font-face {
-    font-style: normal;
-    font-family: "Poppins";
-    font-weight: 500;
-    font-display: swap;
-    src:
-      local(""),
-      url("/assets/fonts/poppins-latin-500-normal.woff2") format("woff2"),
-      /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("/assets/fonts/poppins-latin-500-normal.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
+@font-face {
+  font-style: normal;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-display: swap;
+  src:
+    local(""),
+    url("/assets/fonts/poppins-latin-600-normal.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/assets/fonts/poppins-latin-600-normal.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
-  @font-face {
-    font-style: normal;
-    font-family: "Poppins";
-    font-weight:600;
-    font-display: swap;
-    src:
-      local(""),
-      url("/assets/fonts/poppins-latin-600-normal.woff2") format("woff2"),
-      /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("/assets/fonts/poppins-latin-600-normal.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-
-  @font-face {
-    font-style: normal;
-    font-family: "Acumin Variable Concept";
-    font-display: swap;
-    src:
-      local(""),
-        url("/assets/fonts/acumin-concept-variable.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-
+@font-face {
+  font-style: normal;
+  font-family: "Acumin Variable Concept";
+  font-display: swap;
+  src:
+    local(""),
+    url("/assets/fonts/acumin-concept-variable.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
 @theme {
- /* hsl(218, 47%, 47%) */
-  --color-accent-primary: #4069B1;
+  /* hsl(218, 47%, 47%) */
+  --color-accent-primary: #4069b1;
   --color-accent-dark: #060658;
-  --color-accent-light:#0E46AE;
+  --color-accent-light: #0e46ae;
   --color-bg-light: #fff;
-  --color-body-light:var(--bodyTextColorWhite);
+  --color-body-light: var(--bodyTextColorWhite);
   --color-body-dark: var(--bodyTextColor);
   --color-primary: var(--primary);
 
-  --font-roboto:"Roboto", Arial, sans-serif;
-  --font-poppins:"Poppins", Arial, sans-serif;
-  --font-acumin: "Acumin Variable Concept",Arial, sans-serif;
+  --font-roboto: "Roboto", Arial, sans-serif;
+  --font-poppins: "Poppins", Arial, sans-serif;
+  --font-acumin: "Acumin Variable Concept", Arial, sans-serif;
 
   --text-heading: var(--headerFontSize);
   /* --text-topper: var(--text-3xl); */
-  --text-topper: clamp(var(--text-2xl), 2vw + 1rem, var(--text-3xl)) ;
-  --text-header: clamp(2.25rem,3dvw + 1rem,3.75rem);
-  --text-header-xl: clamp(2.5rem,3dvw + 1rem,4.5rem);
-  --text-title: clamp(var(--text-3xl), 2vw + 1rem, var(--text-4xl)) ;
+  --text-topper: clamp(var(--text-2xl), 2vw + 1rem, var(--text-3xl));
+  --text-header: clamp(2.25rem, 3dvw + 1rem, 3.75rem);
+  --text-header-xl: clamp(2.5rem, 3dvw + 1rem, 4.5rem);
+  --text-title: clamp(var(--text-xl), 2vw + 0.5rem, var(--text-2xl));
   --text-title--line-height: 1.111;
-  --text-body: clamp(var(--text-lg), 2vw + 1rem, var(--text-xl)) ;
+  --text-body: clamp(var(--text-base), 1vw + 0.5rem, var(--text-lg));
   --text-body--line-height: 1.4;
 
   --container-8xl: 96rem;
@@ -81,36 +79,35 @@
   --animate-move-to-top: move-to-top 30s infinite linear;
 }
 
-
-  @keyframes move-to-top {
-    from {
-      transform: translateY(0);
-    }
-
-    to {
-      transform: translateY(-100%);
-    }
+@keyframes move-to-top {
+  from {
+    transform: translateY(0);
   }
 
-  @keyframes move-to-left {
-    from {
-      translate: 0;
-    }
+  to {
+    transform: translateY(-100%);
+  }
+}
 
-    to {
-      translate: -100%;
-    }
+@keyframes move-to-left {
+  from {
+    translate: 0;
   }
 
-  @keyframes move-to-right {
-    from {
-      translate: 0;
-    }
-
-    to {
-      translate: 100%;
-    }
+  to {
+    translate: -100%;
   }
+}
+
+@keyframes move-to-right {
+  from {
+    translate: 0;
+  }
+
+  to {
+    translate: 100%;
+  }
+}
 
 /* Hide scrollbar but keep scrolling */
 .scrollbar-hide {
@@ -122,43 +119,41 @@
 }
 
 /* Pause animations on container hover */
-.animation-stop:active  {
+.animation-stop:active {
   animation-play-state: paused !important; /* !important to override any inline styles if needed */
 }
 
-
 /* Pause animations on container hover */
-.animation-stop:hover ,
+.animation-stop:hover,
 .animation-stop:hover {
   animation-play-state: paused !important; /* !important to override any inline styles if needed */
 }
 
 /* Optional: Also pause on focus for better accessibility (keyboard navigation) */
-.animation-stop:focus-within ,
+.animation-stop:focus-within,
 .animation-stop:focus-within {
   animation-play-state: paused !important;
 }
 
-.animate-pause-hover-sib:hover ~ .animate-pause-hover-sib{
-  animation-play-state: paused ;
+.animate-pause-hover-sib:hover ~ .animate-pause-hover-sib {
+  animation-play-state: paused;
 }
 
-.animate-pause-hover-parent:hover *{
-  animation-play-state: paused ;
+.animate-pause-hover-parent:hover * {
+  animation-play-state: paused;
 }
 
-
-.animate-pause-hover:hover{
-  animation-play-state: paused ;
+.animate-pause-hover:hover {
+  animation-play-state: paused;
 }
 
-.mask-bg-3{
-  mask-image: linear-gradient(to right,transparent, #000 3% 97%, transparent);
+.mask-bg-3 {
+  mask-image: linear-gradient(to right, transparent, #000 3% 97%, transparent);
 }
 
-.mask-bg-3-vertical{
+.mask-bg-3-vertical {
   /* mask-image: linear-gradient(to bottom,transparent, #000 3% 97%, transparent); */
- mask-image: linear-gradient(to bottom,transparent, #000 3% 97%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 3% 97%, transparent);
 }
 
 .mask-bg-both {
@@ -175,31 +170,34 @@
   mask-composite: intersect;
 }
 
-
 .squircle-full {
   border-radius: 9999px;
-  @supports(corner-shape:squircle)
-  {
+  @supports (corner-shape: squircle) {
     border-radius: calc(infinity * 1px);
     corner-shape: squircle;
   }
 }
 
-
-
 .bg-grid {
-    background-color: #f9fafb;
-    background-image: linear-gradient(to right, #29333d14 1px, #00000000 1px), linear-gradient(to bottom, var(--color-slate-100) 1px, transparent 1px);
-    background-size: 50px 50px;
-    transition: background-color 0.4s ease;
-    position: relative;
+  background-color: #f9fafb;
+  background-image:
+    linear-gradient(to right, #29333d14 1px, #00000000 1px),
+    linear-gradient(to bottom, var(--color-slate-100) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transition: background-color 0.4s ease;
+  position: relative;
 }
 
-.bg-grid::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, transparent 0%, transparent 60%, #f9fafb 100%);
-    pointer-events: none;
-    z-index: 0;
+.bg-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 60%,
+    #f9fafb 100%
+  );
+  pointer-events: none;
+  z-index: 0;
 }

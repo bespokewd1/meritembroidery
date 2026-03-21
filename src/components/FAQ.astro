@@ -59,13 +59,23 @@ const faqs: FaqItem[] = [
 ];
 ---
 
-<section id="faq-351" class="bg-bg-light pr-[max(5vw,2rem)]">
+<section
+  id="faq-351"
+  class:list={[
+    "bg-bg-light relative before:mr-[max(5vw,2rem)]",
+    "before:bg-accent-light before:absolute before:inset-0 before:max-w-400 before:rounded-r-[20vw] before:lg:rounded-r-full",
+  ]}
+>
+  <!-- max-w-137.5 
+lg:max-w-7xl  -->
+  <!-- <div class="absolute bg-accent-light rounded-r-[20vw] inset-0 -z-1 "></div> -->
   <div
     class:list={[
-      "ml-0 flex w-full max-w-137.5 flex-col items-center gap-12 rounded-r-[20vw] bg-accent-light pt-8 pb-20 pl-2",
-      " lg:max-w-7xl lg:items-start lg:justify-between lg:rounded-r-full lg:pb-8 lg:pl-8",
+      "relative isolate flex w-full max-w-360 flex-col items-center gap-12 pt-8 pr-[max(5vw,2rem)] pb-20 pl-2 lg:mx-auto",
+      "lg:items-start lg:justify-between lg:rounded-r-full lg:pb-8 lg:pl-8",
     ]}
   >
+    <!-- max-w-212.5  -->
     <div class="flex w-full flex-col items-start text-left">
       <span class="text-topper text-primary font-medium tracking-wider">
         Frequently Asked Questions
@@ -76,12 +86,12 @@ const faqs: FaqItem[] = [
       </h2>
     </div>
 
-    <ul class="w-full p-0 lg:w-[60%]">
+    <ul class="w-full max-w-212.5 p-0 lg:w-[60%]">
       {
         faqs.map((faq, index) => (
           <li
             class:list={[
-              "list-none border-b border-neutral-200",
+              "max-w-212 list-none border-b border-neutral-200",
               index === faqs.length - 1 && "border-b-0",
             ]}
           >
@@ -104,7 +114,7 @@ const faqs: FaqItem[] = [
                 </svg>
               </summary>
 
-              <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out group-open:grid-rows-[1fr]">
+              <div class="starting-slide-in grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out group-open:grid-rows-[1fr]">
                 <div class="overflow-hidden">
                   <div
                     class="text-body text-body-light p-4 pb-6 leading-7 opacity-0 transition-[padding,opacity] duration-300 group-open:pb-6 group-open:opacity-100 [&_a]:underline [&_a]:underline-offset-4 [&_a]:transition-opacity hover:[&_a]:opacity-80"
@@ -118,12 +128,26 @@ const faqs: FaqItem[] = [
       }
     </ul>
 
-    <div>
-      <p class="text-title text-body-light">
-        Still have questions? Give us a <a
-          href={`tel:${client.phoneForTel}`}
-          class="text-primary text-title underline transition-colors hover:text-body-light">call!</a>
-      </p>
-    </div>
+    <p class="text-title text-body-light">
+      Still have questions? Give us a <a
+        href={`tel:${client.phoneForTel}`}
+        class="text-primary text-title hover:text-body-light underline transition-colors"
+        >call!</a
+      >
+    </p>
   </div>
 </section>
+
+<style>
+  .starting-slide-in {
+    transition:
+      opacity 300ms ease-in,
+      display 300ms ease-in !important;
+    transition-behavior: allow-discrete !important;
+
+    @starting-style {
+      opacity: 0;
+      display: none;
+    }
+  }
+</style>
