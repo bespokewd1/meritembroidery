@@ -40,7 +40,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="bg-accent-light absolute inset-0 block h-full w-full rounded-3xl"
+                className="bg-accent-primary absolute inset-0 block h-full w-full rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -136,14 +136,14 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4
+    <h3 
       className={cn(
-        "group-hover:text-accent-primary mt-4 text-xl font-bold tracking-wide text-black",
+        "group-hover:text-accent-primary mt-4 text-title font-bold tracking-wide text-black",
         className,
       )}
     >
       {children}
-    </h4>
+    </h3>
   );
 };
 
@@ -157,7 +157,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-2 pb-4 text-sm leading-relaxed tracking-wide text-black/90",
+        "mt-2 pb-4 text-body leading-relaxed tracking-wide text-black/90",
         className,
       )}
     >

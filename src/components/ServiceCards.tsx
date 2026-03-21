@@ -47,6 +47,7 @@ export const ServiceCards = ({ className }: { className?: string }) => {
         "Professional design services to bring your vision to life. From concept to production-ready files, we handle it all.",
       link: "/services#patches",
       imgData: patches,
+      className: "lg:col-start-2",
     },
     {
       title: "Custom Applique",
@@ -55,7 +56,7 @@ export const ServiceCards = ({ className }: { className?: string }) => {
         combining efficiency with exceptional quality. `,
       link: "/services#applique",
       imgData: applique,
-      className: "lg:row-start-2 lg:col-start-4"
+      // className: "lg:row-start-2 lg:col-start-4"
     },
     {
       title: "Artwork and Digitizing Services",
@@ -67,7 +68,7 @@ export const ServiceCards = ({ className }: { className?: string }) => {
          `,
       link: "/services#artwork",
       imgData: artwork,
-      className:"lg:row-start-2 lg:col-start-6"
+      // className:"lg:row-start-2 lg:col-start-6"
     },
   ];
 
@@ -75,7 +76,7 @@ export const ServiceCards = ({ className }: { className?: string }) => {
     <section
       className={cn("@container relative bg-transparent p-0", className)}
     >
-      <div className="pt-16 pb-24">
+      <div className="pt-16 ">
         <div className="mx-auto max-w-225 xl:max-w-full">
           {/* <span className="cs-topper text-topper font-acumin text-center font-medium tracking-wider">
             Our Services
@@ -89,7 +90,7 @@ export const ServiceCards = ({ className }: { className?: string }) => {
         {/* max-w-7xl */}
         <div className="mx-auto">
           <HoverEffect
-            className="px-[min(0.5rem,5vw)] pt-16"
+            className="px-[min(0.5rem,5vw)] pt-16 lg:grid-cols-8"
             items={serviceItems}
           />
         </div>

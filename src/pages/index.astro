@@ -15,6 +15,7 @@ import Reviews from "@components/Testimonials/Reviews.astro";
 import { ServiceCards } from "@components/ServiceCards";
 import TrustBadgeSection from "@components/TrustBadge/TrustBadgeSection.astro";
 import AboutUs from "@components/About/AboutUs.astro";
+import TrustBadges from "@components/TrustBadge/TrustBadges.astro";
 
 import BlazeSlider from "blaze-slider";
 import "blaze-slider/dist/blaze.css";
@@ -34,10 +35,20 @@ import gallery11 from "@assets/images/gallery/home/11.webp";
 import gallery12 from "@assets/images/gallery/home/12.webp";
 import gallery13 from "@assets/images/gallery/home/13.webp";
 
+
+import aboutGallery1 from "@assets/images/gallery/about/1.webp";
+import aboutGallery2 from "@assets/images/gallery/about/2.webp";
+import aboutGallery3 from "@assets/images/gallery/about/3.webp";
+import aboutGallery4 from "@assets/images/gallery/about/4.webp";
+import aboutGallery5 from "@assets/images/gallery/about/5.webp";
+import aboutGallery6 from "@assets/images/gallery/about/6.webp";
+import aboutGallery7 from "@assets/images/gallery/about/7.webp";
+import aboutGallery8 from "@assets/images/gallery/about/8.webp";
+
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 const optimizedImage = await getImage({
   src: landingImage,
-  format:"webp",
+  format: "webp",
   width: landingImage.width,
   height: landingImage.height,
 });
@@ -111,45 +122,43 @@ const IMAGES: AppLogo[] = [
     calcWidth: getCalculatedWidth(gallery13, TARGET_HEIGHT_PX),
   },
 
-
-
   {
-    src: gallery1,
+    src: aboutGallery1,
     alt: "Gallery Image 1",
     calcWidth: getCalculatedWidth(gallery1, TARGET_HEIGHT_PX),
   },
   {
-    src: gallery2,
+    src: aboutGallery2,
     alt: "Gallery Image 2",
     calcWidth: getCalculatedWidth(gallery2, TARGET_HEIGHT_PX),
   },
   {
-    src: gallery3,
+    src: aboutGallery3,
     alt: "Gallery Image 3",
     calcWidth: getCalculatedWidth(gallery3, TARGET_HEIGHT_PX),
   },
   {
-    src: gallery4,
+    src: aboutGallery4,
     alt: "Gallery Image 4",
     calcWidth: getCalculatedWidth(gallery4, TARGET_HEIGHT_PX),
   },
   {
-    src: gallery5,
+    src: aboutGallery5,
     alt: "Gallery Image 5",
     calcWidth: getCalculatedWidth(gallery5, TARGET_HEIGHT_PX),
   },
   {
-    src: gallery6,
+    src: aboutGallery6,
     alt: "Gallery Image 6",
     calcWidth: getCalculatedWidth(gallery6, TARGET_HEIGHT_PX),
   },
   {
-    src: gallery7,
+    src: aboutGallery7,
     alt: "Gallery Image 7",
     calcWidth: getCalculatedWidth(gallery7, TARGET_HEIGHT_PX),
   },
   {
-    src: gallery8,
+    src: aboutGallery8,
     alt: "Gallery Image 8",
     calcWidth: getCalculatedWidth(gallery8, TARGET_HEIGHT_PX),
   },
@@ -165,14 +174,15 @@ const IMAGES: AppLogo[] = [
   <!--                    Hero                      -->
   <!-- ============================================ -->
 
-    <section
-    id="hero"
-    class="hero-gradient font-acumin w-full px-0 p-(--sectionPadding)"
-  >
+  <section id="hero" class="hero-gradient font-acumin w-full">
     <div
-      class="bg-bg-light mx-auto grid w-full max-w-[1400px] items-center gap-y-8 px-6 lg:grid-cols-2 lg:gap-x-16 "
+      class:list={[
+        "bg-bg-light mx-auto grid w-full max-w-400 gap-y-8 px-6 py-12",
+        "md:px-10 md:py-16 lg:min-h-[calc(80dvh-96px)] lg:grid-cols-2",
+        "lg:content-center lg:gap-x-16 lg:gap-y-0 lg:px-12 lg:py-0",
+      ]}
     >
-      <div class="flex justify-center lg:justify-end">
+      <div class="flex justify-center lg:max-w-160 lg:mr-0 lg:ml-auto lg:justify-end">
         <Image
           src={optimizedImage.src}
           width={optimizedImage.options.width ?? landingImage.width}
@@ -180,27 +190,25 @@ const IMAGES: AppLogo[] = [
           alt="embroidery machines"
           loading="eager"
           fetchpriority="high"
-          class="h-auto w-full max-w-[620px] object-contain"
+          class="h-auto w-full max-w-155 object-contain xl:max-w-175"
         />
       </div>
 
       <div class="flex flex-col items-center lg:items-start">
         <h1
-          class="cs-title text-header-xl text-accent-primary m-0 text-center
-            font-black tracking-wider lg:text-left"
+          class="text-accent-primary m-0 text-center text-header-xl leading-[1.2] font-black lg:text-left "
         >
-          Your Trusted <br /> Promotional Decorators!
+          Your Trusted <br class="hidden lg:inline" /> Promotional Decorators!
         </h1>
 
         <p
-          class="text-accent-primary m-0 text-center text-xl font-black
-            md:text-3xl lg:text-left"
+          class="text-accent-primary mt-3 text-center text-body font-black md:text-3xl lg:text-left"
         >
           Quality. Delivery. Service. Innovation.
         </p>
 
         <ButtonLink
-          class="mt-6 h-auto px-3 py-4 text-xl tracking-widest uppercase"
+          class="mt-6 h-auto px-3 py-4 tracking-widest uppercase"
           href="/get-a-quote"
         >
           Get a Quote
@@ -209,7 +217,7 @@ const IMAGES: AppLogo[] = [
     </div>
   </section>
 
-  <TrustBadgeSection />
+  <!-- <TrustBadgeSection /> -->
 
   <div class="bg-bg-light relative p-0 pb-32">
     <div
@@ -220,6 +228,11 @@ const IMAGES: AppLogo[] = [
     <!--                   Services                   -->
     <!-- ============================================ -->
     <ServiceCards className="z-2" client:visible />
+    <!-- ============================================ -->
+    <!--                   Trust Badges                    -->
+    <!-- ============================================ -->
+    <TrustBadges/>
+
     <!-- ============================================ -->
     <!--                   Gallery                    -->
     <!-- ============================================ -->
@@ -251,7 +264,23 @@ const IMAGES: AppLogo[] = [
 </BaseLayout>
 
 <style lang="less">
+  /*
+#hero {
+  position: relative;
+}
 
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: red;
+  opacity: 0.3;
+  pointer-events: none;
+}
+ */
   /* Hero Gradient Background */
   .hero-gradient {
     /*
@@ -695,26 +724,25 @@ const IMAGES: AppLogo[] = [
 </style>
 
 <script>
-
   import BlazeSlider from "blaze-slider";
   import "blaze-slider/dist/blaze.css";
 
-document.addEventListener('astro:page-load', () => {
-  document.querySelectorAll(".blaze-slider").forEach((el) => {
-    new BlazeSlider(el as HTMLElement, {
-      all: {
-        enableAutoplay: true,
-        autoplayInterval: 2000,
-        transitionDuration: 300,
-        slidesToShow: 3,
-      },
-      "(max-width: 900px)": {
-        slidesToShow: 2,
-      },
-      "(max-width: 650px)": {
-        slidesToShow: 1,
-      },
+  document.addEventListener("astro:page-load", () => {
+    document.querySelectorAll(".blaze-slider").forEach((el) => {
+      new BlazeSlider(el as HTMLElement, {
+        all: {
+          enableAutoplay: true,
+          autoplayInterval: 2000,
+          transitionDuration: 300,
+          slidesToShow: 3,
+        },
+        "(max-width: 900px)": {
+          slidesToShow: 2,
+        },
+        "(max-width: 650px)": {
+          slidesToShow: 1,
+        },
+      });
     });
   });
-});
 </script>

@@ -67,6 +67,10 @@
   --text-topper: clamp(var(--text-2xl), 2vw + 1rem, var(--text-3xl)) ;
   --text-header: clamp(2.25rem,3dvw + 1rem,3.75rem);
   --text-header-xl: clamp(2.5rem,3dvw + 1rem,4.5rem);
+  --text-title: clamp(var(--text-3xl), 2vw + 1rem, var(--text-4xl)) ;
+  --text-title--line-height: 1.111;
+  --text-body: clamp(var(--text-lg), 2vw + 1rem, var(--text-xl)) ;
+  --text-body--line-height: 1.4;
 
   --container-8xl: 96rem;
 
@@ -155,6 +159,20 @@
 .mask-bg-3-vertical{
   /* mask-image: linear-gradient(to bottom,transparent, #000 3% 97%, transparent); */
  mask-image: linear-gradient(to bottom,transparent, #000 3% 97%, transparent);
+}
+
+.mask-bg-both {
+  /* WebKit (Chrome, Safari, Edge) */
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 3% 97%, transparent),
+    linear-gradient(to bottom, transparent, #000 3% 97%, transparent);
+  -webkit-mask-composite: source-in;
+
+  /* Standard */
+  mask-image:
+    linear-gradient(to right, transparent, #000 3% 97%, transparent),
+    linear-gradient(to bottom, transparent, #000 3% 97%, transparent);
+  mask-composite: intersect;
 }
 
 
