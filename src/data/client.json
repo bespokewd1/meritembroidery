@@ -1,17 +1,17 @@
 {
-	"name": "Merit Embroidery",
-	"email": "info@meritembroidery.com",
-	"phoneForTel": "+17084146109",
-	"phoneFormatted": "(780) 414-6109",
-	"phoneForTel2": "+17084146122",
-	"phoneFormatted2": "(780) 414-6122",
-	"address": {
-		"lineOne": "3954 76 Ave NW",
-		"lineTwo": "Edmonton, Alberta, T6B 2P1",
-		"city": "",
-		"state": "",
-		"zip": "",
-		"mapLink": "https://maps.app.goo.gl/5mASptDbZWLEcpT5A"
-	},
-	"domain": "www.codestitch.app"
+  "name": "Merit Embroidery",
+  "email": "info@meritembroidery.com",
+  "phoneForTel": "+17084146109",
+  "phoneFormatted": "(780) 414-6109",
+  "phoneForTel2": "+17084146122",
+  "phoneFormatted2": "(780) 414-6122",
+  "address": {
+    "lineOne": "3954 76 Ave NW",
+    "lineTwo": "Edmonton, Alberta, T6B 2P1",
+    "city": "",
+    "state": "",
+    "zip": "",
+    "mapLink": "https://maps.app.goo.gl/5mASptDbZWLEcpT5A"
+  },
+  "domain": "www.codestitch.app"
 }

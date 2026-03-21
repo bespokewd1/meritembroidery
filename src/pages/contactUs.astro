@@ -203,7 +203,20 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
       </div>
       <!--Map Image, pin is made in the Figma then export as one image-->
       <div class="cs-map min-h-250">
-        <a
+        <div
+          class="block aspect-9/16 size-full overflow-hidden rounded-tr-[250px] rounded-bl-[250px] border-t-15 border-r-15 border-[#224ca1]"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d18980.101961273525!2d-113.403385!3d53.512899!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a0186ce841d67d%3A0x43c318ffd01724a5!2sMerit%20Embroidery%20%26%20Printing%20Ltd.!5e0!3m2!1sen!2sph!4v1774120523168!5m2!1sen!2sph"
+            width="600"
+            class="aspect-9/16 size-full scale-102"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- <a
           href={mapHref}
           target="_blank"
           rel="noopener noreferrer"
@@ -214,7 +227,7 @@ const hours = [{ label: "Mon – Fri", value: "8:00 am – 4:30 pm" }];
             alt="merit map in edmonton"
             class="aspect-9/16 size-full scale-102"
           />
-        </a>
+        </a> -->
       </div>
     </div>
   </section>

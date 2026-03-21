@@ -41,7 +41,7 @@ export const Timeline = ({
   return (
     <section
       className={cn(
-        "bg-accent-light mr-[max(5vw,1rem)] rounded-tr-[200px] font-sans md:px-10",
+        "bg-accent-primary mr-[max(5vw,1rem)] rounded-tr-[200px] font-sans md:px-10",
         className,
       )}
       ref={containerRef}

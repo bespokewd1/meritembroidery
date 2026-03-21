@@ -35,7 +35,6 @@ import gallery11 from "@assets/images/gallery/home/11.webp";
 import gallery12 from "@assets/images/gallery/home/12.webp";
 import gallery13 from "@assets/images/gallery/home/13.webp";
 
-
 import aboutGallery1 from "@assets/images/gallery/about/1.webp";
 import aboutGallery2 from "@assets/images/gallery/about/2.webp";
 import aboutGallery3 from "@assets/images/gallery/about/3.webp";
@@ -182,7 +181,9 @@ const IMAGES: AppLogo[] = [
         "lg:content-center lg:gap-x-16 lg:gap-y-0 lg:px-12 lg:py-0",
       ]}
     >
-      <div class="flex justify-center lg:max-w-160 lg:mr-0 lg:ml-auto lg:justify-end">
+      <div
+        class="flex justify-center lg:mr-0 lg:ml-auto lg:max-w-160 lg:justify-end"
+      >
         <Image
           src={optimizedImage.src}
           width={optimizedImage.options.width ?? landingImage.width}
@@ -196,13 +197,13 @@ const IMAGES: AppLogo[] = [
 
       <div class="flex flex-col items-center lg:items-start">
         <h1
-          class="text-accent-primary m-0 text-center text-header-xl leading-[1.2] font-black lg:text-left "
+          class="text-accent-primary text-header-xl m-0 text-center leading-[1.2] font-black lg:text-left"
         >
           Your Trusted <br class="hidden lg:inline" /> Promotional Decorators!
         </h1>
 
         <p
-          class="text-accent-primary mt-3 text-center text-body font-black md:text-3xl lg:text-left"
+          class="text-accent-primary text-body mt-3 text-center font-black md:text-3xl lg:text-left"
         >
           Quality. Delivery. Service. Innovation.
         </p>
@@ -219,9 +220,9 @@ const IMAGES: AppLogo[] = [
 
   <!-- <TrustBadgeSection /> -->
 
-  <div class="bg-bg-light relative p-0 pb-32 max-w-400 mx-auto">
+  <div class="bg-bg-light relative mx-auto max-w-400 p-0 pb-32">
     <div
-      class="corner-squircle bg-accent-light absolute inset-0 z-1 mx-[max(0.5rem,3vw)] mb-[min(1rem,95%)] rounded-t-[400px] rounded-b-none supports-[corner-shape:squircle]:rounded-t-[800px] supports-[corner-shape:squircle]:rounded-b-none"
+      class="corner-squircle bg-accent-primary absolute inset-0 z-1 mx-[max(0.5rem,3vw)] mb-[min(1rem,95%)] rounded-t-[400px] rounded-b-none supports-[corner-shape:squircle]:rounded-t-[800px] supports-[corner-shape:squircle]:rounded-b-none"
     >
     </div>
     <!-- ============================================ -->
@@ -231,7 +232,7 @@ const IMAGES: AppLogo[] = [
     <!-- ============================================ -->
     <!--                   Trust Badges                    -->
     <!-- ============================================ -->
-    <TrustBadges/>
+    <TrustBadges />
 
     <!-- ============================================ -->
     <!--                   Gallery                    -->

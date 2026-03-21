@@ -17,7 +17,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "mx-auto grid w-full grid-flow-row-dense grid-cols-1 gap-4 md:auto-rows-[20rem] md:grid-cols-3",
+        "mx-auto grid w-full grid-flow-row-dense grid-cols-1 gap-4 md:auto-rows-[20rem] md:grid-cols-4",
         className,
       )}
     >
@@ -53,14 +53,14 @@ export const BentoGridItem = ({
       )}
     >
       {image ? (
-        <div className="h-full w-full flex-1 overflow-hidden ">
+        <div className="h-full w-full flex-1 overflow-hidden">
           <img
             src={image.src}
             alt={image.alt ?? alt}
             width={image.width}
             height={image.height}
             className={cn([
-              "h-full w-full  object-cover object-center transition duration-500 group-hover/bento:scale-105 ",
+              "h-full w-full object-cover object-center transition duration-500 group-hover/bento:scale-105",
               imgClass,
             ])}
             loading="lazy"
