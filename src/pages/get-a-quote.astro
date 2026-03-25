@@ -146,13 +146,13 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
             <!-- 2️⃣ Hidden field for Cloudinary file URL -->
             <input type="hidden" id="file_url" name="File URL" />
             <div class="form-group">
-              <label class="text-accent-light text-lg font-bold">Name </label>
+              <label class="text-accent-light text-lg font-medium">Name </label>
               <div class="row">
                 <input
                   type="text"
                   name="name"
                   required
-                  class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
+                  class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-normal ring outline-none focus-visible:ring-2"
                 />
                 <!-- <input
                   type="text"
@@ -164,21 +164,21 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
             </div>
 
             <div class="form-group">
-              <label class="text-accent-light text-lg font-bold">Email</label>
+              <label class="text-accent-light text-lg font-medium">Email</label>
               <input
                 type="email"
                 name="email"
-                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
+                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-normal ring outline-none focus-visible:ring-2"
                 required
               />
             </div>
 
             <div class="form-group">
-              <label class="text-accent-light text-lg font-bold">Phone</label>
+              <label class="text-accent-light text-lg font-medium">Phone</label>
               <input
                 type="tel"
                 name="phone"
-                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
+                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-normal ring outline-none focus-visible:ring-2"
                 required
               />
               <small class="text-accent-light"
@@ -187,13 +187,13 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
             </div>
 
             <div class="form-group">
-              <label class="text-accent-light text-lg font-bold"
+              <label class="text-accent-light text-lg font-medium"
                 >Company Name</label
               >
               <input
                 type="text"
                 name="company"
-                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
+                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-normal ring outline-none focus-visible:ring-2"
               />
             </div>
 
@@ -208,17 +208,19 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
             </div> -->
 
             <div class="form-group">
-              <label class="text-accent-light text-lg font-bold">Message</label>
+              <label class="text-accent-light text-lg font-medium"
+                >Message</label
+              >
               <textarea
                 name="message"
                 placeholder="Your Message"
                 required
-                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
+                class="ring-accent-light bg-body-light h-auto rounded-none p-2 font-normal ring outline-none focus-visible:ring-2"
               ></textarea>
             </div>
 
             <div class="form-group">
-              <label class="text-accent-light text-lg font-bold"
+              <label class="text-accent-light text-lg font-medium"
                 >File Upload</label
               >
 
@@ -232,7 +234,9 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
                   <label class="upload-icon" for="file">📁</label>
                   <p id="status"></p>
                   <p class="text-lg">
-                    <strong class="text-lg">Share Art and Project Files</strong>
+                    <strong class="text-lg font-medium"
+                      >Share Art and Project Files</strong
+                    >
                   </p>
                   <p>Drag and drop files here, or click to browse</p>
                 </div>

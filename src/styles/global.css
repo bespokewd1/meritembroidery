@@ -58,7 +58,8 @@
 
   --font-roboto: "Roboto", Arial, sans-serif;
   --font-poppins: "Poppins", Arial, sans-serif;
-  --font-acumin: "Acumin Variable Concept", Arial, sans-serif;
+  --font-acumin: "acumin-variable", Arial, sans-serif;
+  /* --font-acumin: "Acumin Variable Concept", Arial, sans-serif; */
 
   --text-heading: var(--headerFontSize);
   /* --text-topper: var(--text-3xl); */

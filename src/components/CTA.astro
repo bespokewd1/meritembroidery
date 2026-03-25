@@ -32,9 +32,12 @@ import { Image } from "astro:assets";
   <div
     class="relative z-10 mx-auto flex h-full max-w-full flex-col items-center px-6 pt-6 pb-12 text-center md:items-end md:px-10 md:pb-16 md:text-right lg:px-16 lg:pb-20"
   >
-  <div class="md:hidden absolute top-1/2 left-1/2 -translate-1/2 w-87.5 h-95 backdrop-blur-sm mask-bg-both -z-1"/>
+    <div
+      class="mask-bg-both absolute top-1/2 left-1/2 -z-1 h-95 w-87.5 -translate-1/2 backdrop-blur-sm md:hidden"
+    >
+    </div>
     <h2
-      class="text-accent-dark text-[clamp(2.25rem,3dvw+1rem,4.25rem)] leading-tight font-black tracking-tight"
+      class="text-accent-dark text-[clamp(2.25rem,3dvw+1rem,4.25rem)] leading-tight font-medium tracking-tight"
     >
       Need Custom Apparel Or
       <br />
@@ -42,7 +45,7 @@ import { Image } from "astro:assets";
     </h2>
     <!-- 2.25 4.5 -->
     <p
-      class="text-primary mb-8 text-[clamp(1.25rem,3dvw+1rem,2.25rem)] leading-snug font-black italic md:mb-10"
+      class="text-primary mb-8 text-[clamp(1.25rem,3dvw+1rem,2.25rem)] leading-snug font-medium italic md:mb-10"
     >
       Let&rsquo;s make it happen!
       <br />

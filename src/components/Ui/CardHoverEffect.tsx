@@ -64,7 +64,7 @@ export const HoverEffect = ({
             <CardDescription className="text-body flex-1">
               {item.description}
             </CardDescription>
-            <span className="text-accent-primary text-body inline-flex items-center gap-2 font-semibold">
+            <span className="text-accent-primary text-body inline-flex items-center gap-2 font-medium">
               Learn More
               <IconArrowRight
                 width={20}
@@ -132,7 +132,7 @@ export const CardTitle = ({
   return (
     <h3
       className={cn(
-        "group-hover:text-accent-primary text-title mt-4 font-bold tracking-wide text-black",
+        "group-hover:text-accent-primary text-title mt-4 font-semibold tracking-wide text-black",
         className,
       )}
     >

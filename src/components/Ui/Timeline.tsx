@@ -51,7 +51,7 @@ export const Timeline = ({
           Three decades of growth, innovation, and excellence.
         </span>
 
-        <h2 className="font-acumin text-body-light text-header max-w-4xl font-black">
+        <h2 className="font-acumin text-body-light text-header max-w-4xl font-medium">
           Our Journey
         </h2>
       </div>
@@ -66,13 +66,13 @@ export const Timeline = ({
               <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-white md:left-3">
                 <div className="h-4 w-4 rounded-full border border-neutral-300 bg-(--primary) p-2" />
               </div>
-              <h3 className="text-body-light font-acumin text-header hidden font-bold md:block md:pl-20">
+              <h3 className="text-body-light font-acumin text-header hidden font-medium md:block md:pl-20">
                 {item.title}
               </h3>
             </div>
 
             <div className="relative w-full pr-4 pl-20 md:pl-4">
-              <h3 className="text-body-light text-header mb-4 block text-left font-bold md:hidden">
+              <h3 className="text-body-light text-header mb-4 block text-left font-medium md:hidden">
                 {item.title}
               </h3>
               {item.content}{" "}

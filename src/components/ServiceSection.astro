@@ -66,7 +66,7 @@ const {
         <!-- text-[clamp(2.25rem,3vw+1rem,4.5rem)]  -->
         <h2
           class:list={[
-            "text-shadow-accent-primary text-header absolute bottom-8 font-black tracking-wide text-balance text-white text-shadow-lg/100",
+            "text-shadow-accent-primary text-header absolute bottom-8 font-bold tracking-wide text-balance text-white text-shadow-lg/100",
             isReverse
               ? "left-8 text-left sm:left-12"
               : "right-8 text-right sm:right-12",
@@ -106,7 +106,7 @@ const {
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </div>
-                  <p class="text-accent-dark text-title mt-2 flex flex-1 items-center justify-center font-black">
+                  <p class="text-accent-dark text-title mt-2 flex flex-1 items-center justify-center font-bold">
                     {subtype.label}
                   </p>
                 </div>
@@ -129,7 +129,7 @@ const {
         features.length > 0 && (
           <div class="mt-2 grid grid-cols-1 gap-x-12 gap-y-4 sm:grid-cols-2">
             {features.map((feature) => (
-              <div class="border-accent-light text-accent-dark text-body border-b-[3px] pb-2 font-black">
+              <div class="border-accent-light text-accent-dark text-body border-b-[3px] pb-2 font-bold">
                 {feature}
               </div>
             ))}
@@ -142,7 +142,7 @@ const {
     <div class="mt-4 flex items-center justify-center lg:mt-6">
       <a
         href="/get-a-quote"
-        class="cs-button-solid bg-accent-primary h-auto px-6 py-4 text-xl font-normal tracking-widest uppercase"
+        class="cs-button-solid bg-accent-primary h-auto px-6 py-4 text-xl font-medium tracking-widest uppercase"
       >
         Get a Quote
       </a>

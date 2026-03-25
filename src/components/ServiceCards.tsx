@@ -1,13 +1,12 @@
 import { HoverEffect, type ItemsTypes } from "./Ui/CardHoverEffect";
 
-
 import embroidery from "@assets/images/gallery/embroidery/2.webp";
 import screenPrint from "@assets/images/gallery/screen-print/2.webp";
-import digitalPrint  from "@assets/images/gallery/digital/15.webp";
-import engraving  from "@assets/images/gallery/engraving/3.webp";
-import patches  from "@assets/images/gallery/patches/13.webp";
-import applique  from "@assets/images/gallery/applique/1.JPG";
-import artwork  from "@assets/images/gallery/engraving/2.JPG";
+import digitalPrint from "@assets/images/gallery/digital/15.webp";
+import engraving from "@assets/images/gallery/engraving/3.webp";
+import patches from "@assets/images/gallery/patches/13.webp";
+import applique from "@assets/images/gallery/applique/1.JPG";
+import artwork from "@assets/images/gallery/engraving/2.JPG";
 
 import cn from "@utils/cn";
 
@@ -51,8 +50,7 @@ export const ServiceCards = ({ className }: { className?: string }) => {
     },
     {
       title: "Custom Applique",
-      description:
-        ` Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour, 
+      description: ` Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour, 
         combining efficiency with exceptional quality. `,
       link: "/services#applique",
       imgData: applique,
@@ -60,8 +58,7 @@ export const ServiceCards = ({ className }: { className?: string }) => {
     },
     {
       title: "Artwork and Digitizing Services",
-      description:
-        ` 
+      description: ` 
         For precise, professional customization, our laser engraving services
         etch your designs, logos, or text onto a variety of materials, including
         wood, metal, acrylic, and leather. 
@@ -76,14 +73,14 @@ export const ServiceCards = ({ className }: { className?: string }) => {
     <section
       className={cn("@container relative bg-transparent p-0", className)}
     >
-      <div className="pt-16 ">
+      <div className="pt-16">
         <div className="mx-auto max-w-225 xl:max-w-full">
           {/* <span className="cs-topper text-topper font-acumin text-center font-medium tracking-wider">
             Our Services
           </span> */}
           {/* text-[clamp(2.25rem,3dvw+1rem,4rem)]  */}
           {/* text-[clamp(2.25rem,3vw+1rem,2.75rem)]  */}
-          <h2 className="cs-title font-acumin text-header text-body-light px-2 text-center font-black text-balance">
+          <h2 className="cs-title font-acumin text-header text-body-light px-2 text-center font-medium text-balance">
             Premium Decoration Services for Your Brand
           </h2>
         </div>
