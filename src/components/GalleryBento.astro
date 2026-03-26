@@ -1,33 +1,32 @@
 ---
-import { rawImages } from "@data/galleryImage";
 import { getImage } from "astro:assets";
 import GalleryBentoReact, { type GalleryImage } from "./GalleryBentoReact";
+import {
+  getGalleryImagesByFolders,
+  type GalleryFolder,
+} from "@data/galleryImage";
 
-const getCleanTitle = (src: string) => {
-  // Grab filename from path and strip queries
-  let filename = src.split("/").pop()?.split("?")[0] || "";
+interface Props {
+  folders?: GalleryFolder[];
+}
 
-  // Remove file extension
-  let nameOnly = filename.substring(0, filename.lastIndexOf(".")) || filename;
+const {
+  folders = [
+    "applique",
+    "digital",
+    "embroidery",
+    "engraving",
+    "new",
+    "patches",
+    "screenprint",
+  ],
+} = Astro.props;
 
-  // Remove Astro's production hash if present (usually looks like 'filename.1a2b3c4d')
-  const parts = nameOnly.split(".");
-  if (parts.length > 1 && parts[parts.length - 1].length >= 8) {
-    parts.pop();
-  }
-
-  // Replace dashes/underscores with spaces and Capitalize Words
-  return parts
-    .join(".")
-    .replace(/[-_]/g, " ")
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-};
+const rawImages = getGalleryImagesByFolders(folders);
 
 const optimizedImages: GalleryImage[] = await Promise.all(
-  rawImages.map(async (img, index) => {
-    const ratio = img.width / img.height;
+  rawImages.map(async ({ image, title }, index) => {
+    const ratio = image.width / image.height;
 
     let spanClass = "md:col-span-1";
     let imgClass = "object-cover";
@@ -44,20 +43,20 @@ const optimizedImages: GalleryImage[] = await Promise.all(
     }
 
     const optimized = await getImage({
-      src: img,
+      src: image,
       format: "webp",
       quality: 80,
-      width: Math.min(img.width, targetWidth),
+      width: Math.min(image.width, targetWidth),
     });
 
     return {
       src: optimized.src,
       width: optimized.attributes.width,
       height: optimized.attributes.height,
-      alt: `Portfolio image ${index + 1}`,
+      alt: title || `Portfolio image ${index + 1}`,
       spanClass,
       imgClass,
-      title: getCleanTitle(img.src),
+      title,
     };
   }),
 );

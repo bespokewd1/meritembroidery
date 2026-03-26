@@ -3,7 +3,8 @@ import navData from "@data/navData.json";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import client from "@data/client.json";
-import navLogo from "@assets/images/merit-bg-transparent.png";
+// import navLogo from "@assets/images/merit-bg-transparent.png";
+import navLogo from "@assets/images/Header-Logo.png";
 import DarkModeToggle from "@components/DarkModeToggle.astro";
 import ButtonLink from "./Ui/ButtonLink.astro";
 import cn from "@utils/cn";
@@ -194,8 +195,7 @@ import cn from "@utils/cn";
           const el = document.getElementById(id);
           if (!el) return;
 
-          const blockPosition =
-                      window.innerWidth >= 1024 ? "center" : "start";
+          const blockPosition = window.innerWidth >= 1024 ? "center" : "start";
 
           el.scrollIntoView({
             behavior: "smooth",

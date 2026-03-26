@@ -18,7 +18,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "mx-auto grid w-full grid-flow-row-dense grid-cols-1 gap-4 md:auto-rows-[20rem] md:grid-cols-4",
+        "mx-auto grid w-full grid-flow-row-dense grid-cols-1 gap-4 md:auto-rows-[20rem] md:grid-cols-3 lg:grid-cols-4",
         className,
       )}
     >
@@ -57,7 +57,7 @@ export function BentoGridItem({
       <div className="absolute inset-x-0 bottom-0 z-20 translate-y-[101%] bg-linear-to-t from-black/90 via-black/70 to-transparent px-4 py-6 transition-transform duration-500 ease-out group-hover:translate-y-0 pointer-coarse:translate-y-0">
         <div className="bg-accent-primary mb-3 h-1 w-12" />
 
-        <h3 className="font-acumin text-title mb-1 font-medium text-white uppercase drop-shadow-md">
+        <h3 className="font-acumin text-title mb-1 font-medium text-balance text-white uppercase drop-shadow-md">
           {image.title}
         </h3>
 

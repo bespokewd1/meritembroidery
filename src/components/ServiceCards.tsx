@@ -1,12 +1,12 @@
 import { HoverEffect, type ItemsTypes } from "./Ui/CardHoverEffect";
 
-import embroidery from "@assets/images/gallery/embroidery/2.webp";
-import screenPrint from "@assets/images/gallery/screen-print/2.webp";
-import digitalPrint from "@assets/images/gallery/digital/15.webp";
-import engraving from "@assets/images/gallery/engraving/3.webp";
-import patches from "@assets/images/gallery/patches/13.webp";
-import applique from "@assets/images/gallery/applique/1.JPG";
-import artwork from "@assets/images/gallery/engraving/2.JPG";
+import embroidery from "@assets/images/services/embroidery/Main-Photo-02.jpg";
+import screenPrint from "@assets/images/services/screen-print/Main-Photo-02.png";
+import digitalPrint from "@assets/images/services/digital/Main-Photo-02.jpg";
+import engraving from "@assets/images/services/engraving/Main-Photo-02.jpg";
+import patches from "@assets/images/services/patches/Main-Photo---02.jpg";
+import applique from "@assets/images/services/applique/Main-Photo-02.JPG";
+import artwork from "@assets/images/services/artwork/Main-Photo-01.jpg";
 
 import cn from "@utils/cn";
 

@@ -3,54 +3,77 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
 import ServiceSection from "@components/ServiceSection.astro";
 
-import embroidery from "@assets/images/gallery/embroidery/2.JPG";
-import doubleLayer from "@assets/images/merit-images/merit-0261.jpg";
-import puffEmbroidery from "@assets/images/gallery/embroidery/3.JPG";
-import frEmbroidery from "@assets/images/gallery/others/4.jpg";
-import splitEmbroidery from "@assets/images/gallery/embroidery/4.JPG";
+import embroidery from "@assets/images/services/embroidery/Main-Photo-01.jpg";
+//@ts-expect-error image extension is correct
+import doubleLayer from "@assets/images/services/embroidery/2-Layer-Puff-Embroidery.JPG";
+import puffEmbroidery from "@assets/images/services/embroidery/Puff-Embroidery.jpg";
+import frEmbroidery from "@assets/images/services/embroidery/FR-Embroidery.png";
+//@ts-expect-error image extension is correct
+import splitEmbroidery from "@assets/images/services/embroidery/Split-Front-Embroidery.JPG";
 import metalEmbroidery from "@assets/images/gallery/embroidery/1.jpg";
+import screenPrint from "@assets/images/services/screen-print/Main-Photo-01.jpg";
+import glowInDark from "@assets/images/services/screen-print/Glow-in-the-Dark.png";
+//@ts-expect-error image extension is correct
+import puffPrint from "@assets/images/services/screen-print/Puff-Screenprinting.JPG";
+//@ts-expect-error image extension is correct
+import hdPrint from "@assets/images/services/screen-print/HD-Puff-Screenprinting.JPG";
+//@ts-expect-error image extension is correct
+import distressedPrint from "@assets/images/services/screen-print/Distressed-Screenprinting.JPG";
+//@ts-expect-error image extension is correct
+import gelPrint from "@assets/images/services/screen-print/Gel-Ink-Screenprinting.JPG";
 
-import screenPrint from "@assets/images/gallery/screen-print/2.JPG";
-import glowInDark from "@assets/images/gallery/screen-print/6.JPG";
-import puffPrint from "@assets/images/gallery/screen-print/1.JPG";
-import hdPrint from "@assets/images/gallery/screen-print/3.JPG";
-import distressedPrint from "@assets/images/gallery/screen-print/7.JPG";
-import gelPrint from "@assets/images/gallery/screen-print/6.JPG";
+import digitalPrint from "@assets/images/services/digital/Main-Photo-01.jpg";
+//@ts-expect-error image extension is correct
+import colorMax from "@assets/images/services/digital/Colormax-DTF-Print---01.JPG";
+//@ts-expect-error image extension is correct
+import cad from "@assets/images/services/digital/CAD-Printed-Banners.JPG";
+//@ts-expect-error image extension is correct
+import vinyl from "@assets/images/services/digital/Specialty-Vinyl.JPG";
+//@ts-expect-error image extension is correct
+import sublimation from "@assets/images/services/digital/Sublimation.JPG";
+//@ts-expect-error image extension is correct
+import uvMax from "@assets/images/services/digital/UV-Colormax-DTF-on-Mugs.JPG";
 
-import digitalPrint from "@assets/images/gallery/digital/15.jpg";
-import colorMax from "@assets/images/gallery/digital/9.JPG";
-import cad from "@assets/images/gallery/digital/8.JPG";
-import vinyl from "@assets/images/gallery/digital/10.JPG";
-import sublimation from "@assets/images/gallery/digital/7.JPG";
-import uvMax from "@assets/images/gallery/digital/4.JPG";
+import engraving from "@assets/images/services/engraving/Main-Photo-01.jpg";
+//@ts-expect-error image extension is correct
+import tumbler from "@assets/images/services/engraving/Engraved-Bottle.JPG";
+//@ts-expect-error image extension is correct
+import bottle from "@assets/images/services/engraving/Bottle-Wraps.JPG";
+//@ts-expect-error image extension is correct
+import glass from "@assets/images/services/engraving/Engraved-Glass.JPG";
+//@ts-expect-error image extension is correct
+import coasters from "@assets/images/services/engraving/Custom-Coasters.JPG";
+import trophies from "@assets/images/services/engraving/Trophies+Medals.jpg";
 
-import engraving from "@assets/images/gallery/engraving/3.JPG";
-import tumbler from "@assets/images/gallery/engraving/1.JPG";
-import bottle from "@assets/images/gallery/mix/2.JPG";
-import glass from "@assets/images/gallery/engraving/7.JPG";
-import coasters from "@assets/images/gallery/engraving/4.JPG";
-import trophies from "@assets/images/gallery/mix/6.JPG";
+import patches from "@assets/images/services/patches/Main-Photo-01.jpg";
+//@ts-expect-error image extension is correct
+import digitalPatch from "@assets/images/services/patches/Digital-Patches.JPG";
+//@ts-expect-error image extension is correct
+import laserPatch from "@assets/images/services/patches/Laser-Patches.JPG";
+//@ts-expect-error image extension is correct
+import sublimatedPatch from "@assets/images/services/patches/Sublimated-Patches.JPG";
+//@ts-expect-error image extension is correct
+import embroidedPatch from "@assets/images/services/patches/Embroidered-Patches.JPG";
+//@ts-expect-error image extension is correct
+import wovenPatch from "@assets/images/services/patches/Woven-Patches.JPG";
 
-import patches from "@assets/images/gallery/patches/13.JPG";
-import digitalPatch from "@assets/images/gallery/patches/15.JPG";
-import laserPatch from "@assets/images/gallery/patches/2.JPG";
-import sublimatedPatch from "@assets/images/gallery/patches/11.JPG";
-import embroidedPatch from "@assets/images/gallery/patches/14.JPG";
-import wovenPatch from "@assets/images/gallery/patches/12.JPG";
+import applique from "@assets/images/services/applique/Main-Photo-01.jpg";
+//@ts-expect-error image extension is correct
+import doubleLayerApplique from "@assets/images/services/applique/2-Layer-Felt-Applique-01.JPG";
+//@ts-expect-error image extension is correct
+import leatherApplique from "@assets/images/services/applique/Faux-Leather-Applique.JPG";
+//@ts-expect-error image extension is correct
+import proTwillApplique from "@assets/images/services/applique/Pro-Twill-Applique.JPG";
+import feltApplique from "@assets/images/services/applique/Felt-Applique.jpg";
+//@ts-expect-error image extension is correct
+import multiMediaApplique from "@assets/images/services/applique/Multi-Media-Applique.JPG";
 
-import applique from "@assets/images/gallery/applique/1.JPG";
-import doubleLayerApplique from "@assets/images/gallery/applique/3.JPG";
-import leatherApplique from "@assets/images/gallery/applique/2.JPG";
-import proTwillApplique from "@assets/images/gallery/applique/5.JPG";
-import feltApplique from "@assets/images/gallery/applique/14.JPG";
-import multiMediaApplique from "@assets/images/gallery/applique/9.JPG";
-
-import artwork from "@assets/images/gallery/engraving/2.JPG";
-import vectorizeLogo from "@assets/images/gallery/digital/12.JPG";
-import digitizeEmbroidery from "@assets/images/gallery/others/3.jpg";
-import editDesign from "@assets/images/gallery/screen-print/9.JPG";
-import productionReady from "@assets/images/gallery/engraving/6.JPG";
-import personalizeDesign from "@assets/images/gallery/mix/3.JPG";
+import artwork from "@assets/images/services/artwork/Main-Photo-01.jpg";
+import vectorizeLogo from "@assets/images/services/artwork/Vectorize-Logos.jpg";
+import digitizeEmbroidery from "@assets/images/services/artwork/Digitize-Logos.jpg";
+import editDesign from "@assets/images/services/artwork/Digitize-Logos.jpg";
+import productionReady from "@assets/images/services/artwork/Vectorize-Logos.jpg";
+import personalizeDesign from "@assets/images/services/artwork/Main-Photo-01.jpg";
 
 import service1 from "@assets/images/merit-images/merit-0261.jpg";
 import service2 from "@assets/images/merit-images/merit-0256.jpg";
