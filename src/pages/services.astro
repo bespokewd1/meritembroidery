@@ -4,6 +4,9 @@ import CTA from "@components/CTA.astro";
 import ServiceSection from "@components/ServiceSection.astro";
 
 import embroidery from "@assets/images/services/embroidery/Main-Photo-01.jpg";
+import embroidery2 from "@assets/images/services/embroidery/Main-Photo-02.jpg";
+//@ts-expect-error image extension is correct
+import embroidery3 from "@assets/images/services/embroidery/Main-Photo-03.JPG";
 //@ts-expect-error image extension is correct
 import doubleLayer from "@assets/images/services/embroidery/2-Layer-Puff-Embroidery.JPG";
 import puffEmbroidery from "@assets/images/services/embroidery/Puff-Embroidery.jpg";
@@ -11,7 +14,10 @@ import frEmbroidery from "@assets/images/services/embroidery/FR-Embroidery.png";
 //@ts-expect-error image extension is correct
 import splitEmbroidery from "@assets/images/services/embroidery/Split-Front-Embroidery.JPG";
 import metalEmbroidery from "@assets/images/gallery/embroidery/1.jpg";
+
 import screenPrint from "@assets/images/services/screen-print/Main-Photo-01.jpg";
+import screenPrint2 from "@assets/images/services/screen-print/Main-Photo-02.png";
+import screenPrint3 from "@assets/images/services/screen-print/Main-Photo-03.jpg";
 import glowInDark from "@assets/images/services/screen-print/Glow-in-the-Dark.png";
 //@ts-expect-error image extension is correct
 import puffPrint from "@assets/images/services/screen-print/Puff-Screenprinting.JPG";
@@ -23,6 +29,9 @@ import distressedPrint from "@assets/images/services/screen-print/Distressed-Scr
 import gelPrint from "@assets/images/services/screen-print/Gel-Ink-Screenprinting.JPG";
 
 import digitalPrint from "@assets/images/services/digital/Main-Photo-01.jpg";
+import digitalPrint2 from "@assets/images/services/digital/Main-Photo-02.jpg";
+//@ts-expect-error image extension is correct
+import digitalPrint3 from "@assets/images/services/digital/Main-Photo-03.JPG";
 //@ts-expect-error image extension is correct
 import colorMax from "@assets/images/services/digital/Colormax-DTF-Print---01.JPG";
 //@ts-expect-error image extension is correct
@@ -35,6 +44,8 @@ import sublimation from "@assets/images/services/digital/Sublimation.JPG";
 import uvMax from "@assets/images/services/digital/UV-Colormax-DTF-on-Mugs.JPG";
 
 import engraving from "@assets/images/services/engraving/Main-Photo-01.jpg";
+import engraving2 from "@assets/images/services/engraving/Main-Photo-02.jpg";
+import engraving3 from "@assets/images/services/engraving/Main-Photo-03.jpg";
 //@ts-expect-error image extension is correct
 import tumbler from "@assets/images/services/engraving/Engraved-Bottle.JPG";
 //@ts-expect-error image extension is correct
@@ -46,6 +57,8 @@ import coasters from "@assets/images/services/engraving/Custom-Coasters.JPG";
 import trophies from "@assets/images/services/engraving/Trophies+Medals.jpg";
 
 import patches from "@assets/images/services/patches/Main-Photo-01.jpg";
+import patches2 from "@assets/images/services/patches/Main-Photo---02.jpg";
+import patches3 from "@assets/images/services/patches/Main-Photo-03.jpg";
 //@ts-expect-error image extension is correct
 import digitalPatch from "@assets/images/services/patches/Digital-Patches.JPG";
 //@ts-expect-error image extension is correct
@@ -58,6 +71,10 @@ import embroidedPatch from "@assets/images/services/patches/Embroidered-Patches.
 import wovenPatch from "@assets/images/services/patches/Woven-Patches.JPG";
 
 import applique from "@assets/images/services/applique/Main-Photo-01.jpg";
+//@ts-expect-error image extension is correct
+import applique2 from "@assets/images/services/applique/Main-Photo-02.JPG";
+//@ts-expect-error image extension is correct
+import applique3 from "@assets/images/services/applique/Main-Photo-03.JPG";
 //@ts-expect-error image extension is correct
 import doubleLayerApplique from "@assets/images/services/applique/2-Layer-Felt-Applique-01.JPG";
 //@ts-expect-error image extension is correct
@@ -103,7 +120,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="embroidery"
-    imageSrc={embroidery}
+    imageSlides={[embroidery, embroidery2, embroidery3]}
     imageAlt="Custom Logo Embroidery"
     features={[
       "Flat embroidery for classic professional look",
@@ -140,7 +157,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="screen-printing"
-    imageSrc={screenPrint}
+    imageSlides={[screenPrint, screenPrint2, screenPrint3]}
     imageAlt="Art & Design Services"
     features={[
       "Logo design and development",
@@ -173,7 +190,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="digital-printing"
-    imageSrc={digitalPrint}
+    imageSlides={[digitalPrint, digitalPrint2, digitalPrint3]}
     imageAlt="digital printing"
     features={[
       "Intricate designs with fine detail",
@@ -205,7 +222,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="laser-engraving"
-    imageSrc={engraving}
+    imageSlides={[engraving, engraving2, engraving3]}
     imageAlt="Laser Engraving"
     features={[
       "Intricate designs with fine detail",
@@ -237,7 +254,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="patches"
-    imageSrc={patches}
+    imageSlides={[patches, patches2, patches3]}
     imageAlt="Digital Printing & Digital Patches"
     features={[
       "CMYK full-color printing",
@@ -270,7 +287,7 @@ const optimizedImage = await getImage({
 
   <ServiceSection
     id="applique"
-    imageSrc={applique}
+    imageSlides={[applique, applique2, applique3]}
     imageAlt="applique shirt with alberta print"
     features={[
       "Up to 12-color designs",

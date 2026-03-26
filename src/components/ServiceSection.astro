@@ -9,7 +9,8 @@ type ServiceSubtype = {
 };
 
 type Props = HTMLAttributes<"section"> & {
-  imageSrc: ImageMetadata;
+  imageSrc?: ImageMetadata;
+  imageSlides?: ImageMetadata[];
   imageAlt: string;
   isReverse?: boolean;
   features?: string[];
@@ -20,6 +21,7 @@ type Props = HTMLAttributes<"section"> & {
 const {
   id: anchorId,
   imageSrc,
+  imageSlides = [],
   imageAlt,
   isReverse = false,
   features = [],
@@ -28,6 +30,9 @@ const {
   class: className,
   ...props
 } = Astro.props;
+
+const slides =
+  imageSlides.length > 0 ? imageSlides : imageSrc ? [imageSrc] : [];
 ---
 
 <section
@@ -48,25 +53,36 @@ const {
     >
       <!-- Arch Image Area -->
       <div
-        class="relative aspect-[20/16] w-full shrink-0 overflow-hidden rounded-t-full lg:w-1/2"
+        class="service-arch relative aspect-[20/16] w-full shrink-0 overflow-hidden rounded-t-full lg:w-1/2"
+        data-service-arch-carousel
       >
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          class="size-full object-cover"
-          widths={[400, 800, 1200]}
-          sizes="(max-width: 1024px) 100vw, 50vw"
-        />
-        <!-- Gradient overlay -->
+        <div class="embla__viewport h-full" data-embla-viewport>
+          <div class="embla__container flex h-full">
+            {
+              slides.map((slide, index) => (
+                <div class="embla__slide relative min-w-0 flex-[0_0_100%]">
+                  <Image
+                    src={slide}
+                    alt={index === 0 ? imageAlt : ""}
+                    class="size-full object-cover"
+                    widths={[400, 800, 1200]}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
         <div
-          class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
         >
         </div>
-        <!-- Title on image -->
-        <!-- text-[clamp(2.25rem,3vw+1rem,4.5rem)]  -->
+
         <h2
           class:list={[
-            "text-shadow-accent-primary text-header absolute bottom-8 font-bold tracking-wide text-balance text-white text-shadow-lg/100",
+            "text-shadow-accent-primary text-header absolute bottom-8 z-10 font-bold tracking-wide text-balance text-white text-shadow-lg/100",
             isReverse
               ? "left-8 text-left sm:left-12"
               : "right-8 text-right sm:right-12",
@@ -149,3 +165,46 @@ const {
     </div>
   </div>
 </section>
+
+<script>
+  import EmblaCarousel from "embla-carousel";
+  import Autoplay from "embla-carousel-autoplay";
+
+  document.addEventListener("astro:page-load", () => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    const roots = document.querySelectorAll("[data-service-arch-carousel]");
+
+    roots.forEach((root) => {
+      if (!(root instanceof HTMLElement)) return;
+      if (root.dataset.emblaInitialized === "true") return;
+
+      const viewport = root.querySelector("[data-embla-viewport]");
+      if (!(viewport instanceof HTMLElement)) return;
+
+      const slideCount = root.querySelectorAll(".embla__slide").length;
+      const shouldAutoplay = !prefersReducedMotion && slideCount > 1;
+
+      EmblaCarousel(
+        viewport,
+        {
+          loop: slideCount > 1,
+        },
+        shouldAutoplay
+          ? [
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+                stopOnFocusIn: true,
+              }),
+            ]
+          : [],
+      );
+
+      root.dataset.emblaInitialized = "true";
+    });
+  });
+</script>
