@@ -8,6 +8,7 @@ export type GalleryImage = {
   alt: string;
   spanClass: string;
   imgClass: string;
+  title: string;
 };
 
 export default function GalleryBentoReact({

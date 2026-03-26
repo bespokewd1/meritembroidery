@@ -1,3 +1,4 @@
+import type { GalleryImage } from "@components/GalleryBentoReact";
 import cn from "@utils/cn";
 
 type BentoImage = {
@@ -26,61 +27,60 @@ export const BentoGrid = ({
   );
 };
 
-export const BentoGridItem = ({
-  className,
-  title,
-  description,
-  header,
-  icon,
+export function BentoGridItem({
   image,
-  alt = "Gallery image",
-  imgClass = "",
+  className,
+  imgClass,
 }: {
+  image: GalleryImage;
   className?: string;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  header?: React.ReactNode;
-  icon?: React.ReactNode;
-  image?: BentoImage;
-  alt?: string;
   imgClass?: string;
-}) => {
+}) {
   return (
     <div
       className={cn(
-        "group/bento relative row-span-1 flex flex-col justify-between space-y-4 rounded-xl bg-white p-0 transition duration-200",
+        "group relative overflow-hidden rounded-2xl bg-white",
         className,
       )}
     >
-      {image ? (
-        <div className="h-full w-full flex-1 overflow-hidden">
-          <img
-            src={image.src}
-            alt={image.alt ?? alt}
-            width={image.width}
-            height={image.height}
-            className={cn([
-              "h-full w-full object-cover object-center transition duration-500 group-hover/bento:scale-105",
-              imgClass,
-            ])}
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      ) : (
-        <div className="flex h-full flex-col justify-between p-4">
-          {header}
-          <div className="transition duration-200 group-hover/bento:translate-x-2">
-            {icon}
-            <div className="mt-2 mb-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
-              {title}
-            </div>
-            <div className="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300">
-              {description}
-            </div>
-          </div>
-        </div>
-      )}
+      <img
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        className={cn(
+          "h-full w-full transition-transform duration-500 group-hover:scale-105",
+          imgClass,
+        )}
+      />
+
+      <div className="absolute inset-x-0 bottom-0 z-20 translate-y-[101%] bg-linear-to-t from-black/90 via-black/70 to-transparent px-4 py-6 transition-transform duration-500 ease-out group-hover:translate-y-0 pointer-coarse:translate-y-0">
+        <div className="bg-accent-primary mb-3 h-1 w-12" />
+
+        <h3 className="font-acumin text-title mb-1 font-medium text-white uppercase drop-shadow-md">
+          {image.title}
+        </h3>
+
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 h-[200%] w-full backdrop-blur-sm"
+          style={{
+            mask: "linear-gradient(to bottom, rgba(255, 255, 255) 0% 50%, transparent 50% 100%)",
+            WebkitMask:
+              "linear-gradient(to bottom, rgba(255, 255, 255) 0% 50%, transparent 50% 100%)",
+          }}
+        />
+
+        <div
+          className="pointer-events-none absolute inset-0 h-full -translate-y-full bg-white/10"
+          style={{
+            mask: "linear-gradient(to top, black 0, black 6px, transparent 6px)",
+            WebkitMask:
+              "linear-gradient(to top, black 0, black 6px, transparent 6px)",
+            backdropFilter: "blur(4px) brightness(120%)",
+            marginTop: "1px",
+          }}
+        />
+      </div>
     </div>
   );
-};
+}
