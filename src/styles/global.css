@@ -77,6 +77,8 @@
 
   --carousel-spd: 35s;
 
+  --breakpoint-3xl: 120rem;
+
   --animate-move-to-left: move-to-left var(--carousel-spd) infinite linear;
   --animate-move-to-right: move-to-right var(--carousel-spd) infinite linear;
   --animate-move-to-top: move-to-top 30s infinite linear;

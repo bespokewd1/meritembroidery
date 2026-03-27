@@ -83,7 +83,7 @@ export const ServiceCards = ({ className }: { className?: string }) => {
           <h2 className="cs-title font-acumin text-header text-body-light px-2 text-center font-medium text-balance">
             Premium Decoration
             <br className="lg:hidden" />
-            Services for Your Brand
+            &nbsp;Services for Your Brand
           </h2>
         </div>
         {/* max-w-7xl */}

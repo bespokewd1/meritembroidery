@@ -222,7 +222,11 @@ const IMAGES: AppLogo[] = [
 
   <div class="bg-bg-light relative mx-auto max-w-400 p-0 pb-32">
     <div
-      class="corner-squircle bg-accent-primary absolute inset-0 z-1 mx-[max(0.5rem,3vw)] mb-[min(1rem,95%)] rounded-t-[15vw] rounded-b-none supports-[corner-shape:squircle]:rounded-t-[30vw] supports-[corner-shape:squircle]:rounded-b-none"
+      class:list={[
+        "corner-squircle bg-accent-primary absolute inset-0 z-1 mx-[max(0.5rem,3vw)] mb-[min(1rem,95%)]",
+        "rounded-t-[15vw] rounded-b-none supports-[corner-shape:squircle]:rounded-t-[30vw] supports-[corner-shape:squircle]:rounded-b-none",
+        "3xl:rounded-t-[300px] 3xl:supports-[corner-shape:squircle]:rounded-t-[600px]",
+      ]}
     >
     </div>
     <!-- ============================================ -->
