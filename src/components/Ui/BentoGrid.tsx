@@ -49,7 +49,7 @@ export function BentoGridItem({
         width={image.width}
         height={image.height}
         className={cn(
-          "h-full w-full transition-transform duration-500 group-hover:scale-105",
+          "h-full w-full object-cover transition-transform duration-500 group-hover:scale-105",
           imgClass,
         )}
       />

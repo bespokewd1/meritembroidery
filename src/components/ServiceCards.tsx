@@ -81,7 +81,9 @@ export const ServiceCards = ({ className }: { className?: string }) => {
           {/* text-[clamp(2.25rem,3dvw+1rem,4rem)]  */}
           {/* text-[clamp(2.25rem,3vw+1rem,2.75rem)]  */}
           <h2 className="cs-title font-acumin text-header text-body-light px-2 text-center font-medium text-balance">
-            Premium Decoration Services for Your Brand
+            Premium Decoration
+            <br className="lg:hidden" />
+            Services for Your Brand
           </h2>
         </div>
         {/* max-w-7xl */}
