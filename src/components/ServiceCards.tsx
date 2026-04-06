@@ -50,7 +50,7 @@ export const ServiceCards = ({ className }: { className?: string }) => {
     },
     {
       title: "Custom Applique",
-      description: ` Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour, 
+      description: ` Our state-of-the-art M&R automatic screen presses allow us to print up to 1,000 garments per hour,
         combining efficiency with exceptional quality. `,
       link: "/services#applique",
       imgData: applique,
@@ -58,10 +58,10 @@ export const ServiceCards = ({ className }: { className?: string }) => {
     },
     {
       title: "Artwork and Digitizing Services",
-      description: ` 
+      description: `
         For precise, professional customization, our laser engraving services
         etch your designs, logos, or text onto a variety of materials, including
-        wood, metal, acrylic, and leather. 
+        wood, metal, acrylic, and leather.
          `,
       link: "/services#artwork",
       imgData: artwork,
@@ -89,7 +89,7 @@ export const ServiceCards = ({ className }: { className?: string }) => {
         {/* max-w-7xl */}
         <div className="mx-auto">
           <HoverEffect
-            className="px-[min(0.5rem,5vw)] pt-16 lg:grid-cols-8"
+            className="px-[min(0.5rem,5vw)] pt-16 lg:grid-cols-8 xl:pt-8"
             items={serviceItems}
           />
         </div>

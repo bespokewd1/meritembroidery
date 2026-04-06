@@ -191,36 +191,38 @@ const IMAGES: AppLogo[] = [
           alt="embroidery machines"
           loading="eager"
           fetchpriority="high"
-          class="h-auto w-full max-w-155 object-contain xl:max-w-175"
+          class="h-auto w-full max-w-155 object-contain xl:max-w-131.25"
         />
       </div>
 
-      <div class="flex flex-col items-center lg:items-start lg:justify-center">
+      <div
+        class="flex flex-col items-center lg:items-start lg:justify-end xl:max-w-131.25"
+      >
         <h1
-          class="text-accent-primary text-header-xl m-0 text-center leading-[1.1] font-medium lg:text-left xl:text-nowrap"
+          class="text-accent-primary text-header-xl m-0 text-center leading-[1.1] font-medium lg:text-left xl:text-[5rem] xl:text-balance"
         >
-          Your Trusted <br class="hidden lg:inline" /> Promotional Decorators!
+          Your Trusted Promotional Decorators!
         </h1>
 
         <p
-          class="text-accent-primary text-body mt-3 text-center font-medium md:text-3xl lg:text-left"
+          class="text-accent-primary text-body mt-3 text-center font-medium md:text-3xl lg:text-left xl:text-[2rem] xl:leading-[1.11] xl:text-balance"
         >
           Quality. Delivery. Service. Innovation.
         </p>
 
-        <ButtonLink
+        <!-- <ButtonLink
           class="mt-6 h-auto px-3 py-4 tracking-widest uppercase"
           href="/get-a-quote"
         >
           Get a Quote
-        </ButtonLink>
+        </ButtonLink> -->
       </div>
     </div>
   </section>
 
   <!-- <TrustBadgeSection /> -->
 
-  <div class="bg-bg-light relative mx-auto mb-32 max-w-400 p-0">
+  <div class="bg-bg-light relative mx-auto mb-32 max-w-400 p-0 xl:pt-10">
     <div
       class:list={[
         "corner-squircle bg-accent-primary absolute inset-0 z-1 mx-[max(0.5rem,3vw)] mb-[min(1rem,95%)]",
@@ -270,22 +272,22 @@ const IMAGES: AppLogo[] = [
 
 <style lang="less">
   /*
-#hero {
-  position: relative;
-}
+  #hero {
+    position: relative;
+  }
 
-#hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: red;
-  opacity: 0.3;
-  pointer-events: none;
-}
- */
+  #hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: red;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+*/
   /* Hero Gradient Background */
   .hero-gradient {
     /*
