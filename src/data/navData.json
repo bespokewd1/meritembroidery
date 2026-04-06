@@ -41,13 +41,13 @@
     ]
   },
   {
-    "key": "About Us",
-    "url": "/about/",
+    "key": "Gallery",
+    "url": "/portfolio/",
     "children": []
   },
   {
-    "key": "Gallery",
-    "url": "/portfolio/",
+    "key": "About Us",
+    "url": "/about/",
     "children": []
   },
   {
