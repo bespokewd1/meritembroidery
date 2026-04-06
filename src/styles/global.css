@@ -156,6 +156,11 @@
   mask-image: linear-gradient(to right, transparent, #000 3% 97%, transparent);
 }
 
+.mask-bg-bottom {
+  /* mask-image: linear-gradient(to bottom,transparent, #000 3% 97%, transparent); */
+  mask-image: linear-gradient(to top, transparent, #000 3% 97%);
+}
+
 .mask-bg-3-vertical {
   /* mask-image: linear-gradient(to bottom,transparent, #000 3% 97%, transparent); */
   mask-image: linear-gradient(to bottom, transparent, #000 3% 97%, transparent);
