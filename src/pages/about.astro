@@ -10,6 +10,7 @@ import "../styles/global.css";
 // import landingImage from "@assets/images/merit-gold.webp";
 // import landingImage from "@assets/images/merit-dark-gold.webp";
 import landingImage from "@assets/images/merit-dark-gold.png";
+import ogImage from "@assets/images/merit-cta.webp";
 
 import { getImage, Image } from "astro:assets";
 import { TimelineSection } from "@components/TimelineSection";
@@ -32,25 +33,25 @@ const cards = [
     title: "Our Mission",
     icon: "tabler:target-arrow",
     description:
-      "To provide 100% customer satisfaction by producing top quality digitizing and above average garment decorating, ensuring project due dates are met consistently.",
+      "To provide our community and industry with superior-quality custom apparel decorating through expert craftsmanship and innovative decorating techniques, ensuring every stitch and print reflects the excellence our clients deserve. We deliver professional, innovative, and high-impact apparel solutions that foster pride, unity, and a lasting impression.",
   },
   {
     title: "Our Vision",
     icon: "tabler:eye",
     description:
-      "Striving to be a stitch above the competition by producing high quality apparel decorating. We love to take on challenging jobs and find ways to complete any project.",
+      "To be the most trusted and innovative garment decoration partner in Western Canada, recognized for setting the industry standard in quality, reliability, and creative excellence. To lead the future of apparel branding by integrating cutting-edge technology with traditional craftsmanship, making world-class custom decoration accessible to every brand, team, and business.",
   },
   {
     title: "Our Values",
     icon: "tabler:diamond",
     description:
-      "With 25+ years of digitizing experience and 35+ years of stitching experience, we handle complex designs with ease using state-of-the-art machinery.",
+      "We blend traditional embroidery techniques with modern technology to produce the highest quality apparel, maintaining that high standard on every piece, whether it’s a single sample or a run of 2,000 units. We hit our deadlines so our clients can hit theirs. Our word is our bond.",
   },
   {
     title: "Our Promise",
     icon: "tabler:award",
     description:
-      "We run our business with utmost honesty and integrity. Every item that leaves our facility meets the highest standards of garment decorating, regardless of order size.",
+      "We promise that every garment leaving our facility will be a 'stitch above' the rest. If it isn't crisp, durable, and exactly to your specifications, we’ll make it right. We promise to provide expert guidance and innovative decorating solutions. You can count on us for transparent communication, on-time delivery, and consistent quality from the first piece to the thousandth.",
   },
 ];
 
@@ -102,8 +103,9 @@ const IMAGES: AppLogo[] = [
 
 <BaseLayout
   title="About"
-  description="High-quality in-house embroidery, screen printing, and custom apparel decoration in Edmonton. Serving businesses across Alberta and North America with fast, reliable, and professional service."
+  description="Merit Embroidery is one of the largest wholesale embroidery houses in Western Canada. We have been in the business of apparel decorating for over 20 years."
   preloadedImage={optimizedImage}
+  ogImage={ogImage}
 >
   <!-- Main About Section Redesign -->
   <section class="bg-bg-light relative overflow-hidden py-16 md:py-24">

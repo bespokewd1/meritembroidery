@@ -1,6 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import type { GetImageResult } from "astro";
+import type { GetImageResult, ImageMetadata } from "astro";
 import client from "@data/client.json";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
@@ -9,24 +9,18 @@ import "@styles/dark.less";
 import "@styles/global.css";
 import ogDefault from "@assets/images/og/og_image.png";
 
-// Define a type for images from the content collection
-type ContentImage = {
-  src: string;
-  width: number;
-  height: number;
-  format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
-};
-
 // Create a union type for preloadedImage
-type PreloadedImage = GetImageResult | ContentImage;
+type LayoutImage = GetImageResult | ImageMetadata;
 
 interface Props {
   title: string;
   description: string;
-  preloadedImage?: PreloadedImage; // optional - passing a preloadedImage to BaseLayout will 1. preload the image and 2. use the image for og socials tags in the <head>
+  preloadedImage?: LayoutImage; // optional - passing a preloadedImage to BaseLayout will preload the image
+  ogImage?: LayoutImage;
 }
 
-const { description, title, preloadedImage } = Astro.props as Props;
+const { description, title, preloadedImage, ogImage } = Astro.props as Props;
+const ogImageSrc = (ogImage ?? ogDefault).src;
 ---
 
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
@@ -61,13 +55,8 @@ const { description, title, preloadedImage } = Astro.props as Props;
       property="og:url"
       content={`https://${client.domain}${Astro.url.pathname}`}
     />
-    <meta property="og:image" content={ogDefault.src} />
-    <meta property="og:image:secure_url" content={ogDefault.src} />
-    <!-- {
-              preloadedImage &&
-                <meta property="og:image" content={preloadedImage.src} />
-                <meta property="og:image:secure_url" content={preloadedImage.src} />
-            } -->
+    <meta property="og:image" content={ogImageSrc} />
+    <meta property="og:image:secure_url" content={ogImageSrc} />
 
     <!-- Favicons -->
     <link
