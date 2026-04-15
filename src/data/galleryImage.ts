@@ -36,8 +36,9 @@ const getCleanTitleFromPath = (path: string) => {
   const lastDotIndex = filename.lastIndexOf(".");
   const nameOnly =
     lastDotIndex > -1 ? filename.substring(0, lastDotIndex) : filename;
+  const displayName = nameOnly.replace(/[-_ ]+0*\d+$/, "");
 
-  return nameOnly
+  return displayName
     .replace(/[-_]/g, " ")
     .split(" ")
     .filter(Boolean)
@@ -55,20 +56,66 @@ const sortByPath = (
   });
 };
 
+const toRawGalleryImage = ([path, mod]: [
+  string,
+  { default: ImageMetadata },
+]): RawGalleryImage => ({
+  path,
+  folder: getFolderFromPath(path),
+  image: mod.default,
+  title: getCleanTitleFromPath(path),
+});
+
+const getFolderOrder = (
+  images: readonly RawGalleryImage[],
+  folders?: readonly GalleryFolder[],
+) => {
+  if (folders && folders.length > 0) return folders;
+
+  const discoveredFolders = new Set(images.map(({ folder }) => folder));
+  return galleryFolders.filter((folder) => discoveredFolders.has(folder));
+};
+
+const interleaveByFolder = (
+  images: readonly RawGalleryImage[],
+  folderOrder: readonly string[],
+) => {
+  const buckets = new Map<string, RawGalleryImage[]>();
+
+  images.forEach((image) => {
+    const folderImages = buckets.get(image.folder) ?? [];
+    folderImages.push(image);
+    buckets.set(image.folder, folderImages);
+  });
+
+  const maxBucketLength = Math.max(
+    0,
+    ...Array.from(buckets.values()).map((bucket) => bucket.length),
+  );
+
+  const orderedImages: RawGalleryImage[] = [];
+
+  for (let index = 0; index < maxBucketLength; index += 1) {
+    folderOrder.forEach((folder) => {
+      const image = buckets.get(folder)?.[index];
+      if (image) orderedImages.push(image);
+    });
+  }
+
+  return orderedImages;
+};
+
 export function getGalleryImagesByFolders(
   folders?: readonly GalleryFolder[],
 ): RawGalleryImage[] {
-  return Object.entries(imageModules)
+  const images = Object.entries(imageModules)
     .filter(([path]) => {
       if (!folders || folders.length === 0) return true;
 
       return folders.some((folder) => path.includes(`/portfolio/${folder}/`));
     })
     .sort(sortByPath)
-    .map(([path, mod]) => ({
-      path,
-      folder: getFolderFromPath(path),
-      image: mod.default,
-      title: getCleanTitleFromPath(path),
-    }));
+    .map(toRawGalleryImage);
+
+  return interleaveByFolder(images, getFolderOrder(images, folders));
 }
