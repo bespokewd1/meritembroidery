@@ -27,6 +27,8 @@ import hdPrint from "@assets/images/services/screen-print/HD-Puff-Screenprinting
 import distressedPrint from "@assets/images/services/screen-print/Distressed-Screenprinting.JPG";
 //@ts-expect-error image extension is correct
 import gelPrint from "@assets/images/services/screen-print/Gel-Ink-Screenprinting.JPG";
+//@ts-expect-error image extension is correct
+import airPrint from "@assets/images/services/screen-print/Water-Based-Air-Dry-Ink.JPG";
 
 import digitalPrint from "@assets/images/services/digital/Main-Photo-01.jpg";
 import digitalPrint2 from "@assets/images/services/digital/Main-Photo-02.jpg";
@@ -84,6 +86,8 @@ import proTwillApplique from "@assets/images/services/applique/Pro-Twill-Appliqu
 import feltApplique from "@assets/images/services/applique/Felt-Applique.jpg";
 //@ts-expect-error image extension is correct
 import multiMediaApplique from "@assets/images/services/applique/Multi-Media-Applique.JPG";
+//@ts-expect-error image extension is correct
+import sublimatedApplique from "@assets/images/services/applique/Sublimated-Applique.JPG";
 
 import artwork from "@assets/images/services/artwork/Main-Photo-01.jpg";
 import vectorizeLogo from "@assets/images/services/artwork/Vectorize-Logos.jpg";
@@ -158,20 +162,21 @@ const optimizedImage = await getImage({
   <ServiceSection
     id="screen-printing"
     imageSlides={[screenPrint, screenPrint2, screenPrint3]}
-    imageAlt="Art & Design Services"
+    imageAlt="Screen Printing"
     features={[
-      "Logo design and development",
-      "Embroidery digitizing",
-      "Screen separations",
-      "Vector file creation and conversion",
-      "Digital mockups and proofs",
-      "Design consulting and recommendations",
+      "Up to 12-color designs",
+      "Reflective ink for safety wear",
+      "Exact Pantone color matching",
+      "Glow-in-the-dark ink options",
+      "High-density prints for textured feel",
+      "Water-based and plastisol inks",
     ]}
     subtypes={[
       { image: glowInDark, label: "Glow-in-the-Dark Print" },
       { image: puffPrint, label: "Puff Print" },
       { image: hdPrint, label: "Hd Print" },
       { image: distressedPrint, label: "Distressed and Fashion Print" },
+      { image: airPrint, label: "Air-Dry Ink Print" },
       { image: gelPrint, label: "Gel Ink Print" },
     ]}
     galleryHref="/portfolio"
@@ -179,11 +184,15 @@ const optimizedImage = await getImage({
     <Fragment slot="title">Screen Printing</Fragment>
     <Fragment slot="description">
       <p class="text-body">
-        Our experienced in-house graphic design and digitizing team provides
-        complete creative support — from logo design and mockups to vector
-        files, digitizing, and embroidery file edits. Whether you need artwork
-        from scratch or technical adjustments, we ensure your designs are
-        optimized for perfect embroidery and printing results.
+        Our state-of-the-art M&R automatic screen presses allow us to print up
+        to 1,000 garments per hour, combining efficiency with exceptional
+        quality. Since expanding into screen printing in 2015, we've mastered
+        techniques that make every print vibrant, durable, and true to your
+        brand.
+      </p>
+      <p class="text-body mt-4">
+        We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty
+        fabrics, using Wilflex plastisol, water-based, and air-dry inks.
       </p>
     </Fragment>
   </ServiceSection>
@@ -191,14 +200,14 @@ const optimizedImage = await getImage({
   <ServiceSection
     id="digital-printing"
     imageSlides={[digitalPrint, digitalPrint2, digitalPrint3]}
-    imageAlt="digital printing"
+    imageAlt="Digital Printing"
     features={[
-      "Intricate designs with fine detail",
-      "Custom shapes and sizes",
-      "Durable and professional finish",
-      "Multiple fabric and material options",
-      "On-demand sample production",
-      "Perfect for premium branding",
+      "CMYK full-color printing",
+      "Sublimation printing",
+      "Specialty vinyl (reflective, foil, soft foam)",
+      "CAD Cut vinyl applications",
+      "Direct to Film (DTF) printing",
+      "High-density and debossed effects",
     ]}
     subtypes={[
       { image: colorMax, label: "Colormax Direct to Film" },
@@ -212,10 +221,11 @@ const optimizedImage = await getImage({
     <Fragment slot="title">Digital Printing</Fragment>
     <Fragment slot="description">
       <p class="text-body">
-        For precise, professional customization, our laser engraving services
-        etch your designs, logos, or text onto a variety of materials, including
-        wood, metal, acrylic, and leather. Using advanced laser technology, we
-        deliver clean, permanent results with intricate detail and sharp edges.
+        When your artwork requires full color and fine detail, our digital
+        printing services bring it to life. Using advanced Mimaki large-format
+        and DTF printers, we produce vibrant prints on apparel, headwear,
+        banners, and more — all made in-house for fast turnaround and consistent
+        color accuracy.
       </p>
     </Fragment>
   </ServiceSection>
@@ -225,12 +235,12 @@ const optimizedImage = await getImage({
     imageSlides={[engraving, engraving2, engraving3]}
     imageAlt="Laser Engraving"
     features={[
-      "Intricate designs with fine detail",
-      "Custom shapes and sizes",
-      "Durable and professional finish",
-      "Multiple fabric and material options",
-      "On-demand sample production",
-      "Perfect for premium branding",
+      "Precision engraving for logos and text",
+      "Permanent etched finish",
+      "Custom bottle and tumbler wraps",
+      "Engraved glass, coasters, trophies, and medals",
+      "Compatible with wood, metal, acrylic, and leather",
+      "Clean detail for awards, gifts, and branded items",
     ]}
     subtypes={[
       { image: tumbler, label: "Engraved Tummblers/Bottles" },
@@ -255,14 +265,14 @@ const optimizedImage = await getImage({
   <ServiceSection
     id="patches"
     imageSlides={[patches, patches2, patches3]}
-    imageAlt="Digital Printing & Digital Patches"
+    imageAlt="Custom patches and crests"
     features={[
-      "CMYK full-color printing",
-      "Sublimation printing",
-      "Specialty vinyl (reflective, foil, soft foam)",
-      "CAD Cut vinyl applications",
-      "Direct to Film (DTF) printing",
-      "High-density and debossed effects",
+      "Intricate designs with fine detail",
+      "Custom shapes and sizes",
+      "Durable and professional finish",
+      "Multiple fabric and material options",
+      "On-demand sample production",
+      "Perfect for premium branding",
     ]}
     subtypes={[
       { image: digitalPatch, label: "Digital Printed Patches" },
@@ -276,11 +286,10 @@ const optimizedImage = await getImage({
     <Fragment slot="title">Patches & Crests</Fragment>
     <Fragment slot="description">
       <p class="text-body">
-        When your artwork requires full color and fine detail, our digital
-        printing services bring it to life. Using advanced Mimaki large-format
-        and DTF printers, we produce vibrant prints on apparel, headwear,
-        banners, and more — all made in-house for fast turnaround and consistent
-        color accuracy.
+        Custom patches and crests give uniforms, workwear, headwear, and
+        promotional apparel a durable branded finish. We produce embroidered,
+        woven, digital, sublimated, and laser-cut patch options in custom shapes
+        and sizes.
       </p>
     </Fragment>
   </ServiceSection>
@@ -302,6 +311,7 @@ const optimizedImage = await getImage({
       { image: leatherApplique, label: "Faux Leather/Suede Applique" },
       { image: proTwillApplique, label: "Pro-Twill Applique" },
       { image: feltApplique, label: "Felt Applique" },
+      { image: sublimatedApplique, label: "Sublimated Applique" },
       { image: multiMediaApplique, label: "Multi Media Applique" },
     ]}
     galleryHref="/portfolio"
@@ -309,15 +319,10 @@ const optimizedImage = await getImage({
     <Fragment slot="title">Custom Applique</Fragment>
     <Fragment slot="description">
       <p class="text-body">
-        Our state-of-the-art M&R automatic screen presses allow us to print up
-        to 1,000 garments per hour, combining efficiency with exceptional
-        quality. Since expanding into screen printing in 2015, we've mastered
-        techniques that make every print vibrant, durable, and true to your
-        brand.
-      </p>
-      <p class="text-body mt-4">
-        We print on t-shirts, hoodies, bags, jerseys, workwear, and specialty
-        fabrics, using Wilflex plastisol, water-based, and air-dry inks.
+        Custom applique adds dimension and texture by stitching felt, twill,
+        faux leather, suede, or mixed media pieces onto garments. It is ideal
+        for oversized designs, team apparel, hoodies, and premium branded pieces
+        that need a bold finish.
       </p>
     </Fragment>
   </ServiceSection>
@@ -327,12 +332,12 @@ const optimizedImage = await getImage({
     imageSrc={artwork}
     imageAlt="Artwork and digitizing"
     features={[
-      "Intricate designs with fine detail",
-      "Custom shapes and sizes",
-      "Durable and professional finish",
-      "Multiple fabric and material options",
-      "On-demand sample production",
-      "Perfect for premium branding",
+      "Logo design and development",
+      "Embroidery digitizing",
+      "Screen separations",
+      "Vector file creation and conversion",
+      "Digital mockups and proofs",
+      "Design consulting and recommendations",
     ]}
     subtypes={[
       { image: vectorizeLogo, label: "Vectorize Logos" },
@@ -346,10 +351,11 @@ const optimizedImage = await getImage({
     <Fragment slot="title">Artwork and Digitizing Services</Fragment>
     <Fragment slot="description">
       <p class="text-body font-medium">
-        For precise, professional customization, our laser engraving services
-        etch your designs, logos, or text onto a variety of materials, including
-        wood, metal, acrylic, and leather. Using advanced laser technology, we
-        deliver clean, permanent results with intricate detail and sharp edges.
+        Our experienced in-house graphic design and digitizing team provides
+        complete creative support — from logo design and mockups to vector
+        files, digitizing, and embroidery file edits. Whether you need artwork
+        from scratch or technical adjustments, we ensure your designs are
+        optimized for perfect embroidery and printing results.
       </p>
     </Fragment>
   </ServiceSection>

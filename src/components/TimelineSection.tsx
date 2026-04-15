@@ -4,7 +4,7 @@ import { Timeline } from "./Ui/Timeline";
 
 // import timeline1 from "@assets/images/merit-images/merit-0256.jpg";
 
-import timeline1 from "@assets/images/home-hero.jpg";
+import timeline1 from "@assets/images/merit-dark-gold.png";
 import timeline2 from "@assets/images/CTA/background-img.jpg";
 import timeline3 from "@assets/images/merit-images/merit-0256.jpg";
 import timeline4 from "@assets/images/merit-images/merit-0314.jpg";
