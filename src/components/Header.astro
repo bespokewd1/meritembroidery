@@ -60,22 +60,35 @@ import cn from "@utils/cn";
                 ]}
               >
                 {entry.children?.length > 0 ? (
-                  // If entry has children in navData.json, create a button and a dropdown icon
-                  // cs-active
-                  <button
-                    aria-expanded="false"
-                    aria-controls={`submenu-${entry.key}`}
-                    class:list={[
-                      "cs-li-link cs-dropdown-button squircle-full text-body-dark px-3 py-2 uppercase",
-                      "text-[clamp(1rem,calc(1rem+1vw),1.125rem)]",
-                      {
-                        "cs-active": Astro.url.pathname.includes(entry.url),
-                      },
-                    ]}
-                  >
-                    {entry.key}
-                    <Icon name="mdi--caret" class="cs-drop-icon" />
-                  </button>
+                  <div class="cs-dropdown-trigger squircle-full">
+                    <a
+                      href={entry.url}
+                      class:list={[
+                        "cs-li-link cs-parent-link text-body-dark px-3 py-2 uppercase",
+                        "text-[clamp(1rem,calc(1rem+1vw),1.125rem)]",
+                        {
+                          "cs-active": Astro.url.pathname.includes(entry.url),
+                        },
+                      ]}
+                      aria-current={
+                        Astro.url.pathname === entry.url ? "page" : undefined
+                      }
+                    >
+                      {entry.key}
+                    </a>
+                    <button
+                      type="button"
+                      aria-expanded="false"
+                      aria-controls={`submenu-${entry.key}`}
+                      aria-label={`Toggle ${entry.key} menu`}
+                      class:list={[
+                        "cs-dropdown-button text-body-dark py-2 pr-3 pl-1",
+                        "text-[clamp(1rem,calc(1rem+1vw),1.125rem)]",
+                      ]}
+                    >
+                      <Icon name="mdi--caret" class="cs-drop-icon" />
+                    </button>
+                  </div>
                 ) : (
                   // If entry does not have children in navData.json, create an anchor
                   // { "cs-active": Astro.url.pathname === entry.url },
@@ -213,6 +226,23 @@ import cn from "@utils/cn";
 <style lang="less">
   html {
     scroll-behavior: smooth;
+  }
+
+  #cs-navigation {
+    .cs-dropdown-trigger {
+      display: inline-flex;
+      align-items: center;
+      color: inherit;
+    }
+
+    .cs-dropdown-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: inherit;
+      line-height: 1;
+      cursor: pointer;
+    }
   }
 
   /*-- -------------------------- -->

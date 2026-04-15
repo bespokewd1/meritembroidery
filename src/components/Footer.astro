@@ -68,7 +68,7 @@ const contactItems: ContactItem[] = [
             <Image
               src={footerLogo}
               alt={"Merit Embroidery & Printing logo"}
-              class="relative z-10 w-full object-contain drop-shadow-sm"
+              class="relative z-10 w-full object-contain"
             />
           </div>
           <div class="flex min-w-0 flex-1 flex-col items-center sm:items-start">
@@ -193,6 +193,7 @@ const contactItems: ContactItem[] = [
 </footer>
 
 <style>
+  /*
   #footer .footer-logo-bg::before {
     content: "";
     position: absolute;
@@ -201,5 +202,10 @@ const contactItems: ContactItem[] = [
     border-radius: 48% 52% 45% 55% / 60% 44% 56% 40%;
     background: rgba(255, 255, 255, 0.96);
     transform: rotate(-2deg);
+  }
+    */
+  .footer-logo-bg img {
+    filter: drop-shadow(1px 1px white) drop-shadow(1px -1px white)
+      drop-shadow(-1px 1px white) drop-shadow(-1px -1px white);
   }
 </style>
