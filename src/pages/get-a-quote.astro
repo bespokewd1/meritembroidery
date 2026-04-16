@@ -12,96 +12,6 @@ import CTA from "@components/CTA.astro";
 const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 ---
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contactForm");
-    const fileInput = document.getElementById("fileInput");
-    const uploadBox = document.getElementById("uploadBox");
-    const fileList = document.getElementById("fileList");
-    const message = document.getElementById("formMessage");
-
-    // 🔹 Click → open file picker
-    uploadBox.addEventListener("click", () => fileInput.click());
-
-    // 🔹 Drag & drop support
-    uploadBox.addEventListener("dragover", (e) => {
-      e.preventDefault();
-      uploadBox.classList.add("dragover");
-    });
-
-    uploadBox.addEventListener("dragleave", () => {
-      uploadBox.classList.remove("dragover");
-    });
-
-    uploadBox.addEventListener("drop", (e) => {
-      e.preventDefault();
-      uploadBox.classList.remove("dragover");
-      fileInput.files = e.dataTransfer.files;
-      displayFiles();
-    });
-
-    // 🔹 Display file list
-    fileInput.addEventListener("change", displayFiles);
-
-    function displayFiles() {
-      const files = Array.from(fileInput.files);
-      fileList.innerHTML = files.length
-        ? `<strong>Files Selected:</strong><ul>${files.map((f) => `<li>${f.name}</li>`).join("")}</ul>`
-        : "";
-    }
-
-    // 🔹 Form submission
-    form.addEventListener("submit", async (e) => {
-      message.style.display = "block";
-      message.textContent = "Sending...";
-
-      // Create FormData
-      const formData = new FormData(form);
-
-      // Add Netlify required hidden input if missing
-      if (!form.querySelector('input[name="form-name"]')) {
-        const hiddenInput = document.createElement("input");
-        hiddenInput.type = "hidden";
-        hiddenInput.name = "form-name";
-        hiddenInput.value = form.getAttribute("name") || "contact";
-        formData.append(hiddenInput.name, hiddenInput.value);
-      }
-
-      try {
-        // Submit form the normal way to let Netlify handle it
-        const request = new XMLHttpRequest();
-        request.open(form.method, form.action || "/", true);
-        request.setRequestHeader("Accept", "application/x-www-form-urlencoded");
-
-        request.onload = function () {
-          if (request.status >= 200 && request.status < 400) {
-            message.textContent =
-              "✅ Thank you! Your form was submitted successfully.";
-            form.reset();
-            fileList.innerHTML = "";
-          } else {
-            message.textContent =
-              "⚠️ There was an issue submitting the form. Please try again.";
-          }
-        };
-
-        request.onerror = function () {
-          message.textContent =
-            "❌ Network error. Please check your connection.";
-        };
-
-        request.send(formData);
-      } catch (error) {
-        console.error(error);
-        message.textContent = "❌ Unexpected error. Please try again.";
-      }
-
-      // Prevent default only to control messages
-      e.preventDefault();
-    });
-  });
-</script>
-
 <BaseLayout
   title="Contact"
   description="High-quality in-house embroidery, screen printing, and custom apparel decoration in Edmonton. Serving businesses across Alberta and North America with fast, reliable, and professional service."
@@ -134,17 +44,21 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
         <!-- <h3 class="cs-title">Minimum Order 24 Pieces</h3> -->
         <div class="form-wrapper bg-bg-light mt-0 max-w-full p-0">
           <form
-            id="myForm"
-            action="https://api.web3forms.com/submit"
+            id="quoteForm"
+            name="Get a Quote"
             method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            enctype="multipart/form-data"
+            data-astro-reload
           >
-            <input
-              type="hidden"
-              name="access_key"
-              value="7f34c878-37fe-46df-adb0-7f0e58fab13e"
-            />
-            <!-- 2️⃣ Hidden field for Cloudinary file URL -->
-            <input type="hidden" id="file_url" name="File URL" />
+            <input type="hidden" name="form-name" value="Get a Quote" />
+            <p style="display: none;">
+              <label>
+                Do not fill this out if you are human:
+                <input name="bot-field" />
+              </label>
+            </p>
             <div class="form-group">
               <label class="text-accent-light text-lg font-medium">Name </label>
               <div class="row">
@@ -226,12 +140,20 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
               <!-- class="" -->
               <div class="file-upload border-neutral-500">
-                <input type="file" id="file" accept=".jpg,.png,.pdf" required />
+                <input
+                  type="file"
+                  id="file"
+                  name="artwork"
+                  accept=".jpg,.jpeg,.png,.pdf"
+                  required
+                />
                 <div
                   class="upload-box ring-accent-light bg-body-light h-auto min-h-50 place-content-center rounded-none p-2 font-medium ring outline-none focus-visible:ring-2"
                   id="uploadBox"
+                  role="button"
+                  tabindex="0"
                 >
-                  <label class="upload-icon" for="file">📁</label>
+                  <span class="upload-icon" aria-hidden="true">📁</span>
                   <p id="status"></p>
                   <p class="text-lg">
                     <strong class="text-lg font-medium"
@@ -259,50 +181,65 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
   <CTA />
 </BaseLayout>
 <script>
-  const form = document.getElementById("myForm");
   const fileInput = document.getElementById("file");
-  const fileUrlInput = document.getElementById("file_url");
+  const uploadBox = document.getElementById("uploadBox");
+  const uploadWrapper = uploadBox?.closest(".file-upload");
+  const fileList = document.getElementById("fileList");
   const status = document.getElementById("status");
 
-  // 🧩 When the user selects a file:
-  fileInput.addEventListener("change", async (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
+  function displayFiles() {
+    const files = Array.from(fileInput?.files || []);
+    fileList.replaceChildren();
 
-    status.textContent = "Uploading file...";
+    if (!files.length) {
+      status.textContent = "";
+      return;
+    }
 
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", "unsigned_upload"); // from Cloudinary
+    const label = document.createElement("strong");
+    label.textContent =
+      files.length === 1 ? "File selected:" : "Files selected:";
 
-    try {
-      // Upload to Cloudinary
-      const res = await fetch(
-        "https://api.cloudinary.com/v1_1/dnlwkkhua/upload",
-        {
-          method: "POST",
-          body: formData,
-        },
-      );
+    const list = document.createElement("ul");
+    files.forEach((file) => {
+      const item = document.createElement("li");
+      const sizeInKb = Math.ceil(file.size / 1024);
+      item.textContent = `${file.name} (${sizeInKb} KB)`;
+      list.appendChild(item);
+    });
 
-      const data = await res.json();
+    fileList.append(label, list);
+    status.textContent = "Ready to submit.";
+  }
 
-      // ✅ Save the file URL to hidden input
-      fileUrlInput.value = data.secure_url;
-      status.textContent = "File uploaded successfully ✔️";
-    } catch (err) {
-      status.textContent = "Upload failed ❌";
-      console.error(err);
+  uploadBox?.addEventListener("click", () => fileInput?.click());
+  uploadBox?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      fileInput?.click();
     }
   });
 
-  // 🧩 When submitting the form:
-  form.addEventListener("submit", async (e) => {
-    if (!fileUrlInput.value) {
-      e.preventDefault(); // stop submission
-      alert("Please wait for the file to finish uploading.");
+  uploadBox?.addEventListener("dragover", (event) => {
+    event.preventDefault();
+    uploadWrapper?.classList.add("dragover");
+  });
+
+  uploadBox?.addEventListener("dragleave", () => {
+    uploadWrapper?.classList.remove("dragover");
+  });
+
+  uploadBox?.addEventListener("drop", (event) => {
+    event.preventDefault();
+    uploadWrapper?.classList.remove("dragover");
+
+    if (event.dataTransfer?.files?.length) {
+      fileInput.files = event.dataTransfer.files;
+      displayFiles();
     }
   });
+
+  fileInput?.addEventListener("change", displayFiles);
 </script>
 
 <style lang="less">
