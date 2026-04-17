@@ -205,7 +205,7 @@ const IMAGES: AppLogo[] = [
         </h1>
 
         <p
-          class="text-accent-primary text-body mt-3 text-center font-medium md:text-3xl lg:text-left xl:text-[2rem] xl:leading-[1.11] xl:text-balance"
+          class="hero-subtitle-copy text-accent-primary mt-3 text-center font-medium text-balance lg:text-left"
         >
           Quality. Delivery. Service. Innovation.
         </p>
@@ -316,6 +316,11 @@ const IMAGES: AppLogo[] = [
     /*    background: #d7e3ee; */
     // #1e3a8a 70%,
     // background-color: var(--color-accent-light);
+  }
+
+  #hero .hero-subtitle-copy {
+    font-size: clamp(1.5rem, 0.7vw + 1rem, 2rem);
+    line-height: 1.25;
   }
 
   .trust-badges-section {
